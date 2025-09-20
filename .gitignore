@@ -1,0 +1,3 @@
+/generator/configs/sub/*.json
+/generator/configs/openapi.json
+/code

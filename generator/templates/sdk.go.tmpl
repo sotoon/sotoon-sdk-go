@@ -1,0 +1,49 @@
+package sotton
+
+import (
+{{- range .Modules}}
+	{{.ImportAlias}} "github.com/sotoon/sotoon-sdk-go/sdk/core/{{.ModuleName}}"
+{{- end}}
+	"github.com/sotoon/sotoon-sdk-go/sdk/interceptors"
+)
+
+const (
+	serverAddress = "https://api.sotoon.ir"
+)
+
+type SDK struct {
+{{- range .Modules}}
+	{{.FieldName}} *{{.ImportAlias}}.Handler
+{{- end}}
+}
+
+type SDKOption func(SDK) SDK
+
+func NewSDK(secretKey string, opts ...SDKOption) (*SDK, error) {
+{{- range .Modules}}
+
+	{{.VarName}}Client, err := {{.ImportAlias}}.NewHandler(serverAddress, secretKey)
+	if err != nil {
+		return nil, err
+	}
+{{- end}}
+
+	sdk := SDK{
+{{- range .Modules}}
+		{{.FieldName}}: {{.VarName}}Client,
+{{- end}}
+	}
+	for _, opt := range opts {
+		sdk = opt(sdk)
+	}
+	return &sdk, nil
+}
+
+func WithInterceptor(interceptors ...interceptors.Interceptor) SDKOption {
+	return func(s SDK) SDK {
+{{- range .Modules}}
+		s.{{.FieldName}}.AddInterceptors(interceptors...)
+{{- end}}
+		return s
+	}
+}
