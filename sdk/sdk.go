@@ -2,6 +2,7 @@ package sotton
 
 import (
 	compute "github.com/sotoon/sotoon-sdk-go/sdk/core/compute"
+	iam "github.com/sotoon/sotoon-sdk-go/sdk/core/iam"
 	sotoon_kubernetes_engine "github.com/sotoon/sotoon-sdk-go/sdk/core/sotoon-kubernetes-engine"
 	"github.com/sotoon/sotoon-sdk-go/sdk/interceptors"
 )
@@ -12,6 +13,7 @@ const (
 
 type SDK struct {
 	Compute *compute.Handler
+	Iam *iam.Handler
 	Engine *sotoon_kubernetes_engine.Handler
 }
 
@@ -24,6 +26,11 @@ func NewSDK(secretKey string, opts ...SDKOption) (*SDK, error) {
 		return nil, err
 	}
 
+	iamClient, err := iam.NewHandler(serverAddress, secretKey)
+	if err != nil {
+		return nil, err
+	}
+
 	engineClient, err := sotoon_kubernetes_engine.NewHandler(serverAddress, secretKey)
 	if err != nil {
 		return nil, err
@@ -31,6 +38,7 @@ func NewSDK(secretKey string, opts ...SDKOption) (*SDK, error) {
 
 	sdk := SDK{
 		Compute: computeClient,
+		Iam: iamClient,
 		Engine: engineClient,
 	}
 	for _, opt := range opts {
@@ -42,6 +50,7 @@ func NewSDK(secretKey string, opts ...SDKOption) (*SDK, error) {
 func WithInterceptor(interceptors ...interceptors.Interceptor) SDKOption {
 	return func(s SDK) SDK {
 		s.Compute.AddInterceptors(interceptors...)
+		s.Iam.AddInterceptors(interceptors...)
 		s.Engine.AddInterceptors(interceptors...)
 		return s
 	}
