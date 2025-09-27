@@ -5,360 +5,598 @@ package iam
 
 import (
 	"time"
+
+	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
 const (
 	Bearer_TokenScopes = "Bearer_Token.Scopes"
 )
 
-// SibBackupKey defines model for SibBackupKey.
-type SibBackupKey struct {
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	Key         *string    `json:"key,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	Uuid        *string    `json:"uuid,omitempty"`
-	Workspace   *string    `json:"workspace,omitempty"`
-}
-
-// SibGroup defines model for SibGroup.
-type SibGroup struct {
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	Uuid        *string    `json:"uuid,omitempty"`
-	Workspace   *string    `json:"workspace,omitempty"`
-}
-
-// SibHealthzResponseDefault defines model for SibHealthzResponseDefault.
-type SibHealthzResponseDefault struct {
-	Default *SibHealthzResponseStatus `json:"default,omitempty"`
-}
-
-// SibHealthzResponseStatus defines model for SibHealthzResponseStatus.
-type SibHealthzResponseStatus struct {
-	Ok *bool `json:"ok,omitempty"`
-}
-
-// SibKiseKey defines model for SibKiseKey.
-type SibKiseKey struct {
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	PublicKey   *string    `json:"public_key,omitempty"`
-	ServiceUser *string    `json:"service_user,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	User        *string    `json:"user,omitempty"`
-	Uuid        *string    `json:"uuid,omitempty"`
-	Workspace   *string    `json:"workspace,omitempty"`
-}
-
-// SibPublicKey defines model for SibPublicKey.
-type SibPublicKey struct {
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	Key       *string    `json:"key,omitempty"`
-	Title     *string    `json:"title,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
-	User      *string    `json:"user,omitempty"`
-	Uuid      *string    `json:"uuid,omitempty"`
-}
-
-// SibRole defines model for SibRole.
-type SibRole struct {
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	Uuid        *string    `json:"uuid,omitempty"`
-	Workspace   *string    `json:"workspace,omitempty"`
-}
-
-// SibRule defines model for SibRule.
-type SibRule struct {
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	Uuid        *string    `json:"uuid,omitempty"`
-	Workspace   *string    `json:"workspace,omitempty"`
-}
-
-// SibService defines model for SibService.
-type SibService struct {
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	Uuid        *string    `json:"uuid,omitempty"`
-	Workspace   *string    `json:"workspace,omitempty"`
-}
-
-// SibServiceUser defines model for SibServiceUser.
-type SibServiceUser struct {
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	Uuid        *string    `json:"uuid,omitempty"`
-	Workspace   *string    `json:"workspace,omitempty"`
-}
-
-// SibToken defines model for SibToken.
-type SibToken struct {
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	Secret      *string    `json:"secret,omitempty"`
-	ServiceUser *string    `json:"service_user,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	Uuid        *string    `json:"uuid,omitempty"`
-	Workspace   *string    `json:"workspace,omitempty"`
-}
-
-// SibUser defines model for SibUser.
-type SibUser struct {
-	Active    *bool      `json:"active,omitempty"`
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	Email     *string    `json:"email,omitempty"`
-	Name      *string    `json:"name,omitempty"`
-	UpdatedAt *time.Time `json:"updated_at,omitempty"`
-	Uuid      *string    `json:"uuid,omitempty"`
-}
-
-// SibUserToken defines model for SibUserToken.
-type SibUserToken struct {
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	Secret      *string    `json:"secret,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	User        *string    `json:"user,omitempty"`
-	Uuid        *string    `json:"uuid,omitempty"`
-}
-
-// SibWorkspace defines model for SibWorkspace.
-type SibWorkspace struct {
-	CreatedAt   *time.Time `json:"created_at,omitempty"`
-	Description *string    `json:"description,omitempty"`
-	Name        *string    `json:"name,omitempty"`
-	UpdatedAt   *time.Time `json:"updated_at,omitempty"`
-	Uuid        *string    `json:"uuid,omitempty"`
-}
-
 // AcceptInvitationJSONBody defines parameters for AcceptInvitation.
 type AcceptInvitationJSONBody struct {
-	Name     *string `json:"name,omitempty"`
+	// Name Full name of the user
+	Name *string `json:"name,omitempty"`
+
+	// Password Password for the new account
 	Password *string `json:"password,omitempty"`
 }
 
-// CreateTokenWithCredJSONBody defines parameters for CreateTokenWithCred.
-type CreateTokenWithCredJSONBody struct {
-	Email    *string `json:"email,omitempty"`
+// CreateAuthTokenWithCredJSONBody defines parameters for CreateAuthTokenWithCred.
+type CreateAuthTokenWithCredJSONBody struct {
+	// Captcha Captcha response if required
+	Captcha *string `json:"captcha,omitempty"`
+
+	// Email Email address of the user
+	Email *openapi_types.Email `json:"email,omitempty"`
+
+	// Password User's password
 	Password *string `json:"password,omitempty"`
-	Remember *bool   `json:"remember,omitempty"`
+
+	// Remember Whether to create a long-lived token
+	Remember *bool `json:"remember,omitempty"`
 }
 
-// CreateTokenWithChallengeJSONBody defines parameters for CreateTokenWithChallenge.
-type CreateTokenWithChallengeJSONBody struct {
+// CreateAuthTokenWithChallengeJSONBody defines parameters for CreateAuthTokenWithChallenge.
+type CreateAuthTokenWithChallengeJSONBody struct {
+	// ChallengeAnswer Answer to the challenge
 	ChallengeAnswer *string `json:"challenge_answer,omitempty"`
-	ChallengeToken  *string `json:"challenge_token,omitempty"`
-	Remember        *bool   `json:"remember,omitempty"`
+
+	// ChallengeToken Token received from the challenge request
+	ChallengeToken *string `json:"challenge_token,omitempty"`
+
+	// Remember Whether to create a long-lived token
+	Remember *bool `json:"remember,omitempty"`
 }
 
-// CreateThirdPartyAccessTokenJSONBody defines parameters for CreateThirdPartyAccessToken.
-type CreateThirdPartyAccessTokenJSONBody struct {
-	ClientId     *string `json:"client_id,omitempty"`
+// GetThirdPartyAccessTokenJSONBody defines parameters for GetThirdPartyAccessToken.
+type GetThirdPartyAccessTokenJSONBody struct {
+	// ClientId Client ID for the third-party service
+	ClientId *string `json:"client_id,omitempty"`
+
+	// ClientSecret Client secret for the third-party service
 	ClientSecret *string `json:"client_secret,omitempty"`
-	Code         *string `json:"code,omitempty"`
-	RedirectUri  *string `json:"redirect_uri,omitempty"`
+
+	// Code Authorization code from the third-party service
+	Code *string `json:"code,omitempty"`
+
+	// RedirectUri Redirect URI used in the authorization request
+	RedirectUri *string `json:"redirect_uri,omitempty"`
+
+	// State State parameter used in the authorization request
+	State *string `json:"state,omitempty"`
 }
 
 // ChangePasswordJSONBody defines parameters for ChangePassword.
 type ChangePasswordJSONBody struct {
+	// Password New password for the user
 	Password *string `json:"password,omitempty"`
 }
 
 // ResetPasswordJSONBody defines parameters for ResetPassword.
 type ResetPasswordJSONBody struct {
+	// Email Email address of the user account to reset password for
 	Email *string `json:"email,omitempty"`
 }
 
-// UserBulkCanJSONBody defines parameters for UserBulkCan.
-type UserBulkCanJSONBody struct {
-	Actions *[]string `json:"actions"`
-	Path    *string   `json:"path,omitempty"`
-	Service *string   `json:"service,omitempty"`
+// BulkCanUserJSONBody defines parameters for BulkCanUser.
+type BulkCanUserJSONBody = []struct {
+	// Actions List of actions to check permissions for
+	Actions *[]string `json:"actions,omitempty"`
+
+	// Path The path within the service to check permissions for
+	Path *string `json:"path,omitempty"`
+
+	// Service The service name to check permissions for
+	Service *string `json:"service,omitempty"`
 }
 
-// EnableUserOTPJSONBody defines parameters for EnableUserOTP.
-type EnableUserOTPJSONBody struct {
-	Code   *string `json:"code,omitempty"`
+// EnableUserOtpJSONBody defines parameters for EnableUserOtp.
+type EnableUserOtpJSONBody struct {
+	// Code Verification code to confirm OTP setup
+	Code *string `json:"code,omitempty"`
+
+	// Secret OTP secret
 	Secret *string `json:"secret,omitempty"`
 }
 
 // CreateUserPublicKeyJSONBody defines parameters for CreateUserPublicKey.
 type CreateUserPublicKeyJSONBody struct {
-	Key   *string `json:"key,omitempty"`
+	// CreatedAt Timestamp when the public key was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// Key The public key content in SSH format
+	Key *string `json:"key,omitempty"`
+
+	// Title Title or name for the public key
 	Title *string `json:"title,omitempty"`
+
+	// UpdatedAt Timestamp when the public key was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// User The user this public key belongs to
+	User *struct {
+		// CreatedAt Timestamp when the user was created
+		CreatedAt *time.Time `json:"created_at,omitempty"`
+
+		// Email Email address of the user
+		Email *string `json:"email,omitempty"`
+
+		// Name Full name of the user
+		Name *string `json:"name,omitempty"`
+
+		// UpdatedAt Timestamp when the user was last updated
+		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+		// Uuid Unique identifier for the user
+		Uuid *string `json:"uuid,omitempty"`
+	} `json:"user,omitempty"`
+
+	// Uuid Unique identifier for the public key
+	Uuid *string `json:"uuid,omitempty"`
 }
 
 // CreateUserTokenJSONBody defines parameters for CreateUserToken.
 type CreateUserTokenJSONBody struct {
-	Description *string `json:"description,omitempty"`
-	Name        *string `json:"name,omitempty"`
+	// ExpiresAt Token expiration timestamp
+	ExpiresAt *time.Time `json:"expires_at,omitempty"`
+
+	// Token Authentication token
+	Token *string `json:"token,omitempty"`
+
+	// UserUuid UUID of the authenticated user
+	UserUuid *string `json:"user_uuid,omitempty"`
 }
 
 // CreateBackupKeyJSONBody defines parameters for CreateBackupKey.
 type CreateBackupKeyJSONBody struct {
-	Description *string `json:"description,omitempty"`
-	Key         *string `json:"key,omitempty"`
-	Name        *string `json:"name,omitempty"`
+	// CreatedAt Timestamp when the backup key was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// Key The SSH key content in SSH format
+	Key *string `json:"key,omitempty"`
+
+	// Title Title or name for the backup key
+	Title *string `json:"title,omitempty"`
+
+	// UpdatedAt Timestamp when the backup key was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// Uuid Unique identifier for the backup key
+	Uuid *string `json:"uuid,omitempty"`
+
+	// Workspace The workspace this backup key belongs to
+	Workspace *string `json:"workspace,omitempty"`
 }
 
 // CreateGroupJSONBody defines parameters for CreateGroup.
 type CreateGroupJSONBody struct {
+	// CreatedAt Timestamp when the group was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// Description Optional description of the group's purpose
 	Description *string `json:"description,omitempty"`
-	Name        *string `json:"name,omitempty"`
+
+	// Name Name of the group
+	Name *string `json:"name,omitempty"`
+
+	// UpdatedAt Timestamp when the group was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// Uuid Unique identifier for the group
+	Uuid *string `json:"uuid,omitempty"`
 }
 
 // UpdateGroupJSONBody defines parameters for UpdateGroup.
 type UpdateGroupJSONBody struct {
-	Description *string `json:"description,omitempty"`
-	Name        *string `json:"name,omitempty"`
-}
+	// CreatedAt Timestamp when the group was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
 
-// BulkAddRolesToGroupJSONBody defines parameters for BulkAddRolesToGroup.
-type BulkAddRolesToGroupJSONBody struct {
-	Roles *[]struct {
-		ItemsList *[]interface{} `json:"items_list"`
-		RoleUuid  *string        `json:"role_uuid,omitempty"`
-	} `json:"roles"`
+	// Description Optional description of the group's purpose
+	Description *string `json:"description,omitempty"`
+
+	// Name Name of the group
+	Name *string `json:"name,omitempty"`
+
+	// UpdatedAt Timestamp when the group was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// Uuid Unique identifier for the group
+	Uuid *string `json:"uuid,omitempty"`
 }
 
 // BulkAddServiceUsersToGroupJSONBody defines parameters for BulkAddServiceUsersToGroup.
 type BulkAddServiceUsersToGroupJSONBody struct {
-	ServiceUsers *[]string `json:"service_users"`
+	// ServiceUsers List of service user UUIDs to add to the group
+	ServiceUsers *[]string `json:"service_users,omitempty"`
 }
 
 // BulkAddUsersToGroupJSONBody defines parameters for BulkAddUsersToGroup.
 type BulkAddUsersToGroupJSONBody struct {
-	Users *[]string `json:"users"`
+	// Users List of user UUIDs to add to the group
+	Users *[]string `json:"users,omitempty"`
 }
 
-// InviteUserJSONBody defines parameters for InviteUser.
-type InviteUserJSONBody struct {
+// AddServiceUserToGroupJSONBody defines parameters for AddServiceUserToGroup.
+type AddServiceUserToGroupJSONBody struct {
+	// CreatedAt Timestamp when the service user was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// Name Name of the service user
+	Name *string `json:"name,omitempty"`
+
+	// UpdatedAt Timestamp when the service user was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// Uuid Unique identifier for the service user
+	Uuid *string `json:"uuid,omitempty"`
+}
+
+// AddUserToGroupJSONBody defines parameters for AddUserToGroup.
+type AddUserToGroupJSONBody struct {
+	// CreatedAt Timestamp when the user was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// Email Email address of the user
 	Email *string `json:"email,omitempty"`
-	Role  *string `json:"role,omitempty"`
+
+	// Name Full name of the user
+	Name *string `json:"name,omitempty"`
+
+	// UpdatedAt Timestamp when the user was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// Uuid Unique identifier for the user
+	Uuid *string `json:"uuid,omitempty"`
 }
 
-// CreateRoleJSONBody defines parameters for CreateRole.
-type CreateRoleJSONBody struct {
-	Description *string `json:"description,omitempty"`
-	Name        *string `json:"name,omitempty"`
+// InviteUsersToWorkspaceJSONBody defines parameters for InviteUsersToWorkspace.
+type InviteUsersToWorkspaceJSONBody struct {
+	// Emails List of email addresses to invite to the workspace
+	Emails *[]string `json:"emails,omitempty"`
 }
 
 // BulkAddRulesToRoleJSONBody defines parameters for BulkAddRulesToRole.
 type BulkAddRulesToRoleJSONBody struct {
-	Rules *[]string `json:"rules"`
+	// RulesUuidList List of UUIDs of the Rule objects to add to the role
+	RulesUuidList *[]interface{} `json:"rules_uuid_list,omitempty"`
 }
 
 // BulkAddServiceUsersToRoleJSONBody defines parameters for BulkAddServiceUsersToRole.
 type BulkAddServiceUsersToRoleJSONBody struct {
-	ServiceUsers *[]struct {
-		ItemsList       *[]interface{} `json:"items_list"`
-		ServiceUserUuid *string        `json:"service_user_uuid,omitempty"`
-	} `json:"service_users"`
+	// Items List of items needed for role bindings
+	Items *[]interface{} `json:"items,omitempty"`
+
+	// ServiceUsers List of service user UUIDs to assign to the role
+	ServiceUsers *[]string `json:"service_users,omitempty"`
 }
 
 // BulkAddUsersToRoleJSONBody defines parameters for BulkAddUsersToRole.
 type BulkAddUsersToRoleJSONBody struct {
-	Users *[]struct {
-		ItemsList *[]interface{} `json:"items_list"`
-		UserUuid  *string        `json:"user_uuid,omitempty"`
-	} `json:"users"`
+	// Items List of items needed for role bindings
+	Items *[]interface{} `json:"items,omitempty"`
+
+	// Users List of user UUIDs to assign to the role
+	Users *[]string `json:"users,omitempty"`
 }
 
-// AddServiceUserToRoleJSONBody defines parameters for AddServiceUserToRole.
-type AddServiceUserToRoleJSONBody struct {
+// AddRuleToRoleJSONBody defines parameters for AddRuleToRole.
+type AddRuleToRoleJSONBody struct {
+	// Action Action this rule controls
+	Action *string `json:"action,omitempty"`
+
+	// CreatedAt Timestamp when the rule was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// Description Description of the rule's purpose
+	Description *string `json:"description,omitempty"`
+
+	// Name Name of the rule
+	Name *string `json:"name,omitempty"`
+
+	// Resource Resource this rule applies to
+	Resource *string `json:"resource,omitempty"`
+
+	// Service Service this rule applies to
+	Service *string `json:"service,omitempty"`
+
+	// UpdatedAt Timestamp when the rule was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// Uuid Unique identifier for the rule
+	Uuid *string `json:"uuid,omitempty"`
+}
+
+// AssignRoleToServiceUserJSONBody defines parameters for AssignRoleToServiceUser.
+type AssignRoleToServiceUserJSONBody struct {
+	// Items Optional items associated with this role binding
+	Items interface{} `json:"items,omitempty"`
+}
+
+// AssignRoleToUserJSONBody defines parameters for AssignRoleToUser.
+type AssignRoleToUserJSONBody struct {
+	// Items Optional items associated with this role binding
 	Items interface{} `json:"items,omitempty"`
 }
 
 // CreateRuleJSONBody defines parameters for CreateRule.
 type CreateRuleJSONBody struct {
+	// Action Action this rule controls
+	Action *string `json:"action,omitempty"`
+
+	// CreatedAt Timestamp when the rule was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// Description Description of the rule's purpose
 	Description *string `json:"description,omitempty"`
-	Name        *string `json:"name,omitempty"`
+
+	// Name Name of the rule
+	Name *string `json:"name,omitempty"`
+
+	// Resource Resource this rule applies to
+	Resource *string `json:"resource,omitempty"`
+
+	// Service Service this rule applies to
+	Service *string `json:"service,omitempty"`
+
+	// UpdatedAt Timestamp when the rule was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// Uuid Unique identifier for the rule
+	Uuid *string `json:"uuid,omitempty"`
 }
 
 // UpdateRuleJSONBody defines parameters for UpdateRule.
 type UpdateRuleJSONBody struct {
+	// Action Action this rule controls
+	Action *string `json:"action,omitempty"`
+
+	// CreatedAt Timestamp when the rule was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// Description Description of the rule's purpose
 	Description *string `json:"description,omitempty"`
-	Name        *string `json:"name,omitempty"`
+
+	// Name Name of the rule
+	Name *string `json:"name,omitempty"`
+
+	// Resource Resource this rule applies to
+	Resource *string `json:"resource,omitempty"`
+
+	// Service Service this rule applies to
+	Service *string `json:"service,omitempty"`
+
+	// UpdatedAt Timestamp when the rule was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// Uuid Unique identifier for the rule
+	Uuid *string `json:"uuid,omitempty"`
 }
 
 // CreateServiceUserJSONBody defines parameters for CreateServiceUser.
 type CreateServiceUserJSONBody struct {
+	// Description Optional description of the service user
 	Description *string `json:"description,omitempty"`
-	Name        *string `json:"name,omitempty"`
+
+	// Name Name of the service user
+	Name *string `json:"name,omitempty"`
 }
 
 // UpdateServiceUserJSONBody defines parameters for UpdateServiceUser.
 type UpdateServiceUserJSONBody struct {
-	Description *string `json:"description,omitempty"`
-	Name        *string `json:"name,omitempty"`
+	// CreatedAt Timestamp when the service user was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// Name Name of the service user
+	Name *string `json:"name,omitempty"`
+
+	// UpdatedAt Timestamp when the service user was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// Uuid Unique identifier for the service user
+	Uuid *string `json:"uuid,omitempty"`
 }
 
 // CreateServiceUserKiseKeyJSONBody defines parameters for CreateServiceUserKiseKey.
 type CreateServiceUserKiseKeyJSONBody struct {
-	Description *string `json:"description,omitempty"`
-	Name        *string `json:"name,omitempty"`
-	PublicKey   *string `json:"public_key,omitempty"`
+	// CreatedAt Timestamp when the KISE key was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// Key The KISE key content
+	Key *string `json:"key,omitempty"`
+
+	// ServiceUser The service user this KISE key belongs to
+	ServiceUser *struct {
+		// CreatedAt Timestamp when the service user was created
+		CreatedAt *time.Time `json:"created_at,omitempty"`
+
+		// Name Name of the service user
+		Name *string `json:"name,omitempty"`
+
+		// UpdatedAt Timestamp when the service user was last updated
+		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+		// Uuid Unique identifier for the service user
+		Uuid *string `json:"uuid,omitempty"`
+	} `json:"service_user,omitempty"`
+
+	// Title Title or name for the KISE key
+	Title *string `json:"title,omitempty"`
+
+	// UpdatedAt Timestamp when the KISE key was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// Uuid Unique identifier for the KISE key
+	Uuid *string `json:"uuid,omitempty"`
+
+	// Workspace The workspace this KISE key belongs to
+	Workspace *string `json:"workspace,omitempty"`
 }
 
 // CreateServiceUserPublicKeyJSONBody defines parameters for CreateServiceUserPublicKey.
 type CreateServiceUserPublicKeyJSONBody struct {
-	Key   *string `json:"key,omitempty"`
+	// Key The public key content in SSH format
+	Key *string `json:"key,omitempty"`
+
+	// Title Title or name for the public key
 	Title *string `json:"title,omitempty"`
 }
 
 // CreateServiceUserTokenJSONBody defines parameters for CreateServiceUserToken.
 type CreateServiceUserTokenJSONBody struct {
-	Description *string `json:"description,omitempty"`
-	Name        *string `json:"name,omitempty"`
+	// CreatedAt Timestamp when the token was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// ExpiresAt Timestamp when the token will expire
+	ExpiresAt *time.Time `json:"expires_at,omitempty"`
+
+	// Name Name of the token
+	Name *string `json:"name,omitempty"`
+
+	// Secret The secret value of the token
+	Secret *string `json:"secret,omitempty"`
+
+	// ServiceUser The service user this token belongs to
+	ServiceUser *struct {
+		// CreatedAt Timestamp when the service user was created
+		CreatedAt *time.Time `json:"created_at,omitempty"`
+
+		// Name Name of the service user
+		Name *string `json:"name,omitempty"`
+
+		// UpdatedAt Timestamp when the service user was last updated
+		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+		// Uuid Unique identifier for the service user
+		Uuid *string `json:"uuid,omitempty"`
+	} `json:"service_user,omitempty"`
+
+	// Uuid Unique identifier for the token
+	Uuid *string `json:"uuid,omitempty"`
 }
 
 // BulkRefreshThirdPartyTokensJSONBody defines parameters for BulkRefreshThirdPartyTokens.
 type BulkRefreshThirdPartyTokensJSONBody struct {
-	TokenIds *[]string `json:"token_ids"`
+	// TokenIds List of token identifiers to refresh
+	TokenIds *[]string `json:"token_ids,omitempty"`
+}
+
+// AllowUserJSONBody defines parameters for AllowUser.
+type AllowUserJSONBody struct {
+	// CreatedAt Timestamp when the user was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// Email Email address of the user
+	Email *string `json:"email,omitempty"`
+
+	// Name Full name of the user
+	Name *string `json:"name,omitempty"`
+
+	// UpdatedAt Timestamp when the user was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// Uuid Unique identifier for the user
+	Uuid *string `json:"uuid,omitempty"`
 }
 
 // CreateUserKiseKeyJSONBody defines parameters for CreateUserKiseKey.
 type CreateUserKiseKeyJSONBody struct {
-	Description *string `json:"description,omitempty"`
-	Name        *string `json:"name,omitempty"`
-	PublicKey   *string `json:"public_key,omitempty"`
+	// CreatedAt Timestamp when the KISE key was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// Key The KISE key content
+	Key *string `json:"key,omitempty"`
+
+	// Title Title or name for the KISE key
+	Title *string `json:"title,omitempty"`
+
+	// UpdatedAt Timestamp when the KISE key was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// User The user this KISE key belongs to
+	User *struct {
+		// CreatedAt Timestamp when the user was created
+		CreatedAt *time.Time `json:"created_at,omitempty"`
+
+		// Email Email address of the user
+		Email *string `json:"email,omitempty"`
+
+		// Name Full name of the user
+		Name *string `json:"name,omitempty"`
+
+		// UpdatedAt Timestamp when the user was last updated
+		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+		// Uuid Unique identifier for the user
+		Uuid *string `json:"uuid,omitempty"`
+	} `json:"user,omitempty"`
+
+	// Uuid Unique identifier for the KISE key
+	Uuid *string `json:"uuid,omitempty"`
+
+	// Workspace The workspace this KISE key belongs to
+	Workspace *string `json:"workspace,omitempty"`
 }
 
-// CreateOpenIDTokenJSONBody defines parameters for CreateOpenIDToken.
-type CreateOpenIDTokenJSONBody struct {
-	ClientId     *string `json:"client_id,omitempty"`
+// SuspendUserJSONBody defines parameters for SuspendUser.
+type SuspendUserJSONBody struct {
+	// CreatedAt Timestamp when the user was created
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
+	// Email Email address of the user
+	Email *string `json:"email,omitempty"`
+
+	// Name Full name of the user
+	Name *string `json:"name,omitempty"`
+
+	// UpdatedAt Timestamp when the user was last updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+
+	// Uuid Unique identifier for the user
+	Uuid *string `json:"uuid,omitempty"`
+}
+
+// GetOpenIdTokenJSONBody defines parameters for GetOpenIdToken.
+type GetOpenIdTokenJSONBody struct {
+	// ClientId OAuth 2.0 client identifier
+	ClientId *string `json:"client_id,omitempty"`
+
+	// ClientSecret OAuth 2.0 client secret
 	ClientSecret *string `json:"client_secret,omitempty"`
-	GrantType    *string `json:"grant_type,omitempty"`
-	Scope        *string `json:"scope,omitempty"`
+
+	// Code Authorization code for authorization_code grant type
+	Code *string `json:"code,omitempty"`
+
+	// GrantType OAuth 2.0 grant type
+	GrantType *string `json:"grant_type,omitempty"`
+
+	// Password Password for password grant type
+	Password *string `json:"password,omitempty"`
+
+	// RedirectUri Redirect URI for authorization_code grant type
+	RedirectUri *string `json:"redirect_uri,omitempty"`
+
+	// RefreshToken Refresh token for refresh_token grant type
+	RefreshToken *string `json:"refresh_token,omitempty"`
+
+	// Scope OAuth 2.0 scope
+	Scope *string `json:"scope,omitempty"`
+
+	// Username Username for password grant type
+	Username *string `json:"username,omitempty"`
 }
 
 // AcceptInvitationJSONRequestBody defines body for AcceptInvitation for application/json ContentType.
 type AcceptInvitationJSONRequestBody AcceptInvitationJSONBody
 
-// CreateTokenWithCredJSONRequestBody defines body for CreateTokenWithCred for application/json ContentType.
-type CreateTokenWithCredJSONRequestBody CreateTokenWithCredJSONBody
+// CreateAuthTokenWithCredJSONRequestBody defines body for CreateAuthTokenWithCred for application/json ContentType.
+type CreateAuthTokenWithCredJSONRequestBody CreateAuthTokenWithCredJSONBody
 
-// CreateTokenWithChallengeJSONRequestBody defines body for CreateTokenWithChallenge for application/json ContentType.
-type CreateTokenWithChallengeJSONRequestBody CreateTokenWithChallengeJSONBody
+// CreateAuthTokenWithChallengeJSONRequestBody defines body for CreateAuthTokenWithChallenge for application/json ContentType.
+type CreateAuthTokenWithChallengeJSONRequestBody CreateAuthTokenWithChallengeJSONBody
 
-// CreateThirdPartyAccessTokenJSONRequestBody defines body for CreateThirdPartyAccessToken for application/json ContentType.
-type CreateThirdPartyAccessTokenJSONRequestBody CreateThirdPartyAccessTokenJSONBody
+// GetThirdPartyAccessTokenJSONRequestBody defines body for GetThirdPartyAccessToken for application/json ContentType.
+type GetThirdPartyAccessTokenJSONRequestBody GetThirdPartyAccessTokenJSONBody
 
 // ChangePasswordJSONRequestBody defines body for ChangePassword for application/json ContentType.
 type ChangePasswordJSONRequestBody ChangePasswordJSONBody
@@ -366,11 +604,11 @@ type ChangePasswordJSONRequestBody ChangePasswordJSONBody
 // ResetPasswordJSONRequestBody defines body for ResetPassword for application/json ContentType.
 type ResetPasswordJSONRequestBody ResetPasswordJSONBody
 
-// UserBulkCanJSONRequestBody defines body for UserBulkCan for application/json ContentType.
-type UserBulkCanJSONRequestBody UserBulkCanJSONBody
+// BulkCanUserJSONRequestBody defines body for BulkCanUser for application/json ContentType.
+type BulkCanUserJSONRequestBody = BulkCanUserJSONBody
 
-// EnableUserOTPJSONRequestBody defines body for EnableUserOTP for application/json ContentType.
-type EnableUserOTPJSONRequestBody EnableUserOTPJSONBody
+// EnableUserOtpJSONRequestBody defines body for EnableUserOtp for application/json ContentType.
+type EnableUserOtpJSONRequestBody EnableUserOtpJSONBody
 
 // CreateUserPublicKeyJSONRequestBody defines body for CreateUserPublicKey for application/json ContentType.
 type CreateUserPublicKeyJSONRequestBody CreateUserPublicKeyJSONBody
@@ -387,20 +625,20 @@ type CreateGroupJSONRequestBody CreateGroupJSONBody
 // UpdateGroupJSONRequestBody defines body for UpdateGroup for application/json ContentType.
 type UpdateGroupJSONRequestBody UpdateGroupJSONBody
 
-// BulkAddRolesToGroupJSONRequestBody defines body for BulkAddRolesToGroup for application/json ContentType.
-type BulkAddRolesToGroupJSONRequestBody BulkAddRolesToGroupJSONBody
-
 // BulkAddServiceUsersToGroupJSONRequestBody defines body for BulkAddServiceUsersToGroup for application/json ContentType.
 type BulkAddServiceUsersToGroupJSONRequestBody BulkAddServiceUsersToGroupJSONBody
 
 // BulkAddUsersToGroupJSONRequestBody defines body for BulkAddUsersToGroup for application/json ContentType.
 type BulkAddUsersToGroupJSONRequestBody BulkAddUsersToGroupJSONBody
 
-// InviteUserJSONRequestBody defines body for InviteUser for application/json ContentType.
-type InviteUserJSONRequestBody InviteUserJSONBody
+// AddServiceUserToGroupJSONRequestBody defines body for AddServiceUserToGroup for application/json ContentType.
+type AddServiceUserToGroupJSONRequestBody AddServiceUserToGroupJSONBody
 
-// CreateRoleJSONRequestBody defines body for CreateRole for application/json ContentType.
-type CreateRoleJSONRequestBody CreateRoleJSONBody
+// AddUserToGroupJSONRequestBody defines body for AddUserToGroup for application/json ContentType.
+type AddUserToGroupJSONRequestBody AddUserToGroupJSONBody
+
+// InviteUsersToWorkspaceJSONRequestBody defines body for InviteUsersToWorkspace for application/json ContentType.
+type InviteUsersToWorkspaceJSONRequestBody InviteUsersToWorkspaceJSONBody
 
 // BulkAddRulesToRoleJSONRequestBody defines body for BulkAddRulesToRole for application/json ContentType.
 type BulkAddRulesToRoleJSONRequestBody BulkAddRulesToRoleJSONBody
@@ -411,8 +649,14 @@ type BulkAddServiceUsersToRoleJSONRequestBody BulkAddServiceUsersToRoleJSONBody
 // BulkAddUsersToRoleJSONRequestBody defines body for BulkAddUsersToRole for application/json ContentType.
 type BulkAddUsersToRoleJSONRequestBody BulkAddUsersToRoleJSONBody
 
-// AddServiceUserToRoleJSONRequestBody defines body for AddServiceUserToRole for application/json ContentType.
-type AddServiceUserToRoleJSONRequestBody AddServiceUserToRoleJSONBody
+// AddRuleToRoleJSONRequestBody defines body for AddRuleToRole for application/json ContentType.
+type AddRuleToRoleJSONRequestBody AddRuleToRoleJSONBody
+
+// AssignRoleToServiceUserJSONRequestBody defines body for AssignRoleToServiceUser for application/json ContentType.
+type AssignRoleToServiceUserJSONRequestBody AssignRoleToServiceUserJSONBody
+
+// AssignRoleToUserJSONRequestBody defines body for AssignRoleToUser for application/json ContentType.
+type AssignRoleToUserJSONRequestBody AssignRoleToUserJSONBody
 
 // CreateRuleJSONRequestBody defines body for CreateRule for application/json ContentType.
 type CreateRuleJSONRequestBody CreateRuleJSONBody
@@ -438,8 +682,14 @@ type CreateServiceUserTokenJSONRequestBody CreateServiceUserTokenJSONBody
 // BulkRefreshThirdPartyTokensJSONRequestBody defines body for BulkRefreshThirdPartyTokens for application/json ContentType.
 type BulkRefreshThirdPartyTokensJSONRequestBody BulkRefreshThirdPartyTokensJSONBody
 
+// AllowUserJSONRequestBody defines body for AllowUser for application/json ContentType.
+type AllowUserJSONRequestBody AllowUserJSONBody
+
 // CreateUserKiseKeyJSONRequestBody defines body for CreateUserKiseKey for application/json ContentType.
 type CreateUserKiseKeyJSONRequestBody CreateUserKiseKeyJSONBody
 
-// CreateOpenIDTokenJSONRequestBody defines body for CreateOpenIDToken for application/json ContentType.
-type CreateOpenIDTokenJSONRequestBody CreateOpenIDTokenJSONBody
+// SuspendUserJSONRequestBody defines body for SuspendUser for application/json ContentType.
+type SuspendUserJSONRequestBody SuspendUserJSONBody
+
+// GetOpenIdTokenJSONRequestBody defines body for GetOpenIdToken for application/json ContentType.
+type GetOpenIdTokenJSONRequestBody GetOpenIdTokenJSONBody

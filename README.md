@@ -9,7 +9,7 @@ The generator downloads the OpenAPI spec, splits it into per-tag sub-APIs, gener
 - `sdk/`
   - `sdk.go` — Top-level SDK wrapper that aggregates all generated service handlers. This file is auto-generated on every run and will be overwritten.
   - `constants/` — Shared constants usable by the SDK. You can edit these.
-  - `interceptors/` — HTTP interceptor middleware (auth, logging, retry, etc.). You can edit these.
+  - `interceptors/` — HTTP interceptor middleware (auth, logging, retry, etc.). You can edit these. See [Interceptors Documentation](sdk/interceptors/Readme.md) for details.
   - `core/` — One folder per service (derived from OpenAPI tags). Each folder contains:
     - `client.gen.go` — Auto-generated client. Always overwritten.
     - `types.gen.go` — Auto-generated types. Always overwritten.
@@ -88,3 +88,78 @@ This will:
 
 - Handlers are intentionally not overwritten to preserve your custom logic. If you need to re-create a handler from the template, delete the existing `handler.go` and run `make generate` again.
 - The top-level SDK wrapper `sdk/sdk.go` is regenerated on every run to ensure it reflects the current set of services.
+
+## Interceptors
+
+The SDK uses a powerful interceptor pattern to plug in cross-cutting behaviors like authentication, logging, retries, and error handling. Interceptors can be added globally to all services or individually per service.
+
+See the [detailed interceptors documentation](sdk/interceptors/Readme.md) to learn about:
+
+- The interceptor chain and how it works
+- Available interceptors (`Authenticator`, `Logger`, `Retry`, `TreatAsError`)
+- How to add interceptors to the SDK
+- Configuration examples and best practices
+
+## Generated Client Features
+
+The SDK uses [github.com/oapi-codegen/oapi-codegen](https://github.com/oapi-codegen/oapi-codegen) to generate the core clients and types. This gives you access to all of oapi-codegen's features:
+
+### ClientWithResponses vs Client
+
+Each service module provides two client types:
+
+1. **Client** - Returns the raw `*http.Response` and leaves deserialization to the caller
+
+   ```go
+   resp, err := client.SomeOperation(ctx, param1, param2)
+   // You need to handle status codes and deserialization manually
+   ```
+
+2. **ClientWithResponses** - Handles deserialization with typed responses for different status codes
+
+   ```go
+   response, err := client.SomeOperationWithResponse(ctx, param1, param2)
+   if err != nil {
+       return err
+   }
+   
+   // Typed access to different status responses
+   if response.JSON200 != nil {
+       successResult := response.JSON200
+       // Handle success case
+   } else if response.JSON404 != nil {
+       // Handle not found case
+   }
+   ```
+
+The `WithResponse` methods are more convenient as they handle HTTP status code checking and response deserialization into proper Go types for you.
+
+### Request Editors
+
+The generated clients support request editor functions for modifying requests before they're sent:
+
+```go
+type RequestEditorFn func(ctx context.Context, req *http.Request) error
+```
+
+This can be used for adding custom headers, query parameters, or other request modifications outside the interceptor chain:
+
+```go
+handler := compute.NewHandler(serverAddress, secretKey)
+
+// Add a request editor to all requests
+handler.AddRequestEditor(func(ctx context.Context, req *http.Request) error {
+    req.Header.Set("X-Custom-Header", "custom-value")
+    return nil
+})
+
+// Or use with a specific request
+result, err := handler.Client.SomeOperation(ctx, param1, param2, 
+    func(ctx context.Context, req *http.Request) error {
+        req.Header.Set("X-Operation-Specific", "value")
+        return nil
+    },
+)
+```
+
+Request editors are applied before interceptors in the request pipeline.

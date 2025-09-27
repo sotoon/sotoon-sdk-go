@@ -7,7 +7,6 @@ import (
 	"log"
 	"net/http"
 	"strings"
-	"time"
 )
 
 // LoggerOptions defines configuration options for the logger interceptor
@@ -78,6 +77,8 @@ func (l *Logger) BeforeRequest(data InterceptorData) (InterceptorData, error) {
 		if err != nil {
 			logBuilder.WriteString(fmt.Sprintf("[%s] Error reading request body: %v\n", data.ID, err))
 		} else {
+			data.Request.Body = io.NopCloser(bytes.NewReader(body))
+
 			// Truncate body if it's too large
 			truncated := false
 			if len(body) > l.opts.MaxBodyLogSize {
@@ -87,7 +88,6 @@ func (l *Logger) BeforeRequest(data InterceptorData) (InterceptorData, error) {
 			logBuilder.WriteString(fmt.Sprintf("[%s] REQ BODY: %s%s\n", data.ID, string(body),
 				map[bool]string{true: " [truncated...]", false: ""}[truncated]))
 
-			data.Request.Body = io.NopCloser(bytes.NewReader(body))
 		}
 	}
 
@@ -110,14 +110,9 @@ func (l *Logger) AfterResponse(data InterceptorData) (InterceptorData, error) {
 
 	var logBuilder strings.Builder
 
-	duration := time.Since(data.Request.Context().Value("start_time").(time.Time))
-	if data.Request.Context().Value("start_time") == nil {
-		duration = 0
-	}
-
 	if l.opts.LogBasicInfo {
-		logBuilder.WriteString(fmt.Sprintf("[%s] <-- %d %s (%s)\n", data.ID,
-			data.Response.StatusCode, http.StatusText(data.Response.StatusCode), duration))
+		logBuilder.WriteString(fmt.Sprintf("[%s] <-- %d %s\n", data.ID,
+			data.Response.StatusCode, http.StatusText(data.Response.StatusCode)))
 	}
 	if l.opts.LogHeaders {
 		headerLogs := l.buildHeaderLogs("RESP", data.ID, data.Response.Header)
@@ -131,16 +126,16 @@ func (l *Logger) AfterResponse(data InterceptorData) (InterceptorData, error) {
 		if err != nil {
 			logBuilder.WriteString(fmt.Sprintf("[%s] Error reading response body: %v\n", data.ID, err))
 		} else {
+			data.Response.Body = io.NopCloser(bytes.NewReader(body))
+
 			// Truncate body if it's too large
 			truncated := false
 			if len(body) > l.opts.MaxBodyLogSize {
 				body = body[:l.opts.MaxBodyLogSize]
 				truncated = true
 			}
-
 			logBuilder.WriteString(fmt.Sprintf("[%s] RESP BODY: %s%s\n", data.ID, string(body),
 				map[bool]string{true: " [truncated...]", false: ""}[truncated]))
-			data.Response.Body = io.NopCloser(bytes.NewReader(body))
 		}
 	}
 
