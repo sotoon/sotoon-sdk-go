@@ -47,7 +47,7 @@ func NewRetryInterceptor(transporter Transporter, backoffStrategy BackoffTimer, 
 	}
 }
 
-func (e *RetryInterceptor) BeforeRequest(data InterceptorData) InterceptorData {
+func (e *RetryInterceptor) BeforeRequest(data InterceptorData) (InterceptorData, error) {
 	if data.Error != nil {
 
 		d := e.getRetryInternalData(data)
@@ -55,7 +55,7 @@ func (e *RetryInterceptor) BeforeRequest(data InterceptorData) InterceptorData {
 			if err != nil {
 				panic(err)
 			}
-			return data
+			return data, data.Error
 		}
 
 		time.Sleep(e.backoffStrategy.TimeToWait(d.RetryCount))
@@ -68,17 +68,19 @@ func (e *RetryInterceptor) BeforeRequest(data InterceptorData) InterceptorData {
 		data.Error = nil
 		data.Response = response
 	}
-	return data
+	return data, nil
 }
 
-func (e *RetryInterceptor) AfterResponse(data InterceptorData) InterceptorData {
+func (e *RetryInterceptor) AfterResponse(data InterceptorData) (InterceptorData, error) {
 
 	d := e.getRetryInternalData(data)
-	if shouldRetry, err := e.retryDecider.ShouldRetry(data.Response, data.Error, d); !shouldRetry {
-		if err != nil {
-			panic(err)
-		}
-		return data
+	shouldRetry, err := e.retryDecider.ShouldRetry(data.Response, data.Error, d)
+
+	if err != nil {
+		return data, err
+	}
+	if !shouldRetry {
+		return data, data.Error
 	}
 
 	time.Sleep(e.backoffStrategy.TimeToWait(d.RetryCount))
@@ -91,7 +93,7 @@ func (e *RetryInterceptor) AfterResponse(data InterceptorData) InterceptorData {
 	}
 	data.Error = nil
 
-	return data
+	return data, nil
 }
 
 func (e *RetryInterceptor) getRetryInternalData(data InterceptorData) RetryInternalData {
