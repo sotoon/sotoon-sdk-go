@@ -269,6 +269,41 @@ treat := interceptors.NewTreatAsErrorInterceptor(
 
 ---
 
+
+### 5) Circuit Breaker
+
+File: `sdk/interceptors/circute_breaker.go`
+
+Implements the circuit breaker pattern to prevent cascading failures by temporarily stopping requests when the system is under stress or experiencing high failure rates.
+
+```go
+type CircuitBreakerInterceptor struct {
+    abortOnFailure bool
+    cb             *gobreaker.CircuitBreaker
+}
+```
+
+Behavior:
+
+- `BeforeRequest`: Checks if the circuit is open. If open and `abortOnFailure` is true, returns `constants.ErrCircuitBreakerOpen`. Otherwise, sets `data.Error` to `constants.ErrCircuitBreakerOpen` but allows the chain to continue.
+- `AfterResponse`: Records the response status code in the circuit breaker to track failure rates.
+
+Usage example:
+
+```go
+sdk, err := sotton.NewSDK(secretKey,
+    sotton.WithInterceptor(
+        interceptors.NewCircuitBreakerInterceptor(
+            interceptors.CircuteBreakerForJust429,
+            true,
+        ),
+        // Other interceptors...
+    ),
+)
+```
+
+---
+
 ## Transport layer
 
 `InterceptorTransport` (see `sdk/interceptors/transport.go`) is a custom `http.RoundTripper` that executes the interceptor chain.
