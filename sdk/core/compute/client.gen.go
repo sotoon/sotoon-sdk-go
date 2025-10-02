@@ -1387,8 +1387,8 @@ type GetComputeV2Thr1ImagesResponse struct {
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -1438,7 +1438,7 @@ type GetComputeV2Thr1ImagesResponse struct {
 		// Metadata Standard metadata fields for the list
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -1475,7 +1475,7 @@ type GetComputeV2Thr1ImagesResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1Images400Kind `json:"kind,omitempty"`
@@ -1486,7 +1486,7 @@ type GetComputeV2Thr1ImagesResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -1529,7 +1529,7 @@ type GetComputeV2Thr1ImagesResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1Images403Kind `json:"kind,omitempty"`
@@ -1540,7 +1540,7 @@ type GetComputeV2Thr1ImagesResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -1614,8 +1614,8 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *[]struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -1642,8 +1642,8 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 				// Limits The limits for the instance type, including disk I/O bandwidth.
 				Limits *struct {
 					Disk *struct {
-						Bandwidth *map[string]string `json:"bandwidth,omitempty"`
-						Io        *map[string]string `json:"io,omitempty"`
+						Bandwidth *map[string]interface{} `json:"bandwidth,omitempty"`
+						Io        *map[string]interface{} `json:"io,omitempty"`
 					} `json:"disk,omitempty"`
 				} `json:"limits,omitempty"`
 
@@ -1651,7 +1651,7 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 				Public *bool `json:"public,omitempty"`
 
 				// Resources The resource specifications for the instance type, including CPU and memory.
-				Resources *map[string]string `json:"resources,omitempty"`
+				Resources *map[string]interface{} `json:"resources,omitempty"`
 
 				// Series The specific series of the instance type.
 				Series *string `json:"series,omitempty"`
@@ -1670,7 +1670,7 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 		// Metadata Standard metadata fields for the list
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -1707,7 +1707,7 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1InstanceTypes400Kind `json:"kind,omitempty"`
@@ -1718,7 +1718,7 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -1761,7 +1761,7 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1InstanceTypes403Kind `json:"kind,omitempty"`
@@ -1772,7 +1772,7 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -1846,8 +1846,8 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *[]struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -1874,7 +1874,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 					Namespace       *string `json:"namespace,omitempty"`
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 					Uid             *string `json:"uid,omitempty"`
-				} `json:"boundTo,omitempty"`
+				} `json:"boundTo"`
 
 				// Ip The allocated external IPv4 address.
 				Ip       *string `json:"ip,omitempty"`
@@ -1903,7 +1903,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		// Metadata Standard metadata fields for the list
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -1940,7 +1940,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Kind `json:"kind,omitempty"`
@@ -1951,7 +1951,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -1994,7 +1994,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Kind `json:"kind,omitempty"`
@@ -2005,7 +2005,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -2074,8 +2074,8 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 			// OwnerReferences References to other resources that own or manage the resource
 			OwnerReferences *[]struct {
 				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-				Controller         *bool   `json:"controller,omitempty"`
+				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+				Controller         *bool   `json:"controller"`
 				Kind               *string `json:"kind,omitempty"`
 				Name               *string `json:"name,omitempty"`
 				Uid                *string `json:"uid,omitempty"`
@@ -2102,7 +2102,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 				Namespace       *string `json:"namespace,omitempty"`
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 				Uid             *string `json:"uid,omitempty"`
-			} `json:"boundTo,omitempty"`
+			} `json:"boundTo"`
 
 			// Ip The allocated external IPv4 address.
 			Ip       *string `json:"ip,omitempty"`
@@ -2156,7 +2156,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Kind `json:"kind,omitempty"`
@@ -2167,7 +2167,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -2210,7 +2210,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Kind `json:"kind,omitempty"`
@@ -2221,7 +2221,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -2264,7 +2264,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409Kind `json:"kind,omitempty"`
@@ -2275,7 +2275,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -2345,8 +2345,8 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 			// OwnerReferences References to other resources that own or manage the resource
 			OwnerReferences *[]struct {
 				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-				Controller         *bool   `json:"controller,omitempty"`
+				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+				Controller         *bool   `json:"controller"`
 				Kind               *string `json:"kind,omitempty"`
 				Name               *string `json:"name,omitempty"`
 				Uid                *string `json:"uid,omitempty"`
@@ -2373,7 +2373,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 				Namespace       *string `json:"namespace,omitempty"`
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 				Uid             *string `json:"uid,omitempty"`
-			} `json:"boundTo,omitempty"`
+			} `json:"boundTo"`
 
 			// Ip The allocated external IPv4 address.
 			Ip       *string `json:"ip,omitempty"`
@@ -2427,7 +2427,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind,omitempty"`
@@ -2438,7 +2438,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -2481,7 +2481,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind,omitempty"`
@@ -2492,7 +2492,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -2559,8 +2559,8 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 			// OwnerReferences References to other resources that own or manage the resource
 			OwnerReferences *[]struct {
 				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-				Controller         *bool   `json:"controller,omitempty"`
+				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+				Controller         *bool   `json:"controller"`
 				Kind               *string `json:"kind,omitempty"`
 				Name               *string `json:"name,omitempty"`
 				Uid                *string `json:"uid,omitempty"`
@@ -2587,7 +2587,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 				Namespace       *string `json:"namespace,omitempty"`
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 				Uid             *string `json:"uid,omitempty"`
-			} `json:"boundTo,omitempty"`
+			} `json:"boundTo"`
 
 			// Ip The allocated external IPv4 address.
 			Ip       *string `json:"ip,omitempty"`
@@ -2641,7 +2641,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind,omitempty"`
@@ -2652,7 +2652,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -2695,7 +2695,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind,omitempty"`
@@ -2706,7 +2706,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -2773,8 +2773,8 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 			// OwnerReferences References to other resources that own or manage the resource
 			OwnerReferences *[]struct {
 				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-				Controller         *bool   `json:"controller,omitempty"`
+				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+				Controller         *bool   `json:"controller"`
 				Kind               *string `json:"kind,omitempty"`
 				Name               *string `json:"name,omitempty"`
 				Uid                *string `json:"uid,omitempty"`
@@ -2801,7 +2801,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 				Namespace       *string `json:"namespace,omitempty"`
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 				Uid             *string `json:"uid,omitempty"`
-			} `json:"boundTo,omitempty"`
+			} `json:"boundTo"`
 
 			// Ip The allocated external IPv4 address.
 			Ip       *string `json:"ip,omitempty"`
@@ -2855,7 +2855,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind,omitempty"`
@@ -2866,7 +2866,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -2909,7 +2909,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind,omitempty"`
@@ -2920,7 +2920,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -2992,8 +2992,8 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -3036,7 +3036,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 							Name *string `json:"name,omitempty"`
 
 							// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
-							Optional *bool `json:"optional,omitempty"`
+							Optional *bool `json:"optional"`
 						} `json:"fromSecret,omitempty"`
 					} `json:"password,omitempty"`
 
@@ -3045,7 +3045,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 
 					// Username Operating system username for the initial user account. Must follow Linux username requirements.
 					Username *string `json:"username,omitempty"`
-				} `json:"initialUser,omitempty"`
+				} `json:"initialUser"`
 
 				// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 				Interfaces *struct {
@@ -3064,26 +3064,26 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 						Name *string `json:"name,omitempty"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size *string `json:"size,omitempty"`
-					} `json:"localDisk,omitempty"`
+						Size interface{} `json:"size,omitempty"`
+					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
 						ClaimName *string `json:"claimName,omitempty"`
 						ReadOnly  *bool   `json:"readOnly,omitempty"`
-					} `json:"persistentVolumeClaim,omitempty"`
+					} `json:"persistentVolumeClaim"`
 				} `json:"osVolume,omitempty"`
 
 				// PlacementGroupRef Reference to a placement group that influences instance scheduling for anti-affinity.
 				PlacementGroupRef *struct {
 					Name *string `json:"name,omitempty"`
-				} `json:"placementGroupRef,omitempty"`
+				} `json:"placementGroupRef"`
 
 				// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
 				PoweredOn *bool `json:"poweredOn,omitempty"`
 
 				// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
-				RestartedAt interface{} `json:"restartedAt,omitempty"`
+				RestartedAt interface{} `json:"restartedAt"`
 
 				// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
 				Type *string `json:"type,omitempty"`
@@ -3099,14 +3099,14 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 						Name *string `json:"name,omitempty"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size *string `json:"size,omitempty"`
-					} `json:"localDisk,omitempty"`
+						Size interface{} `json:"size,omitempty"`
+					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
 						ClaimName *string `json:"claimName,omitempty"`
 						ReadOnly  *bool   `json:"readOnly,omitempty"`
-					} `json:"persistentVolumeClaim,omitempty"`
+					} `json:"persistentVolumeClaim"`
 				} `json:"volumes,omitempty"`
 			} `json:"spec,omitempty"`
 
@@ -3115,7 +3115,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 				AttachedVolumes *struct {
 					// Size Storage capacity of the attached volume in bytes
-					Size *string `json:"Size,omitempty"`
+					Size interface{} `json:"Size,omitempty"`
 
 					// Name Name of the attached volume, corresponding to the PersistentVolume name for persistent volumes or the local disk name for local disks
 					Name *string `json:"name,omitempty"`
@@ -3155,11 +3155,11 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 				RuntimeConfiguration *struct {
 					// Cpu Number of CPU cores
-					Cpu *string `json:"cpu,omitempty"`
+					Cpu interface{} `json:"cpu,omitempty"`
 
 					// Memory Memory size
-					Memory *string `json:"memory,omitempty"`
-				} `json:"runtimeConfiguration,omitempty"`
+					Memory interface{} `json:"memory,omitempty"`
+				} `json:"runtimeConfiguration"`
 
 				// Type The current instance type that defines the cpu, memory and storage capacity
 				Type *string `json:"type,omitempty"`
@@ -3172,7 +3172,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		// Metadata Standard metadata fields for the list
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -3209,7 +3209,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Kind `json:"kind,omitempty"`
@@ -3220,7 +3220,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -3263,7 +3263,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Kind `json:"kind,omitempty"`
@@ -3274,7 +3274,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -3342,8 +3342,8 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 			// OwnerReferences References to other resources that own or manage the resource
 			OwnerReferences *struct {
 				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-				Controller         *bool   `json:"controller,omitempty"`
+				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+				Controller         *bool   `json:"controller"`
 				Kind               *string `json:"kind,omitempty"`
 				Name               *string `json:"name,omitempty"`
 				Uid                *string `json:"uid,omitempty"`
@@ -3386,7 +3386,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 						Name *string `json:"name,omitempty"`
 
 						// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
-						Optional *bool `json:"optional,omitempty"`
+						Optional *bool `json:"optional"`
 					} `json:"fromSecret,omitempty"`
 				} `json:"password,omitempty"`
 
@@ -3395,7 +3395,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 
 				// Username Operating system username for the initial user account. Must follow Linux username requirements.
 				Username *string `json:"username,omitempty"`
-			} `json:"initialUser,omitempty"`
+			} `json:"initialUser"`
 
 			// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 			Interfaces *struct {
@@ -3414,26 +3414,26 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 					Name *string `json:"name,omitempty"`
 
 					// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Size *string `json:"size,omitempty"`
-				} `json:"localDisk,omitempty"`
+					Size interface{} `json:"size,omitempty"`
+				} `json:"localDisk"`
 
 				// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 				PersistentVolumeClaim *struct {
 					ClaimName *string `json:"claimName,omitempty"`
 					ReadOnly  *bool   `json:"readOnly,omitempty"`
-				} `json:"persistentVolumeClaim,omitempty"`
+				} `json:"persistentVolumeClaim"`
 			} `json:"osVolume,omitempty"`
 
 			// PlacementGroupRef Reference to a placement group that influences instance scheduling for anti-affinity.
 			PlacementGroupRef *struct {
 				Name *string `json:"name,omitempty"`
-			} `json:"placementGroupRef,omitempty"`
+			} `json:"placementGroupRef"`
 
 			// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
 			PoweredOn *bool `json:"poweredOn,omitempty"`
 
 			// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
-			RestartedAt interface{} `json:"restartedAt,omitempty"`
+			RestartedAt interface{} `json:"restartedAt"`
 
 			// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
 			Type *string `json:"type,omitempty"`
@@ -3449,14 +3449,14 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 					Name *string `json:"name,omitempty"`
 
 					// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Size *string `json:"size,omitempty"`
-				} `json:"localDisk,omitempty"`
+					Size interface{} `json:"size,omitempty"`
+				} `json:"localDisk"`
 
 				// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 				PersistentVolumeClaim *struct {
 					ClaimName *string `json:"claimName,omitempty"`
 					ReadOnly  *bool   `json:"readOnly,omitempty"`
-				} `json:"persistentVolumeClaim,omitempty"`
+				} `json:"persistentVolumeClaim"`
 			} `json:"volumes,omitempty"`
 		} `json:"spec,omitempty"`
 
@@ -3465,7 +3465,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 			// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 			AttachedVolumes *struct {
 				// Size Storage capacity of the attached volume in bytes
-				Size *string `json:"Size,omitempty"`
+				Size interface{} `json:"Size,omitempty"`
 
 				// Name Name of the attached volume, corresponding to the PersistentVolume name for persistent volumes or the local disk name for local disks
 				Name *string `json:"name,omitempty"`
@@ -3505,11 +3505,11 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 			// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 			RuntimeConfiguration *struct {
 				// Cpu Number of CPU cores
-				Cpu *string `json:"cpu,omitempty"`
+				Cpu interface{} `json:"cpu,omitempty"`
 
 				// Memory Memory size
-				Memory *string `json:"memory,omitempty"`
-			} `json:"runtimeConfiguration,omitempty"`
+				Memory interface{} `json:"memory,omitempty"`
+			} `json:"runtimeConfiguration"`
 
 			// Type The current instance type that defines the cpu, memory and storage capacity
 			Type *string `json:"type,omitempty"`
@@ -3547,7 +3547,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Kind `json:"kind,omitempty"`
@@ -3558,7 +3558,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -3601,7 +3601,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Kind `json:"kind,omitempty"`
@@ -3612,7 +3612,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -3655,7 +3655,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409Kind `json:"kind,omitempty"`
@@ -3666,7 +3666,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -3741,7 +3741,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struc
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind,omitempty"`
@@ -3752,7 +3752,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struc
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -3795,7 +3795,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struc
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind,omitempty"`
@@ -3806,7 +3806,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struc
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -3871,8 +3871,8 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 			// OwnerReferences References to other resources that own or manage the resource
 			OwnerReferences *struct {
 				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-				Controller         *bool   `json:"controller,omitempty"`
+				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+				Controller         *bool   `json:"controller"`
 				Kind               *string `json:"kind,omitempty"`
 				Name               *string `json:"name,omitempty"`
 				Uid                *string `json:"uid,omitempty"`
@@ -3915,7 +3915,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 						Name *string `json:"name,omitempty"`
 
 						// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
-						Optional *bool `json:"optional,omitempty"`
+						Optional *bool `json:"optional"`
 					} `json:"fromSecret,omitempty"`
 				} `json:"password,omitempty"`
 
@@ -3924,7 +3924,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 
 				// Username Operating system username for the initial user account. Must follow Linux username requirements.
 				Username *string `json:"username,omitempty"`
-			} `json:"initialUser,omitempty"`
+			} `json:"initialUser"`
 
 			// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 			Interfaces *struct {
@@ -3943,26 +3943,26 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 					Name *string `json:"name,omitempty"`
 
 					// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Size *string `json:"size,omitempty"`
-				} `json:"localDisk,omitempty"`
+					Size interface{} `json:"size,omitempty"`
+				} `json:"localDisk"`
 
 				// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 				PersistentVolumeClaim *struct {
 					ClaimName *string `json:"claimName,omitempty"`
 					ReadOnly  *bool   `json:"readOnly,omitempty"`
-				} `json:"persistentVolumeClaim,omitempty"`
+				} `json:"persistentVolumeClaim"`
 			} `json:"osVolume,omitempty"`
 
 			// PlacementGroupRef Reference to a placement group that influences instance scheduling for anti-affinity.
 			PlacementGroupRef *struct {
 				Name *string `json:"name,omitempty"`
-			} `json:"placementGroupRef,omitempty"`
+			} `json:"placementGroupRef"`
 
 			// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
 			PoweredOn *bool `json:"poweredOn,omitempty"`
 
 			// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
-			RestartedAt interface{} `json:"restartedAt,omitempty"`
+			RestartedAt interface{} `json:"restartedAt"`
 
 			// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
 			Type *string `json:"type,omitempty"`
@@ -3978,14 +3978,14 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 					Name *string `json:"name,omitempty"`
 
 					// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Size *string `json:"size,omitempty"`
-				} `json:"localDisk,omitempty"`
+					Size interface{} `json:"size,omitempty"`
+				} `json:"localDisk"`
 
 				// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 				PersistentVolumeClaim *struct {
 					ClaimName *string `json:"claimName,omitempty"`
 					ReadOnly  *bool   `json:"readOnly,omitempty"`
-				} `json:"persistentVolumeClaim,omitempty"`
+				} `json:"persistentVolumeClaim"`
 			} `json:"volumes,omitempty"`
 		} `json:"spec,omitempty"`
 
@@ -3994,7 +3994,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 			// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 			AttachedVolumes *struct {
 				// Size Storage capacity of the attached volume in bytes
-				Size *string `json:"Size,omitempty"`
+				Size interface{} `json:"Size,omitempty"`
 
 				// Name Name of the attached volume, corresponding to the PersistentVolume name for persistent volumes or the local disk name for local disks
 				Name *string `json:"name,omitempty"`
@@ -4034,11 +4034,11 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 			// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 			RuntimeConfiguration *struct {
 				// Cpu Number of CPU cores
-				Cpu *string `json:"cpu,omitempty"`
+				Cpu interface{} `json:"cpu,omitempty"`
 
 				// Memory Memory size
-				Memory *string `json:"memory,omitempty"`
-			} `json:"runtimeConfiguration,omitempty"`
+				Memory interface{} `json:"memory,omitempty"`
+			} `json:"runtimeConfiguration"`
 
 			// Type The current instance type that defines the cpu, memory and storage capacity
 			Type *string `json:"type,omitempty"`
@@ -4076,7 +4076,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind,omitempty"`
@@ -4087,7 +4087,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -4130,7 +4130,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind,omitempty"`
@@ -4141,7 +4141,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -4208,8 +4208,8 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 			// OwnerReferences References to other resources that own or manage the resource
 			OwnerReferences *struct {
 				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-				Controller         *bool   `json:"controller,omitempty"`
+				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+				Controller         *bool   `json:"controller"`
 				Kind               *string `json:"kind,omitempty"`
 				Name               *string `json:"name,omitempty"`
 				Uid                *string `json:"uid,omitempty"`
@@ -4252,7 +4252,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 						Name *string `json:"name,omitempty"`
 
 						// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
-						Optional *bool `json:"optional,omitempty"`
+						Optional *bool `json:"optional"`
 					} `json:"fromSecret,omitempty"`
 				} `json:"password,omitempty"`
 
@@ -4261,7 +4261,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 
 				// Username Operating system username for the initial user account. Must follow Linux username requirements.
 				Username *string `json:"username,omitempty"`
-			} `json:"initialUser,omitempty"`
+			} `json:"initialUser"`
 
 			// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 			Interfaces *struct {
@@ -4280,26 +4280,26 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 					Name *string `json:"name,omitempty"`
 
 					// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Size *string `json:"size,omitempty"`
-				} `json:"localDisk,omitempty"`
+					Size interface{} `json:"size,omitempty"`
+				} `json:"localDisk"`
 
 				// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 				PersistentVolumeClaim *struct {
 					ClaimName *string `json:"claimName,omitempty"`
 					ReadOnly  *bool   `json:"readOnly,omitempty"`
-				} `json:"persistentVolumeClaim,omitempty"`
+				} `json:"persistentVolumeClaim"`
 			} `json:"osVolume,omitempty"`
 
 			// PlacementGroupRef Reference to a placement group that influences instance scheduling for anti-affinity.
 			PlacementGroupRef *struct {
 				Name *string `json:"name,omitempty"`
-			} `json:"placementGroupRef,omitempty"`
+			} `json:"placementGroupRef"`
 
 			// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
 			PoweredOn *bool `json:"poweredOn,omitempty"`
 
 			// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
-			RestartedAt interface{} `json:"restartedAt,omitempty"`
+			RestartedAt interface{} `json:"restartedAt"`
 
 			// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
 			Type *string `json:"type,omitempty"`
@@ -4315,14 +4315,14 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 					Name *string `json:"name,omitempty"`
 
 					// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Size *string `json:"size,omitempty"`
-				} `json:"localDisk,omitempty"`
+					Size interface{} `json:"size,omitempty"`
+				} `json:"localDisk"`
 
 				// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 				PersistentVolumeClaim *struct {
 					ClaimName *string `json:"claimName,omitempty"`
 					ReadOnly  *bool   `json:"readOnly,omitempty"`
-				} `json:"persistentVolumeClaim,omitempty"`
+				} `json:"persistentVolumeClaim"`
 			} `json:"volumes,omitempty"`
 		} `json:"spec,omitempty"`
 
@@ -4331,7 +4331,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 			// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 			AttachedVolumes *struct {
 				// Size Storage capacity of the attached volume in bytes
-				Size *string `json:"Size,omitempty"`
+				Size interface{} `json:"Size,omitempty"`
 
 				// Name Name of the attached volume, corresponding to the PersistentVolume name for persistent volumes or the local disk name for local disks
 				Name *string `json:"name,omitempty"`
@@ -4371,11 +4371,11 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 			// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 			RuntimeConfiguration *struct {
 				// Cpu Number of CPU cores
-				Cpu *string `json:"cpu,omitempty"`
+				Cpu interface{} `json:"cpu,omitempty"`
 
 				// Memory Memory size
-				Memory *string `json:"memory,omitempty"`
-			} `json:"runtimeConfiguration,omitempty"`
+				Memory interface{} `json:"memory,omitempty"`
+			} `json:"runtimeConfiguration"`
 
 			// Type The current instance type that defines the cpu, memory and storage capacity
 			Type *string `json:"type,omitempty"`
@@ -4413,7 +4413,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind,omitempty"`
@@ -4424,7 +4424,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -4467,7 +4467,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind,omitempty"`
@@ -4478,7 +4478,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -4550,8 +4550,8 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *[]struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -4578,12 +4578,12 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 					Namespace       *string `json:"namespace,omitempty"`
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 					Uid             *string `json:"uid,omitempty"`
-				} `json:"boundTo,omitempty"`
+				} `json:"boundTo"`
 
 				// ExternalIPRef Reference to the external IP resource. If empty, this link does not have an external IP address.
 				ExternalIPRef *struct {
 					Name *string `json:"name,omitempty"`
-				} `json:"externalIPRef,omitempty"`
+				} `json:"externalIPRef"`
 
 				// ForwardableAddresses List of addresses that can forward traffic through this link.
 				ForwardableAddresses *[]struct {
@@ -4642,7 +4642,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		// Metadata Standard metadata fields for the list
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -4679,7 +4679,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Kind `json:"kind,omitempty"`
@@ -4690,7 +4690,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -4733,7 +4733,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Kind `json:"kind,omitempty"`
@@ -4744,7 +4744,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -4812,8 +4812,8 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 			// OwnerReferences References to other resources that own or manage the resource
 			OwnerReferences *[]struct {
 				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-				Controller         *bool   `json:"controller,omitempty"`
+				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+				Controller         *bool   `json:"controller"`
 				Kind               *string `json:"kind,omitempty"`
 				Name               *string `json:"name,omitempty"`
 				Uid                *string `json:"uid,omitempty"`
@@ -4840,12 +4840,12 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 				Namespace       *string `json:"namespace,omitempty"`
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 				Uid             *string `json:"uid,omitempty"`
-			} `json:"boundTo,omitempty"`
+			} `json:"boundTo"`
 
 			// ExternalIPRef Reference to the external IP resource. If empty, this link does not have an external IP address.
 			ExternalIPRef *struct {
 				Name *string `json:"name,omitempty"`
-			} `json:"externalIPRef,omitempty"`
+			} `json:"externalIPRef"`
 
 			// ForwardableAddresses List of addresses that can forward traffic through this link.
 			ForwardableAddresses *[]struct {
@@ -4929,7 +4929,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Kind `json:"kind,omitempty"`
@@ -4940,7 +4940,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -4983,7 +4983,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Kind `json:"kind,omitempty"`
@@ -4994,7 +4994,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5037,7 +5037,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409Kind `json:"kind,omitempty"`
@@ -5048,7 +5048,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5123,7 +5123,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind,omitempty"`
@@ -5134,7 +5134,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5177,7 +5177,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind,omitempty"`
@@ -5188,7 +5188,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5253,8 +5253,8 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 			// OwnerReferences References to other resources that own or manage the resource
 			OwnerReferences *[]struct {
 				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-				Controller         *bool   `json:"controller,omitempty"`
+				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+				Controller         *bool   `json:"controller"`
 				Kind               *string `json:"kind,omitempty"`
 				Name               *string `json:"name,omitempty"`
 				Uid                *string `json:"uid,omitempty"`
@@ -5281,12 +5281,12 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 				Namespace       *string `json:"namespace,omitempty"`
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 				Uid             *string `json:"uid,omitempty"`
-			} `json:"boundTo,omitempty"`
+			} `json:"boundTo"`
 
 			// ExternalIPRef Reference to the external IP resource. If empty, this link does not have an external IP address.
 			ExternalIPRef *struct {
 				Name *string `json:"name,omitempty"`
-			} `json:"externalIPRef,omitempty"`
+			} `json:"externalIPRef"`
 
 			// ForwardableAddresses List of addresses that can forward traffic through this link.
 			ForwardableAddresses *[]struct {
@@ -5370,7 +5370,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind,omitempty"`
@@ -5381,7 +5381,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5424,7 +5424,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind,omitempty"`
@@ -5435,7 +5435,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5502,8 +5502,8 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 			// OwnerReferences References to other resources that own or manage the resource
 			OwnerReferences *[]struct {
 				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-				Controller         *bool   `json:"controller,omitempty"`
+				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+				Controller         *bool   `json:"controller"`
 				Kind               *string `json:"kind,omitempty"`
 				Name               *string `json:"name,omitempty"`
 				Uid                *string `json:"uid,omitempty"`
@@ -5530,12 +5530,12 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 				Namespace       *string `json:"namespace,omitempty"`
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 				Uid             *string `json:"uid,omitempty"`
-			} `json:"boundTo,omitempty"`
+			} `json:"boundTo"`
 
 			// ExternalIPRef Reference to the external IP resource. If empty, this link does not have an external IP address.
 			ExternalIPRef *struct {
 				Name *string `json:"name,omitempty"`
-			} `json:"externalIPRef,omitempty"`
+			} `json:"externalIPRef"`
 
 			// ForwardableAddresses List of addresses that can forward traffic through this link.
 			ForwardableAddresses *[]struct {
@@ -5619,7 +5619,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind,omitempty"`
@@ -5630,7 +5630,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5673,7 +5673,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind,omitempty"`
@@ -5684,7 +5684,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5737,7 +5737,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 			Data *map[string][]byte `json:"data,omitempty"`
 
 			// Immutable If set to true, ensures that data stored in the Secret cannot be updated (only object metadata can be modified)
-			Immutable *bool `json:"immutable,omitempty"`
+			Immutable *bool `json:"immutable"`
 
 			// Kind The string value 'Secret' that identifies the schema
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ItemsKind `json:"kind,omitempty"`
@@ -5762,8 +5762,8 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *[]struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -5792,7 +5792,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 		// Metadata Standard metadata fields for the list
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5829,7 +5829,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400Kind `json:"kind,omitempty"`
@@ -5840,7 +5840,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5883,7 +5883,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403Kind `json:"kind,omitempty"`
@@ -5894,7 +5894,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5944,7 +5944,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 		Data *map[string][]byte `json:"data,omitempty"`
 
 		// Immutable If set to true, ensures that data stored in the Secret cannot be updated (only object metadata can be modified)
-		Immutable *bool `json:"immutable,omitempty"`
+		Immutable *bool `json:"immutable"`
 
 		// Kind The string value 'Secret' that identifies the schema
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId200Kind `json:"kind,omitempty"`
@@ -5969,8 +5969,8 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 			// OwnerReferences References to other resources that own or manage the resource
 			OwnerReferences *[]struct {
 				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-				Controller         *bool   `json:"controller,omitempty"`
+				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+				Controller         *bool   `json:"controller"`
 				Kind               *string `json:"kind,omitempty"`
 				Name               *string `json:"name,omitempty"`
 				Uid                *string `json:"uid,omitempty"`
@@ -6024,7 +6024,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400Kind `json:"kind,omitempty"`
@@ -6035,7 +6035,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6078,7 +6078,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 
 			// RetryAfterSeconds Number of seconds to wait before retrying
 			RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-		} `json:"details,omitempty"`
+		} `json:"details"`
 
 		// Kind Value is always 'Status'
 		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403Kind `json:"kind,omitempty"`
@@ -6089,7 +6089,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6392,8 +6392,8 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 					// OwnerReferences References to other resources that own or manage the resource
 					OwnerReferences *struct {
 						ApiVersion         *string `json:"apiVersion,omitempty"`
-						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-						Controller         *bool   `json:"controller,omitempty"`
+						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+						Controller         *bool   `json:"controller"`
 						Kind               *string `json:"kind,omitempty"`
 						Name               *string `json:"name,omitempty"`
 						Uid                *string `json:"uid,omitempty"`
@@ -6443,7 +6443,7 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 			// Metadata Standard metadata fields for the list
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -6486,7 +6486,7 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1Images400Kind `json:"kind,omitempty"`
@@ -6497,7 +6497,7 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -6546,7 +6546,7 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1Images403Kind `json:"kind,omitempty"`
@@ -6557,7 +6557,7 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -6625,8 +6625,8 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 					// OwnerReferences References to other resources that own or manage the resource
 					OwnerReferences *[]struct {
 						ApiVersion         *string `json:"apiVersion,omitempty"`
-						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-						Controller         *bool   `json:"controller,omitempty"`
+						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+						Controller         *bool   `json:"controller"`
 						Kind               *string `json:"kind,omitempty"`
 						Name               *string `json:"name,omitempty"`
 						Uid                *string `json:"uid,omitempty"`
@@ -6653,8 +6653,8 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 					// Limits The limits for the instance type, including disk I/O bandwidth.
 					Limits *struct {
 						Disk *struct {
-							Bandwidth *map[string]string `json:"bandwidth,omitempty"`
-							Io        *map[string]string `json:"io,omitempty"`
+							Bandwidth *map[string]interface{} `json:"bandwidth,omitempty"`
+							Io        *map[string]interface{} `json:"io,omitempty"`
 						} `json:"disk,omitempty"`
 					} `json:"limits,omitempty"`
 
@@ -6662,7 +6662,7 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 					Public *bool `json:"public,omitempty"`
 
 					// Resources The resource specifications for the instance type, including CPU and memory.
-					Resources *map[string]string `json:"resources,omitempty"`
+					Resources *map[string]interface{} `json:"resources,omitempty"`
 
 					// Series The specific series of the instance type.
 					Series *string `json:"series,omitempty"`
@@ -6681,7 +6681,7 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 			// Metadata Standard metadata fields for the list
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -6724,7 +6724,7 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1InstanceTypes400Kind `json:"kind,omitempty"`
@@ -6735,7 +6735,7 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -6784,7 +6784,7 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1InstanceTypes403Kind `json:"kind,omitempty"`
@@ -6795,7 +6795,7 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -6863,8 +6863,8 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 					// OwnerReferences References to other resources that own or manage the resource
 					OwnerReferences *[]struct {
 						ApiVersion         *string `json:"apiVersion,omitempty"`
-						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-						Controller         *bool   `json:"controller,omitempty"`
+						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+						Controller         *bool   `json:"controller"`
 						Kind               *string `json:"kind,omitempty"`
 						Name               *string `json:"name,omitempty"`
 						Uid                *string `json:"uid,omitempty"`
@@ -6891,7 +6891,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 						Namespace       *string `json:"namespace,omitempty"`
 						ResourceVersion *string `json:"resourceVersion,omitempty"`
 						Uid             *string `json:"uid,omitempty"`
-					} `json:"boundTo,omitempty"`
+					} `json:"boundTo"`
 
 					// Ip The allocated external IPv4 address.
 					Ip       *string `json:"ip,omitempty"`
@@ -6920,7 +6920,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 			// Metadata Standard metadata fields for the list
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -6963,7 +6963,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Kind `json:"kind,omitempty"`
@@ -6974,7 +6974,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -7023,7 +7023,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Kind `json:"kind,omitempty"`
@@ -7034,7 +7034,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -7097,8 +7097,8 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *[]struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -7125,7 +7125,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 					Namespace       *string `json:"namespace,omitempty"`
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 					Uid             *string `json:"uid,omitempty"`
-				} `json:"boundTo,omitempty"`
+				} `json:"boundTo"`
 
 				// Ip The allocated external IPv4 address.
 				Ip       *string `json:"ip,omitempty"`
@@ -7185,7 +7185,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Kind `json:"kind,omitempty"`
@@ -7196,7 +7196,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -7245,7 +7245,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Kind `json:"kind,omitempty"`
@@ -7256,7 +7256,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -7305,7 +7305,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409Kind `json:"kind,omitempty"`
@@ -7316,7 +7316,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -7379,8 +7379,8 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *[]struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -7407,7 +7407,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 					Namespace       *string `json:"namespace,omitempty"`
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 					Uid             *string `json:"uid,omitempty"`
-				} `json:"boundTo,omitempty"`
+				} `json:"boundTo"`
 
 				// Ip The allocated external IPv4 address.
 				Ip       *string `json:"ip,omitempty"`
@@ -7467,7 +7467,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind,omitempty"`
@@ -7478,7 +7478,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -7527,7 +7527,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind,omitempty"`
@@ -7538,7 +7538,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -7601,8 +7601,8 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *[]struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -7629,7 +7629,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 					Namespace       *string `json:"namespace,omitempty"`
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 					Uid             *string `json:"uid,omitempty"`
-				} `json:"boundTo,omitempty"`
+				} `json:"boundTo"`
 
 				// Ip The allocated external IPv4 address.
 				Ip       *string `json:"ip,omitempty"`
@@ -7689,7 +7689,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind,omitempty"`
@@ -7700,7 +7700,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -7749,7 +7749,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind,omitempty"`
@@ -7760,7 +7760,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -7823,8 +7823,8 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *[]struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -7851,7 +7851,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 					Namespace       *string `json:"namespace,omitempty"`
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 					Uid             *string `json:"uid,omitempty"`
-				} `json:"boundTo,omitempty"`
+				} `json:"boundTo"`
 
 				// Ip The allocated external IPv4 address.
 				Ip       *string `json:"ip,omitempty"`
@@ -7911,7 +7911,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind,omitempty"`
@@ -7922,7 +7922,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -7971,7 +7971,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind,omitempty"`
@@ -7982,7 +7982,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -8050,8 +8050,8 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 					// OwnerReferences References to other resources that own or manage the resource
 					OwnerReferences *struct {
 						ApiVersion         *string `json:"apiVersion,omitempty"`
-						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-						Controller         *bool   `json:"controller,omitempty"`
+						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+						Controller         *bool   `json:"controller"`
 						Kind               *string `json:"kind,omitempty"`
 						Name               *string `json:"name,omitempty"`
 						Uid                *string `json:"uid,omitempty"`
@@ -8094,7 +8094,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 								Name *string `json:"name,omitempty"`
 
 								// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
-								Optional *bool `json:"optional,omitempty"`
+								Optional *bool `json:"optional"`
 							} `json:"fromSecret,omitempty"`
 						} `json:"password,omitempty"`
 
@@ -8103,7 +8103,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 
 						// Username Operating system username for the initial user account. Must follow Linux username requirements.
 						Username *string `json:"username,omitempty"`
-					} `json:"initialUser,omitempty"`
+					} `json:"initialUser"`
 
 					// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 					Interfaces *struct {
@@ -8122,26 +8122,26 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 							Name *string `json:"name,omitempty"`
 
 							// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-							Size *string `json:"size,omitempty"`
-						} `json:"localDisk,omitempty"`
+							Size interface{} `json:"size,omitempty"`
+						} `json:"localDisk"`
 
 						// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 						PersistentVolumeClaim *struct {
 							ClaimName *string `json:"claimName,omitempty"`
 							ReadOnly  *bool   `json:"readOnly,omitempty"`
-						} `json:"persistentVolumeClaim,omitempty"`
+						} `json:"persistentVolumeClaim"`
 					} `json:"osVolume,omitempty"`
 
 					// PlacementGroupRef Reference to a placement group that influences instance scheduling for anti-affinity.
 					PlacementGroupRef *struct {
 						Name *string `json:"name,omitempty"`
-					} `json:"placementGroupRef,omitempty"`
+					} `json:"placementGroupRef"`
 
 					// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
 					PoweredOn *bool `json:"poweredOn,omitempty"`
 
 					// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
-					RestartedAt interface{} `json:"restartedAt,omitempty"`
+					RestartedAt interface{} `json:"restartedAt"`
 
 					// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
 					Type *string `json:"type,omitempty"`
@@ -8157,14 +8157,14 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 							Name *string `json:"name,omitempty"`
 
 							// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-							Size *string `json:"size,omitempty"`
-						} `json:"localDisk,omitempty"`
+							Size interface{} `json:"size,omitempty"`
+						} `json:"localDisk"`
 
 						// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 						PersistentVolumeClaim *struct {
 							ClaimName *string `json:"claimName,omitempty"`
 							ReadOnly  *bool   `json:"readOnly,omitempty"`
-						} `json:"persistentVolumeClaim,omitempty"`
+						} `json:"persistentVolumeClaim"`
 					} `json:"volumes,omitempty"`
 				} `json:"spec,omitempty"`
 
@@ -8173,7 +8173,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 					// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 					AttachedVolumes *struct {
 						// Size Storage capacity of the attached volume in bytes
-						Size *string `json:"Size,omitempty"`
+						Size interface{} `json:"Size,omitempty"`
 
 						// Name Name of the attached volume, corresponding to the PersistentVolume name for persistent volumes or the local disk name for local disks
 						Name *string `json:"name,omitempty"`
@@ -8213,11 +8213,11 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 					// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 					RuntimeConfiguration *struct {
 						// Cpu Number of CPU cores
-						Cpu *string `json:"cpu,omitempty"`
+						Cpu interface{} `json:"cpu,omitempty"`
 
 						// Memory Memory size
-						Memory *string `json:"memory,omitempty"`
-					} `json:"runtimeConfiguration,omitempty"`
+						Memory interface{} `json:"memory,omitempty"`
+					} `json:"runtimeConfiguration"`
 
 					// Type The current instance type that defines the cpu, memory and storage capacity
 					Type *string `json:"type,omitempty"`
@@ -8230,7 +8230,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 			// Metadata Standard metadata fields for the list
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -8273,7 +8273,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Kind `json:"kind,omitempty"`
@@ -8284,7 +8284,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -8333,7 +8333,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Kind `json:"kind,omitempty"`
@@ -8344,7 +8344,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -8407,8 +8407,8 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -8451,7 +8451,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 							Name *string `json:"name,omitempty"`
 
 							// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
-							Optional *bool `json:"optional,omitempty"`
+							Optional *bool `json:"optional"`
 						} `json:"fromSecret,omitempty"`
 					} `json:"password,omitempty"`
 
@@ -8460,7 +8460,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 
 					// Username Operating system username for the initial user account. Must follow Linux username requirements.
 					Username *string `json:"username,omitempty"`
-				} `json:"initialUser,omitempty"`
+				} `json:"initialUser"`
 
 				// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 				Interfaces *struct {
@@ -8479,26 +8479,26 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 						Name *string `json:"name,omitempty"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size *string `json:"size,omitempty"`
-					} `json:"localDisk,omitempty"`
+						Size interface{} `json:"size,omitempty"`
+					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
 						ClaimName *string `json:"claimName,omitempty"`
 						ReadOnly  *bool   `json:"readOnly,omitempty"`
-					} `json:"persistentVolumeClaim,omitempty"`
+					} `json:"persistentVolumeClaim"`
 				} `json:"osVolume,omitempty"`
 
 				// PlacementGroupRef Reference to a placement group that influences instance scheduling for anti-affinity.
 				PlacementGroupRef *struct {
 					Name *string `json:"name,omitempty"`
-				} `json:"placementGroupRef,omitempty"`
+				} `json:"placementGroupRef"`
 
 				// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
 				PoweredOn *bool `json:"poweredOn,omitempty"`
 
 				// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
-				RestartedAt interface{} `json:"restartedAt,omitempty"`
+				RestartedAt interface{} `json:"restartedAt"`
 
 				// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
 				Type *string `json:"type,omitempty"`
@@ -8514,14 +8514,14 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 						Name *string `json:"name,omitempty"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size *string `json:"size,omitempty"`
-					} `json:"localDisk,omitempty"`
+						Size interface{} `json:"size,omitempty"`
+					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
 						ClaimName *string `json:"claimName,omitempty"`
 						ReadOnly  *bool   `json:"readOnly,omitempty"`
-					} `json:"persistentVolumeClaim,omitempty"`
+					} `json:"persistentVolumeClaim"`
 				} `json:"volumes,omitempty"`
 			} `json:"spec,omitempty"`
 
@@ -8530,7 +8530,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 				// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 				AttachedVolumes *struct {
 					// Size Storage capacity of the attached volume in bytes
-					Size *string `json:"Size,omitempty"`
+					Size interface{} `json:"Size,omitempty"`
 
 					// Name Name of the attached volume, corresponding to the PersistentVolume name for persistent volumes or the local disk name for local disks
 					Name *string `json:"name,omitempty"`
@@ -8570,11 +8570,11 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 				// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 				RuntimeConfiguration *struct {
 					// Cpu Number of CPU cores
-					Cpu *string `json:"cpu,omitempty"`
+					Cpu interface{} `json:"cpu,omitempty"`
 
 					// Memory Memory size
-					Memory *string `json:"memory,omitempty"`
-				} `json:"runtimeConfiguration,omitempty"`
+					Memory interface{} `json:"memory,omitempty"`
+				} `json:"runtimeConfiguration"`
 
 				// Type The current instance type that defines the cpu, memory and storage capacity
 				Type *string `json:"type,omitempty"`
@@ -8618,7 +8618,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Kind `json:"kind,omitempty"`
@@ -8629,7 +8629,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -8678,7 +8678,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Kind `json:"kind,omitempty"`
@@ -8689,7 +8689,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -8738,7 +8738,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409Kind `json:"kind,omitempty"`
@@ -8749,7 +8749,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -8817,7 +8817,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind,omitempty"`
@@ -8828,7 +8828,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -8877,7 +8877,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind,omitempty"`
@@ -8888,7 +8888,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -8951,8 +8951,8 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -8995,7 +8995,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 							Name *string `json:"name,omitempty"`
 
 							// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
-							Optional *bool `json:"optional,omitempty"`
+							Optional *bool `json:"optional"`
 						} `json:"fromSecret,omitempty"`
 					} `json:"password,omitempty"`
 
@@ -9004,7 +9004,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 
 					// Username Operating system username for the initial user account. Must follow Linux username requirements.
 					Username *string `json:"username,omitempty"`
-				} `json:"initialUser,omitempty"`
+				} `json:"initialUser"`
 
 				// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 				Interfaces *struct {
@@ -9023,26 +9023,26 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 						Name *string `json:"name,omitempty"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size *string `json:"size,omitempty"`
-					} `json:"localDisk,omitempty"`
+						Size interface{} `json:"size,omitempty"`
+					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
 						ClaimName *string `json:"claimName,omitempty"`
 						ReadOnly  *bool   `json:"readOnly,omitempty"`
-					} `json:"persistentVolumeClaim,omitempty"`
+					} `json:"persistentVolumeClaim"`
 				} `json:"osVolume,omitempty"`
 
 				// PlacementGroupRef Reference to a placement group that influences instance scheduling for anti-affinity.
 				PlacementGroupRef *struct {
 					Name *string `json:"name,omitempty"`
-				} `json:"placementGroupRef,omitempty"`
+				} `json:"placementGroupRef"`
 
 				// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
 				PoweredOn *bool `json:"poweredOn,omitempty"`
 
 				// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
-				RestartedAt interface{} `json:"restartedAt,omitempty"`
+				RestartedAt interface{} `json:"restartedAt"`
 
 				// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
 				Type *string `json:"type,omitempty"`
@@ -9058,14 +9058,14 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 						Name *string `json:"name,omitempty"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size *string `json:"size,omitempty"`
-					} `json:"localDisk,omitempty"`
+						Size interface{} `json:"size,omitempty"`
+					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
 						ClaimName *string `json:"claimName,omitempty"`
 						ReadOnly  *bool   `json:"readOnly,omitempty"`
-					} `json:"persistentVolumeClaim,omitempty"`
+					} `json:"persistentVolumeClaim"`
 				} `json:"volumes,omitempty"`
 			} `json:"spec,omitempty"`
 
@@ -9074,7 +9074,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 				// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 				AttachedVolumes *struct {
 					// Size Storage capacity of the attached volume in bytes
-					Size *string `json:"Size,omitempty"`
+					Size interface{} `json:"Size,omitempty"`
 
 					// Name Name of the attached volume, corresponding to the PersistentVolume name for persistent volumes or the local disk name for local disks
 					Name *string `json:"name,omitempty"`
@@ -9114,11 +9114,11 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 				// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 				RuntimeConfiguration *struct {
 					// Cpu Number of CPU cores
-					Cpu *string `json:"cpu,omitempty"`
+					Cpu interface{} `json:"cpu,omitempty"`
 
 					// Memory Memory size
-					Memory *string `json:"memory,omitempty"`
-				} `json:"runtimeConfiguration,omitempty"`
+					Memory interface{} `json:"memory,omitempty"`
+				} `json:"runtimeConfiguration"`
 
 				// Type The current instance type that defines the cpu, memory and storage capacity
 				Type *string `json:"type,omitempty"`
@@ -9162,7 +9162,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind,omitempty"`
@@ -9173,7 +9173,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -9222,7 +9222,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind,omitempty"`
@@ -9233,7 +9233,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -9296,8 +9296,8 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -9340,7 +9340,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 							Name *string `json:"name,omitempty"`
 
 							// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
-							Optional *bool `json:"optional,omitempty"`
+							Optional *bool `json:"optional"`
 						} `json:"fromSecret,omitempty"`
 					} `json:"password,omitempty"`
 
@@ -9349,7 +9349,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 
 					// Username Operating system username for the initial user account. Must follow Linux username requirements.
 					Username *string `json:"username,omitempty"`
-				} `json:"initialUser,omitempty"`
+				} `json:"initialUser"`
 
 				// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 				Interfaces *struct {
@@ -9368,26 +9368,26 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 						Name *string `json:"name,omitempty"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size *string `json:"size,omitempty"`
-					} `json:"localDisk,omitempty"`
+						Size interface{} `json:"size,omitempty"`
+					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
 						ClaimName *string `json:"claimName,omitempty"`
 						ReadOnly  *bool   `json:"readOnly,omitempty"`
-					} `json:"persistentVolumeClaim,omitempty"`
+					} `json:"persistentVolumeClaim"`
 				} `json:"osVolume,omitempty"`
 
 				// PlacementGroupRef Reference to a placement group that influences instance scheduling for anti-affinity.
 				PlacementGroupRef *struct {
 					Name *string `json:"name,omitempty"`
-				} `json:"placementGroupRef,omitempty"`
+				} `json:"placementGroupRef"`
 
 				// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
 				PoweredOn *bool `json:"poweredOn,omitempty"`
 
 				// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
-				RestartedAt interface{} `json:"restartedAt,omitempty"`
+				RestartedAt interface{} `json:"restartedAt"`
 
 				// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
 				Type *string `json:"type,omitempty"`
@@ -9403,14 +9403,14 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 						Name *string `json:"name,omitempty"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size *string `json:"size,omitempty"`
-					} `json:"localDisk,omitempty"`
+						Size interface{} `json:"size,omitempty"`
+					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
 						ClaimName *string `json:"claimName,omitempty"`
 						ReadOnly  *bool   `json:"readOnly,omitempty"`
-					} `json:"persistentVolumeClaim,omitempty"`
+					} `json:"persistentVolumeClaim"`
 				} `json:"volumes,omitempty"`
 			} `json:"spec,omitempty"`
 
@@ -9419,7 +9419,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 				// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 				AttachedVolumes *struct {
 					// Size Storage capacity of the attached volume in bytes
-					Size *string `json:"Size,omitempty"`
+					Size interface{} `json:"Size,omitempty"`
 
 					// Name Name of the attached volume, corresponding to the PersistentVolume name for persistent volumes or the local disk name for local disks
 					Name *string `json:"name,omitempty"`
@@ -9459,11 +9459,11 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 				// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 				RuntimeConfiguration *struct {
 					// Cpu Number of CPU cores
-					Cpu *string `json:"cpu,omitempty"`
+					Cpu interface{} `json:"cpu,omitempty"`
 
 					// Memory Memory size
-					Memory *string `json:"memory,omitempty"`
-				} `json:"runtimeConfiguration,omitempty"`
+					Memory interface{} `json:"memory,omitempty"`
+				} `json:"runtimeConfiguration"`
 
 				// Type The current instance type that defines the cpu, memory and storage capacity
 				Type *string `json:"type,omitempty"`
@@ -9507,7 +9507,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind,omitempty"`
@@ -9518,7 +9518,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -9567,7 +9567,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind,omitempty"`
@@ -9578,7 +9578,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -9646,8 +9646,8 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 					// OwnerReferences References to other resources that own or manage the resource
 					OwnerReferences *[]struct {
 						ApiVersion         *string `json:"apiVersion,omitempty"`
-						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-						Controller         *bool   `json:"controller,omitempty"`
+						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+						Controller         *bool   `json:"controller"`
 						Kind               *string `json:"kind,omitempty"`
 						Name               *string `json:"name,omitempty"`
 						Uid                *string `json:"uid,omitempty"`
@@ -9674,12 +9674,12 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 						Namespace       *string `json:"namespace,omitempty"`
 						ResourceVersion *string `json:"resourceVersion,omitempty"`
 						Uid             *string `json:"uid,omitempty"`
-					} `json:"boundTo,omitempty"`
+					} `json:"boundTo"`
 
 					// ExternalIPRef Reference to the external IP resource. If empty, this link does not have an external IP address.
 					ExternalIPRef *struct {
 						Name *string `json:"name,omitempty"`
-					} `json:"externalIPRef,omitempty"`
+					} `json:"externalIPRef"`
 
 					// ForwardableAddresses List of addresses that can forward traffic through this link.
 					ForwardableAddresses *[]struct {
@@ -9738,7 +9738,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 			// Metadata Standard metadata fields for the list
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -9781,7 +9781,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Kind `json:"kind,omitempty"`
@@ -9792,7 +9792,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -9841,7 +9841,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Kind `json:"kind,omitempty"`
@@ -9852,7 +9852,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -9915,8 +9915,8 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *[]struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -9943,12 +9943,12 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 					Namespace       *string `json:"namespace,omitempty"`
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 					Uid             *string `json:"uid,omitempty"`
-				} `json:"boundTo,omitempty"`
+				} `json:"boundTo"`
 
 				// ExternalIPRef Reference to the external IP resource. If empty, this link does not have an external IP address.
 				ExternalIPRef *struct {
 					Name *string `json:"name,omitempty"`
-				} `json:"externalIPRef,omitempty"`
+				} `json:"externalIPRef"`
 
 				// ForwardableAddresses List of addresses that can forward traffic through this link.
 				ForwardableAddresses *[]struct {
@@ -10038,7 +10038,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Kind `json:"kind,omitempty"`
@@ -10049,7 +10049,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -10098,7 +10098,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Kind `json:"kind,omitempty"`
@@ -10109,7 +10109,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -10158,7 +10158,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409Kind `json:"kind,omitempty"`
@@ -10169,7 +10169,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -10237,7 +10237,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp 
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind,omitempty"`
@@ -10248,7 +10248,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp 
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -10297,7 +10297,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp 
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind,omitempty"`
@@ -10308,7 +10308,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp 
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -10371,8 +10371,8 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *[]struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -10399,12 +10399,12 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 					Namespace       *string `json:"namespace,omitempty"`
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 					Uid             *string `json:"uid,omitempty"`
-				} `json:"boundTo,omitempty"`
+				} `json:"boundTo"`
 
 				// ExternalIPRef Reference to the external IP resource. If empty, this link does not have an external IP address.
 				ExternalIPRef *struct {
 					Name *string `json:"name,omitempty"`
-				} `json:"externalIPRef,omitempty"`
+				} `json:"externalIPRef"`
 
 				// ForwardableAddresses List of addresses that can forward traffic through this link.
 				ForwardableAddresses *[]struct {
@@ -10494,7 +10494,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind,omitempty"`
@@ -10505,7 +10505,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -10554,7 +10554,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind,omitempty"`
@@ -10565,7 +10565,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -10628,8 +10628,8 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *[]struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -10656,12 +10656,12 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 					Namespace       *string `json:"namespace,omitempty"`
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 					Uid             *string `json:"uid,omitempty"`
-				} `json:"boundTo,omitempty"`
+				} `json:"boundTo"`
 
 				// ExternalIPRef Reference to the external IP resource. If empty, this link does not have an external IP address.
 				ExternalIPRef *struct {
 					Name *string `json:"name,omitempty"`
-				} `json:"externalIPRef,omitempty"`
+				} `json:"externalIPRef"`
 
 				// ForwardableAddresses List of addresses that can forward traffic through this link.
 				ForwardableAddresses *[]struct {
@@ -10751,7 +10751,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind,omitempty"`
@@ -10762,7 +10762,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -10811,7 +10811,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind,omitempty"`
@@ -10822,7 +10822,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -10871,7 +10871,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 				Data *map[string][]byte `json:"data,omitempty"`
 
 				// Immutable If set to true, ensures that data stored in the Secret cannot be updated (only object metadata can be modified)
-				Immutable *bool `json:"immutable,omitempty"`
+				Immutable *bool `json:"immutable"`
 
 				// Kind The string value 'Secret' that identifies the schema
 				Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ItemsKind `json:"kind,omitempty"`
@@ -10896,8 +10896,8 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 					// OwnerReferences References to other resources that own or manage the resource
 					OwnerReferences *[]struct {
 						ApiVersion         *string `json:"apiVersion,omitempty"`
-						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-						Controller         *bool   `json:"controller,omitempty"`
+						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+						Controller         *bool   `json:"controller"`
 						Kind               *string `json:"kind,omitempty"`
 						Name               *string `json:"name,omitempty"`
 						Uid                *string `json:"uid,omitempty"`
@@ -10926,7 +10926,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 			// Metadata Standard metadata fields for the list
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -10969,7 +10969,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400Kind `json:"kind,omitempty"`
@@ -10980,7 +10980,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -11029,7 +11029,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403Kind `json:"kind,omitempty"`
@@ -11040,7 +11040,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -11084,7 +11084,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 			Data *map[string][]byte `json:"data,omitempty"`
 
 			// Immutable If set to true, ensures that data stored in the Secret cannot be updated (only object metadata can be modified)
-			Immutable *bool `json:"immutable,omitempty"`
+			Immutable *bool `json:"immutable"`
 
 			// Kind The string value 'Secret' that identifies the schema
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId200Kind `json:"kind,omitempty"`
@@ -11109,8 +11109,8 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 				// OwnerReferences References to other resources that own or manage the resource
 				OwnerReferences *[]struct {
 					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-					Controller         *bool   `json:"controller,omitempty"`
+					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+					Controller         *bool   `json:"controller"`
 					Kind               *string `json:"kind,omitempty"`
 					Name               *string `json:"name,omitempty"`
 					Uid                *string `json:"uid,omitempty"`
@@ -11170,7 +11170,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400Kind `json:"kind,omitempty"`
@@ -11181,7 +11181,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -11230,7 +11230,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 
 				// RetryAfterSeconds Number of seconds to wait before retrying
 				RetryAfterSeconds *int32 `json:"retryAfterSeconds,omitempty"`
-			} `json:"details,omitempty"`
+			} `json:"details"`
 
 			// Kind Value is always 'Status'
 			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403Kind `json:"kind,omitempty"`
@@ -11241,7 +11241,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`

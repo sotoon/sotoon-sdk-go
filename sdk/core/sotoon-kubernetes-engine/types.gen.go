@@ -491,14 +491,14 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersJSONBody struct
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"pods,omitempty"`
+			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"services,omitempty"`
-		} `json:"clusterNetwork,omitempty"`
+			} `json:"services"`
+		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
 		Infra *struct {
@@ -535,7 +535,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersJSONBody struct
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
 			Name *string `json:"name,omitempty"`
-		} `json:"kubeconfigSecretName,omitempty"`
+		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
 		Phase *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersJSONBodyStatusPhase `json:"phase,omitempty"`
@@ -609,14 +609,14 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSON
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"pods,omitempty"`
+			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"services,omitempty"`
-		} `json:"clusterNetwork,omitempty"`
+			} `json:"services"`
+		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
 		Infra *struct {
@@ -653,7 +653,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSON
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
 			Name *string `json:"name,omitempty"`
-		} `json:"kubeconfigSecretName,omitempty"`
+		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
 		Phase *PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
@@ -727,14 +727,14 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBo
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"pods,omitempty"`
+			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"services,omitempty"`
-		} `json:"clusterNetwork,omitempty"`
+			} `json:"services"`
+		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
 		Infra *struct {
@@ -771,7 +771,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBo
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
 			Name *string `json:"name,omitempty"`
-		} `json:"kubeconfigSecretName,omitempty"`
+		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
 		Phase *PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
@@ -849,7 +849,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBody struc
 		Cri *struct {
 			// Runtime Container runtime to use
 			Runtime *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodySpecCriRuntime `json:"runtime,omitempty"`
-		} `json:"cri,omitempty"`
+		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
@@ -928,7 +928,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSO
 	// Spec Specification for nodepool updates
 	Spec *struct {
 		// Replicas Number of worker nodes desired (0 or greater)
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas *int32 `json:"replicas"`
 	} `json:"spec,omitempty"`
 }
 
@@ -979,7 +979,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSON
 		Cri *struct {
 			// Runtime Container runtime to use
 			Runtime *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime,omitempty"`
-		} `json:"cri,omitempty"`
+		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
@@ -1100,7 +1100,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONB
 		Cri *struct {
 			// Runtime Container runtime to use
 			Runtime *PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime,omitempty"`
-		} `json:"cri,omitempty"`
+		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
@@ -1217,14 +1217,14 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersJSONBody str
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"pods,omitempty"`
+			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"services,omitempty"`
-		} `json:"clusterNetwork,omitempty"`
+			} `json:"services"`
+		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
 		Infra *struct {
@@ -1261,7 +1261,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersJSONBody str
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
 			Name *string `json:"name,omitempty"`
-		} `json:"kubeconfigSecretName,omitempty"`
+		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
 		Phase *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersJSONBodyStatusPhase `json:"phase,omitempty"`
@@ -1335,14 +1335,14 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJ
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"pods,omitempty"`
+			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"services,omitempty"`
-		} `json:"clusterNetwork,omitempty"`
+			} `json:"services"`
+		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
 		Infra *struct {
@@ -1379,7 +1379,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJ
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
 			Name *string `json:"name,omitempty"`
-		} `json:"kubeconfigSecretName,omitempty"`
+		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
 		Phase *PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
@@ -1453,14 +1453,14 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSO
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"pods,omitempty"`
+			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"services,omitempty"`
-		} `json:"clusterNetwork,omitempty"`
+			} `json:"services"`
+		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
 		Infra *struct {
@@ -1497,7 +1497,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSO
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
 			Name *string `json:"name,omitempty"`
-		} `json:"kubeconfigSecretName,omitempty"`
+		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
 		Phase *PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
@@ -1575,7 +1575,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBody st
 		Cri *struct {
 			// Runtime Container runtime to use
 			Runtime *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodySpecCriRuntime `json:"runtime,omitempty"`
-		} `json:"cri,omitempty"`
+		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
@@ -1654,7 +1654,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 	// Spec Specification for nodepool updates
 	Spec *struct {
 		// Replicas Number of worker nodes desired (0 or greater)
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas *int32 `json:"replicas"`
 	} `json:"spec,omitempty"`
 }
 
@@ -1705,7 +1705,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJ
 		Cri *struct {
 			// Runtime Container runtime to use
 			Runtime *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime,omitempty"`
-		} `json:"cri,omitempty"`
+		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
@@ -1826,7 +1826,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJS
 		Cri *struct {
 			// Runtime Container runtime to use
 			Runtime *PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime,omitempty"`
-		} `json:"cri,omitempty"`
+		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
@@ -1943,14 +1943,14 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersJSONBody st
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"pods,omitempty"`
+			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"services,omitempty"`
-		} `json:"clusterNetwork,omitempty"`
+			} `json:"services"`
+		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
 		Infra *struct {
@@ -1987,7 +1987,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersJSONBody st
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
 			Name *string `json:"name,omitempty"`
-		} `json:"kubeconfigSecretName,omitempty"`
+		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
 		Phase *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersJSONBodyStatusPhase `json:"phase,omitempty"`
@@ -2061,14 +2061,14 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"pods,omitempty"`
+			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"services,omitempty"`
-		} `json:"clusterNetwork,omitempty"`
+			} `json:"services"`
+		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
 		Infra *struct {
@@ -2105,7 +2105,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
 			Name *string `json:"name,omitempty"`
-		} `json:"kubeconfigSecretName,omitempty"`
+		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
 		Phase *PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
@@ -2179,14 +2179,14 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJS
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"pods,omitempty"`
+			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
 				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-			} `json:"services,omitempty"`
-		} `json:"clusterNetwork,omitempty"`
+			} `json:"services"`
+		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
 		Infra *struct {
@@ -2223,7 +2223,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJS
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
 			Name *string `json:"name,omitempty"`
-		} `json:"kubeconfigSecretName,omitempty"`
+		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
 		Phase *PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
@@ -2301,7 +2301,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBody s
 		Cri *struct {
 			// Runtime Container runtime to use
 			Runtime *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodySpecCriRuntime `json:"runtime,omitempty"`
-		} `json:"cri,omitempty"`
+		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
@@ -2380,7 +2380,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 	// Spec Specification for nodepool updates
 	Spec *struct {
 		// Replicas Number of worker nodes desired (0 or greater)
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas *int32 `json:"replicas"`
 	} `json:"spec,omitempty"`
 }
 
@@ -2431,7 +2431,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 		Cri *struct {
 			// Runtime Container runtime to use
 			Runtime *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime,omitempty"`
-		} `json:"cri,omitempty"`
+		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
@@ -2552,7 +2552,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJ
 		Cri *struct {
 			// Runtime Container runtime to use
 			Runtime *PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime,omitempty"`
-		} `json:"cri,omitempty"`
+		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`

@@ -95,8 +95,8 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsJSONBody struct {
 		// OwnerReferences References to other resources that own or manage the resource
 		OwnerReferences *[]struct {
 			ApiVersion         *string `json:"apiVersion,omitempty"`
-			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-			Controller         *bool   `json:"controller,omitempty"`
+			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+			Controller         *bool   `json:"controller"`
 			Kind               *string `json:"kind,omitempty"`
 			Name               *string `json:"name,omitempty"`
 			Uid                *string `json:"uid,omitempty"`
@@ -123,7 +123,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsJSONBody struct {
 			Namespace       *string `json:"namespace,omitempty"`
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 			Uid             *string `json:"uid,omitempty"`
-		} `json:"boundTo,omitempty"`
+		} `json:"boundTo"`
 
 		// Ip The allocated external IPv4 address.
 		Ip       *string `json:"ip,omitempty"`
@@ -180,8 +180,8 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdJSONBody struct
 		// OwnerReferences References to other resources that own or manage the resource
 		OwnerReferences *[]struct {
 			ApiVersion         *string `json:"apiVersion,omitempty"`
-			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-			Controller         *bool   `json:"controller,omitempty"`
+			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+			Controller         *bool   `json:"controller"`
 			Kind               *string `json:"kind,omitempty"`
 			Name               *string `json:"name,omitempty"`
 			Uid                *string `json:"uid,omitempty"`
@@ -208,7 +208,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdJSONBody struct
 			Namespace       *string `json:"namespace,omitempty"`
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 			Uid             *string `json:"uid,omitempty"`
-		} `json:"boundTo,omitempty"`
+		} `json:"boundTo"`
 
 		// Ip The allocated external IPv4 address.
 		Ip       *string `json:"ip,omitempty"`
@@ -265,8 +265,8 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 		// OwnerReferences References to other resources that own or manage the resource
 		OwnerReferences *struct {
 			ApiVersion         *string `json:"apiVersion,omitempty"`
-			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-			Controller         *bool   `json:"controller,omitempty"`
+			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+			Controller         *bool   `json:"controller"`
 			Kind               *string `json:"kind,omitempty"`
 			Name               *string `json:"name,omitempty"`
 			Uid                *string `json:"uid,omitempty"`
@@ -309,7 +309,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 					Name *string `json:"name,omitempty"`
 
 					// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
-					Optional *bool `json:"optional,omitempty"`
+					Optional *bool `json:"optional"`
 				} `json:"fromSecret,omitempty"`
 			} `json:"password,omitempty"`
 
@@ -318,7 +318,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 
 			// Username Operating system username for the initial user account. Must follow Linux username requirements.
 			Username *string `json:"username,omitempty"`
-		} `json:"initialUser,omitempty"`
+		} `json:"initialUser"`
 
 		// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 		Interfaces *struct {
@@ -337,26 +337,26 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 				Name *string `json:"name,omitempty"`
 
 				// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-				Size *string `json:"size,omitempty"`
-			} `json:"localDisk,omitempty"`
+				Size interface{} `json:"size,omitempty"`
+			} `json:"localDisk"`
 
 			// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 			PersistentVolumeClaim *struct {
 				ClaimName *string `json:"claimName,omitempty"`
 				ReadOnly  *bool   `json:"readOnly,omitempty"`
-			} `json:"persistentVolumeClaim,omitempty"`
+			} `json:"persistentVolumeClaim"`
 		} `json:"osVolume,omitempty"`
 
 		// PlacementGroupRef Reference to a placement group that influences instance scheduling for anti-affinity.
 		PlacementGroupRef *struct {
 			Name *string `json:"name,omitempty"`
-		} `json:"placementGroupRef,omitempty"`
+		} `json:"placementGroupRef"`
 
 		// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
 		PoweredOn *bool `json:"poweredOn,omitempty"`
 
 		// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
-		RestartedAt interface{} `json:"restartedAt,omitempty"`
+		RestartedAt interface{} `json:"restartedAt"`
 
 		// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
 		Type *string `json:"type,omitempty"`
@@ -372,14 +372,14 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 				Name *string `json:"name,omitempty"`
 
 				// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-				Size *string `json:"size,omitempty"`
-			} `json:"localDisk,omitempty"`
+				Size interface{} `json:"size,omitempty"`
+			} `json:"localDisk"`
 
 			// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 			PersistentVolumeClaim *struct {
 				ClaimName *string `json:"claimName,omitempty"`
 				ReadOnly  *bool   `json:"readOnly,omitempty"`
-			} `json:"persistentVolumeClaim,omitempty"`
+			} `json:"persistentVolumeClaim"`
 		} `json:"volumes,omitempty"`
 	} `json:"spec,omitempty"`
 
@@ -388,7 +388,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 		// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 		AttachedVolumes *struct {
 			// Size Storage capacity of the attached volume in bytes
-			Size *string `json:"Size,omitempty"`
+			Size interface{} `json:"Size,omitempty"`
 
 			// Name Name of the attached volume, corresponding to the PersistentVolume name for persistent volumes or the local disk name for local disks
 			Name *string `json:"name,omitempty"`
@@ -428,11 +428,11 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 		// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 		RuntimeConfiguration *struct {
 			// Cpu Number of CPU cores
-			Cpu *string `json:"cpu,omitempty"`
+			Cpu interface{} `json:"cpu,omitempty"`
 
 			// Memory Memory size
-			Memory *string `json:"memory,omitempty"`
-		} `json:"runtimeConfiguration,omitempty"`
+			Memory interface{} `json:"memory,omitempty"`
+		} `json:"runtimeConfiguration"`
 
 		// Type The current instance type that defines the cpu, memory and storage capacity
 		Type *string `json:"type,omitempty"`
@@ -473,8 +473,8 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 		// OwnerReferences References to other resources that own or manage the resource
 		OwnerReferences *struct {
 			ApiVersion         *string `json:"apiVersion,omitempty"`
-			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-			Controller         *bool   `json:"controller,omitempty"`
+			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+			Controller         *bool   `json:"controller"`
 			Kind               *string `json:"kind,omitempty"`
 			Name               *string `json:"name,omitempty"`
 			Uid                *string `json:"uid,omitempty"`
@@ -517,7 +517,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 					Name *string `json:"name,omitempty"`
 
 					// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
-					Optional *bool `json:"optional,omitempty"`
+					Optional *bool `json:"optional"`
 				} `json:"fromSecret,omitempty"`
 			} `json:"password,omitempty"`
 
@@ -526,7 +526,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 
 			// Username Operating system username for the initial user account. Must follow Linux username requirements.
 			Username *string `json:"username,omitempty"`
-		} `json:"initialUser,omitempty"`
+		} `json:"initialUser"`
 
 		// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 		Interfaces *struct {
@@ -545,26 +545,26 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 				Name *string `json:"name,omitempty"`
 
 				// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-				Size *string `json:"size,omitempty"`
-			} `json:"localDisk,omitempty"`
+				Size interface{} `json:"size,omitempty"`
+			} `json:"localDisk"`
 
 			// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 			PersistentVolumeClaim *struct {
 				ClaimName *string `json:"claimName,omitempty"`
 				ReadOnly  *bool   `json:"readOnly,omitempty"`
-			} `json:"persistentVolumeClaim,omitempty"`
+			} `json:"persistentVolumeClaim"`
 		} `json:"osVolume,omitempty"`
 
 		// PlacementGroupRef Reference to a placement group that influences instance scheduling for anti-affinity.
 		PlacementGroupRef *struct {
 			Name *string `json:"name,omitempty"`
-		} `json:"placementGroupRef,omitempty"`
+		} `json:"placementGroupRef"`
 
 		// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
 		PoweredOn *bool `json:"poweredOn,omitempty"`
 
 		// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
-		RestartedAt interface{} `json:"restartedAt,omitempty"`
+		RestartedAt interface{} `json:"restartedAt"`
 
 		// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
 		Type *string `json:"type,omitempty"`
@@ -580,14 +580,14 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 				Name *string `json:"name,omitempty"`
 
 				// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-				Size *string `json:"size,omitempty"`
-			} `json:"localDisk,omitempty"`
+				Size interface{} `json:"size,omitempty"`
+			} `json:"localDisk"`
 
 			// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 			PersistentVolumeClaim *struct {
 				ClaimName *string `json:"claimName,omitempty"`
 				ReadOnly  *bool   `json:"readOnly,omitempty"`
-			} `json:"persistentVolumeClaim,omitempty"`
+			} `json:"persistentVolumeClaim"`
 		} `json:"volumes,omitempty"`
 	} `json:"spec,omitempty"`
 
@@ -596,7 +596,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 		// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 		AttachedVolumes *struct {
 			// Size Storage capacity of the attached volume in bytes
-			Size *string `json:"Size,omitempty"`
+			Size interface{} `json:"Size,omitempty"`
 
 			// Name Name of the attached volume, corresponding to the PersistentVolume name for persistent volumes or the local disk name for local disks
 			Name *string `json:"name,omitempty"`
@@ -636,11 +636,11 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 		// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 		RuntimeConfiguration *struct {
 			// Cpu Number of CPU cores
-			Cpu *string `json:"cpu,omitempty"`
+			Cpu interface{} `json:"cpu,omitempty"`
 
 			// Memory Memory size
-			Memory *string `json:"memory,omitempty"`
-		} `json:"runtimeConfiguration,omitempty"`
+			Memory interface{} `json:"memory,omitempty"`
+		} `json:"runtimeConfiguration"`
 
 		// Type The current instance type that defines the cpu, memory and storage capacity
 		Type *string `json:"type,omitempty"`
@@ -681,8 +681,8 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksJSONBody struct {
 		// OwnerReferences References to other resources that own or manage the resource
 		OwnerReferences *[]struct {
 			ApiVersion         *string `json:"apiVersion,omitempty"`
-			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-			Controller         *bool   `json:"controller,omitempty"`
+			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+			Controller         *bool   `json:"controller"`
 			Kind               *string `json:"kind,omitempty"`
 			Name               *string `json:"name,omitempty"`
 			Uid                *string `json:"uid,omitempty"`
@@ -709,12 +709,12 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksJSONBody struct {
 			Namespace       *string `json:"namespace,omitempty"`
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 			Uid             *string `json:"uid,omitempty"`
-		} `json:"boundTo,omitempty"`
+		} `json:"boundTo"`
 
 		// ExternalIPRef Reference to the external IP resource. If empty, this link does not have an external IP address.
 		ExternalIPRef *struct {
 			Name *string `json:"name,omitempty"`
-		} `json:"externalIPRef,omitempty"`
+		} `json:"externalIPRef"`
 
 		// ForwardableAddresses List of addresses that can forward traffic through this link.
 		ForwardableAddresses *[]struct {
@@ -801,8 +801,8 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdJSONBody struct {
 		// OwnerReferences References to other resources that own or manage the resource
 		OwnerReferences *[]struct {
 			ApiVersion         *string `json:"apiVersion,omitempty"`
-			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion,omitempty"`
-			Controller         *bool   `json:"controller,omitempty"`
+			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
+			Controller         *bool   `json:"controller"`
 			Kind               *string `json:"kind,omitempty"`
 			Name               *string `json:"name,omitempty"`
 			Uid                *string `json:"uid,omitempty"`
@@ -829,12 +829,12 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdJSONBody struct {
 			Namespace       *string `json:"namespace,omitempty"`
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 			Uid             *string `json:"uid,omitempty"`
-		} `json:"boundTo,omitempty"`
+		} `json:"boundTo"`
 
 		// ExternalIPRef Reference to the external IP resource. If empty, this link does not have an external IP address.
 		ExternalIPRef *struct {
 			Name *string `json:"name,omitempty"`
-		} `json:"externalIPRef,omitempty"`
+		} `json:"externalIPRef"`
 
 		// ForwardableAddresses List of addresses that can forward traffic through this link.
 		ForwardableAddresses *[]struct {

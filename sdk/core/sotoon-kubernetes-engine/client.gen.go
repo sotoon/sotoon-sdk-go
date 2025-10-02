@@ -5218,14 +5218,14 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct 
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -5262,7 +5262,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct 
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase `json:"phase,omitempty"`
@@ -5290,7 +5290,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct 
 		// Metadata Standard metadata fields for the list
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5311,7 +5311,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct 
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5338,7 +5338,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct 
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5365,7 +5365,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct 
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5392,7 +5392,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct 
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5419,7 +5419,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct 
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5512,14 +5512,14 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct
 				Pods *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"pods,omitempty"`
+				} `json:"pods"`
 
 				// Services Network ranges from which service VIPs are allocated
 				Services *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"services,omitempty"`
-			} `json:"clusterNetwork,omitempty"`
+				} `json:"services"`
+			} `json:"clusterNetwork"`
 
 			// Infra Infrastructure configuration for the cluster
 			Infra *struct {
@@ -5556,7 +5556,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct
 			KubeconfigSecretName *struct {
 				// Name Name of the referenced object
 				Name *string `json:"name,omitempty"`
-			} `json:"kubeconfigSecretName,omitempty"`
+			} `json:"kubeconfigSecretName"`
 
 			// Phase Current phase of the cluster
 			Phase *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase `json:"phase,omitempty"`
@@ -5593,7 +5593,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5620,7 +5620,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5647,7 +5647,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5674,7 +5674,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5701,7 +5701,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5728,7 +5728,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5797,7 +5797,7 @@ type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5824,7 +5824,7 @@ type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5851,7 +5851,7 @@ type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5878,7 +5878,7 @@ type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5905,7 +5905,7 @@ type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -5932,7 +5932,7 @@ type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6024,14 +6024,14 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 				Pods *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"pods,omitempty"`
+				} `json:"pods"`
 
 				// Services Network ranges from which service VIPs are allocated
 				Services *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"services,omitempty"`
-			} `json:"clusterNetwork,omitempty"`
+				} `json:"services"`
+			} `json:"clusterNetwork"`
 
 			// Infra Infrastructure configuration for the cluster
 			Infra *struct {
@@ -6068,7 +6068,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 			KubeconfigSecretName *struct {
 				// Name Name of the referenced object
 				Name *string `json:"name,omitempty"`
-			} `json:"kubeconfigSecretName,omitempty"`
+			} `json:"kubeconfigSecretName"`
 
 			// Phase Current phase of the cluster
 			Phase *GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -6105,7 +6105,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6132,7 +6132,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6159,7 +6159,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6186,7 +6186,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6213,7 +6213,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6305,14 +6305,14 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResp
 				Pods *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"pods,omitempty"`
+				} `json:"pods"`
 
 				// Services Network ranges from which service VIPs are allocated
 				Services *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"services,omitempty"`
-			} `json:"clusterNetwork,omitempty"`
+				} `json:"services"`
+			} `json:"clusterNetwork"`
 
 			// Infra Infrastructure configuration for the cluster
 			Infra *struct {
@@ -6349,7 +6349,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResp
 			KubeconfigSecretName *struct {
 				// Name Name of the referenced object
 				Name *string `json:"name,omitempty"`
-			} `json:"kubeconfigSecretName,omitempty"`
+			} `json:"kubeconfigSecretName"`
 
 			// Phase Current phase of the cluster
 			Phase *PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -6386,7 +6386,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResp
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6413,7 +6413,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResp
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6440,7 +6440,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResp
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6467,7 +6467,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResp
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6494,7 +6494,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResp
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6586,14 +6586,14 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 				Pods *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"pods,omitempty"`
+				} `json:"pods"`
 
 				// Services Network ranges from which service VIPs are allocated
 				Services *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"services,omitempty"`
-			} `json:"clusterNetwork,omitempty"`
+				} `json:"services"`
+			} `json:"clusterNetwork"`
 
 			// Infra Infrastructure configuration for the cluster
 			Infra *struct {
@@ -6630,7 +6630,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 			KubeconfigSecretName *struct {
 				// Name Name of the referenced object
 				Name *string `json:"name,omitempty"`
-			} `json:"kubeconfigSecretName,omitempty"`
+			} `json:"kubeconfigSecretName"`
 
 			// Phase Current phase of the cluster
 			Phase *PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -6667,7 +6667,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6694,7 +6694,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6721,7 +6721,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6748,7 +6748,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6775,7 +6775,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRespon
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6876,7 +6876,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struct
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -6944,7 +6944,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struct
 		// Metadata Standard metadata fields for the list
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6965,7 +6965,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -6992,7 +6992,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7019,7 +7019,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7046,7 +7046,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7073,7 +7073,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struct
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7171,7 +7171,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struc
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -7248,7 +7248,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struc
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7275,7 +7275,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struc
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7302,7 +7302,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struc
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7329,7 +7329,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struc
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7356,7 +7356,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struc
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7383,7 +7383,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struc
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7453,7 +7453,7 @@ type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7480,7 +7480,7 @@ type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7507,7 +7507,7 @@ type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7534,7 +7534,7 @@ type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7561,7 +7561,7 @@ type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7588,7 +7588,7 @@ type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7684,7 +7684,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRespo
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -7761,7 +7761,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRespo
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7788,7 +7788,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRespo
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7815,7 +7815,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRespo
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7842,7 +7842,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRespo
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7869,7 +7869,7 @@ type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRespo
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -7966,7 +7966,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRes
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -8043,7 +8043,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8070,7 +8070,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8097,7 +8097,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8124,7 +8124,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8151,7 +8151,7 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8248,7 +8248,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResp
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -8325,7 +8325,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResp
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8352,7 +8352,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResp
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8379,7 +8379,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResp
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8406,7 +8406,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResp
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8433,7 +8433,7 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResp
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8530,7 +8530,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRespo
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -8607,7 +8607,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRespo
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8634,7 +8634,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRespo
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8661,7 +8661,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRespo
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8688,7 +8688,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRespo
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -8715,7 +8715,7 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRespo
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9065,14 +9065,14 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse stru
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -9109,7 +9109,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse stru
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase `json:"phase,omitempty"`
@@ -9137,7 +9137,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse stru
 		// Metadata Standard metadata fields for the list
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9158,7 +9158,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse stru
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9185,7 +9185,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse stru
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9212,7 +9212,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse stru
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9239,7 +9239,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse stru
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9266,7 +9266,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse stru
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9359,14 +9359,14 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse str
 				Pods *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"pods,omitempty"`
+				} `json:"pods"`
 
 				// Services Network ranges from which service VIPs are allocated
 				Services *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"services,omitempty"`
-			} `json:"clusterNetwork,omitempty"`
+				} `json:"services"`
+			} `json:"clusterNetwork"`
 
 			// Infra Infrastructure configuration for the cluster
 			Infra *struct {
@@ -9403,7 +9403,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse str
 			KubeconfigSecretName *struct {
 				// Name Name of the referenced object
 				Name *string `json:"name,omitempty"`
-			} `json:"kubeconfigSecretName,omitempty"`
+			} `json:"kubeconfigSecretName"`
 
 			// Phase Current phase of the cluster
 			Phase *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase `json:"phase,omitempty"`
@@ -9440,7 +9440,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9467,7 +9467,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9494,7 +9494,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9521,7 +9521,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9548,7 +9548,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9575,7 +9575,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9644,7 +9644,7 @@ type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9671,7 +9671,7 @@ type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9698,7 +9698,7 @@ type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9725,7 +9725,7 @@ type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9752,7 +9752,7 @@ type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9779,7 +9779,7 @@ type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9871,14 +9871,14 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 				Pods *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"pods,omitempty"`
+				} `json:"pods"`
 
 				// Services Network ranges from which service VIPs are allocated
 				Services *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"services,omitempty"`
-			} `json:"clusterNetwork,omitempty"`
+				} `json:"services"`
+			} `json:"clusterNetwork"`
 
 			// Infra Infrastructure configuration for the cluster
 			Infra *struct {
@@ -9915,7 +9915,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 			KubeconfigSecretName *struct {
 				// Name Name of the referenced object
 				Name *string `json:"name,omitempty"`
-			} `json:"kubeconfigSecretName,omitempty"`
+			} `json:"kubeconfigSecretName"`
 
 			// Phase Current phase of the cluster
 			Phase *GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -9952,7 +9952,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -9979,7 +9979,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10006,7 +10006,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10033,7 +10033,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10060,7 +10060,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10152,14 +10152,14 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 				Pods *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"pods,omitempty"`
+				} `json:"pods"`
 
 				// Services Network ranges from which service VIPs are allocated
 				Services *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"services,omitempty"`
-			} `json:"clusterNetwork,omitempty"`
+				} `json:"services"`
+			} `json:"clusterNetwork"`
 
 			// Infra Infrastructure configuration for the cluster
 			Infra *struct {
@@ -10196,7 +10196,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 			KubeconfigSecretName *struct {
 				// Name Name of the referenced object
 				Name *string `json:"name,omitempty"`
-			} `json:"kubeconfigSecretName,omitempty"`
+			} `json:"kubeconfigSecretName"`
 
 			// Phase Current phase of the cluster
 			Phase *PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -10233,7 +10233,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10260,7 +10260,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10287,7 +10287,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10314,7 +10314,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10341,7 +10341,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10433,14 +10433,14 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 				Pods *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"pods,omitempty"`
+				} `json:"pods"`
 
 				// Services Network ranges from which service VIPs are allocated
 				Services *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"services,omitempty"`
-			} `json:"clusterNetwork,omitempty"`
+				} `json:"services"`
+			} `json:"clusterNetwork"`
 
 			// Infra Infrastructure configuration for the cluster
 			Infra *struct {
@@ -10477,7 +10477,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 			KubeconfigSecretName *struct {
 				// Name Name of the referenced object
 				Name *string `json:"name,omitempty"`
-			} `json:"kubeconfigSecretName,omitempty"`
+			} `json:"kubeconfigSecretName"`
 
 			// Phase Current phase of the cluster
 			Phase *PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -10514,7 +10514,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10541,7 +10541,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10568,7 +10568,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10595,7 +10595,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10622,7 +10622,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10723,7 +10723,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse str
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -10791,7 +10791,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse str
 		// Metadata Standard metadata fields for the list
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10812,7 +10812,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10839,7 +10839,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10866,7 +10866,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10893,7 +10893,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -10920,7 +10920,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11018,7 +11018,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -11095,7 +11095,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11122,7 +11122,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11149,7 +11149,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11176,7 +11176,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11203,7 +11203,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11230,7 +11230,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11300,7 +11300,7 @@ type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11327,7 +11327,7 @@ type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11354,7 +11354,7 @@ type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11381,7 +11381,7 @@ type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11408,7 +11408,7 @@ type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11435,7 +11435,7 @@ type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11531,7 +11531,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -11608,7 +11608,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11635,7 +11635,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11662,7 +11662,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11689,7 +11689,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11716,7 +11716,7 @@ type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11813,7 +11813,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -11890,7 +11890,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11917,7 +11917,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11944,7 +11944,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11971,7 +11971,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -11998,7 +11998,7 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -12095,7 +12095,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -12172,7 +12172,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -12199,7 +12199,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -12226,7 +12226,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -12253,7 +12253,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -12280,7 +12280,7 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -12377,7 +12377,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -12454,7 +12454,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -12481,7 +12481,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -12508,7 +12508,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -12535,7 +12535,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -12562,7 +12562,7 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -12912,14 +12912,14 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse str
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -12956,7 +12956,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse str
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase `json:"phase,omitempty"`
@@ -12984,7 +12984,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse str
 		// Metadata Standard metadata fields for the list
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13005,7 +13005,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13032,7 +13032,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13059,7 +13059,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13086,7 +13086,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13113,7 +13113,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse str
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13206,14 +13206,14 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse st
 				Pods *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"pods,omitempty"`
+				} `json:"pods"`
 
 				// Services Network ranges from which service VIPs are allocated
 				Services *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"services,omitempty"`
-			} `json:"clusterNetwork,omitempty"`
+				} `json:"services"`
+			} `json:"clusterNetwork"`
 
 			// Infra Infrastructure configuration for the cluster
 			Infra *struct {
@@ -13250,7 +13250,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse st
 			KubeconfigSecretName *struct {
 				// Name Name of the referenced object
 				Name *string `json:"name,omitempty"`
-			} `json:"kubeconfigSecretName,omitempty"`
+			} `json:"kubeconfigSecretName"`
 
 			// Phase Current phase of the cluster
 			Phase *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase `json:"phase,omitempty"`
@@ -13287,7 +13287,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13314,7 +13314,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13341,7 +13341,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13368,7 +13368,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13395,7 +13395,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13422,7 +13422,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13491,7 +13491,7 @@ type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13518,7 +13518,7 @@ type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13545,7 +13545,7 @@ type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13572,7 +13572,7 @@ type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13599,7 +13599,7 @@ type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13626,7 +13626,7 @@ type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13718,14 +13718,14 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 				Pods *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"pods,omitempty"`
+				} `json:"pods"`
 
 				// Services Network ranges from which service VIPs are allocated
 				Services *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"services,omitempty"`
-			} `json:"clusterNetwork,omitempty"`
+				} `json:"services"`
+			} `json:"clusterNetwork"`
 
 			// Infra Infrastructure configuration for the cluster
 			Infra *struct {
@@ -13762,7 +13762,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 			KubeconfigSecretName *struct {
 				// Name Name of the referenced object
 				Name *string `json:"name,omitempty"`
-			} `json:"kubeconfigSecretName,omitempty"`
+			} `json:"kubeconfigSecretName"`
 
 			// Phase Current phase of the cluster
 			Phase *GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -13799,7 +13799,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13826,7 +13826,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13853,7 +13853,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13880,7 +13880,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13907,7 +13907,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -13999,14 +13999,14 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId
 				Pods *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"pods,omitempty"`
+				} `json:"pods"`
 
 				// Services Network ranges from which service VIPs are allocated
 				Services *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"services,omitempty"`
-			} `json:"clusterNetwork,omitempty"`
+				} `json:"services"`
+			} `json:"clusterNetwork"`
 
 			// Infra Infrastructure configuration for the cluster
 			Infra *struct {
@@ -14043,7 +14043,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId
 			KubeconfigSecretName *struct {
 				// Name Name of the referenced object
 				Name *string `json:"name,omitempty"`
-			} `json:"kubeconfigSecretName,omitempty"`
+			} `json:"kubeconfigSecretName"`
 
 			// Phase Current phase of the cluster
 			Phase *PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -14080,7 +14080,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14107,7 +14107,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14134,7 +14134,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14161,7 +14161,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14188,7 +14188,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14280,14 +14280,14 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 				Pods *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"pods,omitempty"`
+				} `json:"pods"`
 
 				// Services Network ranges from which service VIPs are allocated
 				Services *struct {
 					// CidrBlocks List of CIDR blocks
 					CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-				} `json:"services,omitempty"`
-			} `json:"clusterNetwork,omitempty"`
+				} `json:"services"`
+			} `json:"clusterNetwork"`
 
 			// Infra Infrastructure configuration for the cluster
 			Infra *struct {
@@ -14324,7 +14324,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 			KubeconfigSecretName *struct {
 				// Name Name of the referenced object
 				Name *string `json:"name,omitempty"`
-			} `json:"kubeconfigSecretName,omitempty"`
+			} `json:"kubeconfigSecretName"`
 
 			// Phase Current phase of the cluster
 			Phase *PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -14361,7 +14361,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14388,7 +14388,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14415,7 +14415,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14442,7 +14442,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14469,7 +14469,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdRe
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14570,7 +14570,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -14638,7 +14638,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 		// Metadata Standard metadata fields for the list
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14659,7 +14659,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14686,7 +14686,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14713,7 +14713,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14740,7 +14740,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14767,7 +14767,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse st
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14865,7 +14865,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse s
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -14942,7 +14942,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse s
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14969,7 +14969,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse s
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -14996,7 +14996,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse s
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15023,7 +15023,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse s
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15050,7 +15050,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse s
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15077,7 +15077,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse s
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15147,7 +15147,7 @@ type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15174,7 +15174,7 @@ type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15201,7 +15201,7 @@ type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15228,7 +15228,7 @@ type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15255,7 +15255,7 @@ type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15282,7 +15282,7 @@ type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15378,7 +15378,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -15455,7 +15455,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15482,7 +15482,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15509,7 +15509,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15536,7 +15536,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15563,7 +15563,7 @@ type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15660,7 +15660,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -15737,7 +15737,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15764,7 +15764,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15791,7 +15791,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15818,7 +15818,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15845,7 +15845,7 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -15942,7 +15942,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -16019,7 +16019,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -16046,7 +16046,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -16073,7 +16073,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -16100,7 +16100,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -16127,7 +16127,7 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -16224,7 +16224,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 			Cri *struct {
 				// Runtime Container runtime to use
 				Runtime *PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-			} `json:"cri,omitempty"`
+			} `json:"cri"`
 
 			// Labels Labels to apply to worker nodes
 			Labels *map[string]string `json:"labels,omitempty"`
@@ -16301,7 +16301,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -16328,7 +16328,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -16355,7 +16355,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -16382,7 +16382,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -16409,7 +16409,7 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 		// Metadata Standard metadata fields
 		Metadata *struct {
 			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
 		} `json:"metadata,omitempty"`
@@ -17569,14 +17569,14 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(rs
 						Pods *struct {
 							// CidrBlocks List of CIDR blocks
 							CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-						} `json:"pods,omitempty"`
+						} `json:"pods"`
 
 						// Services Network ranges from which service VIPs are allocated
 						Services *struct {
 							// CidrBlocks List of CIDR blocks
 							CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-						} `json:"services,omitempty"`
-					} `json:"clusterNetwork,omitempty"`
+						} `json:"services"`
+					} `json:"clusterNetwork"`
 
 					// Infra Infrastructure configuration for the cluster
 					Infra *struct {
@@ -17613,7 +17613,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(rs
 					KubeconfigSecretName *struct {
 						// Name Name of the referenced object
 						Name *string `json:"name,omitempty"`
-					} `json:"kubeconfigSecretName,omitempty"`
+					} `json:"kubeconfigSecretName"`
 
 					// Phase Current phase of the cluster
 					Phase *GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase `json:"phase,omitempty"`
@@ -17641,7 +17641,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(rs
 			// Metadata Standard metadata fields for the list
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -17668,7 +17668,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(rs
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -17701,7 +17701,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(rs
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -17734,7 +17734,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(rs
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -17767,7 +17767,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(rs
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -17800,7 +17800,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(rs
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -17878,14 +17878,14 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(r
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -17922,7 +17922,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(r
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase `json:"phase,omitempty"`
@@ -17965,7 +17965,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -17998,7 +17998,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18031,7 +18031,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18064,7 +18064,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18097,7 +18097,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18130,7 +18130,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18182,7 +18182,7 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18215,7 +18215,7 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18248,7 +18248,7 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18281,7 +18281,7 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18314,7 +18314,7 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18347,7 +18347,7 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18425,14 +18425,14 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -18469,7 +18469,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -18512,7 +18512,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18545,7 +18545,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18578,7 +18578,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18611,7 +18611,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18644,7 +18644,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18722,14 +18722,14 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceI
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -18766,7 +18766,7 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceI
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -18809,7 +18809,7 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceI
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18842,7 +18842,7 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceI
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18875,7 +18875,7 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceI
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18908,7 +18908,7 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceI
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -18941,7 +18941,7 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceI
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19019,14 +19019,14 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -19063,7 +19063,7 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -19106,7 +19106,7 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19139,7 +19139,7 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19172,7 +19172,7 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19205,7 +19205,7 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19238,7 +19238,7 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19325,7 +19325,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(r
 					Cri *struct {
 						// Runtime Container runtime to use
 						Runtime *GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime `json:"runtime,omitempty"`
-					} `json:"cri,omitempty"`
+					} `json:"cri"`
 
 					// Labels Labels to apply to worker nodes
 					Labels *map[string]string `json:"labels,omitempty"`
@@ -19393,7 +19393,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(r
 			// Metadata Standard metadata fields for the list
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19420,7 +19420,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19453,7 +19453,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19486,7 +19486,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19519,7 +19519,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19552,7 +19552,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(r
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19634,7 +19634,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -19717,7 +19717,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19750,7 +19750,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19783,7 +19783,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19816,7 +19816,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19849,7 +19849,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19882,7 +19882,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19934,7 +19934,7 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -19967,7 +19967,7 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20000,7 +20000,7 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20033,7 +20033,7 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20066,7 +20066,7 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20099,7 +20099,7 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20181,7 +20181,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -20264,7 +20264,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20297,7 +20297,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20330,7 +20330,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20363,7 +20363,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20396,7 +20396,7 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20478,7 +20478,7 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -20561,7 +20561,7 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20594,7 +20594,7 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20627,7 +20627,7 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20660,7 +20660,7 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20693,7 +20693,7 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20775,7 +20775,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -20858,7 +20858,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20891,7 +20891,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20924,7 +20924,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20957,7 +20957,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -20990,7 +20990,7 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -21072,7 +21072,7 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -21155,7 +21155,7 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -21188,7 +21188,7 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -21221,7 +21221,7 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -21254,7 +21254,7 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -21287,7 +21287,7 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -21562,14 +21562,14 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse
 						Pods *struct {
 							// CidrBlocks List of CIDR blocks
 							CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-						} `json:"pods,omitempty"`
+						} `json:"pods"`
 
 						// Services Network ranges from which service VIPs are allocated
 						Services *struct {
 							// CidrBlocks List of CIDR blocks
 							CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-						} `json:"services,omitempty"`
-					} `json:"clusterNetwork,omitempty"`
+						} `json:"services"`
+					} `json:"clusterNetwork"`
 
 					// Infra Infrastructure configuration for the cluster
 					Infra *struct {
@@ -21606,7 +21606,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse
 					KubeconfigSecretName *struct {
 						// Name Name of the referenced object
 						Name *string `json:"name,omitempty"`
-					} `json:"kubeconfigSecretName,omitempty"`
+					} `json:"kubeconfigSecretName"`
 
 					// Phase Current phase of the cluster
 					Phase *GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase `json:"phase,omitempty"`
@@ -21634,7 +21634,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse
 			// Metadata Standard metadata fields for the list
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -21661,7 +21661,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -21694,7 +21694,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -21727,7 +21727,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -21760,7 +21760,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -21793,7 +21793,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -21871,14 +21871,14 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersRespons
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -21915,7 +21915,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersRespons
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase `json:"phase,omitempty"`
@@ -21958,7 +21958,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -21991,7 +21991,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22024,7 +22024,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22057,7 +22057,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22090,7 +22090,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22123,7 +22123,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22175,7 +22175,7 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22208,7 +22208,7 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22241,7 +22241,7 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22274,7 +22274,7 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22307,7 +22307,7 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22340,7 +22340,7 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22418,14 +22418,14 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -22462,7 +22462,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -22505,7 +22505,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22538,7 +22538,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22571,7 +22571,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22604,7 +22604,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22637,7 +22637,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22715,14 +22715,14 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResour
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -22759,7 +22759,7 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResour
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -22802,7 +22802,7 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22835,7 +22835,7 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22868,7 +22868,7 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22901,7 +22901,7 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -22934,7 +22934,7 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23012,14 +23012,14 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -23056,7 +23056,7 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -23099,7 +23099,7 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23132,7 +23132,7 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23165,7 +23165,7 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23198,7 +23198,7 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23231,7 +23231,7 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23318,7 +23318,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespons
 					Cri *struct {
 						// Runtime Container runtime to use
 						Runtime *GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime `json:"runtime,omitempty"`
-					} `json:"cri,omitempty"`
+					} `json:"cri"`
 
 					// Labels Labels to apply to worker nodes
 					Labels *map[string]string `json:"labels,omitempty"`
@@ -23386,7 +23386,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespons
 			// Metadata Standard metadata fields for the list
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23413,7 +23413,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23446,7 +23446,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23479,7 +23479,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23512,7 +23512,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23545,7 +23545,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23627,7 +23627,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -23710,7 +23710,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23743,7 +23743,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23776,7 +23776,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23809,7 +23809,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23842,7 +23842,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23875,7 +23875,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23927,7 +23927,7 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23960,7 +23960,7 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -23993,7 +23993,7 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24026,7 +24026,7 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24059,7 +24059,7 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24092,7 +24092,7 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24174,7 +24174,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -24257,7 +24257,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24290,7 +24290,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24323,7 +24323,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24356,7 +24356,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24389,7 +24389,7 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24471,7 +24471,7 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -24554,7 +24554,7 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24587,7 +24587,7 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24620,7 +24620,7 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24653,7 +24653,7 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24686,7 +24686,7 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24768,7 +24768,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -24851,7 +24851,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24884,7 +24884,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24917,7 +24917,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24950,7 +24950,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -24983,7 +24983,7 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -25065,7 +25065,7 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -25148,7 +25148,7 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -25181,7 +25181,7 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -25214,7 +25214,7 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -25247,7 +25247,7 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -25280,7 +25280,7 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -25555,14 +25555,14 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespons
 						Pods *struct {
 							// CidrBlocks List of CIDR blocks
 							CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-						} `json:"pods,omitempty"`
+						} `json:"pods"`
 
 						// Services Network ranges from which service VIPs are allocated
 						Services *struct {
 							// CidrBlocks List of CIDR blocks
 							CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-						} `json:"services,omitempty"`
-					} `json:"clusterNetwork,omitempty"`
+						} `json:"services"`
+					} `json:"clusterNetwork"`
 
 					// Infra Infrastructure configuration for the cluster
 					Infra *struct {
@@ -25599,7 +25599,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespons
 					KubeconfigSecretName *struct {
 						// Name Name of the referenced object
 						Name *string `json:"name,omitempty"`
-					} `json:"kubeconfigSecretName,omitempty"`
+					} `json:"kubeconfigSecretName"`
 
 					// Phase Current phase of the cluster
 					Phase *GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase `json:"phase,omitempty"`
@@ -25627,7 +25627,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespons
 			// Metadata Standard metadata fields for the list
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -25654,7 +25654,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -25687,7 +25687,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -25720,7 +25720,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -25753,7 +25753,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -25786,7 +25786,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespons
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -25864,14 +25864,14 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespon
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -25908,7 +25908,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespon
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase `json:"phase,omitempty"`
@@ -25951,7 +25951,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -25984,7 +25984,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26017,7 +26017,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26050,7 +26050,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26083,7 +26083,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26116,7 +26116,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26168,7 +26168,7 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26201,7 +26201,7 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26234,7 +26234,7 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26267,7 +26267,7 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26300,7 +26300,7 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26333,7 +26333,7 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26411,14 +26411,14 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -26455,7 +26455,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -26498,7 +26498,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26531,7 +26531,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26564,7 +26564,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26597,7 +26597,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26630,7 +26630,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26708,14 +26708,14 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResou
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -26752,7 +26752,7 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResou
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -26795,7 +26795,7 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26828,7 +26828,7 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26861,7 +26861,7 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26894,7 +26894,7 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -26927,7 +26927,7 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27005,14 +27005,14 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 					Pods *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"pods,omitempty"`
+					} `json:"pods"`
 
 					// Services Network ranges from which service VIPs are allocated
 					Services *struct {
 						// CidrBlocks List of CIDR blocks
 						CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
-					} `json:"services,omitempty"`
-				} `json:"clusterNetwork,omitempty"`
+					} `json:"services"`
+				} `json:"clusterNetwork"`
 
 				// Infra Infrastructure configuration for the cluster
 				Infra *struct {
@@ -27049,7 +27049,7 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 				KubeconfigSecretName *struct {
 					// Name Name of the referenced object
 					Name *string `json:"name,omitempty"`
-				} `json:"kubeconfigSecretName,omitempty"`
+				} `json:"kubeconfigSecretName"`
 
 				// Phase Current phase of the cluster
 				Phase *PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase,omitempty"`
@@ -27092,7 +27092,7 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27125,7 +27125,7 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27158,7 +27158,7 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27191,7 +27191,7 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27224,7 +27224,7 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27311,7 +27311,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 					Cri *struct {
 						// Runtime Container runtime to use
 						Runtime *GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime `json:"runtime,omitempty"`
-					} `json:"cri,omitempty"`
+					} `json:"cri"`
 
 					// Labels Labels to apply to worker nodes
 					Labels *map[string]string `json:"labels,omitempty"`
@@ -27379,7 +27379,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 			// Metadata Standard metadata fields for the list
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27406,7 +27406,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27439,7 +27439,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27472,7 +27472,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27505,7 +27505,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27538,7 +27538,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27620,7 +27620,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespo
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -27703,7 +27703,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespo
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27736,7 +27736,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespo
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27769,7 +27769,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespo
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27802,7 +27802,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespo
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27835,7 +27835,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespo
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27868,7 +27868,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespo
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27920,7 +27920,7 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRes
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27953,7 +27953,7 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRes
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -27986,7 +27986,7 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRes
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28019,7 +28019,7 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRes
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28052,7 +28052,7 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRes
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28085,7 +28085,7 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRes
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28167,7 +28167,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -28250,7 +28250,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28283,7 +28283,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28316,7 +28316,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28349,7 +28349,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28382,7 +28382,7 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28464,7 +28464,7 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -28547,7 +28547,7 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28580,7 +28580,7 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28613,7 +28613,7 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28646,7 +28646,7 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28679,7 +28679,7 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28761,7 +28761,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -28844,7 +28844,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28877,7 +28877,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28910,7 +28910,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28943,7 +28943,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -28976,7 +28976,7 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -29058,7 +29058,7 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 				Cri *struct {
 					// Runtime Container runtime to use
 					Runtime *PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime,omitempty"`
-				} `json:"cri,omitempty"`
+				} `json:"cri"`
 
 				// Labels Labels to apply to worker nodes
 				Labels *map[string]string `json:"labels,omitempty"`
@@ -29141,7 +29141,7 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -29174,7 +29174,7 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -29207,7 +29207,7 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -29240,7 +29240,7 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
@@ -29273,7 +29273,7 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 			// Metadata Standard metadata fields
 			Metadata *struct {
 				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount,omitempty"`
+				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
 			} `json:"metadata,omitempty"`
