@@ -12,7 +12,6 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
-	"time"
 
 	"github.com/oapi-codegen/runtime"
 )
@@ -6470,54 +6469,11 @@ type ClientWithResponsesInterface interface {
 type AcceptInvitationResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// CreatedAt Timestamp when the user was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Email Email address of the user
-		Email string `json:"email"`
-
-		// Name Full name of the user
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the user was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the user
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON404 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamUser
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
+	JSON404      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -6539,58 +6495,12 @@ func (r AcceptInvitationResponse) StatusCode() int {
 type CreateAuthTokenWithCredResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ChallengeToken Token to be used when responding to the challenge
-		ChallengeToken string `json:"challenge_token"`
-
-		// ChallengeType Type of challenge (e.g., 'otp', 'sms')
-		ChallengeType string `json:"challenge_type"`
-
-		// Message Human-readable message about the challenge
-		Message string `json:"message"`
-	}
-	JSON201 *struct {
-		// ExpiresAt Token expiration timestamp
-		ExpiresAt time.Time `json:"expires_at"`
-
-		// Token Authentication token
-		Token string `json:"token"`
-
-		// UserUuid UUID of the authenticated user
-		UserUuid string `json:"user_uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON404 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamChallenge
+	JSON201      *IamUserToken
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
+	JSON404      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -6612,50 +6522,11 @@ func (r CreateAuthTokenWithCredResponse) StatusCode() int {
 type CreateAuthTokenWithChallengeResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ChallengeToken Token to be used when responding to the challenge
-		ChallengeToken string `json:"challenge_token"`
-
-		// ChallengeType Type of challenge (e.g., 'otp', 'sms')
-		ChallengeType string `json:"challenge_type"`
-
-		// Message Human-readable message about the challenge
-		Message string `json:"message"`
-	}
-	JSON201 *struct {
-		// ExpiresAt Token expiration timestamp
-		ExpiresAt time.Time `json:"expires_at"`
-
-		// Token Authentication token
-		Token string `json:"token"`
-
-		// UserUuid UUID of the authenticated user
-		UserUuid string `json:"user_uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamChallenge
+	JSON201      *IamUserToken
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -6677,97 +6548,10 @@ func (r CreateAuthTokenWithChallengeResponse) StatusCode() int {
 type ListDetailedGroupsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the group was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the group's purpose
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the group
-		Name string `json:"name"`
-
-		// Roles List of roles assigned to the group
-		Roles []struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		} `json:"roles"`
-
-		// ServiceUsers List of service user members in the group
-		ServiceUsers []struct {
-			// CreatedAt Timestamp when the member was added to the group
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the member
-			Email string `json:"email"`
-
-			// Name Name of the member
-			Name string `json:"name"`
-
-			// Uuid Unique identifier for the member
-			Uuid string `json:"uuid"`
-		} `json:"service_users"`
-
-		// UpdatedAt Timestamp when the group was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Users List of user members in the group
-		Users []struct {
-			// CreatedAt Timestamp when the member was added to the group
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the member
-			Email string `json:"email"`
-
-			// Name Name of the member
-			Name string `json:"name"`
-
-			// Uuid Unique identifier for the member
-			Uuid string `json:"uuid"`
-		} `json:"users"`
-
-		// Uuid Unique identifier for the group
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamGroupDetailed
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -6789,97 +6573,10 @@ func (r ListDetailedGroupsResponse) StatusCode() int {
 type GetDetailedGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// CreatedAt Timestamp when the group was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the group's purpose
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the group
-		Name string `json:"name"`
-
-		// Roles List of roles assigned to the group
-		Roles []struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		} `json:"roles"`
-
-		// ServiceUsers List of service user members in the group
-		ServiceUsers []struct {
-			// CreatedAt Timestamp when the member was added to the group
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the member
-			Email string `json:"email"`
-
-			// Name Name of the member
-			Name string `json:"name"`
-
-			// Uuid Unique identifier for the member
-			Uuid string `json:"uuid"`
-		} `json:"service_users"`
-
-		// UpdatedAt Timestamp when the group was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Users List of user members in the group
-		Users []struct {
-			// CreatedAt Timestamp when the member was added to the group
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the member
-			Email string `json:"email"`
-
-			// Name Name of the member
-			Name string `json:"name"`
-
-			// Uuid Unique identifier for the member
-			Uuid string `json:"uuid"`
-		} `json:"users"`
-
-		// Uuid Unique identifier for the group
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamGroupDetailed
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -6901,85 +6598,10 @@ func (r GetDetailedGroupResponse) StatusCode() int {
 type ListDetailedServiceUsersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the service user was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the service user
-		Description *string `json:"description,omitempty"`
-
-		// Groups Groups this service user belongs to
-		Groups []struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		} `json:"groups"`
-
-		// Name Name of the service user
-		Name string `json:"name"`
-
-		// Roles Roles assigned to this service user
-		Roles []struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		} `json:"roles"`
-
-		// UpdatedAt Timestamp when the service user was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the service user
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamServiceUserDetailed
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7001,85 +6623,10 @@ func (r ListDetailedServiceUsersResponse) StatusCode() int {
 type GetDetailedServiceUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// CreatedAt Timestamp when the service user was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the service user
-		Description *string `json:"description,omitempty"`
-
-		// Groups Groups this service user belongs to
-		Groups []struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		} `json:"groups"`
-
-		// Name Name of the service user
-		Name string `json:"name"`
-
-		// Roles Roles assigned to this service user
-		Roles []struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		} `json:"roles"`
-
-		// UpdatedAt Timestamp when the service user was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the service user
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamServiceUserDetailed
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7101,112 +6648,10 @@ func (r GetDetailedServiceUserResponse) StatusCode() int {
 type ListDetailedWorkspaceUsersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the user was added to the workspace
-		CreatedAt time.Time `json:"created_at"`
-
-		// Groups Groups this user belongs to in the workspace
-		Groups []struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		} `json:"groups"`
-
-		// Roles Roles assigned to this user in the workspace
-		Roles []struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		} `json:"roles"`
-
-		// UpdatedAt Timestamp when the user's workspace information was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// User The user
-		User struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		} `json:"user"`
-
-		// Workspace The workspace the user belongs to
-		Workspace struct {
-			// CreatedAt Timestamp when the workspace was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the workspace
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the workspace
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the workspace was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the workspace
-			Uuid string `json:"uuid"`
-		} `json:"workspace"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamUserWorkspaceDetailedUser
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7228,112 +6673,10 @@ func (r ListDetailedWorkspaceUsersResponse) StatusCode() int {
 type GetDetailedWorkspaceUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// CreatedAt Timestamp when the user was added to the workspace
-		CreatedAt time.Time `json:"created_at"`
-
-		// Groups Groups this user belongs to in the workspace
-		Groups []struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		} `json:"groups"`
-
-		// Roles Roles assigned to this user in the workspace
-		Roles []struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		} `json:"roles"`
-
-		// UpdatedAt Timestamp when the user's workspace information was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// User The user
-		User struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		} `json:"user"`
-
-		// Workspace The workspace the user belongs to
-		Workspace struct {
-			// CreatedAt Timestamp when the workspace was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the workspace
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the workspace
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the workspace was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the workspace
-			Uuid string `json:"uuid"`
-		} `json:"workspace"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamUserWorkspaceDetailedUser
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7355,40 +6698,8 @@ func (r GetDetailedWorkspaceUserResponse) StatusCode() int {
 type GetIamV1ApiV1HealthzResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		Caches []struct {
-			Default struct {
-				Ok bool `json:"ok"`
-			} `json:"default"`
-		} `json:"caches"`
-		Databases []struct {
-			Default struct {
-				Ok bool `json:"ok"`
-			} `json:"default"`
-		} `json:"databases"`
-		Storage struct {
-			Default struct {
-				Ok bool `json:"ok"`
-			} `json:"default"`
-		} `json:"storage"`
-	}
-	JSON500 *struct {
-		Caches []struct {
-			Default struct {
-				Ok bool `json:"ok"`
-			} `json:"default"`
-		} `json:"caches"`
-		Databases []struct {
-			Default struct {
-				Ok bool `json:"ok"`
-			} `json:"default"`
-		} `json:"databases"`
-		Storage struct {
-			Default struct {
-				Ok bool `json:"ok"`
-			} `json:"default"`
-		} `json:"storage"`
-	}
+	JSON200      *IamHealthzResponse
+	JSON500      *IamHealthzResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -7410,49 +6721,10 @@ func (r GetIamV1ApiV1HealthzResponse) StatusCode() int {
 type GetThirdPartyAccessTokenResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// AccessToken Access token for the third-party service
-		AccessToken string `json:"access_token"`
-
-		// ExpiresIn Number of seconds until the token expires
-		ExpiresIn int `json:"expires_in"`
-
-		// RefreshToken Refresh token for the third-party service
-		RefreshToken *string `json:"refresh_token,omitempty"`
-
-		// Scope Scope of access granted by the token
-		Scope *string `json:"scope,omitempty"`
-
-		// ThirdPartyUserId User ID in the third-party service
-		ThirdPartyUserId *string `json:"third_party_user_id,omitempty"`
-
-		// TokenType Type of token, typically 'Bearer'
-		TokenType string `json:"token_type"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamThirdPartyTokenResponse
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7474,38 +6746,10 @@ func (r GetThirdPartyAccessTokenResponse) StatusCode() int {
 type ChangePasswordResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON404 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
+	JSON404      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7527,30 +6771,9 @@ func (r ChangePasswordResponse) StatusCode() int {
 type ResetPasswordResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7572,46 +6795,10 @@ func (r ResetPasswordResponse) StatusCode() int {
 type GetUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// CreatedAt Timestamp when the user was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Email Email address of the user
-		Email string `json:"email"`
-
-		// Name Full name of the user
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the user was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the user
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamUser
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7633,43 +6820,10 @@ func (r GetUserResponse) StatusCode() int {
 type BulkCanUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// Actions List of actions that were checked
-		Actions []string `json:"actions"`
-
-		// Allowed Whether the user is allowed to perform the actions on the specified service and path
-		Allowed bool `json:"allowed"`
-
-		// Path The path within the service that was checked
-		Path string `json:"path"`
-
-		// Service The service name that was checked
-		Service string `json:"service"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamUserBulkCanResponseItem
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7691,30 +6845,9 @@ func (r BulkCanUserResponse) StatusCode() int {
 type DisableUserOtpResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7736,34 +6869,10 @@ func (r DisableUserOtpResponse) StatusCode() int {
 type GetUserOtpStatusResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// Enabled Whether OTP is enabled for the user
-		Enabled bool `json:"enabled"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamOtpEnabled
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7785,30 +6894,9 @@ func (r GetUserOtpStatusResponse) StatusCode() int {
 type EnableUserOtpResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7830,64 +6918,10 @@ func (r EnableUserOtpResponse) StatusCode() int {
 type ListUserPublicKeysResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the public key was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Key The public key content in SSH format
-		Key string `json:"key"`
-
-		// Title Title or name for the public key
-		Title string `json:"title"`
-
-		// UpdatedAt Timestamp when the public key was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// User The user this public key belongs to
-		User struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		} `json:"user"`
-
-		// Uuid Unique identifier for the public key
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamUserPublicKey
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7909,72 +6943,11 @@ func (r ListUserPublicKeysResponse) StatusCode() int {
 type CreateUserPublicKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// CreatedAt Timestamp when the public key was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Key The public key content in SSH format
-		Key string `json:"key"`
-
-		// Title Title or name for the public key
-		Title string `json:"title"`
-
-		// UpdatedAt Timestamp when the public key was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// User The user this public key belongs to
-		User struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		} `json:"user"`
-
-		// Uuid Unique identifier for the public key
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON409 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamUserPublicKey
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
+	JSON409      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -7996,30 +6969,9 @@ func (r CreateUserPublicKeyResponse) StatusCode() int {
 type DeleteUserPublicKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8041,40 +6993,10 @@ func (r DeleteUserPublicKeyResponse) StatusCode() int {
 type ListUserTokensResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// ExpiresAt Token expiration timestamp
-		ExpiresAt time.Time `json:"expires_at"`
-
-		// Token Authentication token
-		Token string `json:"token"`
-
-		// UserUuid UUID of the authenticated user
-		UserUuid string `json:"user_uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamUserToken
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8096,40 +7018,10 @@ func (r ListUserTokensResponse) StatusCode() int {
 type CreateUserTokenResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// ExpiresAt Token expiration timestamp
-		ExpiresAt time.Time `json:"expires_at"`
-
-		// Token Authentication token
-		Token string `json:"token"`
-
-		// UserUuid UUID of the authenticated user
-		UserUuid string `json:"user_uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamUserToken
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8151,30 +7043,9 @@ func (r CreateUserTokenResponse) StatusCode() int {
 type DeleteUserTokenResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8196,30 +7067,9 @@ func (r DeleteUserTokenResponse) StatusCode() int {
 type ListUserWorkspacesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8241,49 +7091,10 @@ func (r ListUserWorkspacesResponse) StatusCode() int {
 type ListBackupKeysResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the backup key was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Key The SSH key content in SSH format
-		Key string `json:"key"`
-
-		// Title Title or name for the backup key
-		Title string `json:"title"`
-
-		// UpdatedAt Timestamp when the backup key was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the backup key
-		Uuid string `json:"uuid"`
-
-		// Workspace The workspace this backup key belongs to
-		Workspace string `json:"workspace"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamBackupKey
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8305,57 +7116,11 @@ func (r ListBackupKeysResponse) StatusCode() int {
 type CreateBackupKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// CreatedAt Timestamp when the backup key was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Key The SSH key content in SSH format
-		Key string `json:"key"`
-
-		// Title Title or name for the backup key
-		Title string `json:"title"`
-
-		// UpdatedAt Timestamp when the backup key was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the backup key
-		Uuid string `json:"uuid"`
-
-		// Workspace The workspace this backup key belongs to
-		Workspace string `json:"workspace"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON409 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamBackupKey
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
+	JSON409      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8377,30 +7142,9 @@ func (r CreateBackupKeyResponse) StatusCode() int {
 type DeleteBackupKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8422,46 +7166,10 @@ func (r DeleteBackupKeyResponse) StatusCode() int {
 type ListGroupsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the group was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Optional description of the group's purpose
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the group
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the group was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the group
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamGroup
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8483,46 +7191,10 @@ func (r ListGroupsResponse) StatusCode() int {
 type CreateGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// CreatedAt Timestamp when the group was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Optional description of the group's purpose
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the group
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the group was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the group
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamGroup
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8544,30 +7216,9 @@ func (r CreateGroupResponse) StatusCode() int {
 type DeleteGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8589,46 +7240,10 @@ func (r DeleteGroupResponse) StatusCode() int {
 type GetGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// CreatedAt Timestamp when the group was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Optional description of the group's purpose
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the group
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the group was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the group
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamGroup
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8650,46 +7265,10 @@ func (r GetGroupResponse) StatusCode() int {
 type UpdateGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// CreatedAt Timestamp when the group was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Optional description of the group's purpose
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the group
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the group was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the group
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamGroup
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8711,82 +7290,10 @@ func (r UpdateGroupResponse) StatusCode() int {
 type BulkAddRolesToGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *[]struct {
-		// CreatedAt Timestamp when the role binding was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Group The group the role is bound to
-		Group struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		} `json:"group"`
-
-		// Items Optional items associated with this role binding
-		Items interface{} `json:"items,omitempty"`
-
-		// Role The role that is bound
-		Role struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		} `json:"role"`
-
-		// UpdatedAt Timestamp when the role binding was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the role binding
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *[]IamRoleBinding
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8808,70 +7315,10 @@ func (r BulkAddRolesToGroupResponse) StatusCode() int {
 type BulkAddServiceUsersToGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *[]struct {
-		// CreatedAt Timestamp when the service user was added to the group
-		CreatedAt time.Time `json:"created_at"`
-
-		// Group The group the service user was added to
-		Group struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		} `json:"group"`
-
-		// ServiceUser The service user that was added to the group
-		ServiceUser struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		} `json:"service_user"`
-
-		// Uuid Unique identifier for the service-user-group association
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *[]IamServiceUserGroupResponse
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8893,73 +7340,10 @@ func (r BulkAddServiceUsersToGroupResponse) StatusCode() int {
 type BulkAddUsersToGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *[]struct {
-		// CreatedAt Timestamp when the user was added to the group
-		CreatedAt time.Time `json:"created_at"`
-
-		// Group The group the user was added to
-		Group struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		} `json:"group"`
-
-		// User The user that was added to the group
-		User struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		} `json:"user"`
-
-		// Uuid Unique identifier for the user-group association
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *[]IamUserGroupResponse
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -8981,49 +7365,10 @@ func (r BulkAddUsersToGroupResponse) StatusCode() int {
 type ListGroupRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the role was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the role's purpose and permissions
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the role
-		Name string `json:"name"`
-
-		// Service Service this role applies to
-		Service string `json:"service"`
-
-		// UpdatedAt Timestamp when the role was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the role
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamRole
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9045,43 +7390,10 @@ func (r ListGroupRolesResponse) StatusCode() int {
 type ListGroupServiceUsersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the service user was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Name Name of the service user
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the service user was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the service user
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamServiceUser
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9103,30 +7415,9 @@ func (r ListGroupServiceUsersResponse) StatusCode() int {
 type RemoveServiceUserFromGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9148,70 +7439,10 @@ func (r RemoveServiceUserFromGroupResponse) StatusCode() int {
 type AddServiceUserToGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// CreatedAt Timestamp when the service user was added to the group
-		CreatedAt time.Time `json:"created_at"`
-
-		// Group The group the service user was added to
-		Group struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		} `json:"group"`
-
-		// ServiceUser The service user that was added to the group
-		ServiceUser struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		} `json:"service_user"`
-
-		// Uuid Unique identifier for the service-user-group association
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamServiceUserGroupResponse
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9233,46 +7464,10 @@ func (r AddServiceUserToGroupResponse) StatusCode() int {
 type ListGroupUsersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the user was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Email Email address of the user
-		Email string `json:"email"`
-
-		// Name Full name of the user
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the user was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the user
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamUser
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9294,30 +7489,9 @@ func (r ListGroupUsersResponse) StatusCode() int {
 type RemoveUserFromGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9339,73 +7513,10 @@ func (r RemoveUserFromGroupResponse) StatusCode() int {
 type AddUserToGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// CreatedAt Timestamp when the user was added to the group
-		CreatedAt time.Time `json:"created_at"`
-
-		// Group The group the user was added to
-		Group struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		} `json:"group"`
-
-		// User The user that was added to the group
-		User struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		} `json:"user"`
-
-		// Uuid Unique identifier for the user-group association
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamUserGroupResponse
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9427,70 +7538,10 @@ func (r AddUserToGroupResponse) StatusCode() int {
 type InviteUsersToWorkspaceResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// Created List of users that were created
-		Created []struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		} `json:"created"`
-
-		// Existing List of users that already existed
-		Existing []struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		} `json:"existing"`
-
-		// Invited List of email addresses that were invited
-		Invited []string `json:"invited"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamUserCreated
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9512,64 +7563,10 @@ func (r InviteUsersToWorkspaceResponse) StatusCode() int {
 type ListServiceUserKiseKeysResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the KISE key was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Key The KISE key content
-		Key string `json:"key"`
-
-		// ServiceUser The service user this KISE key belongs to
-		ServiceUser struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		} `json:"service_user"`
-
-		// Title Title or name for the KISE key
-		Title string `json:"title"`
-
-		// UpdatedAt Timestamp when the KISE key was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the KISE key
-		Uuid string `json:"uuid"`
-
-		// Workspace The workspace this KISE key belongs to
-		Workspace string `json:"workspace"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamServiceUserKiseKey
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9591,49 +7588,10 @@ func (r ListServiceUserKiseKeysResponse) StatusCode() int {
 type ListRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the role was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the role's purpose and permissions
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the role
-		Name string `json:"name"`
-
-		// Service Service this role applies to
-		Service string `json:"service"`
-
-		// UpdatedAt Timestamp when the role was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the role
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamRole
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9655,30 +7613,9 @@ func (r ListRolesResponse) StatusCode() int {
 type CreateRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9700,30 +7637,9 @@ func (r CreateRoleResponse) StatusCode() int {
 type DeleteRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9745,30 +7661,9 @@ func (r DeleteRoleResponse) StatusCode() int {
 type GetRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9790,88 +7685,10 @@ func (r GetRoleResponse) StatusCode() int {
 type BulkAddRulesToRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *[]struct {
-		// CreatedAt Timestamp when the role-rule binding was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Role The role that is bound
-		Role struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		} `json:"role"`
-
-		// Rule The rule that is bound
-		Rule struct {
-			// Action Action this rule controls
-			Action string `json:"action"`
-
-			// CreatedAt Timestamp when the rule was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the rule's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the rule
-			Name string `json:"name"`
-
-			// Resource Resource this rule applies to
-			Resource string `json:"resource"`
-
-			// Service Service this rule applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the rule
-			Uuid string `json:"uuid"`
-		} `json:"rule"`
-
-		// UpdatedAt Timestamp when the role-rule binding was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the role-rule binding
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *[]IamRoleRule
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9893,82 +7710,10 @@ func (r BulkAddRulesToRoleResponse) StatusCode() int {
 type BulkAddServiceUsersToRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *[]struct {
-		// CreatedAt Timestamp when the role binding was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Group The group the role is bound to
-		Group struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		} `json:"group"`
-
-		// Items Optional items associated with this role binding
-		Items interface{} `json:"items,omitempty"`
-
-		// Role The role that is bound
-		Role struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		} `json:"role"`
-
-		// UpdatedAt Timestamp when the role binding was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the role binding
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *[]IamRoleBinding
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -9990,82 +7735,10 @@ func (r BulkAddServiceUsersToRoleResponse) StatusCode() int {
 type BulkAddUsersToRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *[]struct {
-		// CreatedAt Timestamp when the role binding was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Group The group the role is bound to
-		Group struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		} `json:"group"`
-
-		// Items Optional items associated with this role binding
-		Items interface{} `json:"items,omitempty"`
-
-		// Role The role that is bound
-		Role struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		} `json:"role"`
-
-		// UpdatedAt Timestamp when the role binding was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the role binding
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *[]IamRoleBinding
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10087,30 +7760,9 @@ func (r BulkAddUsersToRoleResponse) StatusCode() int {
 type RemoveRoleFromGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10132,55 +7784,10 @@ func (r RemoveRoleFromGroupResponse) StatusCode() int {
 type ListRoleRulesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// Action Action this rule controls
-		Action string `json:"action"`
-
-		// CreatedAt Timestamp when the rule was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the rule's purpose
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the rule
-		Name string `json:"name"`
-
-		// Resource Resource this rule applies to
-		Resource string `json:"resource"`
-
-		// Service Service this rule applies to
-		Service string `json:"service"`
-
-		// UpdatedAt Timestamp when the rule was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the rule
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamRule
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10202,30 +7809,9 @@ func (r ListRoleRulesResponse) StatusCode() int {
 type RemoveRuleFromRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10247,55 +7833,10 @@ func (r RemoveRuleFromRoleResponse) StatusCode() int {
 type AddRuleToRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// Action Action this rule controls
-		Action string `json:"action"`
-
-		// CreatedAt Timestamp when the rule was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the rule's purpose
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the rule
-		Name string `json:"name"`
-
-		// Resource Resource this rule applies to
-		Resource string `json:"resource"`
-
-		// Service Service this rule applies to
-		Service string `json:"service"`
-
-		// UpdatedAt Timestamp when the rule was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the rule
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamRule
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10317,49 +7858,10 @@ func (r AddRuleToRoleResponse) StatusCode() int {
 type ListServiceUsersRoleBindingsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// Items Optional items associated with this role binding
-		Items interface{} `json:"items,omitempty"`
-
-		// ServiceUser The service user
-		ServiceUser struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		} `json:"service_user"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamServiceUserWithRoleItems
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10381,30 +7883,9 @@ func (r ListServiceUsersRoleBindingsResponse) StatusCode() int {
 type RemoveRoleFromServiceUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10426,49 +7907,10 @@ func (r RemoveRoleFromServiceUserResponse) StatusCode() int {
 type GetServiceUserRoleBindingResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// Items Optional items associated with this role binding
-		Items interface{} `json:"items,omitempty"`
-
-		// ServiceUser The service user
-		ServiceUser struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		} `json:"service_user"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamServiceUserWithRoleItems
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10490,82 +7932,10 @@ func (r GetServiceUserRoleBindingResponse) StatusCode() int {
 type AssignRoleToServiceUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// CreatedAt Timestamp when the binding was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Items Optional items associated with this role binding
-		Items interface{} `json:"items,omitempty"`
-
-		// Role The role that was assigned to the service user
-		Role struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		} `json:"role"`
-
-		// ServiceUser The service user that was assigned the role
-		ServiceUser struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		} `json:"service_user"`
-
-		// UpdatedAt Timestamp when the binding was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the service-user-role binding
-		Uuid string `json:"uuid"`
-
-		// Workspace The workspace in which the binding exists
-		Workspace string `json:"workspace"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamServiceUserRoleBindingDetailed
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10587,52 +7957,10 @@ func (r AssignRoleToServiceUserResponse) StatusCode() int {
 type ListUsersRoleBindingsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// Items Optional items associated with this role binding
-		Items interface{} `json:"items,omitempty"`
-
-		// User The user
-		User struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		} `json:"user"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamUserWithRoleItems
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10654,30 +7982,9 @@ func (r ListUsersRoleBindingsResponse) StatusCode() int {
 type RemoveRoleFromUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10699,52 +8006,10 @@ func (r RemoveRoleFromUserResponse) StatusCode() int {
 type GetUserRoleBindingResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// Items Optional items associated with this role binding
-		Items interface{} `json:"items,omitempty"`
-
-		// User The user
-		User struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		} `json:"user"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamUserWithRoleItems
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10766,85 +8031,10 @@ func (r GetUserRoleBindingResponse) StatusCode() int {
 type AssignRoleToUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// CreatedAt Timestamp when the binding was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Items Optional items associated with this role binding
-		Items interface{} `json:"items,omitempty"`
-
-		// Role The role that was assigned to the user
-		Role struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		} `json:"role"`
-
-		// UpdatedAt Timestamp when the binding was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// User The user that was assigned the role
-		User struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		} `json:"user"`
-
-		// Uuid Unique identifier for the user-role binding
-		Uuid string `json:"uuid"`
-
-		// Workspace The workspace in which the binding exists
-		Workspace string `json:"workspace"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamUserRoleBindingDetailed
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10866,55 +8056,10 @@ func (r AssignRoleToUserResponse) StatusCode() int {
 type ListRulesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// Action Action this rule controls
-		Action string `json:"action"`
-
-		// CreatedAt Timestamp when the rule was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the rule's purpose
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the rule
-		Name string `json:"name"`
-
-		// Resource Resource this rule applies to
-		Resource string `json:"resource"`
-
-		// Service Service this rule applies to
-		Service string `json:"service"`
-
-		// UpdatedAt Timestamp when the rule was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the rule
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamRule
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -10936,63 +8081,11 @@ func (r ListRulesResponse) StatusCode() int {
 type CreateRuleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// Action Action this rule controls
-		Action string `json:"action"`
-
-		// CreatedAt Timestamp when the rule was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the rule's purpose
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the rule
-		Name string `json:"name"`
-
-		// Resource Resource this rule applies to
-		Resource string `json:"resource"`
-
-		// Service Service this rule applies to
-		Service string `json:"service"`
-
-		// UpdatedAt Timestamp when the rule was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the rule
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON409 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamRule
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
+	JSON409      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11014,30 +8107,9 @@ func (r CreateRuleResponse) StatusCode() int {
 type DeleteRuleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11059,55 +8131,10 @@ func (r DeleteRuleResponse) StatusCode() int {
 type GetRuleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// Action Action this rule controls
-		Action string `json:"action"`
-
-		// CreatedAt Timestamp when the rule was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the rule's purpose
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the rule
-		Name string `json:"name"`
-
-		// Resource Resource this rule applies to
-		Resource string `json:"resource"`
-
-		// Service Service this rule applies to
-		Service string `json:"service"`
-
-		// UpdatedAt Timestamp when the rule was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the rule
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamRule
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11129,55 +8156,10 @@ func (r GetRuleResponse) StatusCode() int {
 type UpdateRuleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// Action Action this rule controls
-		Action string `json:"action"`
-
-		// CreatedAt Timestamp when the rule was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the rule's purpose
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the rule
-		Name string `json:"name"`
-
-		// Resource Resource this rule applies to
-		Resource string `json:"resource"`
-
-		// Service Service this rule applies to
-		Service string `json:"service"`
-
-		// UpdatedAt Timestamp when the rule was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the rule
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamRule
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11199,49 +8181,10 @@ func (r UpdateRuleResponse) StatusCode() int {
 type ListRuleRolesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the role was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the role's purpose and permissions
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the role
-		Name string `json:"name"`
-
-		// Service Service this role applies to
-		Service string `json:"service"`
-
-		// UpdatedAt Timestamp when the role was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the role
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamRole
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11263,43 +8206,10 @@ func (r ListRuleRolesResponse) StatusCode() int {
 type ListServiceUsersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the service user was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Name Name of the service user
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the service user was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the service user
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamServiceUser
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11321,43 +8231,10 @@ func (r ListServiceUsersResponse) StatusCode() int {
 type CreateServiceUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// CreatedAt Timestamp when the service user was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Name Name of the service user
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the service user was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the service user
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamServiceUser
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11379,30 +8256,9 @@ func (r CreateServiceUserResponse) StatusCode() int {
 type DeleteServiceUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11424,43 +8280,10 @@ func (r DeleteServiceUserResponse) StatusCode() int {
 type UpdateServiceUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// CreatedAt Timestamp when the service user was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Name Name of the service user
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the service user was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the service user
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamServiceUser
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11482,64 +8305,10 @@ func (r UpdateServiceUserResponse) StatusCode() int {
 type CreateServiceUserKiseKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// CreatedAt Timestamp when the KISE key was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Key The KISE key content
-		Key string `json:"key"`
-
-		// ServiceUser The service user this KISE key belongs to
-		ServiceUser struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		} `json:"service_user"`
-
-		// Title Title or name for the KISE key
-		Title string `json:"title"`
-
-		// UpdatedAt Timestamp when the KISE key was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the KISE key
-		Uuid string `json:"uuid"`
-
-		// Workspace The workspace this KISE key belongs to
-		Workspace string `json:"workspace"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamServiceUserKiseKey
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11561,30 +8330,9 @@ func (r CreateServiceUserKiseKeyResponse) StatusCode() int {
 type DeleteServiceUserKiseKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11606,61 +8354,10 @@ func (r DeleteServiceUserKiseKeyResponse) StatusCode() int {
 type ListServiceUserPublicKeysResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the public key was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Key The public key content in SSH format
-		Key string `json:"key"`
-
-		// ServiceUser The service user this public key belongs to
-		ServiceUser struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		} `json:"service_user"`
-
-		// Title Title or name for the public key
-		Title string `json:"title"`
-
-		// UpdatedAt Timestamp when the public key was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the public key
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamServiceUserPublicKey
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11682,61 +8379,10 @@ func (r ListServiceUserPublicKeysResponse) StatusCode() int {
 type CreateServiceUserPublicKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// CreatedAt Timestamp when the public key was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Key The public key content in SSH format
-		Key string `json:"key"`
-
-		// ServiceUser The service user this public key belongs to
-		ServiceUser struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		} `json:"service_user"`
-
-		// Title Title or name for the public key
-		Title string `json:"title"`
-
-		// UpdatedAt Timestamp when the public key was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the public key
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamServiceUserPublicKey
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11758,30 +8404,9 @@ func (r CreateServiceUserPublicKeyResponse) StatusCode() int {
 type DeleteServiceUserPublicKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11803,58 +8428,10 @@ func (r DeleteServiceUserPublicKeyResponse) StatusCode() int {
 type ListServiceUserTokensResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the token was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// ExpiresAt Timestamp when the token will expire
-		ExpiresAt *time.Time `json:"expires_at,omitempty"`
-
-		// Name Name of the token
-		Name string `json:"name"`
-
-		// ServiceUser The service user this token belongs to
-		ServiceUser struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		} `json:"service_user"`
-
-		// Uuid Unique identifier for the token
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamServiceUserToken
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11876,61 +8453,10 @@ func (r ListServiceUserTokensResponse) StatusCode() int {
 type CreateServiceUserTokenResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// CreatedAt Timestamp when the token was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// ExpiresAt Timestamp when the token will expire
-		ExpiresAt *time.Time `json:"expires_at,omitempty"`
-
-		// Name Name of the token
-		Name string `json:"name"`
-
-		// Secret The secret value of the token
-		Secret string `json:"secret"`
-
-		// ServiceUser The service user this token belongs to
-		ServiceUser struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		} `json:"service_user"`
-
-		// Uuid Unique identifier for the token
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamServiceUserTokenWithSecret
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11952,30 +8478,9 @@ func (r CreateServiceUserTokenResponse) StatusCode() int {
 type DeleteServiceUserTokenResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -11997,43 +8502,10 @@ func (r DeleteServiceUserTokenResponse) StatusCode() int {
 type ListServicesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the service was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Description Description of the service
-		Description *string `json:"description,omitempty"`
-
-		// Name Name of the service
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the service was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamService
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -12055,37 +8527,10 @@ func (r ListServicesResponse) StatusCode() int {
 type BulkRefreshThirdPartyTokensResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// FailedTokens Map of token identifiers to error messages for tokens that failed to refresh
-		FailedTokens *map[string]string `json:"failed_tokens,omitempty"`
-
-		// RefreshedTokens Map of token identifiers to refreshed tokens
-		RefreshedTokens map[string]string `json:"refreshed_tokens"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamBulkRefreshTokenResponse
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -12107,46 +8552,10 @@ func (r BulkRefreshThirdPartyTokensResponse) StatusCode() int {
 type ListWorkspaceUsersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the user was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Email Email address of the user
-		Email string `json:"email"`
-
-		// Name Full name of the user
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the user was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the user
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamUser
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -12168,30 +8577,9 @@ func (r ListWorkspaceUsersResponse) StatusCode() int {
 type RemoveUserFromWorkspaceResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -12213,46 +8601,10 @@ func (r RemoveUserFromWorkspaceResponse) StatusCode() int {
 type AllowUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// CreatedAt Timestamp when the user was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Email Email address of the user
-		Email string `json:"email"`
-
-		// Name Full name of the user
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the user was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the user
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamUser
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -12274,67 +8626,10 @@ func (r AllowUserResponse) StatusCode() int {
 type ListUserKiseKeysResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]struct {
-		// CreatedAt Timestamp when the KISE key was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Key The KISE key content
-		Key string `json:"key"`
-
-		// Title Title or name for the KISE key
-		Title string `json:"title"`
-
-		// UpdatedAt Timestamp when the KISE key was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// User The user this KISE key belongs to
-		User struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		} `json:"user"`
-
-		// Uuid Unique identifier for the KISE key
-		Uuid string `json:"uuid"`
-
-		// Workspace The workspace this KISE key belongs to
-		Workspace string `json:"workspace"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *[]IamUserKiseKey
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -12356,67 +8651,10 @@ func (r ListUserKiseKeysResponse) StatusCode() int {
 type CreateUserKiseKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// CreatedAt Timestamp when the KISE key was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Key The KISE key content
-		Key string `json:"key"`
-
-		// Title Title or name for the KISE key
-		Title string `json:"title"`
-
-		// UpdatedAt Timestamp when the KISE key was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// User The user this KISE key belongs to
-		User struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		} `json:"user"`
-
-		// Uuid Unique identifier for the KISE key
-		Uuid string `json:"uuid"`
-
-		// Workspace The workspace this KISE key belongs to
-		Workspace string `json:"workspace"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON201      *IamUserKiseKey
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -12438,30 +8676,9 @@ func (r CreateUserKiseKeyResponse) StatusCode() int {
 type DeleteUserKiseKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON400      *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -12483,46 +8700,10 @@ func (r DeleteUserKiseKeyResponse) StatusCode() int {
 type SuspendUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// CreatedAt Timestamp when the user was created
-		CreatedAt time.Time `json:"created_at"`
-
-		// Email Email address of the user
-		Email string `json:"email"`
-
-		// Name Full name of the user
-		Name string `json:"name"`
-
-		// UpdatedAt Timestamp when the user was last updated
-		UpdatedAt time.Time `json:"updated_at"`
-
-		// Uuid Unique identifier for the user
-		Uuid string `json:"uuid"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamUser
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -12544,46 +8725,10 @@ func (r SuspendUserResponse) StatusCode() int {
 type GetOpenIdTokenResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// AccessToken OAuth 2.0 access token
-		AccessToken string `json:"access_token"`
-
-		// ExpiresIn Number of seconds until the token expires
-		ExpiresIn int `json:"expires_in"`
-
-		// IdToken OpenID Connect ID token
-		IdToken *string `json:"id_token,omitempty"`
-
-		// RefreshToken OAuth 2.0 refresh token
-		RefreshToken *string `json:"refresh_token,omitempty"`
-
-		// TokenType Type of token, typically 'Bearer'
-		TokenType string `json:"token_type"`
-	}
-	JSON400 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON401 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
-	JSON403 *struct {
-		Code    int `json:"code"`
-		Message struct {
-			Detail string `json:"detail"`
-		} `json:"message"`
-		Reason string `json:"reason"`
-		Status string `json:"status"`
-	}
+	JSON200      *IamOpenIdTokenResponse
+	JSON400      *IamError
+	JSON401      *IamError
+	JSON403      *IamError
 }
 
 // Status returns HTTPResponse.Status
@@ -13733,78 +9878,35 @@ func ParseAcceptInvitationResponse(rsp *http.Response) (*AcceptInvitationRespons
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		}
+		var dest IamUser
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -13830,88 +9932,42 @@ func ParseCreateAuthTokenWithCredResponse(rsp *http.Response) (*CreateAuthTokenW
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ChallengeToken Token to be used when responding to the challenge
-			ChallengeToken string `json:"challenge_token"`
-
-			// ChallengeType Type of challenge (e.g., 'otp', 'sms')
-			ChallengeType string `json:"challenge_type"`
-
-			// Message Human-readable message about the challenge
-			Message string `json:"message"`
-		}
+		var dest IamChallenge
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// ExpiresAt Token expiration timestamp
-			ExpiresAt time.Time `json:"expires_at"`
-
-			// Token Authentication token
-			Token string `json:"token"`
-
-			// UserUuid UUID of the authenticated user
-			UserUuid string `json:"user_uuid"`
-		}
+		var dest IamUserToken
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -13937,74 +9993,35 @@ func ParseCreateAuthTokenWithChallengeResponse(rsp *http.Response) (*CreateAuthT
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ChallengeToken Token to be used when responding to the challenge
-			ChallengeToken string `json:"challenge_token"`
-
-			// ChallengeType Type of challenge (e.g., 'otp', 'sms')
-			ChallengeType string `json:"challenge_type"`
-
-			// Message Human-readable message about the challenge
-			Message string `json:"message"`
-		}
+		var dest IamChallenge
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// ExpiresAt Token expiration timestamp
-			ExpiresAt time.Time `json:"expires_at"`
-
-			// Token Authentication token
-			Token string `json:"token"`
-
-			// UserUuid UUID of the authenticated user
-			UserUuid string `json:"user_uuid"`
-		}
+		var dest IamUserToken
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -14030,115 +10047,28 @@ func ParseListDetailedGroupsResponse(rsp *http.Response) (*ListDetailedGroupsRes
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// Roles List of roles assigned to the group
-			Roles []struct {
-				// CreatedAt Timestamp when the role was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the role's purpose and permissions
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the role
-				Name string `json:"name"`
-
-				// Service Service this role applies to
-				Service string `json:"service"`
-
-				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the role
-				Uuid string `json:"uuid"`
-			} `json:"roles"`
-
-			// ServiceUsers List of service user members in the group
-			ServiceUsers []struct {
-				// CreatedAt Timestamp when the member was added to the group
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the member
-				Email string `json:"email"`
-
-				// Name Name of the member
-				Name string `json:"name"`
-
-				// Uuid Unique identifier for the member
-				Uuid string `json:"uuid"`
-			} `json:"service_users"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Users List of user members in the group
-			Users []struct {
-				// CreatedAt Timestamp when the member was added to the group
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the member
-				Email string `json:"email"`
-
-				// Name Name of the member
-				Name string `json:"name"`
-
-				// Uuid Unique identifier for the member
-				Uuid string `json:"uuid"`
-			} `json:"users"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamGroupDetailed
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -14164,115 +10094,28 @@ func ParseGetDetailedGroupResponse(rsp *http.Response) (*GetDetailedGroupRespons
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// Roles List of roles assigned to the group
-			Roles []struct {
-				// CreatedAt Timestamp when the role was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the role's purpose and permissions
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the role
-				Name string `json:"name"`
-
-				// Service Service this role applies to
-				Service string `json:"service"`
-
-				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the role
-				Uuid string `json:"uuid"`
-			} `json:"roles"`
-
-			// ServiceUsers List of service user members in the group
-			ServiceUsers []struct {
-				// CreatedAt Timestamp when the member was added to the group
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the member
-				Email string `json:"email"`
-
-				// Name Name of the member
-				Name string `json:"name"`
-
-				// Uuid Unique identifier for the member
-				Uuid string `json:"uuid"`
-			} `json:"service_users"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Users List of user members in the group
-			Users []struct {
-				// CreatedAt Timestamp when the member was added to the group
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the member
-				Email string `json:"email"`
-
-				// Name Name of the member
-				Name string `json:"name"`
-
-				// Uuid Unique identifier for the member
-				Uuid string `json:"uuid"`
-			} `json:"users"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		}
+		var dest IamGroupDetailed
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -14298,103 +10141,28 @@ func ParseListDetailedServiceUsersResponse(rsp *http.Response) (*ListDetailedSer
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the service user
-			Description *string `json:"description,omitempty"`
-
-			// Groups Groups this service user belongs to
-			Groups []struct {
-				// CreatedAt Timestamp when the group was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Optional description of the group's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the group
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the group
-				Uuid string `json:"uuid"`
-			} `json:"groups"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// Roles Roles assigned to this service user
-			Roles []struct {
-				// CreatedAt Timestamp when the role was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the role's purpose and permissions
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the role
-				Name string `json:"name"`
-
-				// Service Service this role applies to
-				Service string `json:"service"`
-
-				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the role
-				Uuid string `json:"uuid"`
-			} `json:"roles"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamServiceUserDetailed
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -14420,103 +10188,28 @@ func ParseGetDetailedServiceUserResponse(rsp *http.Response) (*GetDetailedServic
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the service user
-			Description *string `json:"description,omitempty"`
-
-			// Groups Groups this service user belongs to
-			Groups []struct {
-				// CreatedAt Timestamp when the group was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Optional description of the group's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the group
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the group
-				Uuid string `json:"uuid"`
-			} `json:"groups"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// Roles Roles assigned to this service user
-			Roles []struct {
-				// CreatedAt Timestamp when the role was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the role's purpose and permissions
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the role
-				Name string `json:"name"`
-
-				// Service Service this role applies to
-				Service string `json:"service"`
-
-				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the role
-				Uuid string `json:"uuid"`
-			} `json:"roles"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		}
+		var dest IamServiceUserDetailed
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -14542,130 +10235,28 @@ func ParseListDetailedWorkspaceUsersResponse(rsp *http.Response) (*ListDetailedW
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the user was added to the workspace
-			CreatedAt time.Time `json:"created_at"`
-
-			// Groups Groups this user belongs to in the workspace
-			Groups []struct {
-				// CreatedAt Timestamp when the group was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Optional description of the group's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the group
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the group
-				Uuid string `json:"uuid"`
-			} `json:"groups"`
-
-			// Roles Roles assigned to this user in the workspace
-			Roles []struct {
-				// CreatedAt Timestamp when the role was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the role's purpose and permissions
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the role
-				Name string `json:"name"`
-
-				// Service Service this role applies to
-				Service string `json:"service"`
-
-				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the role
-				Uuid string `json:"uuid"`
-			} `json:"roles"`
-
-			// UpdatedAt Timestamp when the user's workspace information was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// User The user
-			User struct {
-				// CreatedAt Timestamp when the user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the user
-				Email string `json:"email"`
-
-				// Name Full name of the user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the user
-				Uuid string `json:"uuid"`
-			} `json:"user"`
-
-			// Workspace The workspace the user belongs to
-			Workspace struct {
-				// CreatedAt Timestamp when the workspace was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the workspace
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the workspace
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the workspace was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the workspace
-				Uuid string `json:"uuid"`
-			} `json:"workspace"`
-		}
+		var dest []IamUserWorkspaceDetailedUser
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -14691,130 +10282,28 @@ func ParseGetDetailedWorkspaceUserResponse(rsp *http.Response) (*GetDetailedWork
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// CreatedAt Timestamp when the user was added to the workspace
-			CreatedAt time.Time `json:"created_at"`
-
-			// Groups Groups this user belongs to in the workspace
-			Groups []struct {
-				// CreatedAt Timestamp when the group was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Optional description of the group's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the group
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the group
-				Uuid string `json:"uuid"`
-			} `json:"groups"`
-
-			// Roles Roles assigned to this user in the workspace
-			Roles []struct {
-				// CreatedAt Timestamp when the role was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the role's purpose and permissions
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the role
-				Name string `json:"name"`
-
-				// Service Service this role applies to
-				Service string `json:"service"`
-
-				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the role
-				Uuid string `json:"uuid"`
-			} `json:"roles"`
-
-			// UpdatedAt Timestamp when the user's workspace information was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// User The user
-			User struct {
-				// CreatedAt Timestamp when the user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the user
-				Email string `json:"email"`
-
-				// Name Full name of the user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the user
-				Uuid string `json:"uuid"`
-			} `json:"user"`
-
-			// Workspace The workspace the user belongs to
-			Workspace struct {
-				// CreatedAt Timestamp when the workspace was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the workspace
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the workspace
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the workspace was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the workspace
-				Uuid string `json:"uuid"`
-			} `json:"workspace"`
-		}
+		var dest IamUserWorkspaceDetailedUser
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -14840,46 +10329,14 @@ func ParseGetIamV1ApiV1HealthzResponse(rsp *http.Response) (*GetIamV1ApiV1Health
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			Caches []struct {
-				Default struct {
-					Ok bool `json:"ok"`
-				} `json:"default"`
-			} `json:"caches"`
-			Databases []struct {
-				Default struct {
-					Ok bool `json:"ok"`
-				} `json:"default"`
-			} `json:"databases"`
-			Storage struct {
-				Default struct {
-					Ok bool `json:"ok"`
-				} `json:"default"`
-			} `json:"storage"`
-		}
+		var dest IamHealthzResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
-		var dest struct {
-			Caches []struct {
-				Default struct {
-					Ok bool `json:"ok"`
-				} `json:"default"`
-			} `json:"caches"`
-			Databases []struct {
-				Default struct {
-					Ok bool `json:"ok"`
-				} `json:"default"`
-			} `json:"databases"`
-			Storage struct {
-				Default struct {
-					Ok bool `json:"ok"`
-				} `json:"default"`
-			} `json:"storage"`
-		}
+		var dest IamHealthzResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -14905,67 +10362,28 @@ func ParseGetThirdPartyAccessTokenResponse(rsp *http.Response) (*GetThirdPartyAc
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// AccessToken Access token for the third-party service
-			AccessToken string `json:"access_token"`
-
-			// ExpiresIn Number of seconds until the token expires
-			ExpiresIn int `json:"expires_in"`
-
-			// RefreshToken Refresh token for the third-party service
-			RefreshToken *string `json:"refresh_token,omitempty"`
-
-			// Scope Scope of access granted by the token
-			Scope *string `json:"scope,omitempty"`
-
-			// ThirdPartyUserId User ID in the third-party service
-			ThirdPartyUserId *string `json:"third_party_user_id,omitempty"`
-
-			// TokenType Type of token, typically 'Bearer'
-			TokenType string `json:"token_type"`
-		}
+		var dest IamThirdPartyTokenResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -14991,56 +10409,28 @@ func ParseChangePasswordResponse(rsp *http.Response) (*ChangePasswordResponse, e
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15066,42 +10456,21 @@ func ParseResetPasswordResponse(rsp *http.Response) (*ResetPasswordResponse, err
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15127,64 +10496,28 @@ func ParseGetUserResponse(rsp *http.Response) (*GetUserResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		}
+		var dest IamUser
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15210,61 +10543,28 @@ func ParseBulkCanUserResponse(rsp *http.Response) (*BulkCanUserResponse, error) 
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// Actions List of actions that were checked
-			Actions []string `json:"actions"`
-
-			// Allowed Whether the user is allowed to perform the actions on the specified service and path
-			Allowed bool `json:"allowed"`
-
-			// Path The path within the service that was checked
-			Path string `json:"path"`
-
-			// Service The service name that was checked
-			Service string `json:"service"`
-		}
+		var dest []IamUserBulkCanResponseItem
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15290,42 +10590,21 @@ func ParseDisableUserOtpResponse(rsp *http.Response) (*DisableUserOtpResponse, e
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15351,52 +10630,28 @@ func ParseGetUserOtpStatusResponse(rsp *http.Response) (*GetUserOtpStatusRespons
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Enabled Whether OTP is enabled for the user
-			Enabled bool `json:"enabled"`
-		}
+		var dest IamOtpEnabled
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15422,42 +10677,21 @@ func ParseEnableUserOtpResponse(rsp *http.Response) (*EnableUserOtpResponse, err
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15483,82 +10717,28 @@ func ParseListUserPublicKeysResponse(rsp *http.Response) (*ListUserPublicKeysRes
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the public key was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Key The public key content in SSH format
-			Key string `json:"key"`
-
-			// Title Title or name for the public key
-			Title string `json:"title"`
-
-			// UpdatedAt Timestamp when the public key was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// User The user this public key belongs to
-			User struct {
-				// CreatedAt Timestamp when the user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the user
-				Email string `json:"email"`
-
-				// Name Full name of the user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the user
-				Uuid string `json:"uuid"`
-			} `json:"user"`
-
-			// Uuid Unique identifier for the public key
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamUserPublicKey
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15584,96 +10764,35 @@ func ParseCreateUserPublicKeyResponse(rsp *http.Response) (*CreateUserPublicKeyR
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// CreatedAt Timestamp when the public key was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Key The public key content in SSH format
-			Key string `json:"key"`
-
-			// Title Title or name for the public key
-			Title string `json:"title"`
-
-			// UpdatedAt Timestamp when the public key was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// User The user this public key belongs to
-			User struct {
-				// CreatedAt Timestamp when the user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the user
-				Email string `json:"email"`
-
-				// Name Full name of the user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the user
-				Uuid string `json:"uuid"`
-			} `json:"user"`
-
-			// Uuid Unique identifier for the public key
-			Uuid string `json:"uuid"`
-		}
+		var dest IamUserPublicKey
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15699,42 +10818,21 @@ func ParseDeleteUserPublicKeyResponse(rsp *http.Response) (*DeleteUserPublicKeyR
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15760,58 +10858,28 @@ func ParseListUserTokensResponse(rsp *http.Response) (*ListUserTokensResponse, e
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// ExpiresAt Token expiration timestamp
-			ExpiresAt time.Time `json:"expires_at"`
-
-			// Token Authentication token
-			Token string `json:"token"`
-
-			// UserUuid UUID of the authenticated user
-			UserUuid string `json:"user_uuid"`
-		}
+		var dest []IamUserToken
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15837,58 +10905,28 @@ func ParseCreateUserTokenResponse(rsp *http.Response) (*CreateUserTokenResponse,
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// ExpiresAt Token expiration timestamp
-			ExpiresAt time.Time `json:"expires_at"`
-
-			// Token Authentication token
-			Token string `json:"token"`
-
-			// UserUuid UUID of the authenticated user
-			UserUuid string `json:"user_uuid"`
-		}
+		var dest IamUserToken
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15914,42 +10952,21 @@ func ParseDeleteUserTokenResponse(rsp *http.Response) (*DeleteUserTokenResponse,
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15975,42 +10992,21 @@ func ParseListUserWorkspacesResponse(rsp *http.Response) (*ListUserWorkspacesRes
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16036,67 +11032,28 @@ func ParseListBackupKeysResponse(rsp *http.Response) (*ListBackupKeysResponse, e
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the backup key was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Key The SSH key content in SSH format
-			Key string `json:"key"`
-
-			// Title Title or name for the backup key
-			Title string `json:"title"`
-
-			// UpdatedAt Timestamp when the backup key was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the backup key
-			Uuid string `json:"uuid"`
-
-			// Workspace The workspace this backup key belongs to
-			Workspace string `json:"workspace"`
-		}
+		var dest []IamBackupKey
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16122,81 +11079,35 @@ func ParseCreateBackupKeyResponse(rsp *http.Response) (*CreateBackupKeyResponse,
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// CreatedAt Timestamp when the backup key was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Key The SSH key content in SSH format
-			Key string `json:"key"`
-
-			// Title Title or name for the backup key
-			Title string `json:"title"`
-
-			// UpdatedAt Timestamp when the backup key was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the backup key
-			Uuid string `json:"uuid"`
-
-			// Workspace The workspace this backup key belongs to
-			Workspace string `json:"workspace"`
-		}
+		var dest IamBackupKey
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16222,42 +11133,21 @@ func ParseDeleteBackupKeyResponse(rsp *http.Response) (*DeleteBackupKeyResponse,
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16283,64 +11173,28 @@ func ParseListGroupsResponse(rsp *http.Response) (*ListGroupsResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamGroup
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16366,64 +11220,28 @@ func ParseCreateGroupResponse(rsp *http.Response) (*CreateGroupResponse, error) 
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		}
+		var dest IamGroup
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16449,42 +11267,21 @@ func ParseDeleteGroupResponse(rsp *http.Response) (*DeleteGroupResponse, error) 
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16510,64 +11307,28 @@ func ParseGetGroupResponse(rsp *http.Response) (*GetGroupResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		}
+		var dest IamGroup
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16593,64 +11354,28 @@ func ParseUpdateGroupResponse(rsp *http.Response) (*UpdateGroupResponse, error) 
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// CreatedAt Timestamp when the group was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Optional description of the group's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the group
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the group
-			Uuid string `json:"uuid"`
-		}
+		var dest IamGroup
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16676,100 +11401,28 @@ func ParseBulkAddRolesToGroupResponse(rsp *http.Response) (*BulkAddRolesToGroupR
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest []struct {
-			// CreatedAt Timestamp when the role binding was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Group The group the role is bound to
-			Group struct {
-				// CreatedAt Timestamp when the group was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Optional description of the group's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the group
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the group
-				Uuid string `json:"uuid"`
-			} `json:"group"`
-
-			// Items Optional items associated with this role binding
-			Items interface{} `json:"items,omitempty"`
-
-			// Role The role that is bound
-			Role struct {
-				// CreatedAt Timestamp when the role was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the role's purpose and permissions
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the role
-				Name string `json:"name"`
-
-				// Service Service this role applies to
-				Service string `json:"service"`
-
-				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the role
-				Uuid string `json:"uuid"`
-			} `json:"role"`
-
-			// UpdatedAt Timestamp when the role binding was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role binding
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamRoleBinding
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16795,88 +11448,28 @@ func ParseBulkAddServiceUsersToGroupResponse(rsp *http.Response) (*BulkAddServic
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest []struct {
-			// CreatedAt Timestamp when the service user was added to the group
-			CreatedAt time.Time `json:"created_at"`
-
-			// Group The group the service user was added to
-			Group struct {
-				// CreatedAt Timestamp when the group was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Optional description of the group's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the group
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the group
-				Uuid string `json:"uuid"`
-			} `json:"group"`
-
-			// ServiceUser The service user that was added to the group
-			ServiceUser struct {
-				// CreatedAt Timestamp when the service user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Name Name of the service user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the service user
-				Uuid string `json:"uuid"`
-			} `json:"service_user"`
-
-			// Uuid Unique identifier for the service-user-group association
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamServiceUserGroupResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16902,91 +11495,28 @@ func ParseBulkAddUsersToGroupResponse(rsp *http.Response) (*BulkAddUsersToGroupR
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest []struct {
-			// CreatedAt Timestamp when the user was added to the group
-			CreatedAt time.Time `json:"created_at"`
-
-			// Group The group the user was added to
-			Group struct {
-				// CreatedAt Timestamp when the group was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Optional description of the group's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the group
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the group
-				Uuid string `json:"uuid"`
-			} `json:"group"`
-
-			// User The user that was added to the group
-			User struct {
-				// CreatedAt Timestamp when the user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the user
-				Email string `json:"email"`
-
-				// Name Full name of the user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the user
-				Uuid string `json:"uuid"`
-			} `json:"user"`
-
-			// Uuid Unique identifier for the user-group association
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamUserGroupResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -17012,67 +11542,28 @@ func ParseListGroupRolesResponse(rsp *http.Response) (*ListGroupRolesResponse, e
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamRole
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -17098,61 +11589,28 @@ func ParseListGroupServiceUsersResponse(rsp *http.Response) (*ListGroupServiceUs
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamServiceUser
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -17178,42 +11636,21 @@ func ParseRemoveServiceUserFromGroupResponse(rsp *http.Response) (*RemoveService
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -17239,88 +11676,28 @@ func ParseAddServiceUserToGroupResponse(rsp *http.Response) (*AddServiceUserToGr
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// CreatedAt Timestamp when the service user was added to the group
-			CreatedAt time.Time `json:"created_at"`
-
-			// Group The group the service user was added to
-			Group struct {
-				// CreatedAt Timestamp when the group was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Optional description of the group's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the group
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the group
-				Uuid string `json:"uuid"`
-			} `json:"group"`
-
-			// ServiceUser The service user that was added to the group
-			ServiceUser struct {
-				// CreatedAt Timestamp when the service user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Name Name of the service user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the service user
-				Uuid string `json:"uuid"`
-			} `json:"service_user"`
-
-			// Uuid Unique identifier for the service-user-group association
-			Uuid string `json:"uuid"`
-		}
+		var dest IamServiceUserGroupResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -17346,64 +11723,28 @@ func ParseListGroupUsersResponse(rsp *http.Response) (*ListGroupUsersResponse, e
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamUser
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -17429,42 +11770,21 @@ func ParseRemoveUserFromGroupResponse(rsp *http.Response) (*RemoveUserFromGroupR
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -17490,91 +11810,28 @@ func ParseAddUserToGroupResponse(rsp *http.Response) (*AddUserToGroupResponse, e
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// CreatedAt Timestamp when the user was added to the group
-			CreatedAt time.Time `json:"created_at"`
-
-			// Group The group the user was added to
-			Group struct {
-				// CreatedAt Timestamp when the group was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Optional description of the group's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the group
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the group
-				Uuid string `json:"uuid"`
-			} `json:"group"`
-
-			// User The user that was added to the group
-			User struct {
-				// CreatedAt Timestamp when the user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the user
-				Email string `json:"email"`
-
-				// Name Full name of the user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the user
-				Uuid string `json:"uuid"`
-			} `json:"user"`
-
-			// Uuid Unique identifier for the user-group association
-			Uuid string `json:"uuid"`
-		}
+		var dest IamUserGroupResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -17600,88 +11857,28 @@ func ParseInviteUsersToWorkspaceResponse(rsp *http.Response) (*InviteUsersToWork
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Created List of users that were created
-			Created []struct {
-				// CreatedAt Timestamp when the user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the user
-				Email string `json:"email"`
-
-				// Name Full name of the user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the user
-				Uuid string `json:"uuid"`
-			} `json:"created"`
-
-			// Existing List of users that already existed
-			Existing []struct {
-				// CreatedAt Timestamp when the user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the user
-				Email string `json:"email"`
-
-				// Name Full name of the user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the user
-				Uuid string `json:"uuid"`
-			} `json:"existing"`
-
-			// Invited List of email addresses that were invited
-			Invited []string `json:"invited"`
-		}
+		var dest IamUserCreated
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -17707,82 +11904,28 @@ func ParseListServiceUserKiseKeysResponse(rsp *http.Response) (*ListServiceUserK
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the KISE key was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Key The KISE key content
-			Key string `json:"key"`
-
-			// ServiceUser The service user this KISE key belongs to
-			ServiceUser struct {
-				// CreatedAt Timestamp when the service user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Name Name of the service user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the service user
-				Uuid string `json:"uuid"`
-			} `json:"service_user"`
-
-			// Title Title or name for the KISE key
-			Title string `json:"title"`
-
-			// UpdatedAt Timestamp when the KISE key was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the KISE key
-			Uuid string `json:"uuid"`
-
-			// Workspace The workspace this KISE key belongs to
-			Workspace string `json:"workspace"`
-		}
+		var dest []IamServiceUserKiseKey
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -17808,67 +11951,28 @@ func ParseListRolesResponse(rsp *http.Response) (*ListRolesResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamRole
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -17894,42 +11998,21 @@ func ParseCreateRoleResponse(rsp *http.Response) (*CreateRoleResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -17955,42 +12038,21 @@ func ParseDeleteRoleResponse(rsp *http.Response) (*DeleteRoleResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18016,42 +12078,21 @@ func ParseGetRoleResponse(rsp *http.Response) (*GetRoleResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18077,106 +12118,28 @@ func ParseBulkAddRulesToRoleResponse(rsp *http.Response) (*BulkAddRulesToRoleRes
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest []struct {
-			// CreatedAt Timestamp when the role-rule binding was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Role The role that is bound
-			Role struct {
-				// CreatedAt Timestamp when the role was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the role's purpose and permissions
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the role
-				Name string `json:"name"`
-
-				// Service Service this role applies to
-				Service string `json:"service"`
-
-				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the role
-				Uuid string `json:"uuid"`
-			} `json:"role"`
-
-			// Rule The rule that is bound
-			Rule struct {
-				// Action Action this rule controls
-				Action string `json:"action"`
-
-				// CreatedAt Timestamp when the rule was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the rule's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the rule
-				Name string `json:"name"`
-
-				// Resource Resource this rule applies to
-				Resource string `json:"resource"`
-
-				// Service Service this rule applies to
-				Service string `json:"service"`
-
-				// UpdatedAt Timestamp when the rule was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the rule
-				Uuid string `json:"uuid"`
-			} `json:"rule"`
-
-			// UpdatedAt Timestamp when the role-rule binding was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role-rule binding
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamRoleRule
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18202,100 +12165,28 @@ func ParseBulkAddServiceUsersToRoleResponse(rsp *http.Response) (*BulkAddService
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest []struct {
-			// CreatedAt Timestamp when the role binding was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Group The group the role is bound to
-			Group struct {
-				// CreatedAt Timestamp when the group was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Optional description of the group's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the group
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the group
-				Uuid string `json:"uuid"`
-			} `json:"group"`
-
-			// Items Optional items associated with this role binding
-			Items interface{} `json:"items,omitempty"`
-
-			// Role The role that is bound
-			Role struct {
-				// CreatedAt Timestamp when the role was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the role's purpose and permissions
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the role
-				Name string `json:"name"`
-
-				// Service Service this role applies to
-				Service string `json:"service"`
-
-				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the role
-				Uuid string `json:"uuid"`
-			} `json:"role"`
-
-			// UpdatedAt Timestamp when the role binding was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role binding
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamRoleBinding
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18321,100 +12212,28 @@ func ParseBulkAddUsersToRoleResponse(rsp *http.Response) (*BulkAddUsersToRoleRes
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest []struct {
-			// CreatedAt Timestamp when the role binding was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Group The group the role is bound to
-			Group struct {
-				// CreatedAt Timestamp when the group was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Optional description of the group's purpose
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the group
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the group
-				Uuid string `json:"uuid"`
-			} `json:"group"`
-
-			// Items Optional items associated with this role binding
-			Items interface{} `json:"items,omitempty"`
-
-			// Role The role that is bound
-			Role struct {
-				// CreatedAt Timestamp when the role was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the role's purpose and permissions
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the role
-				Name string `json:"name"`
-
-				// Service Service this role applies to
-				Service string `json:"service"`
-
-				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the role
-				Uuid string `json:"uuid"`
-			} `json:"role"`
-
-			// UpdatedAt Timestamp when the role binding was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role binding
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamRoleBinding
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18440,42 +12259,21 @@ func ParseRemoveRoleFromGroupResponse(rsp *http.Response) (*RemoveRoleFromGroupR
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18501,73 +12299,28 @@ func ParseListRoleRulesResponse(rsp *http.Response) (*ListRoleRulesResponse, err
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// Action Action this rule controls
-			Action string `json:"action"`
-
-			// CreatedAt Timestamp when the rule was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the rule's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the rule
-			Name string `json:"name"`
-
-			// Resource Resource this rule applies to
-			Resource string `json:"resource"`
-
-			// Service Service this rule applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the rule
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamRule
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18593,42 +12346,21 @@ func ParseRemoveRuleFromRoleResponse(rsp *http.Response) (*RemoveRuleFromRoleRes
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18654,73 +12386,28 @@ func ParseAddRuleToRoleResponse(rsp *http.Response) (*AddRuleToRoleResponse, err
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// Action Action this rule controls
-			Action string `json:"action"`
-
-			// CreatedAt Timestamp when the rule was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the rule's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the rule
-			Name string `json:"name"`
-
-			// Resource Resource this rule applies to
-			Resource string `json:"resource"`
-
-			// Service Service this rule applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the rule
-			Uuid string `json:"uuid"`
-		}
+		var dest IamRule
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18746,67 +12433,28 @@ func ParseListServiceUsersRoleBindingsResponse(rsp *http.Response) (*ListService
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// Items Optional items associated with this role binding
-			Items interface{} `json:"items,omitempty"`
-
-			// ServiceUser The service user
-			ServiceUser struct {
-				// CreatedAt Timestamp when the service user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Name Name of the service user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the service user
-				Uuid string `json:"uuid"`
-			} `json:"service_user"`
-		}
+		var dest []IamServiceUserWithRoleItems
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18832,42 +12480,21 @@ func ParseRemoveRoleFromServiceUserResponse(rsp *http.Response) (*RemoveRoleFrom
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18893,67 +12520,28 @@ func ParseGetServiceUserRoleBindingResponse(rsp *http.Response) (*GetServiceUser
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Items Optional items associated with this role binding
-			Items interface{} `json:"items,omitempty"`
-
-			// ServiceUser The service user
-			ServiceUser struct {
-				// CreatedAt Timestamp when the service user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Name Name of the service user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the service user
-				Uuid string `json:"uuid"`
-			} `json:"service_user"`
-		}
+		var dest IamServiceUserWithRoleItems
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18979,100 +12567,28 @@ func ParseAssignRoleToServiceUserResponse(rsp *http.Response) (*AssignRoleToServ
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// CreatedAt Timestamp when the binding was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Items Optional items associated with this role binding
-			Items interface{} `json:"items,omitempty"`
-
-			// Role The role that was assigned to the service user
-			Role struct {
-				// CreatedAt Timestamp when the role was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the role's purpose and permissions
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the role
-				Name string `json:"name"`
-
-				// Service Service this role applies to
-				Service string `json:"service"`
-
-				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the role
-				Uuid string `json:"uuid"`
-			} `json:"role"`
-
-			// ServiceUser The service user that was assigned the role
-			ServiceUser struct {
-				// CreatedAt Timestamp when the service user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Name Name of the service user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the service user
-				Uuid string `json:"uuid"`
-			} `json:"service_user"`
-
-			// UpdatedAt Timestamp when the binding was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service-user-role binding
-			Uuid string `json:"uuid"`
-
-			// Workspace The workspace in which the binding exists
-			Workspace string `json:"workspace"`
-		}
+		var dest IamServiceUserRoleBindingDetailed
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19098,70 +12614,28 @@ func ParseListUsersRoleBindingsResponse(rsp *http.Response) (*ListUsersRoleBindi
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// Items Optional items associated with this role binding
-			Items interface{} `json:"items,omitempty"`
-
-			// User The user
-			User struct {
-				// CreatedAt Timestamp when the user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the user
-				Email string `json:"email"`
-
-				// Name Full name of the user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the user
-				Uuid string `json:"uuid"`
-			} `json:"user"`
-		}
+		var dest []IamUserWithRoleItems
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19187,42 +12661,21 @@ func ParseRemoveRoleFromUserResponse(rsp *http.Response) (*RemoveRoleFromUserRes
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19248,70 +12701,28 @@ func ParseGetUserRoleBindingResponse(rsp *http.Response) (*GetUserRoleBindingRes
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Items Optional items associated with this role binding
-			Items interface{} `json:"items,omitempty"`
-
-			// User The user
-			User struct {
-				// CreatedAt Timestamp when the user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the user
-				Email string `json:"email"`
-
-				// Name Full name of the user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the user
-				Uuid string `json:"uuid"`
-			} `json:"user"`
-		}
+		var dest IamUserWithRoleItems
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19337,103 +12748,28 @@ func ParseAssignRoleToUserResponse(rsp *http.Response) (*AssignRoleToUserRespons
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// CreatedAt Timestamp when the binding was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Items Optional items associated with this role binding
-			Items interface{} `json:"items,omitempty"`
-
-			// Role The role that was assigned to the user
-			Role struct {
-				// CreatedAt Timestamp when the role was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Description Description of the role's purpose and permissions
-				Description *string `json:"description,omitempty"`
-
-				// Name Name of the role
-				Name string `json:"name"`
-
-				// Service Service this role applies to
-				Service string `json:"service"`
-
-				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the role
-				Uuid string `json:"uuid"`
-			} `json:"role"`
-
-			// UpdatedAt Timestamp when the binding was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// User The user that was assigned the role
-			User struct {
-				// CreatedAt Timestamp when the user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the user
-				Email string `json:"email"`
-
-				// Name Full name of the user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the user
-				Uuid string `json:"uuid"`
-			} `json:"user"`
-
-			// Uuid Unique identifier for the user-role binding
-			Uuid string `json:"uuid"`
-
-			// Workspace The workspace in which the binding exists
-			Workspace string `json:"workspace"`
-		}
+		var dest IamUserRoleBindingDetailed
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19459,73 +12795,28 @@ func ParseListRulesResponse(rsp *http.Response) (*ListRulesResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// Action Action this rule controls
-			Action string `json:"action"`
-
-			// CreatedAt Timestamp when the rule was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the rule's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the rule
-			Name string `json:"name"`
-
-			// Resource Resource this rule applies to
-			Resource string `json:"resource"`
-
-			// Service Service this rule applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the rule
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamRule
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19551,87 +12842,35 @@ func ParseCreateRuleResponse(rsp *http.Response) (*CreateRuleResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// Action Action this rule controls
-			Action string `json:"action"`
-
-			// CreatedAt Timestamp when the rule was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the rule's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the rule
-			Name string `json:"name"`
-
-			// Resource Resource this rule applies to
-			Resource string `json:"resource"`
-
-			// Service Service this rule applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the rule
-			Uuid string `json:"uuid"`
-		}
+		var dest IamRule
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19657,42 +12896,21 @@ func ParseDeleteRuleResponse(rsp *http.Response) (*DeleteRuleResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19718,73 +12936,28 @@ func ParseGetRuleResponse(rsp *http.Response) (*GetRuleResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Action Action this rule controls
-			Action string `json:"action"`
-
-			// CreatedAt Timestamp when the rule was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the rule's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the rule
-			Name string `json:"name"`
-
-			// Resource Resource this rule applies to
-			Resource string `json:"resource"`
-
-			// Service Service this rule applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the rule
-			Uuid string `json:"uuid"`
-		}
+		var dest IamRule
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19810,73 +12983,28 @@ func ParseUpdateRuleResponse(rsp *http.Response) (*UpdateRuleResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Action Action this rule controls
-			Action string `json:"action"`
-
-			// CreatedAt Timestamp when the rule was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the rule's purpose
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the rule
-			Name string `json:"name"`
-
-			// Resource Resource this rule applies to
-			Resource string `json:"resource"`
-
-			// Service Service this rule applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the rule
-			Uuid string `json:"uuid"`
-		}
+		var dest IamRule
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19902,67 +13030,28 @@ func ParseListRuleRolesResponse(rsp *http.Response) (*ListRuleRolesResponse, err
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the role was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the role's purpose and permissions
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the role
-			Name string `json:"name"`
-
-			// Service Service this role applies to
-			Service string `json:"service"`
-
-			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the role
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamRole
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19988,61 +13077,28 @@ func ParseListServiceUsersResponse(rsp *http.Response) (*ListServiceUsersRespons
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamServiceUser
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20068,61 +13124,28 @@ func ParseCreateServiceUserResponse(rsp *http.Response) (*CreateServiceUserRespo
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		}
+		var dest IamServiceUser
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20148,42 +13171,21 @@ func ParseDeleteServiceUserResponse(rsp *http.Response) (*DeleteServiceUserRespo
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20209,61 +13211,28 @@ func ParseUpdateServiceUserResponse(rsp *http.Response) (*UpdateServiceUserRespo
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// CreatedAt Timestamp when the service user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Name Name of the service user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the service user
-			Uuid string `json:"uuid"`
-		}
+		var dest IamServiceUser
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20289,82 +13258,28 @@ func ParseCreateServiceUserKiseKeyResponse(rsp *http.Response) (*CreateServiceUs
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// CreatedAt Timestamp when the KISE key was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Key The KISE key content
-			Key string `json:"key"`
-
-			// ServiceUser The service user this KISE key belongs to
-			ServiceUser struct {
-				// CreatedAt Timestamp when the service user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Name Name of the service user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the service user
-				Uuid string `json:"uuid"`
-			} `json:"service_user"`
-
-			// Title Title or name for the KISE key
-			Title string `json:"title"`
-
-			// UpdatedAt Timestamp when the KISE key was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the KISE key
-			Uuid string `json:"uuid"`
-
-			// Workspace The workspace this KISE key belongs to
-			Workspace string `json:"workspace"`
-		}
+		var dest IamServiceUserKiseKey
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20390,42 +13305,21 @@ func ParseDeleteServiceUserKiseKeyResponse(rsp *http.Response) (*DeleteServiceUs
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20451,79 +13345,28 @@ func ParseListServiceUserPublicKeysResponse(rsp *http.Response) (*ListServiceUse
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the public key was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Key The public key content in SSH format
-			Key string `json:"key"`
-
-			// ServiceUser The service user this public key belongs to
-			ServiceUser struct {
-				// CreatedAt Timestamp when the service user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Name Name of the service user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the service user
-				Uuid string `json:"uuid"`
-			} `json:"service_user"`
-
-			// Title Title or name for the public key
-			Title string `json:"title"`
-
-			// UpdatedAt Timestamp when the public key was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the public key
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamServiceUserPublicKey
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20549,79 +13392,28 @@ func ParseCreateServiceUserPublicKeyResponse(rsp *http.Response) (*CreateService
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// CreatedAt Timestamp when the public key was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Key The public key content in SSH format
-			Key string `json:"key"`
-
-			// ServiceUser The service user this public key belongs to
-			ServiceUser struct {
-				// CreatedAt Timestamp when the service user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Name Name of the service user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the service user
-				Uuid string `json:"uuid"`
-			} `json:"service_user"`
-
-			// Title Title or name for the public key
-			Title string `json:"title"`
-
-			// UpdatedAt Timestamp when the public key was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the public key
-			Uuid string `json:"uuid"`
-		}
+		var dest IamServiceUserPublicKey
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20647,42 +13439,21 @@ func ParseDeleteServiceUserPublicKeyResponse(rsp *http.Response) (*DeleteService
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20708,76 +13479,28 @@ func ParseListServiceUserTokensResponse(rsp *http.Response) (*ListServiceUserTok
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the token was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// ExpiresAt Timestamp when the token will expire
-			ExpiresAt *time.Time `json:"expires_at,omitempty"`
-
-			// Name Name of the token
-			Name string `json:"name"`
-
-			// ServiceUser The service user this token belongs to
-			ServiceUser struct {
-				// CreatedAt Timestamp when the service user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Name Name of the service user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the service user
-				Uuid string `json:"uuid"`
-			} `json:"service_user"`
-
-			// Uuid Unique identifier for the token
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamServiceUserToken
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20803,79 +13526,28 @@ func ParseCreateServiceUserTokenResponse(rsp *http.Response) (*CreateServiceUser
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// CreatedAt Timestamp when the token was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// ExpiresAt Timestamp when the token will expire
-			ExpiresAt *time.Time `json:"expires_at,omitempty"`
-
-			// Name Name of the token
-			Name string `json:"name"`
-
-			// Secret The secret value of the token
-			Secret string `json:"secret"`
-
-			// ServiceUser The service user this token belongs to
-			ServiceUser struct {
-				// CreatedAt Timestamp when the service user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Name Name of the service user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the service user
-				Uuid string `json:"uuid"`
-			} `json:"service_user"`
-
-			// Uuid Unique identifier for the token
-			Uuid string `json:"uuid"`
-		}
+		var dest IamServiceUserTokenWithSecret
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20901,42 +13573,21 @@ func ParseDeleteServiceUserTokenResponse(rsp *http.Response) (*DeleteServiceUser
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20962,61 +13613,28 @@ func ParseListServicesResponse(rsp *http.Response) (*ListServicesResponse, error
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the service was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Description Description of the service
-			Description *string `json:"description,omitempty"`
-
-			// Name Name of the service
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the service was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-		}
+		var dest []IamService
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -21042,55 +13660,28 @@ func ParseBulkRefreshThirdPartyTokensResponse(rsp *http.Response) (*BulkRefreshT
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// FailedTokens Map of token identifiers to error messages for tokens that failed to refresh
-			FailedTokens *map[string]string `json:"failed_tokens,omitempty"`
-
-			// RefreshedTokens Map of token identifiers to refreshed tokens
-			RefreshedTokens map[string]string `json:"refreshed_tokens"`
-		}
+		var dest IamBulkRefreshTokenResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -21116,64 +13707,28 @@ func ParseListWorkspaceUsersResponse(rsp *http.Response) (*ListWorkspaceUsersRes
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		}
+		var dest []IamUser
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -21199,42 +13754,21 @@ func ParseRemoveUserFromWorkspaceResponse(rsp *http.Response) (*RemoveUserFromWo
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -21260,64 +13794,28 @@ func ParseAllowUserResponse(rsp *http.Response) (*AllowUserResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		}
+		var dest IamUser
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -21343,85 +13841,28 @@ func ParseListUserKiseKeysResponse(rsp *http.Response) (*ListUserKiseKeysRespons
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []struct {
-			// CreatedAt Timestamp when the KISE key was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Key The KISE key content
-			Key string `json:"key"`
-
-			// Title Title or name for the KISE key
-			Title string `json:"title"`
-
-			// UpdatedAt Timestamp when the KISE key was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// User The user this KISE key belongs to
-			User struct {
-				// CreatedAt Timestamp when the user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the user
-				Email string `json:"email"`
-
-				// Name Full name of the user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the user
-				Uuid string `json:"uuid"`
-			} `json:"user"`
-
-			// Uuid Unique identifier for the KISE key
-			Uuid string `json:"uuid"`
-
-			// Workspace The workspace this KISE key belongs to
-			Workspace string `json:"workspace"`
-		}
+		var dest []IamUserKiseKey
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -21447,85 +13888,28 @@ func ParseCreateUserKiseKeyResponse(rsp *http.Response) (*CreateUserKiseKeyRespo
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// CreatedAt Timestamp when the KISE key was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Key The KISE key content
-			Key string `json:"key"`
-
-			// Title Title or name for the KISE key
-			Title string `json:"title"`
-
-			// UpdatedAt Timestamp when the KISE key was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// User The user this KISE key belongs to
-			User struct {
-				// CreatedAt Timestamp when the user was created
-				CreatedAt time.Time `json:"created_at"`
-
-				// Email Email address of the user
-				Email string `json:"email"`
-
-				// Name Full name of the user
-				Name string `json:"name"`
-
-				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt time.Time `json:"updated_at"`
-
-				// Uuid Unique identifier for the user
-				Uuid string `json:"uuid"`
-			} `json:"user"`
-
-			// Uuid Unique identifier for the KISE key
-			Uuid string `json:"uuid"`
-
-			// Workspace The workspace this KISE key belongs to
-			Workspace string `json:"workspace"`
-		}
+		var dest IamUserKiseKey
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -21551,42 +13935,21 @@ func ParseDeleteUserKiseKeyResponse(rsp *http.Response) (*DeleteUserKiseKeyRespo
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -21612,64 +13975,28 @@ func ParseSuspendUserResponse(rsp *http.Response) (*SuspendUserResponse, error) 
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// CreatedAt Timestamp when the user was created
-			CreatedAt time.Time `json:"created_at"`
-
-			// Email Email address of the user
-			Email string `json:"email"`
-
-			// Name Full name of the user
-			Name string `json:"name"`
-
-			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt time.Time `json:"updated_at"`
-
-			// Uuid Unique identifier for the user
-			Uuid string `json:"uuid"`
-		}
+		var dest IamUser
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -21695,64 +14022,28 @@ func ParseGetOpenIdTokenResponse(rsp *http.Response) (*GetOpenIdTokenResponse, e
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// AccessToken OAuth 2.0 access token
-			AccessToken string `json:"access_token"`
-
-			// ExpiresIn Number of seconds until the token expires
-			ExpiresIn int `json:"expires_in"`
-
-			// IdToken OpenID Connect ID token
-			IdToken *string `json:"id_token,omitempty"`
-
-			// RefreshToken OAuth 2.0 refresh token
-			RefreshToken *string `json:"refresh_token,omitempty"`
-
-			// TokenType Type of token, typically 'Bearer'
-			TokenType string `json:"token_type"`
-		}
+		var dest IamOpenIdTokenResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			Code    int `json:"code"`
-			Message struct {
-				Detail string `json:"detail"`
-			} `json:"message"`
-			Reason string `json:"reason"`
-			Status string `json:"status"`
-		}
+		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

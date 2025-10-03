@@ -5171,285 +5171,13 @@ func (r PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonaddonsResourceIdRespo
 type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion string `json:"apiVersion"`
-
-		// Items Collection of SotoonCluster resources
-		Items []struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200ItemsApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200ItemsKind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		} `json:"items"`
-
-		// Kind The string value 'SotoonClusterList'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200Kind `json:"kind"`
-
-		// Metadata Standard metadata fields for the list
-		Metadata struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonClusterList
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200ItemsApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200ItemsKind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422Status string
 
 // Status returns HTTPResponse.Status
 func (r GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse) Status() string {
@@ -5470,297 +5198,14 @@ func (r GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse) Sta
 type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters201ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonCluster' that identifies the schema
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters201Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the Kubernetes cluster
-		Spec struct {
-			// ClusterNetwork Network configuration for the cluster
-			ClusterNetwork *struct {
-				// Pods Network ranges from which Pod networks are allocated
-				Pods *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"pods"`
-
-				// Services Network ranges from which service VIPs are allocated
-				Services *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"services"`
-			} `json:"clusterNetwork"`
-
-			// Infra Infrastructure configuration for the cluster
-			Infra struct {
-				// VPC Virtual Private Cloud Network that the cluster is created in
-				VPC string `json:"VPC"`
-
-				// Subnet Engine sub-network that the cluster is created in
-				Subnet string `json:"subnet"`
-
-				// Version Control-plane version configuration
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"infra"`
-		} `json:"spec"`
-
-		// Status Current observed state of the cluster
-		Status struct {
-			// Conditions Current conditions of the cluster
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// KubeconfigSecretName Reference to the kubeconfig secret
-			KubeconfigSecretName *struct {
-				// Name Name of the referenced object
-				Name string `json:"name"`
-			} `json:"kubeconfigSecretName"`
-
-			// Phase Current phase of the cluster
-			Phase PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase `json:"phase"`
-
-			// Ready Indicates if the cluster is ready for use
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of ready replicas
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of unavailable replicas
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of updated replicas
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404Status `json:"status"`
-	}
-	JSON409 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters409ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters409Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters409Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422Status `json:"status"`
-	}
+	JSON201      *ContainerSotoonCluster
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON409      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters201ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters201Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters409ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters409Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters409Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422Status string
 
 // Status returns HTTPResponse.Status
 func (r PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse) Status() string {
@@ -5781,187 +5226,13 @@ func (r PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse) St
 type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Status `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerStatus
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Status string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse) Status() string {
@@ -5982,267 +5253,13 @@ func (r DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId
 type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonCluster' that identifies the schema
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the Kubernetes cluster
-		Spec struct {
-			// ClusterNetwork Network configuration for the cluster
-			ClusterNetwork *struct {
-				// Pods Network ranges from which Pod networks are allocated
-				Pods *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"pods"`
-
-				// Services Network ranges from which service VIPs are allocated
-				Services *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"services"`
-			} `json:"clusterNetwork"`
-
-			// Infra Infrastructure configuration for the cluster
-			Infra struct {
-				// VPC Virtual Private Cloud Network that the cluster is created in
-				VPC string `json:"VPC"`
-
-				// Subnet Engine sub-network that the cluster is created in
-				Subnet string `json:"subnet"`
-
-				// Version Control-plane version configuration
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"infra"`
-		} `json:"spec"`
-
-		// Status Current observed state of the cluster
-		Status struct {
-			// Conditions Current conditions of the cluster
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// KubeconfigSecretName Reference to the kubeconfig secret
-			KubeconfigSecretName *struct {
-				// Name Name of the referenced object
-				Name string `json:"name"`
-			} `json:"kubeconfigSecretName"`
-
-			// Phase Current phase of the cluster
-			Phase GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the cluster is ready for use
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of ready replicas
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of unavailable replicas
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of updated replicas
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonCluster
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse) Status() string {
@@ -6263,267 +5280,13 @@ func (r GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonCluster' that identifies the schema
-		Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the Kubernetes cluster
-		Spec struct {
-			// ClusterNetwork Network configuration for the cluster
-			ClusterNetwork *struct {
-				// Pods Network ranges from which Pod networks are allocated
-				Pods *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"pods"`
-
-				// Services Network ranges from which service VIPs are allocated
-				Services *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"services"`
-			} `json:"clusterNetwork"`
-
-			// Infra Infrastructure configuration for the cluster
-			Infra struct {
-				// VPC Virtual Private Cloud Network that the cluster is created in
-				VPC string `json:"VPC"`
-
-				// Subnet Engine sub-network that the cluster is created in
-				Subnet string `json:"subnet"`
-
-				// Version Control-plane version configuration
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"infra"`
-		} `json:"spec"`
-
-		// Status Current observed state of the cluster
-		Status struct {
-			// Conditions Current conditions of the cluster
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// KubeconfigSecretName Reference to the kubeconfig secret
-			KubeconfigSecretName *struct {
-				// Name Name of the referenced object
-				Name string `json:"name"`
-			} `json:"kubeconfigSecretName"`
-
-			// Phase Current phase of the cluster
-			Phase PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the cluster is ready for use
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of ready replicas
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of unavailable replicas
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of updated replicas
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonCluster
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse) Status() string {
@@ -6544,267 +5307,13 @@ func (r PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonCluster' that identifies the schema
-		Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the Kubernetes cluster
-		Spec struct {
-			// ClusterNetwork Network configuration for the cluster
-			ClusterNetwork *struct {
-				// Pods Network ranges from which Pod networks are allocated
-				Pods *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"pods"`
-
-				// Services Network ranges from which service VIPs are allocated
-				Services *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"services"`
-			} `json:"clusterNetwork"`
-
-			// Infra Infrastructure configuration for the cluster
-			Infra struct {
-				// VPC Virtual Private Cloud Network that the cluster is created in
-				VPC string `json:"VPC"`
-
-				// Subnet Engine sub-network that the cluster is created in
-				Subnet string `json:"subnet"`
-
-				// Version Control-plane version configuration
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"infra"`
-		} `json:"spec"`
-
-		// Status Current observed state of the cluster
-		Status struct {
-			// Conditions Current conditions of the cluster
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// KubeconfigSecretName Reference to the kubeconfig secret
-			KubeconfigSecretName *struct {
-				// Name Name of the referenced object
-				Name string `json:"name"`
-			} `json:"kubeconfigSecretName"`
-
-			// Phase Current phase of the cluster
-			Phase PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the cluster is ready for use
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of ready replicas
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of unavailable replicas
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of updated replicas
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonCluster
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse) Status() string {
@@ -6825,286 +5334,13 @@ func (r PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdRes
 type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion string `json:"apiVersion"`
-
-		// Items Collection of SotoonNodepool resources
-		Items []struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsKind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsStatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		} `json:"items"`
-
-		// Kind The string value 'SotoonNodepoolList'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200Kind `json:"kind"`
-
-		// Metadata Standard metadata fields for the list
-		Metadata struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepoolList
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsKind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsStatusPhase string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422Status string
 
 // Status returns HTTPResponse.Status
 func (r GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse) Status() string {
@@ -7125,298 +5361,14 @@ func (r GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse) St
 type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404Status `json:"status"`
-	}
-	JSON409 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools409ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools409Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools409Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422Status `json:"status"`
-	}
+	JSON201      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON409      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201StatusPhase string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools409ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools409Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools409Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422Status string
 
 // Status returns HTTPResponse.Status
 func (r PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse) Status() string {
@@ -7437,187 +5389,13 @@ func (r PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse) S
 type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Status `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerStatus
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Status string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -7638,268 +5416,13 @@ func (r DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -7920,268 +5443,13 @@ func (r GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdRe
 type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -8202,268 +5470,13 @@ func (r PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -8484,268 +5497,13 @@ func (r PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdR
 type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -9018,285 +5776,13 @@ func (r PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonaddonsResourceIdRe
 type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion string `json:"apiVersion"`
-
-		// Items Collection of SotoonCluster resources
-		Items []struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200ItemsApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200ItemsKind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		} `json:"items"`
-
-		// Kind The string value 'SotoonClusterList'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200Kind `json:"kind"`
-
-		// Metadata Standard metadata fields for the list
-		Metadata struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonClusterList
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200ItemsApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200ItemsKind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422Status string
 
 // Status returns HTTPResponse.Status
 func (r GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse) Status() string {
@@ -9317,297 +5803,14 @@ func (r GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse) 
 type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters201ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonCluster' that identifies the schema
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters201Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the Kubernetes cluster
-		Spec struct {
-			// ClusterNetwork Network configuration for the cluster
-			ClusterNetwork *struct {
-				// Pods Network ranges from which Pod networks are allocated
-				Pods *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"pods"`
-
-				// Services Network ranges from which service VIPs are allocated
-				Services *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"services"`
-			} `json:"clusterNetwork"`
-
-			// Infra Infrastructure configuration for the cluster
-			Infra struct {
-				// VPC Virtual Private Cloud Network that the cluster is created in
-				VPC string `json:"VPC"`
-
-				// Subnet Engine sub-network that the cluster is created in
-				Subnet string `json:"subnet"`
-
-				// Version Control-plane version configuration
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"infra"`
-		} `json:"spec"`
-
-		// Status Current observed state of the cluster
-		Status struct {
-			// Conditions Current conditions of the cluster
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// KubeconfigSecretName Reference to the kubeconfig secret
-			KubeconfigSecretName *struct {
-				// Name Name of the referenced object
-				Name string `json:"name"`
-			} `json:"kubeconfigSecretName"`
-
-			// Phase Current phase of the cluster
-			Phase PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase `json:"phase"`
-
-			// Ready Indicates if the cluster is ready for use
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of ready replicas
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of unavailable replicas
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of updated replicas
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404Status `json:"status"`
-	}
-	JSON409 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters409ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters409Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters409Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422Status `json:"status"`
-	}
+	JSON201      *ContainerSotoonCluster
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON409      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters201ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters201Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters409ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters409Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters409Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422Status string
 
 // Status returns HTTPResponse.Status
 func (r PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse) Status() string {
@@ -9628,187 +5831,13 @@ func (r PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse)
 type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Status `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerStatus
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Status string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse) Status() string {
@@ -9829,267 +5858,13 @@ func (r DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourc
 type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonCluster' that identifies the schema
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the Kubernetes cluster
-		Spec struct {
-			// ClusterNetwork Network configuration for the cluster
-			ClusterNetwork *struct {
-				// Pods Network ranges from which Pod networks are allocated
-				Pods *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"pods"`
-
-				// Services Network ranges from which service VIPs are allocated
-				Services *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"services"`
-			} `json:"clusterNetwork"`
-
-			// Infra Infrastructure configuration for the cluster
-			Infra struct {
-				// VPC Virtual Private Cloud Network that the cluster is created in
-				VPC string `json:"VPC"`
-
-				// Subnet Engine sub-network that the cluster is created in
-				Subnet string `json:"subnet"`
-
-				// Version Control-plane version configuration
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"infra"`
-		} `json:"spec"`
-
-		// Status Current observed state of the cluster
-		Status struct {
-			// Conditions Current conditions of the cluster
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// KubeconfigSecretName Reference to the kubeconfig secret
-			KubeconfigSecretName *struct {
-				// Name Name of the referenced object
-				Name string `json:"name"`
-			} `json:"kubeconfigSecretName"`
-
-			// Phase Current phase of the cluster
-			Phase GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the cluster is ready for use
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of ready replicas
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of unavailable replicas
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of updated replicas
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonCluster
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse) Status() string {
@@ -10110,267 +5885,13 @@ func (r GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId
 type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonCluster' that identifies the schema
-		Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the Kubernetes cluster
-		Spec struct {
-			// ClusterNetwork Network configuration for the cluster
-			ClusterNetwork *struct {
-				// Pods Network ranges from which Pod networks are allocated
-				Pods *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"pods"`
-
-				// Services Network ranges from which service VIPs are allocated
-				Services *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"services"`
-			} `json:"clusterNetwork"`
-
-			// Infra Infrastructure configuration for the cluster
-			Infra struct {
-				// VPC Virtual Private Cloud Network that the cluster is created in
-				VPC string `json:"VPC"`
-
-				// Subnet Engine sub-network that the cluster is created in
-				Subnet string `json:"subnet"`
-
-				// Version Control-plane version configuration
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"infra"`
-		} `json:"spec"`
-
-		// Status Current observed state of the cluster
-		Status struct {
-			// Conditions Current conditions of the cluster
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// KubeconfigSecretName Reference to the kubeconfig secret
-			KubeconfigSecretName *struct {
-				// Name Name of the referenced object
-				Name string `json:"name"`
-			} `json:"kubeconfigSecretName"`
-
-			// Phase Current phase of the cluster
-			Phase PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the cluster is ready for use
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of ready replicas
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of unavailable replicas
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of updated replicas
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonCluster
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse) Status() string {
@@ -10391,267 +5912,13 @@ func (r PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonCluster' that identifies the schema
-		Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the Kubernetes cluster
-		Spec struct {
-			// ClusterNetwork Network configuration for the cluster
-			ClusterNetwork *struct {
-				// Pods Network ranges from which Pod networks are allocated
-				Pods *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"pods"`
-
-				// Services Network ranges from which service VIPs are allocated
-				Services *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"services"`
-			} `json:"clusterNetwork"`
-
-			// Infra Infrastructure configuration for the cluster
-			Infra struct {
-				// VPC Virtual Private Cloud Network that the cluster is created in
-				VPC string `json:"VPC"`
-
-				// Subnet Engine sub-network that the cluster is created in
-				Subnet string `json:"subnet"`
-
-				// Version Control-plane version configuration
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"infra"`
-		} `json:"spec"`
-
-		// Status Current observed state of the cluster
-		Status struct {
-			// Conditions Current conditions of the cluster
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// KubeconfigSecretName Reference to the kubeconfig secret
-			KubeconfigSecretName *struct {
-				// Name Name of the referenced object
-				Name string `json:"name"`
-			} `json:"kubeconfigSecretName"`
-
-			// Phase Current phase of the cluster
-			Phase PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the cluster is ready for use
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of ready replicas
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of unavailable replicas
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of updated replicas
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonCluster
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse) Status() string {
@@ -10672,286 +5939,13 @@ func (r PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId
 type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion string `json:"apiVersion"`
-
-		// Items Collection of SotoonNodepool resources
-		Items []struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsKind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsStatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		} `json:"items"`
-
-		// Kind The string value 'SotoonNodepoolList'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200Kind `json:"kind"`
-
-		// Metadata Standard metadata fields for the list
-		Metadata struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepoolList
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsKind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsStatusPhase string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422Status string
 
 // Status returns HTTPResponse.Status
 func (r GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse) Status() string {
@@ -10972,298 +5966,14 @@ func (r GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse)
 type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404Status `json:"status"`
-	}
-	JSON409 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools409ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools409Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools409Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422Status `json:"status"`
-	}
+	JSON201      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON409      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201StatusPhase string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools409ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools409Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools409Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422Status string
 
 // Status returns HTTPResponse.Status
 func (r PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse) Status() string {
@@ -11284,187 +5994,13 @@ func (r PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResponse
 type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Status `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerStatus
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Status string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -11485,268 +6021,13 @@ func (r DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -11767,268 +6048,13 @@ func (r GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -12049,268 +6075,13 @@ func (r PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -12331,268 +6102,13 @@ func (r PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -12865,285 +6381,13 @@ func (r PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonaddonsResourceIdR
 type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion string `json:"apiVersion"`
-
-		// Items Collection of SotoonCluster resources
-		Items []struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200ItemsApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200ItemsKind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		} `json:"items"`
-
-		// Kind The string value 'SotoonClusterList'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200Kind `json:"kind"`
-
-		// Metadata Standard metadata fields for the list
-		Metadata struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonClusterList
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200ItemsApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200ItemsKind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422Status string
 
 // Status returns HTTPResponse.Status
 func (r GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse) Status() string {
@@ -13164,297 +6408,14 @@ func (r GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse)
 type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters201ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonCluster' that identifies the schema
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters201Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the Kubernetes cluster
-		Spec struct {
-			// ClusterNetwork Network configuration for the cluster
-			ClusterNetwork *struct {
-				// Pods Network ranges from which Pod networks are allocated
-				Pods *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"pods"`
-
-				// Services Network ranges from which service VIPs are allocated
-				Services *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"services"`
-			} `json:"clusterNetwork"`
-
-			// Infra Infrastructure configuration for the cluster
-			Infra struct {
-				// VPC Virtual Private Cloud Network that the cluster is created in
-				VPC string `json:"VPC"`
-
-				// Subnet Engine sub-network that the cluster is created in
-				Subnet string `json:"subnet"`
-
-				// Version Control-plane version configuration
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"infra"`
-		} `json:"spec"`
-
-		// Status Current observed state of the cluster
-		Status struct {
-			// Conditions Current conditions of the cluster
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// KubeconfigSecretName Reference to the kubeconfig secret
-			KubeconfigSecretName *struct {
-				// Name Name of the referenced object
-				Name string `json:"name"`
-			} `json:"kubeconfigSecretName"`
-
-			// Phase Current phase of the cluster
-			Phase PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase `json:"phase"`
-
-			// Ready Indicates if the cluster is ready for use
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of ready replicas
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of unavailable replicas
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of updated replicas
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404Status `json:"status"`
-	}
-	JSON409 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters409ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters409Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters409Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422Status `json:"status"`
-	}
+	JSON201      *ContainerSotoonCluster
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON409      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters201ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters201Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters409ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters409Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters409Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422Status string
 
 // Status returns HTTPResponse.Status
 func (r PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse) Status() string {
@@ -13475,187 +6436,13 @@ func (r PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResponse
 type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Status `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerStatus
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Status string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse) Status() string {
@@ -13676,267 +6463,13 @@ func (r DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResour
 type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonCluster' that identifies the schema
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the Kubernetes cluster
-		Spec struct {
-			// ClusterNetwork Network configuration for the cluster
-			ClusterNetwork *struct {
-				// Pods Network ranges from which Pod networks are allocated
-				Pods *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"pods"`
-
-				// Services Network ranges from which service VIPs are allocated
-				Services *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"services"`
-			} `json:"clusterNetwork"`
-
-			// Infra Infrastructure configuration for the cluster
-			Infra struct {
-				// VPC Virtual Private Cloud Network that the cluster is created in
-				VPC string `json:"VPC"`
-
-				// Subnet Engine sub-network that the cluster is created in
-				Subnet string `json:"subnet"`
-
-				// Version Control-plane version configuration
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"infra"`
-		} `json:"spec"`
-
-		// Status Current observed state of the cluster
-		Status struct {
-			// Conditions Current conditions of the cluster
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// KubeconfigSecretName Reference to the kubeconfig secret
-			KubeconfigSecretName *struct {
-				// Name Name of the referenced object
-				Name string `json:"name"`
-			} `json:"kubeconfigSecretName"`
-
-			// Phase Current phase of the cluster
-			Phase GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the cluster is ready for use
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of ready replicas
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of unavailable replicas
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of updated replicas
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonCluster
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse) Status() string {
@@ -13957,267 +6490,13 @@ func (r GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceI
 type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonCluster' that identifies the schema
-		Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the Kubernetes cluster
-		Spec struct {
-			// ClusterNetwork Network configuration for the cluster
-			ClusterNetwork *struct {
-				// Pods Network ranges from which Pod networks are allocated
-				Pods *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"pods"`
-
-				// Services Network ranges from which service VIPs are allocated
-				Services *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"services"`
-			} `json:"clusterNetwork"`
-
-			// Infra Infrastructure configuration for the cluster
-			Infra struct {
-				// VPC Virtual Private Cloud Network that the cluster is created in
-				VPC string `json:"VPC"`
-
-				// Subnet Engine sub-network that the cluster is created in
-				Subnet string `json:"subnet"`
-
-				// Version Control-plane version configuration
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"infra"`
-		} `json:"spec"`
-
-		// Status Current observed state of the cluster
-		Status struct {
-			// Conditions Current conditions of the cluster
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// KubeconfigSecretName Reference to the kubeconfig secret
-			KubeconfigSecretName *struct {
-				// Name Name of the referenced object
-				Name string `json:"name"`
-			} `json:"kubeconfigSecretName"`
-
-			// Phase Current phase of the cluster
-			Phase PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the cluster is ready for use
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of ready replicas
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of unavailable replicas
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of updated replicas
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonCluster
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse) Status() string {
@@ -14238,267 +6517,13 @@ func (r PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonCluster' that identifies the schema
-		Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the Kubernetes cluster
-		Spec struct {
-			// ClusterNetwork Network configuration for the cluster
-			ClusterNetwork *struct {
-				// Pods Network ranges from which Pod networks are allocated
-				Pods *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"pods"`
-
-				// Services Network ranges from which service VIPs are allocated
-				Services *struct {
-					// CidrBlocks List of CIDR blocks
-					CidrBlocks []string `json:"cidrBlocks"`
-				} `json:"services"`
-			} `json:"clusterNetwork"`
-
-			// Infra Infrastructure configuration for the cluster
-			Infra struct {
-				// VPC Virtual Private Cloud Network that the cluster is created in
-				VPC string `json:"VPC"`
-
-				// Subnet Engine sub-network that the cluster is created in
-				Subnet string `json:"subnet"`
-
-				// Version Control-plane version configuration
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"infra"`
-		} `json:"spec"`
-
-		// Status Current observed state of the cluster
-		Status struct {
-			// Conditions Current conditions of the cluster
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// KubeconfigSecretName Reference to the kubeconfig secret
-			KubeconfigSecretName *struct {
-				// Name Name of the referenced object
-				Name string `json:"name"`
-			} `json:"kubeconfigSecretName"`
-
-			// Phase Current phase of the cluster
-			Phase PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the cluster is ready for use
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of ready replicas
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of unavailable replicas
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of updated replicas
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonCluster
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdResponse) Status() string {
@@ -14519,286 +6544,13 @@ func (r PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceI
 type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion string `json:"apiVersion"`
-
-		// Items Collection of SotoonNodepool resources
-		Items []struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsKind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsStatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		} `json:"items"`
-
-		// Kind The string value 'SotoonNodepoolList'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200Kind `json:"kind"`
-
-		// Metadata Standard metadata fields for the list
-		Metadata struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepoolList
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsKind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsStatusPhase string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422Status string
 
 // Status returns HTTPResponse.Status
 func (r GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse) Status() string {
@@ -14819,298 +6571,14 @@ func (r GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse
 type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404Status `json:"status"`
-	}
-	JSON409 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools409ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools409Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools409Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422Status `json:"status"`
-	}
+	JSON201      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON409      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201StatusPhase string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools409ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools409Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools409Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422Status string
 
 // Status returns HTTPResponse.Status
 func (r PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResponse) Status() string {
@@ -15131,187 +6599,13 @@ func (r PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespons
 type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Status `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerStatus
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Status string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -15332,268 +6626,13 @@ func (r DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -15614,268 +6653,13 @@ func (r GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -15896,268 +6680,13 @@ func (r PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -16178,268 +6707,13 @@ func (r PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// ApiVersion Version identifier of the API schema
-		ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-		// Kind The string value 'SotoonNodepool' that identifies the schema
-		Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-		// Metadata Standard resource metadata fields
-		Metadata struct {
-			// Annotations Annotations store additional metadata about the resource
-			Annotations map[string]string `json:"annotations"`
-
-			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp"`
-
-			// DeletionTimestamp Timestamp when the resource was marked for deletion
-			DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels map[string]string `json:"labels"`
-
-			// Name User-provided name that uniquely identifies the resource within its workspace
-			Name string `json:"name"`
-
-			// ResourceVersion Internal version for optimistic concurrency control
-			ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-			// Uid System-generated unique identifier for the resource
-			Uid string `json:"uid"`
-
-			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace string `json:"workspace"`
-		} `json:"metadata"`
-
-		// Spec Desired configuration for the nodepool
-		Spec struct {
-			// AllowedUnsafeSysctls List of allowed unsafe sysctls
-			AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-			// ClusterName Name of the cluster this nodepool belongs to
-			ClusterName string `json:"clusterName"`
-
-			// Cri Container runtime configuration
-			Cri *struct {
-				// Runtime Container runtime to use
-				Runtime PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-			} `json:"cri"`
-
-			// Labels Labels to apply to worker nodes
-			Labels *map[string]string `json:"labels,omitempty"`
-
-			// Replicas Number of worker nodes desired in the nodepool
-			Replicas int32 `json:"replicas"`
-
-			// Template Template configuration for worker nodes
-			Template struct {
-				// IamEnabled Enable IAM integration for nodes
-				IamEnabled bool `json:"iamEnabled"`
-
-				// InstanceType Instance type for worker nodes in Engine
-				InstanceType string `json:"instanceType"`
-			} `json:"template"`
-
-			// Version Kubernetes and SKE patch version configuration for worker machines
-			Version struct {
-				// KubernetesVersion Kubernetes version
-				KubernetesVersion string `json:"kubernetesVersion"`
-
-				// PatchVersion SKE patch version
-				PatchVersion string `json:"patchVersion"`
-			} `json:"version"`
-		} `json:"spec"`
-
-		// Status Current observed state of the nodepool
-		Status struct {
-			// AvailableReplicas Number of replicas available for scheduling
-			AvailableReplicas int32 `json:"availableReplicas"`
-
-			// Conditions Current conditions of the nodepool
-			Conditions *[]struct {
-				LastTransitionTime interface{} `json:"lastTransitionTime"`
-				Message            string      `json:"message"`
-				ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-				Reason             string      `json:"reason"`
-				Status             string      `json:"status"`
-				Type               string      `json:"type"`
-			} `json:"conditions,omitempty"`
-
-			// Phase Current phase of scaling operation
-			Phase PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-			// Ready Indicates if the nodepool is ready
-			Ready bool `json:"ready"`
-
-			// ReadyReplicas Number of replicas that are ready to serve traffic
-			ReadyReplicas int32 `json:"readyReplicas"`
-
-			// Replicas Current total number of replicas
-			Replicas int32 `json:"replicas"`
-
-			// UnavailableReplicas Number of replicas currently unavailable
-			UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-			// UpdatedReplicas Number of replicas updated to the latest spec
-			UpdatedReplicas int32 `json:"updatedReplicas"`
-		} `json:"status"`
-	}
-	JSON400 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-	}
-	JSON401 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-	}
-	JSON403 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-	}
-	JSON404 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-	}
-	JSON422 *struct {
-		// ApiVersion Version of the Status kind
-		ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-		// Code HTTP status code corresponding to this status
-		Code int32 `json:"code"`
-
-		// Kind Value is always 'Status'
-		Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-		// Message Human-readable description of the status
-		Message *string `json:"message,omitempty"`
-
-		// Metadata Standard metadata fields
-		Metadata *struct {
-			Continue           *string `json:"continue,omitempty"`
-			RemainingItemCount *int64  `json:"remainingItemCount"`
-			ResourceVersion    *string `json:"resourceVersion,omitempty"`
-			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
-
-		// Reason Machine-readable description of the cause
-		Reason *string `json:"reason,omitempty"`
-
-		// Status Status of the operation
-		Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-	}
+	JSON200      *ContainerSotoonNodepool
+	JSON400      *ContainerStatus
+	JSON401      *ContainerStatus
+	JSON403      *ContainerStatus
+	JSON404      *ContainerStatus
+	JSON422      *ContainerStatus
 }
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind string
-type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status string
 
 // Status returns HTTPResponse.Status
 func (r PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdResponse) Status() string {
@@ -17522,295 +7796,42 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(rs
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion string `json:"apiVersion"`
-
-			// Items Collection of SotoonCluster resources
-			Items []struct {
-				// ApiVersion Version identifier of the API schema
-				ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200ItemsApiVersion `json:"apiVersion"`
-
-				// Kind The string value 'SotoonCluster' that identifies the schema
-				Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200ItemsKind `json:"kind"`
-
-				// Metadata Standard resource metadata fields
-				Metadata struct {
-					// Annotations Annotations store additional metadata about the resource
-					Annotations map[string]string `json:"annotations"`
-
-					// CreationTimestamp Timestamp when the resource was initially created
-					CreationTimestamp interface{} `json:"creationTimestamp"`
-
-					// DeletionTimestamp Timestamp when the resource was marked for deletion
-					DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-					// Labels Labels are key-value pairs attached to resources for organization and categorization
-					Labels map[string]string `json:"labels"`
-
-					// Name User-provided name that uniquely identifies the resource within its workspace
-					Name string `json:"name"`
-
-					// ResourceVersion Internal version for optimistic concurrency control
-					ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-					// Uid System-generated unique identifier for the resource
-					Uid string `json:"uid"`
-
-					// Workspace Unique identifier of the workspace where the resource belongs
-					Workspace string `json:"workspace"`
-				} `json:"metadata"`
-
-				// Spec Desired configuration for the Kubernetes cluster
-				Spec struct {
-					// ClusterNetwork Network configuration for the cluster
-					ClusterNetwork *struct {
-						// Pods Network ranges from which Pod networks are allocated
-						Pods *struct {
-							// CidrBlocks List of CIDR blocks
-							CidrBlocks []string `json:"cidrBlocks"`
-						} `json:"pods"`
-
-						// Services Network ranges from which service VIPs are allocated
-						Services *struct {
-							// CidrBlocks List of CIDR blocks
-							CidrBlocks []string `json:"cidrBlocks"`
-						} `json:"services"`
-					} `json:"clusterNetwork"`
-
-					// Infra Infrastructure configuration for the cluster
-					Infra struct {
-						// VPC Virtual Private Cloud Network that the cluster is created in
-						VPC string `json:"VPC"`
-
-						// Subnet Engine sub-network that the cluster is created in
-						Subnet string `json:"subnet"`
-
-						// Version Control-plane version configuration
-						Version struct {
-							// KubernetesVersion Kubernetes version
-							KubernetesVersion string `json:"kubernetesVersion"`
-
-							// PatchVersion SKE patch version
-							PatchVersion string `json:"patchVersion"`
-						} `json:"version"`
-					} `json:"infra"`
-				} `json:"spec"`
-
-				// Status Current observed state of the cluster
-				Status struct {
-					// Conditions Current conditions of the cluster
-					Conditions *[]struct {
-						LastTransitionTime interface{} `json:"lastTransitionTime"`
-						Message            string      `json:"message"`
-						ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-						Reason             string      `json:"reason"`
-						Status             string      `json:"status"`
-						Type               string      `json:"type"`
-					} `json:"conditions,omitempty"`
-
-					// KubeconfigSecretName Reference to the kubeconfig secret
-					KubeconfigSecretName *struct {
-						// Name Name of the referenced object
-						Name string `json:"name"`
-					} `json:"kubeconfigSecretName"`
-
-					// Phase Current phase of the cluster
-					Phase GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase `json:"phase"`
-
-					// Ready Indicates if the cluster is ready for use
-					Ready bool `json:"ready"`
-
-					// ReadyReplicas Number of ready replicas
-					ReadyReplicas int32 `json:"readyReplicas"`
-
-					// Replicas Total number of replicas
-					Replicas int32 `json:"replicas"`
-
-					// UnavailableReplicas Number of unavailable replicas
-					UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-					// UpdatedReplicas Number of updated replicas
-					UpdatedReplicas int32 `json:"updatedReplicas"`
-				} `json:"status"`
-			} `json:"items"`
-
-			// Kind The string value 'SotoonClusterList'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters200Kind `json:"kind"`
-
-			// Metadata Standard metadata fields for the list
-			Metadata struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata"`
-		}
+		var dest ContainerSotoonClusterList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -17836,311 +7857,49 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResponse(r
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters201ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters201Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonCluster
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters409ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters409Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters409Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18166,198 +7925,42 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResource
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18383,278 +7986,42 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonCluster
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18680,278 +8047,42 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceI
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonCluster
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -18977,278 +8108,42 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdR
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonCluster
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19274,295 +8169,42 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(r
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion string `json:"apiVersion"`
-
-			// Items Collection of SotoonNodepool resources
-			Items []struct {
-				// ApiVersion Version identifier of the API schema
-				ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsApiVersion `json:"apiVersion"`
-
-				// Kind The string value 'SotoonNodepool' that identifies the schema
-				Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsKind `json:"kind"`
-
-				// Metadata Standard resource metadata fields
-				Metadata struct {
-					// Annotations Annotations store additional metadata about the resource
-					Annotations map[string]string `json:"annotations"`
-
-					// CreationTimestamp Timestamp when the resource was initially created
-					CreationTimestamp interface{} `json:"creationTimestamp"`
-
-					// DeletionTimestamp Timestamp when the resource was marked for deletion
-					DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-					// Labels Labels are key-value pairs attached to resources for organization and categorization
-					Labels map[string]string `json:"labels"`
-
-					// Name User-provided name that uniquely identifies the resource within its workspace
-					Name string `json:"name"`
-
-					// ResourceVersion Internal version for optimistic concurrency control
-					ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-					// Uid System-generated unique identifier for the resource
-					Uid string `json:"uid"`
-
-					// Workspace Unique identifier of the workspace where the resource belongs
-					Workspace string `json:"workspace"`
-				} `json:"metadata"`
-
-				// Spec Desired configuration for the nodepool
-				Spec struct {
-					// AllowedUnsafeSysctls List of allowed unsafe sysctls
-					AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-					// ClusterName Name of the cluster this nodepool belongs to
-					ClusterName string `json:"clusterName"`
-
-					// Cri Container runtime configuration
-					Cri *struct {
-						// Runtime Container runtime to use
-						Runtime GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime `json:"runtime"`
-					} `json:"cri"`
-
-					// Labels Labels to apply to worker nodes
-					Labels *map[string]string `json:"labels,omitempty"`
-
-					// Replicas Number of worker nodes desired in the nodepool
-					Replicas int32 `json:"replicas"`
-
-					// Template Template configuration for worker nodes
-					Template struct {
-						// IamEnabled Enable IAM integration for nodes
-						IamEnabled bool `json:"iamEnabled"`
-
-						// InstanceType Instance type for worker nodes in Engine
-						InstanceType string `json:"instanceType"`
-					} `json:"template"`
-
-					// Version Kubernetes and SKE patch version configuration for worker machines
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"spec"`
-
-				// Status Current observed state of the nodepool
-				Status struct {
-					// AvailableReplicas Number of replicas available for scheduling
-					AvailableReplicas int32 `json:"availableReplicas"`
-
-					// Conditions Current conditions of the nodepool
-					Conditions *[]struct {
-						LastTransitionTime interface{} `json:"lastTransitionTime"`
-						Message            string      `json:"message"`
-						ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-						Reason             string      `json:"reason"`
-						Status             string      `json:"status"`
-						Type               string      `json:"type"`
-					} `json:"conditions,omitempty"`
-
-					// Phase Current phase of scaling operation
-					Phase GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200ItemsStatusPhase `json:"phase"`
-
-					// Ready Indicates if the nodepool is ready
-					Ready bool `json:"ready"`
-
-					// ReadyReplicas Number of replicas that are ready to serve traffic
-					ReadyReplicas int32 `json:"readyReplicas"`
-
-					// Replicas Current total number of replicas
-					Replicas int32 `json:"replicas"`
-
-					// UnavailableReplicas Number of replicas currently unavailable
-					UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-					// UpdatedReplicas Number of replicas updated to the latest spec
-					UpdatedReplicas int32 `json:"updatedReplicas"`
-				} `json:"status"`
-			} `json:"items"`
-
-			// Kind The string value 'SotoonNodepoolList'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools200Kind `json:"kind"`
-
-			// Metadata Standard metadata fields for the list
-			Metadata struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata"`
-		}
+		var dest ContainerSotoonNodepoolList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19588,311 +8230,49 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResponse(
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools201StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools409ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools409Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools409Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -19918,198 +8298,42 @@ func ParseDeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20135,278 +8359,42 @@ func ParseGetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20432,278 +8420,42 @@ func ParsePatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResource
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -20729,278 +8481,42 @@ func ParsePostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceI
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -21026,278 +8542,42 @@ func ParsePutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -21515,295 +8795,42 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResponse
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion string `json:"apiVersion"`
-
-			// Items Collection of SotoonCluster resources
-			Items []struct {
-				// ApiVersion Version identifier of the API schema
-				ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200ItemsApiVersion `json:"apiVersion"`
-
-				// Kind The string value 'SotoonCluster' that identifies the schema
-				Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200ItemsKind `json:"kind"`
-
-				// Metadata Standard resource metadata fields
-				Metadata struct {
-					// Annotations Annotations store additional metadata about the resource
-					Annotations map[string]string `json:"annotations"`
-
-					// CreationTimestamp Timestamp when the resource was initially created
-					CreationTimestamp interface{} `json:"creationTimestamp"`
-
-					// DeletionTimestamp Timestamp when the resource was marked for deletion
-					DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-					// Labels Labels are key-value pairs attached to resources for organization and categorization
-					Labels map[string]string `json:"labels"`
-
-					// Name User-provided name that uniquely identifies the resource within its workspace
-					Name string `json:"name"`
-
-					// ResourceVersion Internal version for optimistic concurrency control
-					ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-					// Uid System-generated unique identifier for the resource
-					Uid string `json:"uid"`
-
-					// Workspace Unique identifier of the workspace where the resource belongs
-					Workspace string `json:"workspace"`
-				} `json:"metadata"`
-
-				// Spec Desired configuration for the Kubernetes cluster
-				Spec struct {
-					// ClusterNetwork Network configuration for the cluster
-					ClusterNetwork *struct {
-						// Pods Network ranges from which Pod networks are allocated
-						Pods *struct {
-							// CidrBlocks List of CIDR blocks
-							CidrBlocks []string `json:"cidrBlocks"`
-						} `json:"pods"`
-
-						// Services Network ranges from which service VIPs are allocated
-						Services *struct {
-							// CidrBlocks List of CIDR blocks
-							CidrBlocks []string `json:"cidrBlocks"`
-						} `json:"services"`
-					} `json:"clusterNetwork"`
-
-					// Infra Infrastructure configuration for the cluster
-					Infra struct {
-						// VPC Virtual Private Cloud Network that the cluster is created in
-						VPC string `json:"VPC"`
-
-						// Subnet Engine sub-network that the cluster is created in
-						Subnet string `json:"subnet"`
-
-						// Version Control-plane version configuration
-						Version struct {
-							// KubernetesVersion Kubernetes version
-							KubernetesVersion string `json:"kubernetesVersion"`
-
-							// PatchVersion SKE patch version
-							PatchVersion string `json:"patchVersion"`
-						} `json:"version"`
-					} `json:"infra"`
-				} `json:"spec"`
-
-				// Status Current observed state of the cluster
-				Status struct {
-					// Conditions Current conditions of the cluster
-					Conditions *[]struct {
-						LastTransitionTime interface{} `json:"lastTransitionTime"`
-						Message            string      `json:"message"`
-						ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-						Reason             string      `json:"reason"`
-						Status             string      `json:"status"`
-						Type               string      `json:"type"`
-					} `json:"conditions,omitempty"`
-
-					// KubeconfigSecretName Reference to the kubeconfig secret
-					KubeconfigSecretName *struct {
-						// Name Name of the referenced object
-						Name string `json:"name"`
-					} `json:"kubeconfigSecretName"`
-
-					// Phase Current phase of the cluster
-					Phase GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase `json:"phase"`
-
-					// Ready Indicates if the cluster is ready for use
-					Ready bool `json:"ready"`
-
-					// ReadyReplicas Number of ready replicas
-					ReadyReplicas int32 `json:"readyReplicas"`
-
-					// Replicas Total number of replicas
-					Replicas int32 `json:"replicas"`
-
-					// UnavailableReplicas Number of unavailable replicas
-					UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-					// UpdatedReplicas Number of updated replicas
-					UpdatedReplicas int32 `json:"updatedReplicas"`
-				} `json:"status"`
-			} `json:"items"`
-
-			// Kind The string value 'SotoonClusterList'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters200Kind `json:"kind"`
-
-			// Metadata Standard metadata fields for the list
-			Metadata struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata"`
-		}
+		var dest ContainerSotoonClusterList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -21829,311 +8856,49 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersRespons
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters201ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters201Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonCluster
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters409ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters409Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters409Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -22159,198 +8924,42 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResou
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -22376,278 +8985,42 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonCluster
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -22673,278 +9046,42 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResour
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonCluster
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -22970,278 +9107,42 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResource
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonCluster
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -23267,295 +9168,42 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespons
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion string `json:"apiVersion"`
-
-			// Items Collection of SotoonNodepool resources
-			Items []struct {
-				// ApiVersion Version identifier of the API schema
-				ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsApiVersion `json:"apiVersion"`
-
-				// Kind The string value 'SotoonNodepool' that identifies the schema
-				Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsKind `json:"kind"`
-
-				// Metadata Standard resource metadata fields
-				Metadata struct {
-					// Annotations Annotations store additional metadata about the resource
-					Annotations map[string]string `json:"annotations"`
-
-					// CreationTimestamp Timestamp when the resource was initially created
-					CreationTimestamp interface{} `json:"creationTimestamp"`
-
-					// DeletionTimestamp Timestamp when the resource was marked for deletion
-					DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-					// Labels Labels are key-value pairs attached to resources for organization and categorization
-					Labels map[string]string `json:"labels"`
-
-					// Name User-provided name that uniquely identifies the resource within its workspace
-					Name string `json:"name"`
-
-					// ResourceVersion Internal version for optimistic concurrency control
-					ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-					// Uid System-generated unique identifier for the resource
-					Uid string `json:"uid"`
-
-					// Workspace Unique identifier of the workspace where the resource belongs
-					Workspace string `json:"workspace"`
-				} `json:"metadata"`
-
-				// Spec Desired configuration for the nodepool
-				Spec struct {
-					// AllowedUnsafeSysctls List of allowed unsafe sysctls
-					AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-					// ClusterName Name of the cluster this nodepool belongs to
-					ClusterName string `json:"clusterName"`
-
-					// Cri Container runtime configuration
-					Cri *struct {
-						// Runtime Container runtime to use
-						Runtime GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime `json:"runtime"`
-					} `json:"cri"`
-
-					// Labels Labels to apply to worker nodes
-					Labels *map[string]string `json:"labels,omitempty"`
-
-					// Replicas Number of worker nodes desired in the nodepool
-					Replicas int32 `json:"replicas"`
-
-					// Template Template configuration for worker nodes
-					Template struct {
-						// IamEnabled Enable IAM integration for nodes
-						IamEnabled bool `json:"iamEnabled"`
-
-						// InstanceType Instance type for worker nodes in Engine
-						InstanceType string `json:"instanceType"`
-					} `json:"template"`
-
-					// Version Kubernetes and SKE patch version configuration for worker machines
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"spec"`
-
-				// Status Current observed state of the nodepool
-				Status struct {
-					// AvailableReplicas Number of replicas available for scheduling
-					AvailableReplicas int32 `json:"availableReplicas"`
-
-					// Conditions Current conditions of the nodepool
-					Conditions *[]struct {
-						LastTransitionTime interface{} `json:"lastTransitionTime"`
-						Message            string      `json:"message"`
-						ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-						Reason             string      `json:"reason"`
-						Status             string      `json:"status"`
-						Type               string      `json:"type"`
-					} `json:"conditions,omitempty"`
-
-					// Phase Current phase of scaling operation
-					Phase GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200ItemsStatusPhase `json:"phase"`
-
-					// Ready Indicates if the nodepool is ready
-					Ready bool `json:"ready"`
-
-					// ReadyReplicas Number of replicas that are ready to serve traffic
-					ReadyReplicas int32 `json:"readyReplicas"`
-
-					// Replicas Current total number of replicas
-					Replicas int32 `json:"replicas"`
-
-					// UnavailableReplicas Number of replicas currently unavailable
-					UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-					// UpdatedReplicas Number of replicas updated to the latest spec
-					UpdatedReplicas int32 `json:"updatedReplicas"`
-				} `json:"status"`
-			} `json:"items"`
-
-			// Kind The string value 'SotoonNodepoolList'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools200Kind `json:"kind"`
-
-			// Metadata Standard metadata fields for the list
-			Metadata struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata"`
-		}
+		var dest ContainerSotoonNodepoolList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -23581,311 +9229,49 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools201StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools409ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools409Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools409Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -23911,198 +9297,42 @@ func ParseDeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -24128,278 +9358,42 @@ func ParseGetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -24425,278 +9419,42 @@ func ParsePatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -24722,278 +9480,42 @@ func ParsePostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -25019,278 +9541,42 @@ func ParsePutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourc
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -25508,295 +9794,42 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespons
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion string `json:"apiVersion"`
-
-			// Items Collection of SotoonCluster resources
-			Items []struct {
-				// ApiVersion Version identifier of the API schema
-				ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200ItemsApiVersion `json:"apiVersion"`
-
-				// Kind The string value 'SotoonCluster' that identifies the schema
-				Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200ItemsKind `json:"kind"`
-
-				// Metadata Standard resource metadata fields
-				Metadata struct {
-					// Annotations Annotations store additional metadata about the resource
-					Annotations map[string]string `json:"annotations"`
-
-					// CreationTimestamp Timestamp when the resource was initially created
-					CreationTimestamp interface{} `json:"creationTimestamp"`
-
-					// DeletionTimestamp Timestamp when the resource was marked for deletion
-					DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-					// Labels Labels are key-value pairs attached to resources for organization and categorization
-					Labels map[string]string `json:"labels"`
-
-					// Name User-provided name that uniquely identifies the resource within its workspace
-					Name string `json:"name"`
-
-					// ResourceVersion Internal version for optimistic concurrency control
-					ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-					// Uid System-generated unique identifier for the resource
-					Uid string `json:"uid"`
-
-					// Workspace Unique identifier of the workspace where the resource belongs
-					Workspace string `json:"workspace"`
-				} `json:"metadata"`
-
-				// Spec Desired configuration for the Kubernetes cluster
-				Spec struct {
-					// ClusterNetwork Network configuration for the cluster
-					ClusterNetwork *struct {
-						// Pods Network ranges from which Pod networks are allocated
-						Pods *struct {
-							// CidrBlocks List of CIDR blocks
-							CidrBlocks []string `json:"cidrBlocks"`
-						} `json:"pods"`
-
-						// Services Network ranges from which service VIPs are allocated
-						Services *struct {
-							// CidrBlocks List of CIDR blocks
-							CidrBlocks []string `json:"cidrBlocks"`
-						} `json:"services"`
-					} `json:"clusterNetwork"`
-
-					// Infra Infrastructure configuration for the cluster
-					Infra struct {
-						// VPC Virtual Private Cloud Network that the cluster is created in
-						VPC string `json:"VPC"`
-
-						// Subnet Engine sub-network that the cluster is created in
-						Subnet string `json:"subnet"`
-
-						// Version Control-plane version configuration
-						Version struct {
-							// KubernetesVersion Kubernetes version
-							KubernetesVersion string `json:"kubernetesVersion"`
-
-							// PatchVersion SKE patch version
-							PatchVersion string `json:"patchVersion"`
-						} `json:"version"`
-					} `json:"infra"`
-				} `json:"spec"`
-
-				// Status Current observed state of the cluster
-				Status struct {
-					// Conditions Current conditions of the cluster
-					Conditions *[]struct {
-						LastTransitionTime interface{} `json:"lastTransitionTime"`
-						Message            string      `json:"message"`
-						ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-						Reason             string      `json:"reason"`
-						Status             string      `json:"status"`
-						Type               string      `json:"type"`
-					} `json:"conditions,omitempty"`
-
-					// KubeconfigSecretName Reference to the kubeconfig secret
-					KubeconfigSecretName *struct {
-						// Name Name of the referenced object
-						Name string `json:"name"`
-					} `json:"kubeconfigSecretName"`
-
-					// Phase Current phase of the cluster
-					Phase GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200ItemsStatusPhase `json:"phase"`
-
-					// Ready Indicates if the cluster is ready for use
-					Ready bool `json:"ready"`
-
-					// ReadyReplicas Number of ready replicas
-					ReadyReplicas int32 `json:"readyReplicas"`
-
-					// Replicas Total number of replicas
-					Replicas int32 `json:"replicas"`
-
-					// UnavailableReplicas Number of unavailable replicas
-					UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-					// UpdatedReplicas Number of updated replicas
-					UpdatedReplicas int32 `json:"updatedReplicas"`
-				} `json:"status"`
-			} `json:"items"`
-
-			// Kind The string value 'SotoonClusterList'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters200Kind `json:"kind"`
-
-			// Metadata Standard metadata fields for the list
-			Metadata struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata"`
-		}
+		var dest ContainerSotoonClusterList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -25822,311 +9855,49 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersRespon
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters201ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters201Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters201StatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonCluster
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters409ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters409Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters409Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -26152,198 +9923,42 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersReso
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -26369,278 +9984,42 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonCluster
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -26666,278 +10045,42 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResou
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonCluster
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -26963,278 +10106,42 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourc
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonCluster' that identifies the schema
-			Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the Kubernetes cluster
-			Spec struct {
-				// ClusterNetwork Network configuration for the cluster
-				ClusterNetwork *struct {
-					// Pods Network ranges from which Pod networks are allocated
-					Pods *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"pods"`
-
-					// Services Network ranges from which service VIPs are allocated
-					Services *struct {
-						// CidrBlocks List of CIDR blocks
-						CidrBlocks []string `json:"cidrBlocks"`
-					} `json:"services"`
-				} `json:"clusterNetwork"`
-
-				// Infra Infrastructure configuration for the cluster
-				Infra struct {
-					// VPC Virtual Private Cloud Network that the cluster is created in
-					VPC string `json:"VPC"`
-
-					// Subnet Engine sub-network that the cluster is created in
-					Subnet string `json:"subnet"`
-
-					// Version Control-plane version configuration
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"infra"`
-			} `json:"spec"`
-
-			// Status Current observed state of the cluster
-			Status struct {
-				// Conditions Current conditions of the cluster
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// KubeconfigSecretName Reference to the kubeconfig secret
-				KubeconfigSecretName *struct {
-					// Name Name of the referenced object
-					Name string `json:"name"`
-				} `json:"kubeconfigSecretName"`
-
-				// Phase Current phase of the cluster
-				Phase PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the cluster is ready for use
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of ready replicas
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of unavailable replicas
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of updated replicas
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonCluster
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -27260,295 +10167,42 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespon
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion string `json:"apiVersion"`
-
-			// Items Collection of SotoonNodepool resources
-			Items []struct {
-				// ApiVersion Version identifier of the API schema
-				ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsApiVersion `json:"apiVersion"`
-
-				// Kind The string value 'SotoonNodepool' that identifies the schema
-				Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsKind `json:"kind"`
-
-				// Metadata Standard resource metadata fields
-				Metadata struct {
-					// Annotations Annotations store additional metadata about the resource
-					Annotations map[string]string `json:"annotations"`
-
-					// CreationTimestamp Timestamp when the resource was initially created
-					CreationTimestamp interface{} `json:"creationTimestamp"`
-
-					// DeletionTimestamp Timestamp when the resource was marked for deletion
-					DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-					// Labels Labels are key-value pairs attached to resources for organization and categorization
-					Labels map[string]string `json:"labels"`
-
-					// Name User-provided name that uniquely identifies the resource within its workspace
-					Name string `json:"name"`
-
-					// ResourceVersion Internal version for optimistic concurrency control
-					ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-					// Uid System-generated unique identifier for the resource
-					Uid string `json:"uid"`
-
-					// Workspace Unique identifier of the workspace where the resource belongs
-					Workspace string `json:"workspace"`
-				} `json:"metadata"`
-
-				// Spec Desired configuration for the nodepool
-				Spec struct {
-					// AllowedUnsafeSysctls List of allowed unsafe sysctls
-					AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-					// ClusterName Name of the cluster this nodepool belongs to
-					ClusterName string `json:"clusterName"`
-
-					// Cri Container runtime configuration
-					Cri *struct {
-						// Runtime Container runtime to use
-						Runtime GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsSpecCriRuntime `json:"runtime"`
-					} `json:"cri"`
-
-					// Labels Labels to apply to worker nodes
-					Labels *map[string]string `json:"labels,omitempty"`
-
-					// Replicas Number of worker nodes desired in the nodepool
-					Replicas int32 `json:"replicas"`
-
-					// Template Template configuration for worker nodes
-					Template struct {
-						// IamEnabled Enable IAM integration for nodes
-						IamEnabled bool `json:"iamEnabled"`
-
-						// InstanceType Instance type for worker nodes in Engine
-						InstanceType string `json:"instanceType"`
-					} `json:"template"`
-
-					// Version Kubernetes and SKE patch version configuration for worker machines
-					Version struct {
-						// KubernetesVersion Kubernetes version
-						KubernetesVersion string `json:"kubernetesVersion"`
-
-						// PatchVersion SKE patch version
-						PatchVersion string `json:"patchVersion"`
-					} `json:"version"`
-				} `json:"spec"`
-
-				// Status Current observed state of the nodepool
-				Status struct {
-					// AvailableReplicas Number of replicas available for scheduling
-					AvailableReplicas int32 `json:"availableReplicas"`
-
-					// Conditions Current conditions of the nodepool
-					Conditions *[]struct {
-						LastTransitionTime interface{} `json:"lastTransitionTime"`
-						Message            string      `json:"message"`
-						ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-						Reason             string      `json:"reason"`
-						Status             string      `json:"status"`
-						Type               string      `json:"type"`
-					} `json:"conditions,omitempty"`
-
-					// Phase Current phase of scaling operation
-					Phase GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200ItemsStatusPhase `json:"phase"`
-
-					// Ready Indicates if the nodepool is ready
-					Ready bool `json:"ready"`
-
-					// ReadyReplicas Number of replicas that are ready to serve traffic
-					ReadyReplicas int32 `json:"readyReplicas"`
-
-					// Replicas Current total number of replicas
-					Replicas int32 `json:"replicas"`
-
-					// UnavailableReplicas Number of replicas currently unavailable
-					UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-					// UpdatedReplicas Number of replicas updated to the latest spec
-					UpdatedReplicas int32 `json:"updatedReplicas"`
-				} `json:"status"`
-			} `json:"items"`
-
-			// Kind The string value 'SotoonNodepoolList'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools200Kind `json:"kind"`
-
-			// Metadata Standard metadata fields for the list
-			Metadata struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata"`
-		}
+		var dest ContainerSotoonNodepoolList
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -27574,311 +10228,49 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRespo
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools201StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools409ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools409Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools409Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON409 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -27904,198 +10296,42 @@ func ParseDeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsRes
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status DeleteSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -28121,278 +10357,42 @@ func ParseGetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status GetSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -28418,278 +10418,42 @@ func ParsePatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsReso
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -28715,278 +10479,42 @@ func ParsePostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResou
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -29012,278 +10540,42 @@ func ParsePutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResour
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// ApiVersion Version identifier of the API schema
-			ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200ApiVersion `json:"apiVersion"`
-
-			// Kind The string value 'SotoonNodepool' that identifies the schema
-			Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200Kind `json:"kind"`
-
-			// Metadata Standard resource metadata fields
-			Metadata struct {
-				// Annotations Annotations store additional metadata about the resource
-				Annotations map[string]string `json:"annotations"`
-
-				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp"`
-
-				// DeletionTimestamp Timestamp when the resource was marked for deletion
-				DeletionTimestamp interface{} `json:"deletionTimestamp"`
-
-				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels map[string]string `json:"labels"`
-
-				// Name User-provided name that uniquely identifies the resource within its workspace
-				Name string `json:"name"`
-
-				// ResourceVersion Internal version for optimistic concurrency control
-				ResourceVersion *string `json:"resourceVersion,omitempty"`
-
-				// Uid System-generated unique identifier for the resource
-				Uid string `json:"uid"`
-
-				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace string `json:"workspace"`
-			} `json:"metadata"`
-
-			// Spec Desired configuration for the nodepool
-			Spec struct {
-				// AllowedUnsafeSysctls List of allowed unsafe sysctls
-				AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
-
-				// ClusterName Name of the cluster this nodepool belongs to
-				ClusterName string `json:"clusterName"`
-
-				// Cri Container runtime configuration
-				Cri *struct {
-					// Runtime Container runtime to use
-					Runtime PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200SpecCriRuntime `json:"runtime"`
-				} `json:"cri"`
-
-				// Labels Labels to apply to worker nodes
-				Labels *map[string]string `json:"labels,omitempty"`
-
-				// Replicas Number of worker nodes desired in the nodepool
-				Replicas int32 `json:"replicas"`
-
-				// Template Template configuration for worker nodes
-				Template struct {
-					// IamEnabled Enable IAM integration for nodes
-					IamEnabled bool `json:"iamEnabled"`
-
-					// InstanceType Instance type for worker nodes in Engine
-					InstanceType string `json:"instanceType"`
-				} `json:"template"`
-
-				// Version Kubernetes and SKE patch version configuration for worker machines
-				Version struct {
-					// KubernetesVersion Kubernetes version
-					KubernetesVersion string `json:"kubernetesVersion"`
-
-					// PatchVersion SKE patch version
-					PatchVersion string `json:"patchVersion"`
-				} `json:"version"`
-			} `json:"spec"`
-
-			// Status Current observed state of the nodepool
-			Status struct {
-				// AvailableReplicas Number of replicas available for scheduling
-				AvailableReplicas int32 `json:"availableReplicas"`
-
-				// Conditions Current conditions of the nodepool
-				Conditions *[]struct {
-					LastTransitionTime interface{} `json:"lastTransitionTime"`
-					Message            string      `json:"message"`
-					ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-					Reason             string      `json:"reason"`
-					Status             string      `json:"status"`
-					Type               string      `json:"type"`
-				} `json:"conditions,omitempty"`
-
-				// Phase Current phase of scaling operation
-				Phase PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId200StatusPhase `json:"phase"`
-
-				// Ready Indicates if the nodepool is ready
-				Ready bool `json:"ready"`
-
-				// ReadyReplicas Number of replicas that are ready to serve traffic
-				ReadyReplicas int32 `json:"readyReplicas"`
-
-				// Replicas Current total number of replicas
-				Replicas int32 `json:"replicas"`
-
-				// UnavailableReplicas Number of replicas currently unavailable
-				UnavailableReplicas int32 `json:"unavailableReplicas"`
-
-				// UpdatedReplicas Number of replicas updated to the latest spec
-				UpdatedReplicas int32 `json:"updatedReplicas"`
-			} `json:"status"`
-		}
+		var dest ContainerSotoonNodepool
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId400Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON400 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId401Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId403Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON403 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId404Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
 		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest struct {
-			// ApiVersion Version of the Status kind
-			ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422ApiVersion `json:"apiVersion"`
-
-			// Code HTTP status code corresponding to this status
-			Code int32 `json:"code"`
-
-			// Kind Value is always 'Status'
-			Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Kind `json:"kind"`
-
-			// Message Human-readable description of the status
-			Message *string `json:"message,omitempty"`
-
-			// Metadata Standard metadata fields
-			Metadata *struct {
-				Continue           *string `json:"continue,omitempty"`
-				RemainingItemCount *int64  `json:"remainingItemCount"`
-				ResourceVersion    *string `json:"resourceVersion,omitempty"`
-				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
-
-			// Reason Machine-readable description of the cause
-			Reason *string `json:"reason,omitempty"`
-
-			// Status Status of the operation
-			Status PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId422Status `json:"status"`
-		}
+		var dest ContainerStatus
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
