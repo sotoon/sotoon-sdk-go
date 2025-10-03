@@ -6472,51 +6472,51 @@ type AcceptInvitationResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// CreatedAt Timestamp when the user was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Email Email address of the user
-		Email *string `json:"email,omitempty"`
+		Email string `json:"email"`
 
 		// Name Full name of the user
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the user was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the user
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON404 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -6541,55 +6541,55 @@ type CreateAuthTokenWithCredResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ChallengeToken Token to be used when responding to the challenge
-		ChallengeToken *string `json:"challenge_token,omitempty"`
+		ChallengeToken string `json:"challenge_token"`
 
 		// ChallengeType Type of challenge (e.g., 'otp', 'sms')
-		ChallengeType *string `json:"challenge_type,omitempty"`
+		ChallengeType string `json:"challenge_type"`
 
 		// Message Human-readable message about the challenge
-		Message *string `json:"message,omitempty"`
+		Message string `json:"message"`
 	}
 	JSON201 *struct {
 		// ExpiresAt Token expiration timestamp
-		ExpiresAt *time.Time `json:"expires_at,omitempty"`
+		ExpiresAt time.Time `json:"expires_at"`
 
 		// Token Authentication token
-		Token *string `json:"token,omitempty"`
+		Token string `json:"token"`
 
 		// UserUuid UUID of the authenticated user
-		UserUuid *string `json:"user_uuid,omitempty"`
+		UserUuid string `json:"user_uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON404 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -6614,47 +6614,47 @@ type CreateAuthTokenWithChallengeResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ChallengeToken Token to be used when responding to the challenge
-		ChallengeToken *string `json:"challenge_token,omitempty"`
+		ChallengeToken string `json:"challenge_token"`
 
 		// ChallengeType Type of challenge (e.g., 'otp', 'sms')
-		ChallengeType *string `json:"challenge_type,omitempty"`
+		ChallengeType string `json:"challenge_type"`
 
 		// Message Human-readable message about the challenge
-		Message *string `json:"message,omitempty"`
+		Message string `json:"message"`
 	}
 	JSON201 *struct {
 		// ExpiresAt Token expiration timestamp
-		ExpiresAt *time.Time `json:"expires_at,omitempty"`
+		ExpiresAt time.Time `json:"expires_at"`
 
 		// Token Authentication token
-		Token *string `json:"token,omitempty"`
+		Token string `json:"token"`
 
 		// UserUuid UUID of the authenticated user
-		UserUuid *string `json:"user_uuid,omitempty"`
+		UserUuid string `json:"user_uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -6679,94 +6679,94 @@ type ListDetailedGroupsResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the group was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the group's purpose
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the group
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Roles List of roles assigned to the group
-		Roles *[]struct {
+		Roles []struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"roles,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"roles"`
 
 		// ServiceUsers List of service user members in the group
-		ServiceUsers *[]struct {
+		ServiceUsers []struct {
 			// CreatedAt Timestamp when the member was added to the group
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the member
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Name of the member
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Uuid Unique identifier for the member
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"service_users,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"service_users"`
 
 		// UpdatedAt Timestamp when the group was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Users List of user members in the group
-		Users *[]struct {
+		Users []struct {
 			// CreatedAt Timestamp when the member was added to the group
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the member
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Name of the member
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Uuid Unique identifier for the member
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"users,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"users"`
 
 		// Uuid Unique identifier for the group
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -6791,94 +6791,94 @@ type GetDetailedGroupResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// CreatedAt Timestamp when the group was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the group's purpose
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the group
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Roles List of roles assigned to the group
-		Roles *[]struct {
+		Roles []struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"roles,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"roles"`
 
 		// ServiceUsers List of service user members in the group
-		ServiceUsers *[]struct {
+		ServiceUsers []struct {
 			// CreatedAt Timestamp when the member was added to the group
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the member
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Name of the member
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Uuid Unique identifier for the member
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"service_users,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"service_users"`
 
 		// UpdatedAt Timestamp when the group was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Users List of user members in the group
-		Users *[]struct {
+		Users []struct {
 			// CreatedAt Timestamp when the member was added to the group
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the member
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Name of the member
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Uuid Unique identifier for the member
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"users,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"users"`
 
 		// Uuid Unique identifier for the group
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -6903,82 +6903,82 @@ type ListDetailedServiceUsersResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the service user was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the service user
 		Description *string `json:"description,omitempty"`
 
 		// Groups Groups this service user belongs to
-		Groups *[]struct {
+		Groups []struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"groups,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"groups"`
 
 		// Name Name of the service user
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Roles Roles assigned to this service user
-		Roles *[]struct {
+		Roles []struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"roles,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"roles"`
 
 		// UpdatedAt Timestamp when the service user was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the service user
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7003,82 +7003,82 @@ type GetDetailedServiceUserResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// CreatedAt Timestamp when the service user was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the service user
 		Description *string `json:"description,omitempty"`
 
 		// Groups Groups this service user belongs to
-		Groups *[]struct {
+		Groups []struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"groups,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"groups"`
 
 		// Name Name of the service user
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Roles Roles assigned to this service user
-		Roles *[]struct {
+		Roles []struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"roles,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"roles"`
 
 		// UpdatedAt Timestamp when the service user was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the service user
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7103,109 +7103,109 @@ type ListDetailedWorkspaceUsersResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the user was added to the workspace
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Groups Groups this user belongs to in the workspace
-		Groups *[]struct {
+		Groups []struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"groups,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"groups"`
 
 		// Roles Roles assigned to this user in the workspace
-		Roles *[]struct {
+		Roles []struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"roles,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"roles"`
 
 		// UpdatedAt Timestamp when the user's workspace information was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// User The user
-		User *struct {
+		User struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"user"`
 
 		// Workspace The workspace the user belongs to
-		Workspace *struct {
+		Workspace struct {
 			// CreatedAt Timestamp when the workspace was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the workspace
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the workspace
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the workspace was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the workspace
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"workspace,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"workspace"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7230,109 +7230,109 @@ type GetDetailedWorkspaceUserResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// CreatedAt Timestamp when the user was added to the workspace
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Groups Groups this user belongs to in the workspace
-		Groups *[]struct {
+		Groups []struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"groups,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"groups"`
 
 		// Roles Roles assigned to this user in the workspace
-		Roles *[]struct {
+		Roles []struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"roles,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"roles"`
 
 		// UpdatedAt Timestamp when the user's workspace information was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// User The user
-		User *struct {
+		User struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"user"`
 
 		// Workspace The workspace the user belongs to
-		Workspace *struct {
+		Workspace struct {
 			// CreatedAt Timestamp when the workspace was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the workspace
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the workspace
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the workspace was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the workspace
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"workspace,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"workspace"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7356,38 +7356,38 @@ type GetIamV1ApiV1HealthzResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
-		Caches *[]struct {
-			Default *struct {
-				Ok *bool `json:"ok,omitempty"`
-			} `json:"default,omitempty"`
-		} `json:"caches,omitempty"`
-		Databases *[]struct {
-			Default *struct {
-				Ok *bool `json:"ok,omitempty"`
-			} `json:"default,omitempty"`
-		} `json:"databases,omitempty"`
-		Storage *struct {
-			Default *struct {
-				Ok *bool `json:"ok,omitempty"`
-			} `json:"default,omitempty"`
-		} `json:"storage,omitempty"`
+		Caches []struct {
+			Default struct {
+				Ok bool `json:"ok"`
+			} `json:"default"`
+		} `json:"caches"`
+		Databases []struct {
+			Default struct {
+				Ok bool `json:"ok"`
+			} `json:"default"`
+		} `json:"databases"`
+		Storage struct {
+			Default struct {
+				Ok bool `json:"ok"`
+			} `json:"default"`
+		} `json:"storage"`
 	}
 	JSON500 *struct {
-		Caches *[]struct {
-			Default *struct {
-				Ok *bool `json:"ok,omitempty"`
-			} `json:"default,omitempty"`
-		} `json:"caches,omitempty"`
-		Databases *[]struct {
-			Default *struct {
-				Ok *bool `json:"ok,omitempty"`
-			} `json:"default,omitempty"`
-		} `json:"databases,omitempty"`
-		Storage *struct {
-			Default *struct {
-				Ok *bool `json:"ok,omitempty"`
-			} `json:"default,omitempty"`
-		} `json:"storage,omitempty"`
+		Caches []struct {
+			Default struct {
+				Ok bool `json:"ok"`
+			} `json:"default"`
+		} `json:"caches"`
+		Databases []struct {
+			Default struct {
+				Ok bool `json:"ok"`
+			} `json:"default"`
+		} `json:"databases"`
+		Storage struct {
+			Default struct {
+				Ok bool `json:"ok"`
+			} `json:"default"`
+		} `json:"storage"`
 	}
 }
 
@@ -7412,10 +7412,10 @@ type GetThirdPartyAccessTokenResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// AccessToken Access token for the third-party service
-		AccessToken *string `json:"access_token,omitempty"`
+		AccessToken string `json:"access_token"`
 
 		// ExpiresIn Number of seconds until the token expires
-		ExpiresIn *int `json:"expires_in,omitempty"`
+		ExpiresIn int `json:"expires_in"`
 
 		// RefreshToken Refresh token for the third-party service
 		RefreshToken *string `json:"refresh_token,omitempty"`
@@ -7427,31 +7427,31 @@ type GetThirdPartyAccessTokenResponse struct {
 		ThirdPartyUserId *string `json:"third_party_user_id,omitempty"`
 
 		// TokenType Type of token, typically 'Bearer'
-		TokenType *string `json:"token_type,omitempty"`
+		TokenType string `json:"token_type"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7475,36 +7475,36 @@ type ChangePasswordResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON404 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7528,28 +7528,28 @@ type ResetPasswordResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7574,43 +7574,43 @@ type GetUserResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// CreatedAt Timestamp when the user was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Email Email address of the user
-		Email *string `json:"email,omitempty"`
+		Email string `json:"email"`
 
 		// Name Full name of the user
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the user was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the user
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7635,40 +7635,40 @@ type BulkCanUserResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// Actions List of actions that were checked
-		Actions *[]string `json:"actions,omitempty"`
+		Actions []string `json:"actions"`
 
 		// Allowed Whether the user is allowed to perform the actions on the specified service and path
-		Allowed *bool `json:"allowed,omitempty"`
+		Allowed bool `json:"allowed"`
 
 		// Path The path within the service that was checked
-		Path *string `json:"path,omitempty"`
+		Path string `json:"path"`
 
 		// Service The service name that was checked
-		Service *string `json:"service,omitempty"`
+		Service string `json:"service"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7692,28 +7692,28 @@ type DisableUserOtpResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7738,31 +7738,31 @@ type GetUserOtpStatusResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// Enabled Whether OTP is enabled for the user
-		Enabled *bool `json:"enabled,omitempty"`
+		Enabled bool `json:"enabled"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7786,28 +7786,28 @@ type EnableUserOtpResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7832,61 +7832,61 @@ type ListUserPublicKeysResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the public key was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Key The public key content in SSH format
-		Key *string `json:"key,omitempty"`
+		Key string `json:"key"`
 
 		// Title Title or name for the public key
-		Title *string `json:"title,omitempty"`
+		Title string `json:"title"`
 
 		// UpdatedAt Timestamp when the public key was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// User The user this public key belongs to
-		User *struct {
+		User struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"user"`
 
 		// Uuid Unique identifier for the public key
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7911,69 +7911,69 @@ type CreateUserPublicKeyResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// CreatedAt Timestamp when the public key was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Key The public key content in SSH format
-		Key *string `json:"key,omitempty"`
+		Key string `json:"key"`
 
 		// Title Title or name for the public key
-		Title *string `json:"title,omitempty"`
+		Title string `json:"title"`
 
 		// UpdatedAt Timestamp when the public key was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// User The user this public key belongs to
-		User *struct {
+		User struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"user"`
 
 		// Uuid Unique identifier for the public key
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON409 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -7997,28 +7997,28 @@ type DeleteUserPublicKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8043,37 +8043,37 @@ type ListUserTokensResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// ExpiresAt Token expiration timestamp
-		ExpiresAt *time.Time `json:"expires_at,omitempty"`
+		ExpiresAt time.Time `json:"expires_at"`
 
 		// Token Authentication token
-		Token *string `json:"token,omitempty"`
+		Token string `json:"token"`
 
 		// UserUuid UUID of the authenticated user
-		UserUuid *string `json:"user_uuid,omitempty"`
+		UserUuid string `json:"user_uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8098,37 +8098,37 @@ type CreateUserTokenResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// ExpiresAt Token expiration timestamp
-		ExpiresAt *time.Time `json:"expires_at,omitempty"`
+		ExpiresAt time.Time `json:"expires_at"`
 
 		// Token Authentication token
-		Token *string `json:"token,omitempty"`
+		Token string `json:"token"`
 
 		// UserUuid UUID of the authenticated user
-		UserUuid *string `json:"user_uuid,omitempty"`
+		UserUuid string `json:"user_uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8152,28 +8152,28 @@ type DeleteUserTokenResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8197,28 +8197,28 @@ type ListUserWorkspacesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8243,46 +8243,46 @@ type ListBackupKeysResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the backup key was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Key The SSH key content in SSH format
-		Key *string `json:"key,omitempty"`
+		Key string `json:"key"`
 
 		// Title Title or name for the backup key
-		Title *string `json:"title,omitempty"`
+		Title string `json:"title"`
 
 		// UpdatedAt Timestamp when the backup key was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the backup key
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 
 		// Workspace The workspace this backup key belongs to
-		Workspace *string `json:"workspace,omitempty"`
+		Workspace string `json:"workspace"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8307,54 +8307,54 @@ type CreateBackupKeyResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// CreatedAt Timestamp when the backup key was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Key The SSH key content in SSH format
-		Key *string `json:"key,omitempty"`
+		Key string `json:"key"`
 
 		// Title Title or name for the backup key
-		Title *string `json:"title,omitempty"`
+		Title string `json:"title"`
 
 		// UpdatedAt Timestamp when the backup key was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the backup key
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 
 		// Workspace The workspace this backup key belongs to
-		Workspace *string `json:"workspace,omitempty"`
+		Workspace string `json:"workspace"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON409 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8378,28 +8378,28 @@ type DeleteBackupKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8424,43 +8424,43 @@ type ListGroupsResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the group was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Optional description of the group's purpose
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the group
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the group was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the group
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8485,43 +8485,43 @@ type CreateGroupResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// CreatedAt Timestamp when the group was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Optional description of the group's purpose
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the group
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the group was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the group
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8545,28 +8545,28 @@ type DeleteGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8591,43 +8591,43 @@ type GetGroupResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// CreatedAt Timestamp when the group was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Optional description of the group's purpose
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the group
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the group was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the group
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8652,43 +8652,43 @@ type UpdateGroupResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// CreatedAt Timestamp when the group was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Optional description of the group's purpose
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the group
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the group was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the group
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8713,79 +8713,79 @@ type BulkAddRolesToGroupResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *[]struct {
 		// CreatedAt Timestamp when the role binding was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Group The group the role is bound to
-		Group *struct {
+		Group struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"group,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"group"`
 
 		// Items Optional items associated with this role binding
 		Items interface{} `json:"items,omitempty"`
 
 		// Role The role that is bound
-		Role *struct {
+		Role struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"role,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"role"`
 
 		// UpdatedAt Timestamp when the role binding was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the role binding
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8810,67 +8810,67 @@ type BulkAddServiceUsersToGroupResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *[]struct {
 		// CreatedAt Timestamp when the service user was added to the group
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Group The group the service user was added to
-		Group *struct {
+		Group struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"group,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"group"`
 
 		// ServiceUser The service user that was added to the group
-		ServiceUser *struct {
+		ServiceUser struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"service_user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"service_user"`
 
 		// Uuid Unique identifier for the service-user-group association
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8895,70 +8895,70 @@ type BulkAddUsersToGroupResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *[]struct {
 		// CreatedAt Timestamp when the user was added to the group
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Group The group the user was added to
-		Group *struct {
+		Group struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"group,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"group"`
 
 		// User The user that was added to the group
-		User *struct {
+		User struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"user"`
 
 		// Uuid Unique identifier for the user-group association
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -8983,46 +8983,46 @@ type ListGroupRolesResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the role was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the role's purpose and permissions
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the role
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Service Service this role applies to
-		Service *string `json:"service,omitempty"`
+		Service string `json:"service"`
 
 		// UpdatedAt Timestamp when the role was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the role
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9047,40 +9047,40 @@ type ListGroupServiceUsersResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the service user was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Name Name of the service user
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the service user was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the service user
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9104,28 +9104,28 @@ type RemoveServiceUserFromGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9150,67 +9150,67 @@ type AddServiceUserToGroupResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// CreatedAt Timestamp when the service user was added to the group
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Group The group the service user was added to
-		Group *struct {
+		Group struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"group,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"group"`
 
 		// ServiceUser The service user that was added to the group
-		ServiceUser *struct {
+		ServiceUser struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"service_user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"service_user"`
 
 		// Uuid Unique identifier for the service-user-group association
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9235,43 +9235,43 @@ type ListGroupUsersResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the user was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Email Email address of the user
-		Email *string `json:"email,omitempty"`
+		Email string `json:"email"`
 
 		// Name Full name of the user
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the user was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the user
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9295,28 +9295,28 @@ type RemoveUserFromGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9341,70 +9341,70 @@ type AddUserToGroupResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// CreatedAt Timestamp when the user was added to the group
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Group The group the user was added to
-		Group *struct {
+		Group struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"group,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"group"`
 
 		// User The user that was added to the group
-		User *struct {
+		User struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"user"`
 
 		// Uuid Unique identifier for the user-group association
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9429,67 +9429,67 @@ type InviteUsersToWorkspaceResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// Created List of users that were created
-		Created *[]struct {
+		Created []struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"created,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"created"`
 
 		// Existing List of users that already existed
-		Existing *[]struct {
+		Existing []struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"existing,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"existing"`
 
 		// Invited List of email addresses that were invited
-		Invited *[]string `json:"invited,omitempty"`
+		Invited []string `json:"invited"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9514,61 +9514,61 @@ type ListServiceUserKiseKeysResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the KISE key was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Key The KISE key content
-		Key *string `json:"key,omitempty"`
+		Key string `json:"key"`
 
 		// ServiceUser The service user this KISE key belongs to
-		ServiceUser *struct {
+		ServiceUser struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"service_user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"service_user"`
 
 		// Title Title or name for the KISE key
-		Title *string `json:"title,omitempty"`
+		Title string `json:"title"`
 
 		// UpdatedAt Timestamp when the KISE key was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the KISE key
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 
 		// Workspace The workspace this KISE key belongs to
-		Workspace *string `json:"workspace,omitempty"`
+		Workspace string `json:"workspace"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9593,46 +9593,46 @@ type ListRolesResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the role was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the role's purpose and permissions
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the role
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Service Service this role applies to
-		Service *string `json:"service,omitempty"`
+		Service string `json:"service"`
 
 		// UpdatedAt Timestamp when the role was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the role
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9656,28 +9656,28 @@ type CreateRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9701,28 +9701,28 @@ type DeleteRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9746,28 +9746,28 @@ type GetRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9792,85 +9792,85 @@ type BulkAddRulesToRoleResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *[]struct {
 		// CreatedAt Timestamp when the role-rule binding was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Role The role that is bound
-		Role *struct {
+		Role struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"role,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"role"`
 
 		// Rule The rule that is bound
-		Rule *struct {
+		Rule struct {
 			// Action Action this rule controls
-			Action *string `json:"action,omitempty"`
+			Action string `json:"action"`
 
 			// CreatedAt Timestamp when the rule was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the rule's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the rule
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Resource Resource this rule applies to
-			Resource *string `json:"resource,omitempty"`
+			Resource string `json:"resource"`
 
 			// Service Service this rule applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the rule
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"rule,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"rule"`
 
 		// UpdatedAt Timestamp when the role-rule binding was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the role-rule binding
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9895,79 +9895,79 @@ type BulkAddServiceUsersToRoleResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *[]struct {
 		// CreatedAt Timestamp when the role binding was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Group The group the role is bound to
-		Group *struct {
+		Group struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"group,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"group"`
 
 		// Items Optional items associated with this role binding
 		Items interface{} `json:"items,omitempty"`
 
 		// Role The role that is bound
-		Role *struct {
+		Role struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"role,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"role"`
 
 		// UpdatedAt Timestamp when the role binding was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the role binding
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -9992,79 +9992,79 @@ type BulkAddUsersToRoleResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *[]struct {
 		// CreatedAt Timestamp when the role binding was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Group The group the role is bound to
-		Group *struct {
+		Group struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"group,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"group"`
 
 		// Items Optional items associated with this role binding
 		Items interface{} `json:"items,omitempty"`
 
 		// Role The role that is bound
-		Role *struct {
+		Role struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"role,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"role"`
 
 		// UpdatedAt Timestamp when the role binding was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the role binding
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10088,28 +10088,28 @@ type RemoveRoleFromGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10134,52 +10134,52 @@ type ListRoleRulesResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// Action Action this rule controls
-		Action *string `json:"action,omitempty"`
+		Action string `json:"action"`
 
 		// CreatedAt Timestamp when the rule was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the rule's purpose
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the rule
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Resource Resource this rule applies to
-		Resource *string `json:"resource,omitempty"`
+		Resource string `json:"resource"`
 
 		// Service Service this rule applies to
-		Service *string `json:"service,omitempty"`
+		Service string `json:"service"`
 
 		// UpdatedAt Timestamp when the rule was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the rule
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10203,28 +10203,28 @@ type RemoveRuleFromRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10249,52 +10249,52 @@ type AddRuleToRoleResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// Action Action this rule controls
-		Action *string `json:"action,omitempty"`
+		Action string `json:"action"`
 
 		// CreatedAt Timestamp when the rule was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the rule's purpose
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the rule
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Resource Resource this rule applies to
-		Resource *string `json:"resource,omitempty"`
+		Resource string `json:"resource"`
 
 		// Service Service this rule applies to
-		Service *string `json:"service,omitempty"`
+		Service string `json:"service"`
 
 		// UpdatedAt Timestamp when the rule was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the rule
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10322,43 +10322,43 @@ type ListServiceUsersRoleBindingsResponse struct {
 		Items interface{} `json:"items,omitempty"`
 
 		// ServiceUser The service user
-		ServiceUser *struct {
+		ServiceUser struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"service_user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"service_user"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10382,28 +10382,28 @@ type RemoveRoleFromServiceUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10431,43 +10431,43 @@ type GetServiceUserRoleBindingResponse struct {
 		Items interface{} `json:"items,omitempty"`
 
 		// ServiceUser The service user
-		ServiceUser *struct {
+		ServiceUser struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"service_user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"service_user"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10492,79 +10492,79 @@ type AssignRoleToServiceUserResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// CreatedAt Timestamp when the binding was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Items Optional items associated with this role binding
 		Items interface{} `json:"items,omitempty"`
 
 		// Role The role that was assigned to the service user
-		Role *struct {
+		Role struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"role,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"role"`
 
 		// ServiceUser The service user that was assigned the role
-		ServiceUser *struct {
+		ServiceUser struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"service_user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"service_user"`
 
 		// UpdatedAt Timestamp when the binding was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the service-user-role binding
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 
 		// Workspace The workspace in which the binding exists
-		Workspace *string `json:"workspace,omitempty"`
+		Workspace string `json:"workspace"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10592,46 +10592,46 @@ type ListUsersRoleBindingsResponse struct {
 		Items interface{} `json:"items,omitempty"`
 
 		// User The user
-		User *struct {
+		User struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"user"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10655,28 +10655,28 @@ type RemoveRoleFromUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10704,46 +10704,46 @@ type GetUserRoleBindingResponse struct {
 		Items interface{} `json:"items,omitempty"`
 
 		// User The user
-		User *struct {
+		User struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"user"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10768,82 +10768,82 @@ type AssignRoleToUserResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// CreatedAt Timestamp when the binding was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Items Optional items associated with this role binding
 		Items interface{} `json:"items,omitempty"`
 
 		// Role The role that was assigned to the user
-		Role *struct {
+		Role struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"role,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"role"`
 
 		// UpdatedAt Timestamp when the binding was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// User The user that was assigned the role
-		User *struct {
+		User struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"user"`
 
 		// Uuid Unique identifier for the user-role binding
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 
 		// Workspace The workspace in which the binding exists
-		Workspace *string `json:"workspace,omitempty"`
+		Workspace string `json:"workspace"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10868,52 +10868,52 @@ type ListRulesResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// Action Action this rule controls
-		Action *string `json:"action,omitempty"`
+		Action string `json:"action"`
 
 		// CreatedAt Timestamp when the rule was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the rule's purpose
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the rule
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Resource Resource this rule applies to
-		Resource *string `json:"resource,omitempty"`
+		Resource string `json:"resource"`
 
 		// Service Service this rule applies to
-		Service *string `json:"service,omitempty"`
+		Service string `json:"service"`
 
 		// UpdatedAt Timestamp when the rule was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the rule
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -10938,60 +10938,60 @@ type CreateRuleResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// Action Action this rule controls
-		Action *string `json:"action,omitempty"`
+		Action string `json:"action"`
 
 		// CreatedAt Timestamp when the rule was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the rule's purpose
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the rule
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Resource Resource this rule applies to
-		Resource *string `json:"resource,omitempty"`
+		Resource string `json:"resource"`
 
 		// Service Service this rule applies to
-		Service *string `json:"service,omitempty"`
+		Service string `json:"service"`
 
 		// UpdatedAt Timestamp when the rule was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the rule
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON409 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11015,28 +11015,28 @@ type DeleteRuleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11061,52 +11061,52 @@ type GetRuleResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// Action Action this rule controls
-		Action *string `json:"action,omitempty"`
+		Action string `json:"action"`
 
 		// CreatedAt Timestamp when the rule was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the rule's purpose
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the rule
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Resource Resource this rule applies to
-		Resource *string `json:"resource,omitempty"`
+		Resource string `json:"resource"`
 
 		// Service Service this rule applies to
-		Service *string `json:"service,omitempty"`
+		Service string `json:"service"`
 
 		// UpdatedAt Timestamp when the rule was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the rule
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11131,52 +11131,52 @@ type UpdateRuleResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// Action Action this rule controls
-		Action *string `json:"action,omitempty"`
+		Action string `json:"action"`
 
 		// CreatedAt Timestamp when the rule was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the rule's purpose
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the rule
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Resource Resource this rule applies to
-		Resource *string `json:"resource,omitempty"`
+		Resource string `json:"resource"`
 
 		// Service Service this rule applies to
-		Service *string `json:"service,omitempty"`
+		Service string `json:"service"`
 
 		// UpdatedAt Timestamp when the rule was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the rule
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11201,46 +11201,46 @@ type ListRuleRolesResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the role was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the role's purpose and permissions
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the role
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Service Service this role applies to
-		Service *string `json:"service,omitempty"`
+		Service string `json:"service"`
 
 		// UpdatedAt Timestamp when the role was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the role
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11265,40 +11265,40 @@ type ListServiceUsersResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the service user was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Name Name of the service user
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the service user was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the service user
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11323,40 +11323,40 @@ type CreateServiceUserResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// CreatedAt Timestamp when the service user was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Name Name of the service user
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the service user was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the service user
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11380,28 +11380,28 @@ type DeleteServiceUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11426,40 +11426,40 @@ type UpdateServiceUserResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// CreatedAt Timestamp when the service user was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Name Name of the service user
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the service user was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the service user
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11484,61 +11484,61 @@ type CreateServiceUserKiseKeyResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// CreatedAt Timestamp when the KISE key was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Key The KISE key content
-		Key *string `json:"key,omitempty"`
+		Key string `json:"key"`
 
 		// ServiceUser The service user this KISE key belongs to
-		ServiceUser *struct {
+		ServiceUser struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"service_user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"service_user"`
 
 		// Title Title or name for the KISE key
-		Title *string `json:"title,omitempty"`
+		Title string `json:"title"`
 
 		// UpdatedAt Timestamp when the KISE key was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the KISE key
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 
 		// Workspace The workspace this KISE key belongs to
-		Workspace *string `json:"workspace,omitempty"`
+		Workspace string `json:"workspace"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11562,28 +11562,28 @@ type DeleteServiceUserKiseKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11608,58 +11608,58 @@ type ListServiceUserPublicKeysResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the public key was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Key The public key content in SSH format
-		Key *string `json:"key,omitempty"`
+		Key string `json:"key"`
 
 		// ServiceUser The service user this public key belongs to
-		ServiceUser *struct {
+		ServiceUser struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"service_user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"service_user"`
 
 		// Title Title or name for the public key
-		Title *string `json:"title,omitempty"`
+		Title string `json:"title"`
 
 		// UpdatedAt Timestamp when the public key was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the public key
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11684,58 +11684,58 @@ type CreateServiceUserPublicKeyResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// CreatedAt Timestamp when the public key was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Key The public key content in SSH format
-		Key *string `json:"key,omitempty"`
+		Key string `json:"key"`
 
 		// ServiceUser The service user this public key belongs to
-		ServiceUser *struct {
+		ServiceUser struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"service_user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"service_user"`
 
 		// Title Title or name for the public key
-		Title *string `json:"title,omitempty"`
+		Title string `json:"title"`
 
 		// UpdatedAt Timestamp when the public key was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the public key
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11759,28 +11759,28 @@ type DeleteServiceUserPublicKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11805,55 +11805,55 @@ type ListServiceUserTokensResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the token was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// ExpiresAt Timestamp when the token will expire
 		ExpiresAt *time.Time `json:"expires_at,omitempty"`
 
 		// Name Name of the token
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ServiceUser The service user this token belongs to
-		ServiceUser *struct {
+		ServiceUser struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"service_user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"service_user"`
 
 		// Uuid Unique identifier for the token
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11878,58 +11878,58 @@ type CreateServiceUserTokenResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// CreatedAt Timestamp when the token was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// ExpiresAt Timestamp when the token will expire
 		ExpiresAt *time.Time `json:"expires_at,omitempty"`
 
 		// Name Name of the token
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// Secret The secret value of the token
-		Secret *string `json:"secret,omitempty"`
+		Secret string `json:"secret"`
 
 		// ServiceUser The service user this token belongs to
-		ServiceUser *struct {
+		ServiceUser struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"service_user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"service_user"`
 
 		// Uuid Unique identifier for the token
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11953,28 +11953,28 @@ type DeleteServiceUserTokenResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -11999,40 +11999,40 @@ type ListServicesResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the service was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Description Description of the service
 		Description *string `json:"description,omitempty"`
 
 		// Name Name of the service
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the service was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -12060,31 +12060,31 @@ type BulkRefreshThirdPartyTokensResponse struct {
 		FailedTokens *map[string]string `json:"failed_tokens,omitempty"`
 
 		// RefreshedTokens Map of token identifiers to refreshed tokens
-		RefreshedTokens *map[string]string `json:"refreshed_tokens,omitempty"`
+		RefreshedTokens map[string]string `json:"refreshed_tokens"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -12109,43 +12109,43 @@ type ListWorkspaceUsersResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the user was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Email Email address of the user
-		Email *string `json:"email,omitempty"`
+		Email string `json:"email"`
 
 		// Name Full name of the user
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the user was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the user
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -12169,28 +12169,28 @@ type RemoveUserFromWorkspaceResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -12215,43 +12215,43 @@ type AllowUserResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// CreatedAt Timestamp when the user was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Email Email address of the user
-		Email *string `json:"email,omitempty"`
+		Email string `json:"email"`
 
 		// Name Full name of the user
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the user was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the user
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -12276,64 +12276,64 @@ type ListUserKiseKeysResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
 		// CreatedAt Timestamp when the KISE key was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Key The KISE key content
-		Key *string `json:"key,omitempty"`
+		Key string `json:"key"`
 
 		// Title Title or name for the KISE key
-		Title *string `json:"title,omitempty"`
+		Title string `json:"title"`
 
 		// UpdatedAt Timestamp when the KISE key was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// User The user this KISE key belongs to
-		User *struct {
+		User struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"user"`
 
 		// Uuid Unique identifier for the KISE key
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 
 		// Workspace The workspace this KISE key belongs to
-		Workspace *string `json:"workspace,omitempty"`
+		Workspace string `json:"workspace"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -12358,64 +12358,64 @@ type CreateUserKiseKeyResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// CreatedAt Timestamp when the KISE key was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Key The KISE key content
-		Key *string `json:"key,omitempty"`
+		Key string `json:"key"`
 
 		// Title Title or name for the KISE key
-		Title *string `json:"title,omitempty"`
+		Title string `json:"title"`
 
 		// UpdatedAt Timestamp when the KISE key was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// User The user this KISE key belongs to
-		User *struct {
+		User struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
-		} `json:"user,omitempty"`
+			Uuid string `json:"uuid"`
+		} `json:"user"`
 
 		// Uuid Unique identifier for the KISE key
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 
 		// Workspace The workspace this KISE key belongs to
-		Workspace *string `json:"workspace,omitempty"`
+		Workspace string `json:"workspace"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -12439,28 +12439,28 @@ type DeleteUserKiseKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON400      *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -12485,43 +12485,43 @@ type SuspendUserResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// CreatedAt Timestamp when the user was created
-		CreatedAt *time.Time `json:"created_at,omitempty"`
+		CreatedAt time.Time `json:"created_at"`
 
 		// Email Email address of the user
-		Email *string `json:"email,omitempty"`
+		Email string `json:"email"`
 
 		// Name Full name of the user
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// UpdatedAt Timestamp when the user was last updated
-		UpdatedAt *time.Time `json:"updated_at,omitempty"`
+		UpdatedAt time.Time `json:"updated_at"`
 
 		// Uuid Unique identifier for the user
-		Uuid *string `json:"uuid,omitempty"`
+		Uuid string `json:"uuid"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -12546,10 +12546,10 @@ type GetOpenIdTokenResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// AccessToken OAuth 2.0 access token
-		AccessToken *string `json:"access_token,omitempty"`
+		AccessToken string `json:"access_token"`
 
 		// ExpiresIn Number of seconds until the token expires
-		ExpiresIn *int `json:"expires_in,omitempty"`
+		ExpiresIn int `json:"expires_in"`
 
 		// IdToken OpenID Connect ID token
 		IdToken *string `json:"id_token,omitempty"`
@@ -12558,31 +12558,31 @@ type GetOpenIdTokenResponse struct {
 		RefreshToken *string `json:"refresh_token,omitempty"`
 
 		// TokenType Type of token, typically 'Bearer'
-		TokenType *string `json:"token_type,omitempty"`
+		TokenType string `json:"token_type"`
 	}
 	JSON400 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON401 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 	JSON403 *struct {
-		Code    *int `json:"code,omitempty"`
-		Message *struct {
-			Detail *string `json:"detail,omitempty"`
-		} `json:"message,omitempty"`
-		Reason *string `json:"reason,omitempty"`
-		Status *string `json:"status,omitempty"`
+		Code    int `json:"code"`
+		Message struct {
+			Detail string `json:"detail"`
+		} `json:"message"`
+		Reason string `json:"reason"`
+		Status string `json:"status"`
 	}
 }
 
@@ -13735,19 +13735,19 @@ func ParseAcceptInvitationResponse(rsp *http.Response) (*AcceptInvitationRespons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13756,12 +13756,12 @@ func ParseAcceptInvitationResponse(rsp *http.Response) (*AcceptInvitationRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13770,12 +13770,12 @@ func ParseAcceptInvitationResponse(rsp *http.Response) (*AcceptInvitationRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13784,12 +13784,12 @@ func ParseAcceptInvitationResponse(rsp *http.Response) (*AcceptInvitationRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13798,12 +13798,12 @@ func ParseAcceptInvitationResponse(rsp *http.Response) (*AcceptInvitationRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13832,13 +13832,13 @@ func ParseCreateAuthTokenWithCredResponse(rsp *http.Response) (*CreateAuthTokenW
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ChallengeToken Token to be used when responding to the challenge
-			ChallengeToken *string `json:"challenge_token,omitempty"`
+			ChallengeToken string `json:"challenge_token"`
 
 			// ChallengeType Type of challenge (e.g., 'otp', 'sms')
-			ChallengeType *string `json:"challenge_type,omitempty"`
+			ChallengeType string `json:"challenge_type"`
 
 			// Message Human-readable message about the challenge
-			Message *string `json:"message,omitempty"`
+			Message string `json:"message"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13848,13 +13848,13 @@ func ParseCreateAuthTokenWithCredResponse(rsp *http.Response) (*CreateAuthTokenW
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// ExpiresAt Token expiration timestamp
-			ExpiresAt *time.Time `json:"expires_at,omitempty"`
+			ExpiresAt time.Time `json:"expires_at"`
 
 			// Token Authentication token
-			Token *string `json:"token,omitempty"`
+			Token string `json:"token"`
 
 			// UserUuid UUID of the authenticated user
-			UserUuid *string `json:"user_uuid,omitempty"`
+			UserUuid string `json:"user_uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13863,12 +13863,12 @@ func ParseCreateAuthTokenWithCredResponse(rsp *http.Response) (*CreateAuthTokenW
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13877,12 +13877,12 @@ func ParseCreateAuthTokenWithCredResponse(rsp *http.Response) (*CreateAuthTokenW
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13891,12 +13891,12 @@ func ParseCreateAuthTokenWithCredResponse(rsp *http.Response) (*CreateAuthTokenW
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13905,12 +13905,12 @@ func ParseCreateAuthTokenWithCredResponse(rsp *http.Response) (*CreateAuthTokenW
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13939,13 +13939,13 @@ func ParseCreateAuthTokenWithChallengeResponse(rsp *http.Response) (*CreateAuthT
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ChallengeToken Token to be used when responding to the challenge
-			ChallengeToken *string `json:"challenge_token,omitempty"`
+			ChallengeToken string `json:"challenge_token"`
 
 			// ChallengeType Type of challenge (e.g., 'otp', 'sms')
-			ChallengeType *string `json:"challenge_type,omitempty"`
+			ChallengeType string `json:"challenge_type"`
 
 			// Message Human-readable message about the challenge
-			Message *string `json:"message,omitempty"`
+			Message string `json:"message"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13955,13 +13955,13 @@ func ParseCreateAuthTokenWithChallengeResponse(rsp *http.Response) (*CreateAuthT
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// ExpiresAt Token expiration timestamp
-			ExpiresAt *time.Time `json:"expires_at,omitempty"`
+			ExpiresAt time.Time `json:"expires_at"`
 
 			// Token Authentication token
-			Token *string `json:"token,omitempty"`
+			Token string `json:"token"`
 
 			// UserUuid UUID of the authenticated user
-			UserUuid *string `json:"user_uuid,omitempty"`
+			UserUuid string `json:"user_uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13970,12 +13970,12 @@ func ParseCreateAuthTokenWithChallengeResponse(rsp *http.Response) (*CreateAuthT
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13984,12 +13984,12 @@ func ParseCreateAuthTokenWithChallengeResponse(rsp *http.Response) (*CreateAuthT
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -13998,12 +13998,12 @@ func ParseCreateAuthTokenWithChallengeResponse(rsp *http.Response) (*CreateAuthT
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14032,70 +14032,70 @@ func ParseListDetailedGroupsResponse(rsp *http.Response) (*ListDetailedGroupsRes
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Roles List of roles assigned to the group
-			Roles *[]struct {
+			Roles []struct {
 				// CreatedAt Timestamp when the role was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the role's purpose and permissions
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the role
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Service Service this role applies to
-				Service *string `json:"service,omitempty"`
+				Service string `json:"service"`
 
 				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the role
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"roles,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"roles"`
 
 			// ServiceUsers List of service user members in the group
-			ServiceUsers *[]struct {
+			ServiceUsers []struct {
 				// CreatedAt Timestamp when the member was added to the group
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the member
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Name of the member
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Uuid Unique identifier for the member
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"service_users,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"service_users"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Users List of user members in the group
-			Users *[]struct {
+			Users []struct {
 				// CreatedAt Timestamp when the member was added to the group
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the member
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Name of the member
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Uuid Unique identifier for the member
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"users,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"users"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14104,12 +14104,12 @@ func ParseListDetailedGroupsResponse(rsp *http.Response) (*ListDetailedGroupsRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14118,12 +14118,12 @@ func ParseListDetailedGroupsResponse(rsp *http.Response) (*ListDetailedGroupsRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14132,12 +14132,12 @@ func ParseListDetailedGroupsResponse(rsp *http.Response) (*ListDetailedGroupsRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14166,70 +14166,70 @@ func ParseGetDetailedGroupResponse(rsp *http.Response) (*GetDetailedGroupRespons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Roles List of roles assigned to the group
-			Roles *[]struct {
+			Roles []struct {
 				// CreatedAt Timestamp when the role was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the role's purpose and permissions
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the role
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Service Service this role applies to
-				Service *string `json:"service,omitempty"`
+				Service string `json:"service"`
 
 				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the role
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"roles,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"roles"`
 
 			// ServiceUsers List of service user members in the group
-			ServiceUsers *[]struct {
+			ServiceUsers []struct {
 				// CreatedAt Timestamp when the member was added to the group
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the member
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Name of the member
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Uuid Unique identifier for the member
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"service_users,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"service_users"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Users List of user members in the group
-			Users *[]struct {
+			Users []struct {
 				// CreatedAt Timestamp when the member was added to the group
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the member
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Name of the member
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Uuid Unique identifier for the member
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"users,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"users"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14238,12 +14238,12 @@ func ParseGetDetailedGroupResponse(rsp *http.Response) (*GetDetailedGroupRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14252,12 +14252,12 @@ func ParseGetDetailedGroupResponse(rsp *http.Response) (*GetDetailedGroupRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14266,12 +14266,12 @@ func ParseGetDetailedGroupResponse(rsp *http.Response) (*GetDetailedGroupRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14300,58 +14300,58 @@ func ParseListDetailedServiceUsersResponse(rsp *http.Response) (*ListDetailedSer
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the service user
 			Description *string `json:"description,omitempty"`
 
 			// Groups Groups this service user belongs to
-			Groups *[]struct {
+			Groups []struct {
 				// CreatedAt Timestamp when the group was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Optional description of the group's purpose
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the group
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the group
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"groups,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"groups"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Roles Roles assigned to this service user
-			Roles *[]struct {
+			Roles []struct {
 				// CreatedAt Timestamp when the role was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the role's purpose and permissions
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the role
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Service Service this role applies to
-				Service *string `json:"service,omitempty"`
+				Service string `json:"service"`
 
 				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the role
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"roles,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"roles"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14360,12 +14360,12 @@ func ParseListDetailedServiceUsersResponse(rsp *http.Response) (*ListDetailedSer
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14374,12 +14374,12 @@ func ParseListDetailedServiceUsersResponse(rsp *http.Response) (*ListDetailedSer
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14388,12 +14388,12 @@ func ParseListDetailedServiceUsersResponse(rsp *http.Response) (*ListDetailedSer
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14422,58 +14422,58 @@ func ParseGetDetailedServiceUserResponse(rsp *http.Response) (*GetDetailedServic
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the service user
 			Description *string `json:"description,omitempty"`
 
 			// Groups Groups this service user belongs to
-			Groups *[]struct {
+			Groups []struct {
 				// CreatedAt Timestamp when the group was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Optional description of the group's purpose
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the group
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the group
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"groups,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"groups"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Roles Roles assigned to this service user
-			Roles *[]struct {
+			Roles []struct {
 				// CreatedAt Timestamp when the role was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the role's purpose and permissions
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the role
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Service Service this role applies to
-				Service *string `json:"service,omitempty"`
+				Service string `json:"service"`
 
 				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the role
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"roles,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"roles"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14482,12 +14482,12 @@ func ParseGetDetailedServiceUserResponse(rsp *http.Response) (*GetDetailedServic
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14496,12 +14496,12 @@ func ParseGetDetailedServiceUserResponse(rsp *http.Response) (*GetDetailedServic
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14510,12 +14510,12 @@ func ParseGetDetailedServiceUserResponse(rsp *http.Response) (*GetDetailedServic
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14544,85 +14544,85 @@ func ParseListDetailedWorkspaceUsersResponse(rsp *http.Response) (*ListDetailedW
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the user was added to the workspace
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Groups Groups this user belongs to in the workspace
-			Groups *[]struct {
+			Groups []struct {
 				// CreatedAt Timestamp when the group was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Optional description of the group's purpose
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the group
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the group
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"groups,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"groups"`
 
 			// Roles Roles assigned to this user in the workspace
-			Roles *[]struct {
+			Roles []struct {
 				// CreatedAt Timestamp when the role was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the role's purpose and permissions
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the role
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Service Service this role applies to
-				Service *string `json:"service,omitempty"`
+				Service string `json:"service"`
 
 				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the role
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"roles,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"roles"`
 
 			// UpdatedAt Timestamp when the user's workspace information was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// User The user
-			User *struct {
+			User struct {
 				// CreatedAt Timestamp when the user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the user
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Full name of the user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"user"`
 
 			// Workspace The workspace the user belongs to
-			Workspace *struct {
+			Workspace struct {
 				// CreatedAt Timestamp when the workspace was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the workspace
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the workspace
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the workspace was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the workspace
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"workspace,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"workspace"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14631,12 +14631,12 @@ func ParseListDetailedWorkspaceUsersResponse(rsp *http.Response) (*ListDetailedW
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14645,12 +14645,12 @@ func ParseListDetailedWorkspaceUsersResponse(rsp *http.Response) (*ListDetailedW
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14659,12 +14659,12 @@ func ParseListDetailedWorkspaceUsersResponse(rsp *http.Response) (*ListDetailedW
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14693,85 +14693,85 @@ func ParseGetDetailedWorkspaceUserResponse(rsp *http.Response) (*GetDetailedWork
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// CreatedAt Timestamp when the user was added to the workspace
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Groups Groups this user belongs to in the workspace
-			Groups *[]struct {
+			Groups []struct {
 				// CreatedAt Timestamp when the group was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Optional description of the group's purpose
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the group
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the group
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"groups,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"groups"`
 
 			// Roles Roles assigned to this user in the workspace
-			Roles *[]struct {
+			Roles []struct {
 				// CreatedAt Timestamp when the role was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the role's purpose and permissions
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the role
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Service Service this role applies to
-				Service *string `json:"service,omitempty"`
+				Service string `json:"service"`
 
 				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the role
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"roles,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"roles"`
 
 			// UpdatedAt Timestamp when the user's workspace information was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// User The user
-			User *struct {
+			User struct {
 				// CreatedAt Timestamp when the user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the user
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Full name of the user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"user"`
 
 			// Workspace The workspace the user belongs to
-			Workspace *struct {
+			Workspace struct {
 				// CreatedAt Timestamp when the workspace was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the workspace
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the workspace
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the workspace was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the workspace
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"workspace,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"workspace"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14780,12 +14780,12 @@ func ParseGetDetailedWorkspaceUserResponse(rsp *http.Response) (*GetDetailedWork
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14794,12 +14794,12 @@ func ParseGetDetailedWorkspaceUserResponse(rsp *http.Response) (*GetDetailedWork
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14808,12 +14808,12 @@ func ParseGetDetailedWorkspaceUserResponse(rsp *http.Response) (*GetDetailedWork
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14841,21 +14841,21 @@ func ParseGetIamV1ApiV1HealthzResponse(rsp *http.Response) (*GetIamV1ApiV1Health
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			Caches *[]struct {
-				Default *struct {
-					Ok *bool `json:"ok,omitempty"`
-				} `json:"default,omitempty"`
-			} `json:"caches,omitempty"`
-			Databases *[]struct {
-				Default *struct {
-					Ok *bool `json:"ok,omitempty"`
-				} `json:"default,omitempty"`
-			} `json:"databases,omitempty"`
-			Storage *struct {
-				Default *struct {
-					Ok *bool `json:"ok,omitempty"`
-				} `json:"default,omitempty"`
-			} `json:"storage,omitempty"`
+			Caches []struct {
+				Default struct {
+					Ok bool `json:"ok"`
+				} `json:"default"`
+			} `json:"caches"`
+			Databases []struct {
+				Default struct {
+					Ok bool `json:"ok"`
+				} `json:"default"`
+			} `json:"databases"`
+			Storage struct {
+				Default struct {
+					Ok bool `json:"ok"`
+				} `json:"default"`
+			} `json:"storage"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14864,21 +14864,21 @@ func ParseGetIamV1ApiV1HealthzResponse(rsp *http.Response) (*GetIamV1ApiV1Health
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
 		var dest struct {
-			Caches *[]struct {
-				Default *struct {
-					Ok *bool `json:"ok,omitempty"`
-				} `json:"default,omitempty"`
-			} `json:"caches,omitempty"`
-			Databases *[]struct {
-				Default *struct {
-					Ok *bool `json:"ok,omitempty"`
-				} `json:"default,omitempty"`
-			} `json:"databases,omitempty"`
-			Storage *struct {
-				Default *struct {
-					Ok *bool `json:"ok,omitempty"`
-				} `json:"default,omitempty"`
-			} `json:"storage,omitempty"`
+			Caches []struct {
+				Default struct {
+					Ok bool `json:"ok"`
+				} `json:"default"`
+			} `json:"caches"`
+			Databases []struct {
+				Default struct {
+					Ok bool `json:"ok"`
+				} `json:"default"`
+			} `json:"databases"`
+			Storage struct {
+				Default struct {
+					Ok bool `json:"ok"`
+				} `json:"default"`
+			} `json:"storage"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14907,10 +14907,10 @@ func ParseGetThirdPartyAccessTokenResponse(rsp *http.Response) (*GetThirdPartyAc
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// AccessToken Access token for the third-party service
-			AccessToken *string `json:"access_token,omitempty"`
+			AccessToken string `json:"access_token"`
 
 			// ExpiresIn Number of seconds until the token expires
-			ExpiresIn *int `json:"expires_in,omitempty"`
+			ExpiresIn int `json:"expires_in"`
 
 			// RefreshToken Refresh token for the third-party service
 			RefreshToken *string `json:"refresh_token,omitempty"`
@@ -14922,7 +14922,7 @@ func ParseGetThirdPartyAccessTokenResponse(rsp *http.Response) (*GetThirdPartyAc
 			ThirdPartyUserId *string `json:"third_party_user_id,omitempty"`
 
 			// TokenType Type of token, typically 'Bearer'
-			TokenType *string `json:"token_type,omitempty"`
+			TokenType string `json:"token_type"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14931,12 +14931,12 @@ func ParseGetThirdPartyAccessTokenResponse(rsp *http.Response) (*GetThirdPartyAc
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14945,12 +14945,12 @@ func ParseGetThirdPartyAccessTokenResponse(rsp *http.Response) (*GetThirdPartyAc
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14959,12 +14959,12 @@ func ParseGetThirdPartyAccessTokenResponse(rsp *http.Response) (*GetThirdPartyAc
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -14992,12 +14992,12 @@ func ParseChangePasswordResponse(rsp *http.Response) (*ChangePasswordResponse, e
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15006,12 +15006,12 @@ func ParseChangePasswordResponse(rsp *http.Response) (*ChangePasswordResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15020,12 +15020,12 @@ func ParseChangePasswordResponse(rsp *http.Response) (*ChangePasswordResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15034,12 +15034,12 @@ func ParseChangePasswordResponse(rsp *http.Response) (*ChangePasswordResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15067,12 +15067,12 @@ func ParseResetPasswordResponse(rsp *http.Response) (*ResetPasswordResponse, err
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15081,12 +15081,12 @@ func ParseResetPasswordResponse(rsp *http.Response) (*ResetPasswordResponse, err
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15095,12 +15095,12 @@ func ParseResetPasswordResponse(rsp *http.Response) (*ResetPasswordResponse, err
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15129,19 +15129,19 @@ func ParseGetUserResponse(rsp *http.Response) (*GetUserResponse, error) {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15150,12 +15150,12 @@ func ParseGetUserResponse(rsp *http.Response) (*GetUserResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15164,12 +15164,12 @@ func ParseGetUserResponse(rsp *http.Response) (*GetUserResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15178,12 +15178,12 @@ func ParseGetUserResponse(rsp *http.Response) (*GetUserResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15212,16 +15212,16 @@ func ParseBulkCanUserResponse(rsp *http.Response) (*BulkCanUserResponse, error) 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// Actions List of actions that were checked
-			Actions *[]string `json:"actions,omitempty"`
+			Actions []string `json:"actions"`
 
 			// Allowed Whether the user is allowed to perform the actions on the specified service and path
-			Allowed *bool `json:"allowed,omitempty"`
+			Allowed bool `json:"allowed"`
 
 			// Path The path within the service that was checked
-			Path *string `json:"path,omitempty"`
+			Path string `json:"path"`
 
 			// Service The service name that was checked
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15230,12 +15230,12 @@ func ParseBulkCanUserResponse(rsp *http.Response) (*BulkCanUserResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15244,12 +15244,12 @@ func ParseBulkCanUserResponse(rsp *http.Response) (*BulkCanUserResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15258,12 +15258,12 @@ func ParseBulkCanUserResponse(rsp *http.Response) (*BulkCanUserResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15291,12 +15291,12 @@ func ParseDisableUserOtpResponse(rsp *http.Response) (*DisableUserOtpResponse, e
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15305,12 +15305,12 @@ func ParseDisableUserOtpResponse(rsp *http.Response) (*DisableUserOtpResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15319,12 +15319,12 @@ func ParseDisableUserOtpResponse(rsp *http.Response) (*DisableUserOtpResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15353,7 +15353,7 @@ func ParseGetUserOtpStatusResponse(rsp *http.Response) (*GetUserOtpStatusRespons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// Enabled Whether OTP is enabled for the user
-			Enabled *bool `json:"enabled,omitempty"`
+			Enabled bool `json:"enabled"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15362,12 +15362,12 @@ func ParseGetUserOtpStatusResponse(rsp *http.Response) (*GetUserOtpStatusRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15376,12 +15376,12 @@ func ParseGetUserOtpStatusResponse(rsp *http.Response) (*GetUserOtpStatusRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15390,12 +15390,12 @@ func ParseGetUserOtpStatusResponse(rsp *http.Response) (*GetUserOtpStatusRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15423,12 +15423,12 @@ func ParseEnableUserOtpResponse(rsp *http.Response) (*EnableUserOtpResponse, err
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15437,12 +15437,12 @@ func ParseEnableUserOtpResponse(rsp *http.Response) (*EnableUserOtpResponse, err
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15451,12 +15451,12 @@ func ParseEnableUserOtpResponse(rsp *http.Response) (*EnableUserOtpResponse, err
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15485,37 +15485,37 @@ func ParseListUserPublicKeysResponse(rsp *http.Response) (*ListUserPublicKeysRes
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the public key was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Key The public key content in SSH format
-			Key *string `json:"key,omitempty"`
+			Key string `json:"key"`
 
 			// Title Title or name for the public key
-			Title *string `json:"title,omitempty"`
+			Title string `json:"title"`
 
 			// UpdatedAt Timestamp when the public key was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// User The user this public key belongs to
-			User *struct {
+			User struct {
 				// CreatedAt Timestamp when the user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the user
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Full name of the user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"user"`
 
 			// Uuid Unique identifier for the public key
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15524,12 +15524,12 @@ func ParseListUserPublicKeysResponse(rsp *http.Response) (*ListUserPublicKeysRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15538,12 +15538,12 @@ func ParseListUserPublicKeysResponse(rsp *http.Response) (*ListUserPublicKeysRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15552,12 +15552,12 @@ func ParseListUserPublicKeysResponse(rsp *http.Response) (*ListUserPublicKeysRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15586,37 +15586,37 @@ func ParseCreateUserPublicKeyResponse(rsp *http.Response) (*CreateUserPublicKeyR
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// CreatedAt Timestamp when the public key was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Key The public key content in SSH format
-			Key *string `json:"key,omitempty"`
+			Key string `json:"key"`
 
 			// Title Title or name for the public key
-			Title *string `json:"title,omitempty"`
+			Title string `json:"title"`
 
 			// UpdatedAt Timestamp when the public key was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// User The user this public key belongs to
-			User *struct {
+			User struct {
 				// CreatedAt Timestamp when the user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the user
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Full name of the user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"user"`
 
 			// Uuid Unique identifier for the public key
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15625,12 +15625,12 @@ func ParseCreateUserPublicKeyResponse(rsp *http.Response) (*CreateUserPublicKeyR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15639,12 +15639,12 @@ func ParseCreateUserPublicKeyResponse(rsp *http.Response) (*CreateUserPublicKeyR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15653,12 +15653,12 @@ func ParseCreateUserPublicKeyResponse(rsp *http.Response) (*CreateUserPublicKeyR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15667,12 +15667,12 @@ func ParseCreateUserPublicKeyResponse(rsp *http.Response) (*CreateUserPublicKeyR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15700,12 +15700,12 @@ func ParseDeleteUserPublicKeyResponse(rsp *http.Response) (*DeleteUserPublicKeyR
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15714,12 +15714,12 @@ func ParseDeleteUserPublicKeyResponse(rsp *http.Response) (*DeleteUserPublicKeyR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15728,12 +15728,12 @@ func ParseDeleteUserPublicKeyResponse(rsp *http.Response) (*DeleteUserPublicKeyR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15762,13 +15762,13 @@ func ParseListUserTokensResponse(rsp *http.Response) (*ListUserTokensResponse, e
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// ExpiresAt Token expiration timestamp
-			ExpiresAt *time.Time `json:"expires_at,omitempty"`
+			ExpiresAt time.Time `json:"expires_at"`
 
 			// Token Authentication token
-			Token *string `json:"token,omitempty"`
+			Token string `json:"token"`
 
 			// UserUuid UUID of the authenticated user
-			UserUuid *string `json:"user_uuid,omitempty"`
+			UserUuid string `json:"user_uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15777,12 +15777,12 @@ func ParseListUserTokensResponse(rsp *http.Response) (*ListUserTokensResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15791,12 +15791,12 @@ func ParseListUserTokensResponse(rsp *http.Response) (*ListUserTokensResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15805,12 +15805,12 @@ func ParseListUserTokensResponse(rsp *http.Response) (*ListUserTokensResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15839,13 +15839,13 @@ func ParseCreateUserTokenResponse(rsp *http.Response) (*CreateUserTokenResponse,
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// ExpiresAt Token expiration timestamp
-			ExpiresAt *time.Time `json:"expires_at,omitempty"`
+			ExpiresAt time.Time `json:"expires_at"`
 
 			// Token Authentication token
-			Token *string `json:"token,omitempty"`
+			Token string `json:"token"`
 
 			// UserUuid UUID of the authenticated user
-			UserUuid *string `json:"user_uuid,omitempty"`
+			UserUuid string `json:"user_uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15854,12 +15854,12 @@ func ParseCreateUserTokenResponse(rsp *http.Response) (*CreateUserTokenResponse,
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15868,12 +15868,12 @@ func ParseCreateUserTokenResponse(rsp *http.Response) (*CreateUserTokenResponse,
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15882,12 +15882,12 @@ func ParseCreateUserTokenResponse(rsp *http.Response) (*CreateUserTokenResponse,
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15915,12 +15915,12 @@ func ParseDeleteUserTokenResponse(rsp *http.Response) (*DeleteUserTokenResponse,
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15929,12 +15929,12 @@ func ParseDeleteUserTokenResponse(rsp *http.Response) (*DeleteUserTokenResponse,
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15943,12 +15943,12 @@ func ParseDeleteUserTokenResponse(rsp *http.Response) (*DeleteUserTokenResponse,
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15976,12 +15976,12 @@ func ParseListUserWorkspacesResponse(rsp *http.Response) (*ListUserWorkspacesRes
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -15990,12 +15990,12 @@ func ParseListUserWorkspacesResponse(rsp *http.Response) (*ListUserWorkspacesRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16004,12 +16004,12 @@ func ParseListUserWorkspacesResponse(rsp *http.Response) (*ListUserWorkspacesRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16038,22 +16038,22 @@ func ParseListBackupKeysResponse(rsp *http.Response) (*ListBackupKeysResponse, e
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the backup key was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Key The SSH key content in SSH format
-			Key *string `json:"key,omitempty"`
+			Key string `json:"key"`
 
 			// Title Title or name for the backup key
-			Title *string `json:"title,omitempty"`
+			Title string `json:"title"`
 
 			// UpdatedAt Timestamp when the backup key was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the backup key
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 
 			// Workspace The workspace this backup key belongs to
-			Workspace *string `json:"workspace,omitempty"`
+			Workspace string `json:"workspace"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16062,12 +16062,12 @@ func ParseListBackupKeysResponse(rsp *http.Response) (*ListBackupKeysResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16076,12 +16076,12 @@ func ParseListBackupKeysResponse(rsp *http.Response) (*ListBackupKeysResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16090,12 +16090,12 @@ func ParseListBackupKeysResponse(rsp *http.Response) (*ListBackupKeysResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16124,22 +16124,22 @@ func ParseCreateBackupKeyResponse(rsp *http.Response) (*CreateBackupKeyResponse,
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// CreatedAt Timestamp when the backup key was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Key The SSH key content in SSH format
-			Key *string `json:"key,omitempty"`
+			Key string `json:"key"`
 
 			// Title Title or name for the backup key
-			Title *string `json:"title,omitempty"`
+			Title string `json:"title"`
 
 			// UpdatedAt Timestamp when the backup key was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the backup key
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 
 			// Workspace The workspace this backup key belongs to
-			Workspace *string `json:"workspace,omitempty"`
+			Workspace string `json:"workspace"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16148,12 +16148,12 @@ func ParseCreateBackupKeyResponse(rsp *http.Response) (*CreateBackupKeyResponse,
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16162,12 +16162,12 @@ func ParseCreateBackupKeyResponse(rsp *http.Response) (*CreateBackupKeyResponse,
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16176,12 +16176,12 @@ func ParseCreateBackupKeyResponse(rsp *http.Response) (*CreateBackupKeyResponse,
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16190,12 +16190,12 @@ func ParseCreateBackupKeyResponse(rsp *http.Response) (*CreateBackupKeyResponse,
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16223,12 +16223,12 @@ func ParseDeleteBackupKeyResponse(rsp *http.Response) (*DeleteBackupKeyResponse,
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16237,12 +16237,12 @@ func ParseDeleteBackupKeyResponse(rsp *http.Response) (*DeleteBackupKeyResponse,
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16251,12 +16251,12 @@ func ParseDeleteBackupKeyResponse(rsp *http.Response) (*DeleteBackupKeyResponse,
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16285,19 +16285,19 @@ func ParseListGroupsResponse(rsp *http.Response) (*ListGroupsResponse, error) {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16306,12 +16306,12 @@ func ParseListGroupsResponse(rsp *http.Response) (*ListGroupsResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16320,12 +16320,12 @@ func ParseListGroupsResponse(rsp *http.Response) (*ListGroupsResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16334,12 +16334,12 @@ func ParseListGroupsResponse(rsp *http.Response) (*ListGroupsResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16368,19 +16368,19 @@ func ParseCreateGroupResponse(rsp *http.Response) (*CreateGroupResponse, error) 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16389,12 +16389,12 @@ func ParseCreateGroupResponse(rsp *http.Response) (*CreateGroupResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16403,12 +16403,12 @@ func ParseCreateGroupResponse(rsp *http.Response) (*CreateGroupResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16417,12 +16417,12 @@ func ParseCreateGroupResponse(rsp *http.Response) (*CreateGroupResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16450,12 +16450,12 @@ func ParseDeleteGroupResponse(rsp *http.Response) (*DeleteGroupResponse, error) 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16464,12 +16464,12 @@ func ParseDeleteGroupResponse(rsp *http.Response) (*DeleteGroupResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16478,12 +16478,12 @@ func ParseDeleteGroupResponse(rsp *http.Response) (*DeleteGroupResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16512,19 +16512,19 @@ func ParseGetGroupResponse(rsp *http.Response) (*GetGroupResponse, error) {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16533,12 +16533,12 @@ func ParseGetGroupResponse(rsp *http.Response) (*GetGroupResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16547,12 +16547,12 @@ func ParseGetGroupResponse(rsp *http.Response) (*GetGroupResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16561,12 +16561,12 @@ func ParseGetGroupResponse(rsp *http.Response) (*GetGroupResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16595,19 +16595,19 @@ func ParseUpdateGroupResponse(rsp *http.Response) (*UpdateGroupResponse, error) 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// CreatedAt Timestamp when the group was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Optional description of the group's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the group
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the group was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the group
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16616,12 +16616,12 @@ func ParseUpdateGroupResponse(rsp *http.Response) (*UpdateGroupResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16630,12 +16630,12 @@ func ParseUpdateGroupResponse(rsp *http.Response) (*UpdateGroupResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16644,12 +16644,12 @@ func ParseUpdateGroupResponse(rsp *http.Response) (*UpdateGroupResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16678,55 +16678,55 @@ func ParseBulkAddRolesToGroupResponse(rsp *http.Response) (*BulkAddRolesToGroupR
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest []struct {
 			// CreatedAt Timestamp when the role binding was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Group The group the role is bound to
-			Group *struct {
+			Group struct {
 				// CreatedAt Timestamp when the group was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Optional description of the group's purpose
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the group
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the group
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"group,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"group"`
 
 			// Items Optional items associated with this role binding
 			Items interface{} `json:"items,omitempty"`
 
 			// Role The role that is bound
-			Role *struct {
+			Role struct {
 				// CreatedAt Timestamp when the role was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the role's purpose and permissions
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the role
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Service Service this role applies to
-				Service *string `json:"service,omitempty"`
+				Service string `json:"service"`
 
 				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the role
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"role,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"role"`
 
 			// UpdatedAt Timestamp when the role binding was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role binding
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16735,12 +16735,12 @@ func ParseBulkAddRolesToGroupResponse(rsp *http.Response) (*BulkAddRolesToGroupR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16749,12 +16749,12 @@ func ParseBulkAddRolesToGroupResponse(rsp *http.Response) (*BulkAddRolesToGroupR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16763,12 +16763,12 @@ func ParseBulkAddRolesToGroupResponse(rsp *http.Response) (*BulkAddRolesToGroupR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16797,43 +16797,43 @@ func ParseBulkAddServiceUsersToGroupResponse(rsp *http.Response) (*BulkAddServic
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest []struct {
 			// CreatedAt Timestamp when the service user was added to the group
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Group The group the service user was added to
-			Group *struct {
+			Group struct {
 				// CreatedAt Timestamp when the group was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Optional description of the group's purpose
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the group
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the group
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"group,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"group"`
 
 			// ServiceUser The service user that was added to the group
-			ServiceUser *struct {
+			ServiceUser struct {
 				// CreatedAt Timestamp when the service user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Name Name of the service user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the service user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"service_user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"service_user"`
 
 			// Uuid Unique identifier for the service-user-group association
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16842,12 +16842,12 @@ func ParseBulkAddServiceUsersToGroupResponse(rsp *http.Response) (*BulkAddServic
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16856,12 +16856,12 @@ func ParseBulkAddServiceUsersToGroupResponse(rsp *http.Response) (*BulkAddServic
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16870,12 +16870,12 @@ func ParseBulkAddServiceUsersToGroupResponse(rsp *http.Response) (*BulkAddServic
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16904,46 +16904,46 @@ func ParseBulkAddUsersToGroupResponse(rsp *http.Response) (*BulkAddUsersToGroupR
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest []struct {
 			// CreatedAt Timestamp when the user was added to the group
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Group The group the user was added to
-			Group *struct {
+			Group struct {
 				// CreatedAt Timestamp when the group was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Optional description of the group's purpose
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the group
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the group
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"group,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"group"`
 
 			// User The user that was added to the group
-			User *struct {
+			User struct {
 				// CreatedAt Timestamp when the user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the user
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Full name of the user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"user"`
 
 			// Uuid Unique identifier for the user-group association
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16952,12 +16952,12 @@ func ParseBulkAddUsersToGroupResponse(rsp *http.Response) (*BulkAddUsersToGroupR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16966,12 +16966,12 @@ func ParseBulkAddUsersToGroupResponse(rsp *http.Response) (*BulkAddUsersToGroupR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -16980,12 +16980,12 @@ func ParseBulkAddUsersToGroupResponse(rsp *http.Response) (*BulkAddUsersToGroupR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17014,22 +17014,22 @@ func ParseListGroupRolesResponse(rsp *http.Response) (*ListGroupRolesResponse, e
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17038,12 +17038,12 @@ func ParseListGroupRolesResponse(rsp *http.Response) (*ListGroupRolesResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17052,12 +17052,12 @@ func ParseListGroupRolesResponse(rsp *http.Response) (*ListGroupRolesResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17066,12 +17066,12 @@ func ParseListGroupRolesResponse(rsp *http.Response) (*ListGroupRolesResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17100,16 +17100,16 @@ func ParseListGroupServiceUsersResponse(rsp *http.Response) (*ListGroupServiceUs
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17118,12 +17118,12 @@ func ParseListGroupServiceUsersResponse(rsp *http.Response) (*ListGroupServiceUs
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17132,12 +17132,12 @@ func ParseListGroupServiceUsersResponse(rsp *http.Response) (*ListGroupServiceUs
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17146,12 +17146,12 @@ func ParseListGroupServiceUsersResponse(rsp *http.Response) (*ListGroupServiceUs
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17179,12 +17179,12 @@ func ParseRemoveServiceUserFromGroupResponse(rsp *http.Response) (*RemoveService
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17193,12 +17193,12 @@ func ParseRemoveServiceUserFromGroupResponse(rsp *http.Response) (*RemoveService
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17207,12 +17207,12 @@ func ParseRemoveServiceUserFromGroupResponse(rsp *http.Response) (*RemoveService
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17241,43 +17241,43 @@ func ParseAddServiceUserToGroupResponse(rsp *http.Response) (*AddServiceUserToGr
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// CreatedAt Timestamp when the service user was added to the group
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Group The group the service user was added to
-			Group *struct {
+			Group struct {
 				// CreatedAt Timestamp when the group was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Optional description of the group's purpose
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the group
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the group
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"group,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"group"`
 
 			// ServiceUser The service user that was added to the group
-			ServiceUser *struct {
+			ServiceUser struct {
 				// CreatedAt Timestamp when the service user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Name Name of the service user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the service user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"service_user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"service_user"`
 
 			// Uuid Unique identifier for the service-user-group association
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17286,12 +17286,12 @@ func ParseAddServiceUserToGroupResponse(rsp *http.Response) (*AddServiceUserToGr
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17300,12 +17300,12 @@ func ParseAddServiceUserToGroupResponse(rsp *http.Response) (*AddServiceUserToGr
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17314,12 +17314,12 @@ func ParseAddServiceUserToGroupResponse(rsp *http.Response) (*AddServiceUserToGr
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17348,19 +17348,19 @@ func ParseListGroupUsersResponse(rsp *http.Response) (*ListGroupUsersResponse, e
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17369,12 +17369,12 @@ func ParseListGroupUsersResponse(rsp *http.Response) (*ListGroupUsersResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17383,12 +17383,12 @@ func ParseListGroupUsersResponse(rsp *http.Response) (*ListGroupUsersResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17397,12 +17397,12 @@ func ParseListGroupUsersResponse(rsp *http.Response) (*ListGroupUsersResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17430,12 +17430,12 @@ func ParseRemoveUserFromGroupResponse(rsp *http.Response) (*RemoveUserFromGroupR
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17444,12 +17444,12 @@ func ParseRemoveUserFromGroupResponse(rsp *http.Response) (*RemoveUserFromGroupR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17458,12 +17458,12 @@ func ParseRemoveUserFromGroupResponse(rsp *http.Response) (*RemoveUserFromGroupR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17492,46 +17492,46 @@ func ParseAddUserToGroupResponse(rsp *http.Response) (*AddUserToGroupResponse, e
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// CreatedAt Timestamp when the user was added to the group
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Group The group the user was added to
-			Group *struct {
+			Group struct {
 				// CreatedAt Timestamp when the group was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Optional description of the group's purpose
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the group
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the group
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"group,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"group"`
 
 			// User The user that was added to the group
-			User *struct {
+			User struct {
 				// CreatedAt Timestamp when the user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the user
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Full name of the user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"user"`
 
 			// Uuid Unique identifier for the user-group association
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17540,12 +17540,12 @@ func ParseAddUserToGroupResponse(rsp *http.Response) (*AddUserToGroupResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17554,12 +17554,12 @@ func ParseAddUserToGroupResponse(rsp *http.Response) (*AddUserToGroupResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17568,12 +17568,12 @@ func ParseAddUserToGroupResponse(rsp *http.Response) (*AddUserToGroupResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17602,43 +17602,43 @@ func ParseInviteUsersToWorkspaceResponse(rsp *http.Response) (*InviteUsersToWork
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// Created List of users that were created
-			Created *[]struct {
+			Created []struct {
 				// CreatedAt Timestamp when the user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the user
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Full name of the user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"created,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"created"`
 
 			// Existing List of users that already existed
-			Existing *[]struct {
+			Existing []struct {
 				// CreatedAt Timestamp when the user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the user
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Full name of the user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"existing,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"existing"`
 
 			// Invited List of email addresses that were invited
-			Invited *[]string `json:"invited,omitempty"`
+			Invited []string `json:"invited"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17647,12 +17647,12 @@ func ParseInviteUsersToWorkspaceResponse(rsp *http.Response) (*InviteUsersToWork
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17661,12 +17661,12 @@ func ParseInviteUsersToWorkspaceResponse(rsp *http.Response) (*InviteUsersToWork
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17675,12 +17675,12 @@ func ParseInviteUsersToWorkspaceResponse(rsp *http.Response) (*InviteUsersToWork
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17709,37 +17709,37 @@ func ParseListServiceUserKiseKeysResponse(rsp *http.Response) (*ListServiceUserK
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the KISE key was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Key The KISE key content
-			Key *string `json:"key,omitempty"`
+			Key string `json:"key"`
 
 			// ServiceUser The service user this KISE key belongs to
-			ServiceUser *struct {
+			ServiceUser struct {
 				// CreatedAt Timestamp when the service user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Name Name of the service user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the service user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"service_user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"service_user"`
 
 			// Title Title or name for the KISE key
-			Title *string `json:"title,omitempty"`
+			Title string `json:"title"`
 
 			// UpdatedAt Timestamp when the KISE key was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the KISE key
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 
 			// Workspace The workspace this KISE key belongs to
-			Workspace *string `json:"workspace,omitempty"`
+			Workspace string `json:"workspace"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17748,12 +17748,12 @@ func ParseListServiceUserKiseKeysResponse(rsp *http.Response) (*ListServiceUserK
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17762,12 +17762,12 @@ func ParseListServiceUserKiseKeysResponse(rsp *http.Response) (*ListServiceUserK
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17776,12 +17776,12 @@ func ParseListServiceUserKiseKeysResponse(rsp *http.Response) (*ListServiceUserK
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17810,22 +17810,22 @@ func ParseListRolesResponse(rsp *http.Response) (*ListRolesResponse, error) {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17834,12 +17834,12 @@ func ParseListRolesResponse(rsp *http.Response) (*ListRolesResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17848,12 +17848,12 @@ func ParseListRolesResponse(rsp *http.Response) (*ListRolesResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17862,12 +17862,12 @@ func ParseListRolesResponse(rsp *http.Response) (*ListRolesResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17895,12 +17895,12 @@ func ParseCreateRoleResponse(rsp *http.Response) (*CreateRoleResponse, error) {
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17909,12 +17909,12 @@ func ParseCreateRoleResponse(rsp *http.Response) (*CreateRoleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17923,12 +17923,12 @@ func ParseCreateRoleResponse(rsp *http.Response) (*CreateRoleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17956,12 +17956,12 @@ func ParseDeleteRoleResponse(rsp *http.Response) (*DeleteRoleResponse, error) {
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17970,12 +17970,12 @@ func ParseDeleteRoleResponse(rsp *http.Response) (*DeleteRoleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -17984,12 +17984,12 @@ func ParseDeleteRoleResponse(rsp *http.Response) (*DeleteRoleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18017,12 +18017,12 @@ func ParseGetRoleResponse(rsp *http.Response) (*GetRoleResponse, error) {
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18031,12 +18031,12 @@ func ParseGetRoleResponse(rsp *http.Response) (*GetRoleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18045,12 +18045,12 @@ func ParseGetRoleResponse(rsp *http.Response) (*GetRoleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18079,61 +18079,61 @@ func ParseBulkAddRulesToRoleResponse(rsp *http.Response) (*BulkAddRulesToRoleRes
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest []struct {
 			// CreatedAt Timestamp when the role-rule binding was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Role The role that is bound
-			Role *struct {
+			Role struct {
 				// CreatedAt Timestamp when the role was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the role's purpose and permissions
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the role
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Service Service this role applies to
-				Service *string `json:"service,omitempty"`
+				Service string `json:"service"`
 
 				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the role
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"role,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"role"`
 
 			// Rule The rule that is bound
-			Rule *struct {
+			Rule struct {
 				// Action Action this rule controls
-				Action *string `json:"action,omitempty"`
+				Action string `json:"action"`
 
 				// CreatedAt Timestamp when the rule was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the rule's purpose
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the rule
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Resource Resource this rule applies to
-				Resource *string `json:"resource,omitempty"`
+				Resource string `json:"resource"`
 
 				// Service Service this rule applies to
-				Service *string `json:"service,omitempty"`
+				Service string `json:"service"`
 
 				// UpdatedAt Timestamp when the rule was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the rule
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"rule,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"rule"`
 
 			// UpdatedAt Timestamp when the role-rule binding was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role-rule binding
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18142,12 +18142,12 @@ func ParseBulkAddRulesToRoleResponse(rsp *http.Response) (*BulkAddRulesToRoleRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18156,12 +18156,12 @@ func ParseBulkAddRulesToRoleResponse(rsp *http.Response) (*BulkAddRulesToRoleRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18170,12 +18170,12 @@ func ParseBulkAddRulesToRoleResponse(rsp *http.Response) (*BulkAddRulesToRoleRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18204,55 +18204,55 @@ func ParseBulkAddServiceUsersToRoleResponse(rsp *http.Response) (*BulkAddService
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest []struct {
 			// CreatedAt Timestamp when the role binding was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Group The group the role is bound to
-			Group *struct {
+			Group struct {
 				// CreatedAt Timestamp when the group was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Optional description of the group's purpose
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the group
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the group
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"group,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"group"`
 
 			// Items Optional items associated with this role binding
 			Items interface{} `json:"items,omitempty"`
 
 			// Role The role that is bound
-			Role *struct {
+			Role struct {
 				// CreatedAt Timestamp when the role was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the role's purpose and permissions
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the role
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Service Service this role applies to
-				Service *string `json:"service,omitempty"`
+				Service string `json:"service"`
 
 				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the role
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"role,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"role"`
 
 			// UpdatedAt Timestamp when the role binding was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role binding
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18261,12 +18261,12 @@ func ParseBulkAddServiceUsersToRoleResponse(rsp *http.Response) (*BulkAddService
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18275,12 +18275,12 @@ func ParseBulkAddServiceUsersToRoleResponse(rsp *http.Response) (*BulkAddService
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18289,12 +18289,12 @@ func ParseBulkAddServiceUsersToRoleResponse(rsp *http.Response) (*BulkAddService
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18323,55 +18323,55 @@ func ParseBulkAddUsersToRoleResponse(rsp *http.Response) (*BulkAddUsersToRoleRes
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest []struct {
 			// CreatedAt Timestamp when the role binding was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Group The group the role is bound to
-			Group *struct {
+			Group struct {
 				// CreatedAt Timestamp when the group was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Optional description of the group's purpose
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the group
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the group was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the group
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"group,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"group"`
 
 			// Items Optional items associated with this role binding
 			Items interface{} `json:"items,omitempty"`
 
 			// Role The role that is bound
-			Role *struct {
+			Role struct {
 				// CreatedAt Timestamp when the role was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the role's purpose and permissions
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the role
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Service Service this role applies to
-				Service *string `json:"service,omitempty"`
+				Service string `json:"service"`
 
 				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the role
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"role,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"role"`
 
 			// UpdatedAt Timestamp when the role binding was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role binding
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18380,12 +18380,12 @@ func ParseBulkAddUsersToRoleResponse(rsp *http.Response) (*BulkAddUsersToRoleRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18394,12 +18394,12 @@ func ParseBulkAddUsersToRoleResponse(rsp *http.Response) (*BulkAddUsersToRoleRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18408,12 +18408,12 @@ func ParseBulkAddUsersToRoleResponse(rsp *http.Response) (*BulkAddUsersToRoleRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18441,12 +18441,12 @@ func ParseRemoveRoleFromGroupResponse(rsp *http.Response) (*RemoveRoleFromGroupR
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18455,12 +18455,12 @@ func ParseRemoveRoleFromGroupResponse(rsp *http.Response) (*RemoveRoleFromGroupR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18469,12 +18469,12 @@ func ParseRemoveRoleFromGroupResponse(rsp *http.Response) (*RemoveRoleFromGroupR
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18503,28 +18503,28 @@ func ParseListRoleRulesResponse(rsp *http.Response) (*ListRoleRulesResponse, err
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// Action Action this rule controls
-			Action *string `json:"action,omitempty"`
+			Action string `json:"action"`
 
 			// CreatedAt Timestamp when the rule was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the rule's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the rule
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Resource Resource this rule applies to
-			Resource *string `json:"resource,omitempty"`
+			Resource string `json:"resource"`
 
 			// Service Service this rule applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the rule
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18533,12 +18533,12 @@ func ParseListRoleRulesResponse(rsp *http.Response) (*ListRoleRulesResponse, err
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18547,12 +18547,12 @@ func ParseListRoleRulesResponse(rsp *http.Response) (*ListRoleRulesResponse, err
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18561,12 +18561,12 @@ func ParseListRoleRulesResponse(rsp *http.Response) (*ListRoleRulesResponse, err
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18594,12 +18594,12 @@ func ParseRemoveRuleFromRoleResponse(rsp *http.Response) (*RemoveRuleFromRoleRes
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18608,12 +18608,12 @@ func ParseRemoveRuleFromRoleResponse(rsp *http.Response) (*RemoveRuleFromRoleRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18622,12 +18622,12 @@ func ParseRemoveRuleFromRoleResponse(rsp *http.Response) (*RemoveRuleFromRoleRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18656,28 +18656,28 @@ func ParseAddRuleToRoleResponse(rsp *http.Response) (*AddRuleToRoleResponse, err
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// Action Action this rule controls
-			Action *string `json:"action,omitempty"`
+			Action string `json:"action"`
 
 			// CreatedAt Timestamp when the rule was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the rule's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the rule
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Resource Resource this rule applies to
-			Resource *string `json:"resource,omitempty"`
+			Resource string `json:"resource"`
 
 			// Service Service this rule applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the rule
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18686,12 +18686,12 @@ func ParseAddRuleToRoleResponse(rsp *http.Response) (*AddRuleToRoleResponse, err
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18700,12 +18700,12 @@ func ParseAddRuleToRoleResponse(rsp *http.Response) (*AddRuleToRoleResponse, err
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18714,12 +18714,12 @@ func ParseAddRuleToRoleResponse(rsp *http.Response) (*AddRuleToRoleResponse, err
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18751,19 +18751,19 @@ func ParseListServiceUsersRoleBindingsResponse(rsp *http.Response) (*ListService
 			Items interface{} `json:"items,omitempty"`
 
 			// ServiceUser The service user
-			ServiceUser *struct {
+			ServiceUser struct {
 				// CreatedAt Timestamp when the service user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Name Name of the service user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the service user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"service_user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"service_user"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18772,12 +18772,12 @@ func ParseListServiceUsersRoleBindingsResponse(rsp *http.Response) (*ListService
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18786,12 +18786,12 @@ func ParseListServiceUsersRoleBindingsResponse(rsp *http.Response) (*ListService
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18800,12 +18800,12 @@ func ParseListServiceUsersRoleBindingsResponse(rsp *http.Response) (*ListService
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18833,12 +18833,12 @@ func ParseRemoveRoleFromServiceUserResponse(rsp *http.Response) (*RemoveRoleFrom
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18847,12 +18847,12 @@ func ParseRemoveRoleFromServiceUserResponse(rsp *http.Response) (*RemoveRoleFrom
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18861,12 +18861,12 @@ func ParseRemoveRoleFromServiceUserResponse(rsp *http.Response) (*RemoveRoleFrom
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18898,19 +18898,19 @@ func ParseGetServiceUserRoleBindingResponse(rsp *http.Response) (*GetServiceUser
 			Items interface{} `json:"items,omitempty"`
 
 			// ServiceUser The service user
-			ServiceUser *struct {
+			ServiceUser struct {
 				// CreatedAt Timestamp when the service user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Name Name of the service user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the service user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"service_user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"service_user"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18919,12 +18919,12 @@ func ParseGetServiceUserRoleBindingResponse(rsp *http.Response) (*GetServiceUser
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18933,12 +18933,12 @@ func ParseGetServiceUserRoleBindingResponse(rsp *http.Response) (*GetServiceUser
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18947,12 +18947,12 @@ func ParseGetServiceUserRoleBindingResponse(rsp *http.Response) (*GetServiceUser
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -18981,55 +18981,55 @@ func ParseAssignRoleToServiceUserResponse(rsp *http.Response) (*AssignRoleToServ
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// CreatedAt Timestamp when the binding was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Items Optional items associated with this role binding
 			Items interface{} `json:"items,omitempty"`
 
 			// Role The role that was assigned to the service user
-			Role *struct {
+			Role struct {
 				// CreatedAt Timestamp when the role was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the role's purpose and permissions
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the role
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Service Service this role applies to
-				Service *string `json:"service,omitempty"`
+				Service string `json:"service"`
 
 				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the role
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"role,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"role"`
 
 			// ServiceUser The service user that was assigned the role
-			ServiceUser *struct {
+			ServiceUser struct {
 				// CreatedAt Timestamp when the service user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Name Name of the service user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the service user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"service_user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"service_user"`
 
 			// UpdatedAt Timestamp when the binding was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service-user-role binding
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 
 			// Workspace The workspace in which the binding exists
-			Workspace *string `json:"workspace,omitempty"`
+			Workspace string `json:"workspace"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19038,12 +19038,12 @@ func ParseAssignRoleToServiceUserResponse(rsp *http.Response) (*AssignRoleToServ
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19052,12 +19052,12 @@ func ParseAssignRoleToServiceUserResponse(rsp *http.Response) (*AssignRoleToServ
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19066,12 +19066,12 @@ func ParseAssignRoleToServiceUserResponse(rsp *http.Response) (*AssignRoleToServ
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19103,22 +19103,22 @@ func ParseListUsersRoleBindingsResponse(rsp *http.Response) (*ListUsersRoleBindi
 			Items interface{} `json:"items,omitempty"`
 
 			// User The user
-			User *struct {
+			User struct {
 				// CreatedAt Timestamp when the user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the user
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Full name of the user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"user"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19127,12 +19127,12 @@ func ParseListUsersRoleBindingsResponse(rsp *http.Response) (*ListUsersRoleBindi
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19141,12 +19141,12 @@ func ParseListUsersRoleBindingsResponse(rsp *http.Response) (*ListUsersRoleBindi
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19155,12 +19155,12 @@ func ParseListUsersRoleBindingsResponse(rsp *http.Response) (*ListUsersRoleBindi
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19188,12 +19188,12 @@ func ParseRemoveRoleFromUserResponse(rsp *http.Response) (*RemoveRoleFromUserRes
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19202,12 +19202,12 @@ func ParseRemoveRoleFromUserResponse(rsp *http.Response) (*RemoveRoleFromUserRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19216,12 +19216,12 @@ func ParseRemoveRoleFromUserResponse(rsp *http.Response) (*RemoveRoleFromUserRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19253,22 +19253,22 @@ func ParseGetUserRoleBindingResponse(rsp *http.Response) (*GetUserRoleBindingRes
 			Items interface{} `json:"items,omitempty"`
 
 			// User The user
-			User *struct {
+			User struct {
 				// CreatedAt Timestamp when the user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the user
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Full name of the user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"user"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19277,12 +19277,12 @@ func ParseGetUserRoleBindingResponse(rsp *http.Response) (*GetUserRoleBindingRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19291,12 +19291,12 @@ func ParseGetUserRoleBindingResponse(rsp *http.Response) (*GetUserRoleBindingRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19305,12 +19305,12 @@ func ParseGetUserRoleBindingResponse(rsp *http.Response) (*GetUserRoleBindingRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19339,58 +19339,58 @@ func ParseAssignRoleToUserResponse(rsp *http.Response) (*AssignRoleToUserRespons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// CreatedAt Timestamp when the binding was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Items Optional items associated with this role binding
 			Items interface{} `json:"items,omitempty"`
 
 			// Role The role that was assigned to the user
-			Role *struct {
+			Role struct {
 				// CreatedAt Timestamp when the role was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Description Description of the role's purpose and permissions
 				Description *string `json:"description,omitempty"`
 
 				// Name Name of the role
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Service Service this role applies to
-				Service *string `json:"service,omitempty"`
+				Service string `json:"service"`
 
 				// UpdatedAt Timestamp when the role was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the role
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"role,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"role"`
 
 			// UpdatedAt Timestamp when the binding was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// User The user that was assigned the role
-			User *struct {
+			User struct {
 				// CreatedAt Timestamp when the user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the user
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Full name of the user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"user"`
 
 			// Uuid Unique identifier for the user-role binding
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 
 			// Workspace The workspace in which the binding exists
-			Workspace *string `json:"workspace,omitempty"`
+			Workspace string `json:"workspace"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19399,12 +19399,12 @@ func ParseAssignRoleToUserResponse(rsp *http.Response) (*AssignRoleToUserRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19413,12 +19413,12 @@ func ParseAssignRoleToUserResponse(rsp *http.Response) (*AssignRoleToUserRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19427,12 +19427,12 @@ func ParseAssignRoleToUserResponse(rsp *http.Response) (*AssignRoleToUserRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19461,28 +19461,28 @@ func ParseListRulesResponse(rsp *http.Response) (*ListRulesResponse, error) {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// Action Action this rule controls
-			Action *string `json:"action,omitempty"`
+			Action string `json:"action"`
 
 			// CreatedAt Timestamp when the rule was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the rule's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the rule
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Resource Resource this rule applies to
-			Resource *string `json:"resource,omitempty"`
+			Resource string `json:"resource"`
 
 			// Service Service this rule applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the rule
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19491,12 +19491,12 @@ func ParseListRulesResponse(rsp *http.Response) (*ListRulesResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19505,12 +19505,12 @@ func ParseListRulesResponse(rsp *http.Response) (*ListRulesResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19519,12 +19519,12 @@ func ParseListRulesResponse(rsp *http.Response) (*ListRulesResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19553,28 +19553,28 @@ func ParseCreateRuleResponse(rsp *http.Response) (*CreateRuleResponse, error) {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// Action Action this rule controls
-			Action *string `json:"action,omitempty"`
+			Action string `json:"action"`
 
 			// CreatedAt Timestamp when the rule was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the rule's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the rule
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Resource Resource this rule applies to
-			Resource *string `json:"resource,omitempty"`
+			Resource string `json:"resource"`
 
 			// Service Service this rule applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the rule
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19583,12 +19583,12 @@ func ParseCreateRuleResponse(rsp *http.Response) (*CreateRuleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19597,12 +19597,12 @@ func ParseCreateRuleResponse(rsp *http.Response) (*CreateRuleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19611,12 +19611,12 @@ func ParseCreateRuleResponse(rsp *http.Response) (*CreateRuleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19625,12 +19625,12 @@ func ParseCreateRuleResponse(rsp *http.Response) (*CreateRuleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19658,12 +19658,12 @@ func ParseDeleteRuleResponse(rsp *http.Response) (*DeleteRuleResponse, error) {
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19672,12 +19672,12 @@ func ParseDeleteRuleResponse(rsp *http.Response) (*DeleteRuleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19686,12 +19686,12 @@ func ParseDeleteRuleResponse(rsp *http.Response) (*DeleteRuleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19720,28 +19720,28 @@ func ParseGetRuleResponse(rsp *http.Response) (*GetRuleResponse, error) {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// Action Action this rule controls
-			Action *string `json:"action,omitempty"`
+			Action string `json:"action"`
 
 			// CreatedAt Timestamp when the rule was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the rule's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the rule
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Resource Resource this rule applies to
-			Resource *string `json:"resource,omitempty"`
+			Resource string `json:"resource"`
 
 			// Service Service this rule applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the rule
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19750,12 +19750,12 @@ func ParseGetRuleResponse(rsp *http.Response) (*GetRuleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19764,12 +19764,12 @@ func ParseGetRuleResponse(rsp *http.Response) (*GetRuleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19778,12 +19778,12 @@ func ParseGetRuleResponse(rsp *http.Response) (*GetRuleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19812,28 +19812,28 @@ func ParseUpdateRuleResponse(rsp *http.Response) (*UpdateRuleResponse, error) {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// Action Action this rule controls
-			Action *string `json:"action,omitempty"`
+			Action string `json:"action"`
 
 			// CreatedAt Timestamp when the rule was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the rule's purpose
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the rule
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Resource Resource this rule applies to
-			Resource *string `json:"resource,omitempty"`
+			Resource string `json:"resource"`
 
 			// Service Service this rule applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the rule was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the rule
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19842,12 +19842,12 @@ func ParseUpdateRuleResponse(rsp *http.Response) (*UpdateRuleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19856,12 +19856,12 @@ func ParseUpdateRuleResponse(rsp *http.Response) (*UpdateRuleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19870,12 +19870,12 @@ func ParseUpdateRuleResponse(rsp *http.Response) (*UpdateRuleResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19904,22 +19904,22 @@ func ParseListRuleRolesResponse(rsp *http.Response) (*ListRuleRolesResponse, err
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the role was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the role's purpose and permissions
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the role
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Service Service this role applies to
-			Service *string `json:"service,omitempty"`
+			Service string `json:"service"`
 
 			// UpdatedAt Timestamp when the role was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the role
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19928,12 +19928,12 @@ func ParseListRuleRolesResponse(rsp *http.Response) (*ListRuleRolesResponse, err
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19942,12 +19942,12 @@ func ParseListRuleRolesResponse(rsp *http.Response) (*ListRuleRolesResponse, err
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19956,12 +19956,12 @@ func ParseListRuleRolesResponse(rsp *http.Response) (*ListRuleRolesResponse, err
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -19990,16 +19990,16 @@ func ParseListServiceUsersResponse(rsp *http.Response) (*ListServiceUsersRespons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20008,12 +20008,12 @@ func ParseListServiceUsersResponse(rsp *http.Response) (*ListServiceUsersRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20022,12 +20022,12 @@ func ParseListServiceUsersResponse(rsp *http.Response) (*ListServiceUsersRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20036,12 +20036,12 @@ func ParseListServiceUsersResponse(rsp *http.Response) (*ListServiceUsersRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20070,16 +20070,16 @@ func ParseCreateServiceUserResponse(rsp *http.Response) (*CreateServiceUserRespo
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20088,12 +20088,12 @@ func ParseCreateServiceUserResponse(rsp *http.Response) (*CreateServiceUserRespo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20102,12 +20102,12 @@ func ParseCreateServiceUserResponse(rsp *http.Response) (*CreateServiceUserRespo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20116,12 +20116,12 @@ func ParseCreateServiceUserResponse(rsp *http.Response) (*CreateServiceUserRespo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20149,12 +20149,12 @@ func ParseDeleteServiceUserResponse(rsp *http.Response) (*DeleteServiceUserRespo
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20163,12 +20163,12 @@ func ParseDeleteServiceUserResponse(rsp *http.Response) (*DeleteServiceUserRespo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20177,12 +20177,12 @@ func ParseDeleteServiceUserResponse(rsp *http.Response) (*DeleteServiceUserRespo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20211,16 +20211,16 @@ func ParseUpdateServiceUserResponse(rsp *http.Response) (*UpdateServiceUserRespo
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// CreatedAt Timestamp when the service user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Name Name of the service user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the service user
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20229,12 +20229,12 @@ func ParseUpdateServiceUserResponse(rsp *http.Response) (*UpdateServiceUserRespo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20243,12 +20243,12 @@ func ParseUpdateServiceUserResponse(rsp *http.Response) (*UpdateServiceUserRespo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20257,12 +20257,12 @@ func ParseUpdateServiceUserResponse(rsp *http.Response) (*UpdateServiceUserRespo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20291,37 +20291,37 @@ func ParseCreateServiceUserKiseKeyResponse(rsp *http.Response) (*CreateServiceUs
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// CreatedAt Timestamp when the KISE key was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Key The KISE key content
-			Key *string `json:"key,omitempty"`
+			Key string `json:"key"`
 
 			// ServiceUser The service user this KISE key belongs to
-			ServiceUser *struct {
+			ServiceUser struct {
 				// CreatedAt Timestamp when the service user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Name Name of the service user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the service user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"service_user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"service_user"`
 
 			// Title Title or name for the KISE key
-			Title *string `json:"title,omitempty"`
+			Title string `json:"title"`
 
 			// UpdatedAt Timestamp when the KISE key was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the KISE key
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 
 			// Workspace The workspace this KISE key belongs to
-			Workspace *string `json:"workspace,omitempty"`
+			Workspace string `json:"workspace"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20330,12 +20330,12 @@ func ParseCreateServiceUserKiseKeyResponse(rsp *http.Response) (*CreateServiceUs
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20344,12 +20344,12 @@ func ParseCreateServiceUserKiseKeyResponse(rsp *http.Response) (*CreateServiceUs
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20358,12 +20358,12 @@ func ParseCreateServiceUserKiseKeyResponse(rsp *http.Response) (*CreateServiceUs
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20391,12 +20391,12 @@ func ParseDeleteServiceUserKiseKeyResponse(rsp *http.Response) (*DeleteServiceUs
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20405,12 +20405,12 @@ func ParseDeleteServiceUserKiseKeyResponse(rsp *http.Response) (*DeleteServiceUs
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20419,12 +20419,12 @@ func ParseDeleteServiceUserKiseKeyResponse(rsp *http.Response) (*DeleteServiceUs
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20453,34 +20453,34 @@ func ParseListServiceUserPublicKeysResponse(rsp *http.Response) (*ListServiceUse
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the public key was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Key The public key content in SSH format
-			Key *string `json:"key,omitempty"`
+			Key string `json:"key"`
 
 			// ServiceUser The service user this public key belongs to
-			ServiceUser *struct {
+			ServiceUser struct {
 				// CreatedAt Timestamp when the service user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Name Name of the service user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the service user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"service_user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"service_user"`
 
 			// Title Title or name for the public key
-			Title *string `json:"title,omitempty"`
+			Title string `json:"title"`
 
 			// UpdatedAt Timestamp when the public key was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the public key
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20489,12 +20489,12 @@ func ParseListServiceUserPublicKeysResponse(rsp *http.Response) (*ListServiceUse
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20503,12 +20503,12 @@ func ParseListServiceUserPublicKeysResponse(rsp *http.Response) (*ListServiceUse
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20517,12 +20517,12 @@ func ParseListServiceUserPublicKeysResponse(rsp *http.Response) (*ListServiceUse
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20551,34 +20551,34 @@ func ParseCreateServiceUserPublicKeyResponse(rsp *http.Response) (*CreateService
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// CreatedAt Timestamp when the public key was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Key The public key content in SSH format
-			Key *string `json:"key,omitempty"`
+			Key string `json:"key"`
 
 			// ServiceUser The service user this public key belongs to
-			ServiceUser *struct {
+			ServiceUser struct {
 				// CreatedAt Timestamp when the service user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Name Name of the service user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the service user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"service_user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"service_user"`
 
 			// Title Title or name for the public key
-			Title *string `json:"title,omitempty"`
+			Title string `json:"title"`
 
 			// UpdatedAt Timestamp when the public key was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the public key
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20587,12 +20587,12 @@ func ParseCreateServiceUserPublicKeyResponse(rsp *http.Response) (*CreateService
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20601,12 +20601,12 @@ func ParseCreateServiceUserPublicKeyResponse(rsp *http.Response) (*CreateService
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20615,12 +20615,12 @@ func ParseCreateServiceUserPublicKeyResponse(rsp *http.Response) (*CreateService
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20648,12 +20648,12 @@ func ParseDeleteServiceUserPublicKeyResponse(rsp *http.Response) (*DeleteService
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20662,12 +20662,12 @@ func ParseDeleteServiceUserPublicKeyResponse(rsp *http.Response) (*DeleteService
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20676,12 +20676,12 @@ func ParseDeleteServiceUserPublicKeyResponse(rsp *http.Response) (*DeleteService
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20710,31 +20710,31 @@ func ParseListServiceUserTokensResponse(rsp *http.Response) (*ListServiceUserTok
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the token was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// ExpiresAt Timestamp when the token will expire
 			ExpiresAt *time.Time `json:"expires_at,omitempty"`
 
 			// Name Name of the token
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// ServiceUser The service user this token belongs to
-			ServiceUser *struct {
+			ServiceUser struct {
 				// CreatedAt Timestamp when the service user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Name Name of the service user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the service user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"service_user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"service_user"`
 
 			// Uuid Unique identifier for the token
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20743,12 +20743,12 @@ func ParseListServiceUserTokensResponse(rsp *http.Response) (*ListServiceUserTok
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20757,12 +20757,12 @@ func ParseListServiceUserTokensResponse(rsp *http.Response) (*ListServiceUserTok
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20771,12 +20771,12 @@ func ParseListServiceUserTokensResponse(rsp *http.Response) (*ListServiceUserTok
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20805,34 +20805,34 @@ func ParseCreateServiceUserTokenResponse(rsp *http.Response) (*CreateServiceUser
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// CreatedAt Timestamp when the token was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// ExpiresAt Timestamp when the token will expire
 			ExpiresAt *time.Time `json:"expires_at,omitempty"`
 
 			// Name Name of the token
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// Secret The secret value of the token
-			Secret *string `json:"secret,omitempty"`
+			Secret string `json:"secret"`
 
 			// ServiceUser The service user this token belongs to
-			ServiceUser *struct {
+			ServiceUser struct {
 				// CreatedAt Timestamp when the service user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Name Name of the service user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the service user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the service user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"service_user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"service_user"`
 
 			// Uuid Unique identifier for the token
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20841,12 +20841,12 @@ func ParseCreateServiceUserTokenResponse(rsp *http.Response) (*CreateServiceUser
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20855,12 +20855,12 @@ func ParseCreateServiceUserTokenResponse(rsp *http.Response) (*CreateServiceUser
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20869,12 +20869,12 @@ func ParseCreateServiceUserTokenResponse(rsp *http.Response) (*CreateServiceUser
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20902,12 +20902,12 @@ func ParseDeleteServiceUserTokenResponse(rsp *http.Response) (*DeleteServiceUser
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20916,12 +20916,12 @@ func ParseDeleteServiceUserTokenResponse(rsp *http.Response) (*DeleteServiceUser
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20930,12 +20930,12 @@ func ParseDeleteServiceUserTokenResponse(rsp *http.Response) (*DeleteServiceUser
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20964,16 +20964,16 @@ func ParseListServicesResponse(rsp *http.Response) (*ListServicesResponse, error
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the service was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Description Description of the service
 			Description *string `json:"description,omitempty"`
 
 			// Name Name of the service
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the service was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20982,12 +20982,12 @@ func ParseListServicesResponse(rsp *http.Response) (*ListServicesResponse, error
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -20996,12 +20996,12 @@ func ParseListServicesResponse(rsp *http.Response) (*ListServicesResponse, error
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21010,12 +21010,12 @@ func ParseListServicesResponse(rsp *http.Response) (*ListServicesResponse, error
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21047,7 +21047,7 @@ func ParseBulkRefreshThirdPartyTokensResponse(rsp *http.Response) (*BulkRefreshT
 			FailedTokens *map[string]string `json:"failed_tokens,omitempty"`
 
 			// RefreshedTokens Map of token identifiers to refreshed tokens
-			RefreshedTokens *map[string]string `json:"refreshed_tokens,omitempty"`
+			RefreshedTokens map[string]string `json:"refreshed_tokens"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21056,12 +21056,12 @@ func ParseBulkRefreshThirdPartyTokensResponse(rsp *http.Response) (*BulkRefreshT
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21070,12 +21070,12 @@ func ParseBulkRefreshThirdPartyTokensResponse(rsp *http.Response) (*BulkRefreshT
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21084,12 +21084,12 @@ func ParseBulkRefreshThirdPartyTokensResponse(rsp *http.Response) (*BulkRefreshT
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21118,19 +21118,19 @@ func ParseListWorkspaceUsersResponse(rsp *http.Response) (*ListWorkspaceUsersRes
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21139,12 +21139,12 @@ func ParseListWorkspaceUsersResponse(rsp *http.Response) (*ListWorkspaceUsersRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21153,12 +21153,12 @@ func ParseListWorkspaceUsersResponse(rsp *http.Response) (*ListWorkspaceUsersRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21167,12 +21167,12 @@ func ParseListWorkspaceUsersResponse(rsp *http.Response) (*ListWorkspaceUsersRes
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21200,12 +21200,12 @@ func ParseRemoveUserFromWorkspaceResponse(rsp *http.Response) (*RemoveUserFromWo
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21214,12 +21214,12 @@ func ParseRemoveUserFromWorkspaceResponse(rsp *http.Response) (*RemoveUserFromWo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21228,12 +21228,12 @@ func ParseRemoveUserFromWorkspaceResponse(rsp *http.Response) (*RemoveUserFromWo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21262,19 +21262,19 @@ func ParseAllowUserResponse(rsp *http.Response) (*AllowUserResponse, error) {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21283,12 +21283,12 @@ func ParseAllowUserResponse(rsp *http.Response) (*AllowUserResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21297,12 +21297,12 @@ func ParseAllowUserResponse(rsp *http.Response) (*AllowUserResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21311,12 +21311,12 @@ func ParseAllowUserResponse(rsp *http.Response) (*AllowUserResponse, error) {
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21345,40 +21345,40 @@ func ParseListUserKiseKeysResponse(rsp *http.Response) (*ListUserKiseKeysRespons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
 			// CreatedAt Timestamp when the KISE key was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Key The KISE key content
-			Key *string `json:"key,omitempty"`
+			Key string `json:"key"`
 
 			// Title Title or name for the KISE key
-			Title *string `json:"title,omitempty"`
+			Title string `json:"title"`
 
 			// UpdatedAt Timestamp when the KISE key was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// User The user this KISE key belongs to
-			User *struct {
+			User struct {
 				// CreatedAt Timestamp when the user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the user
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Full name of the user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"user"`
 
 			// Uuid Unique identifier for the KISE key
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 
 			// Workspace The workspace this KISE key belongs to
-			Workspace *string `json:"workspace,omitempty"`
+			Workspace string `json:"workspace"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21387,12 +21387,12 @@ func ParseListUserKiseKeysResponse(rsp *http.Response) (*ListUserKiseKeysRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21401,12 +21401,12 @@ func ParseListUserKiseKeysResponse(rsp *http.Response) (*ListUserKiseKeysRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21415,12 +21415,12 @@ func ParseListUserKiseKeysResponse(rsp *http.Response) (*ListUserKiseKeysRespons
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21449,40 +21449,40 @@ func ParseCreateUserKiseKeyResponse(rsp *http.Response) (*CreateUserKiseKeyRespo
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// CreatedAt Timestamp when the KISE key was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Key The KISE key content
-			Key *string `json:"key,omitempty"`
+			Key string `json:"key"`
 
 			// Title Title or name for the KISE key
-			Title *string `json:"title,omitempty"`
+			Title string `json:"title"`
 
 			// UpdatedAt Timestamp when the KISE key was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// User The user this KISE key belongs to
-			User *struct {
+			User struct {
 				// CreatedAt Timestamp when the user was created
-				CreatedAt *time.Time `json:"created_at,omitempty"`
+				CreatedAt time.Time `json:"created_at"`
 
 				// Email Email address of the user
-				Email *string `json:"email,omitempty"`
+				Email string `json:"email"`
 
 				// Name Full name of the user
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// UpdatedAt Timestamp when the user was last updated
-				UpdatedAt *time.Time `json:"updated_at,omitempty"`
+				UpdatedAt time.Time `json:"updated_at"`
 
 				// Uuid Unique identifier for the user
-				Uuid *string `json:"uuid,omitempty"`
-			} `json:"user,omitempty"`
+				Uuid string `json:"uuid"`
+			} `json:"user"`
 
 			// Uuid Unique identifier for the KISE key
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 
 			// Workspace The workspace this KISE key belongs to
-			Workspace *string `json:"workspace,omitempty"`
+			Workspace string `json:"workspace"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21491,12 +21491,12 @@ func ParseCreateUserKiseKeyResponse(rsp *http.Response) (*CreateUserKiseKeyRespo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21505,12 +21505,12 @@ func ParseCreateUserKiseKeyResponse(rsp *http.Response) (*CreateUserKiseKeyRespo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21519,12 +21519,12 @@ func ParseCreateUserKiseKeyResponse(rsp *http.Response) (*CreateUserKiseKeyRespo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21552,12 +21552,12 @@ func ParseDeleteUserKiseKeyResponse(rsp *http.Response) (*DeleteUserKiseKeyRespo
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21566,12 +21566,12 @@ func ParseDeleteUserKiseKeyResponse(rsp *http.Response) (*DeleteUserKiseKeyRespo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21580,12 +21580,12 @@ func ParseDeleteUserKiseKeyResponse(rsp *http.Response) (*DeleteUserKiseKeyRespo
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21614,19 +21614,19 @@ func ParseSuspendUserResponse(rsp *http.Response) (*SuspendUserResponse, error) 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// CreatedAt Timestamp when the user was created
-			CreatedAt *time.Time `json:"created_at,omitempty"`
+			CreatedAt time.Time `json:"created_at"`
 
 			// Email Email address of the user
-			Email *string `json:"email,omitempty"`
+			Email string `json:"email"`
 
 			// Name Full name of the user
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// UpdatedAt Timestamp when the user was last updated
-			UpdatedAt *time.Time `json:"updated_at,omitempty"`
+			UpdatedAt time.Time `json:"updated_at"`
 
 			// Uuid Unique identifier for the user
-			Uuid *string `json:"uuid,omitempty"`
+			Uuid string `json:"uuid"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21635,12 +21635,12 @@ func ParseSuspendUserResponse(rsp *http.Response) (*SuspendUserResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21649,12 +21649,12 @@ func ParseSuspendUserResponse(rsp *http.Response) (*SuspendUserResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21663,12 +21663,12 @@ func ParseSuspendUserResponse(rsp *http.Response) (*SuspendUserResponse, error) 
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21697,10 +21697,10 @@ func ParseGetOpenIdTokenResponse(rsp *http.Response) (*GetOpenIdTokenResponse, e
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// AccessToken OAuth 2.0 access token
-			AccessToken *string `json:"access_token,omitempty"`
+			AccessToken string `json:"access_token"`
 
 			// ExpiresIn Number of seconds until the token expires
-			ExpiresIn *int `json:"expires_in,omitempty"`
+			ExpiresIn int `json:"expires_in"`
 
 			// IdToken OpenID Connect ID token
 			IdToken *string `json:"id_token,omitempty"`
@@ -21709,7 +21709,7 @@ func ParseGetOpenIdTokenResponse(rsp *http.Response) (*GetOpenIdTokenResponse, e
 			RefreshToken *string `json:"refresh_token,omitempty"`
 
 			// TokenType Type of token, typically 'Bearer'
-			TokenType *string `json:"token_type,omitempty"`
+			TokenType string `json:"token_type"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21718,12 +21718,12 @@ func ParseGetOpenIdTokenResponse(rsp *http.Response) (*GetOpenIdTokenResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21732,12 +21732,12 @@ func ParseGetOpenIdTokenResponse(rsp *http.Response) (*GetOpenIdTokenResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -21746,12 +21746,12 @@ func ParseGetOpenIdTokenResponse(rsp *http.Response) (*GetOpenIdTokenResponse, e
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
-			Code    *int `json:"code,omitempty"`
-			Message *struct {
-				Detail *string `json:"detail,omitempty"`
-			} `json:"message,omitempty"`
-			Reason *string `json:"reason,omitempty"`
-			Status *string `json:"status,omitempty"`
+			Code    int `json:"code"`
+			Message struct {
+				Detail string `json:"detail"`
+			} `json:"message"`
+			Reason string `json:"reason"`
+			Status string `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err

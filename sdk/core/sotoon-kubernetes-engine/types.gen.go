@@ -451,110 +451,110 @@ const (
 // PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersJSONBody defines parameters for PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters.
 type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonCluster' that identifies the schema
-	Kind *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersJSONBodyKind `json:"kind,omitempty"`
+	Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the Kubernetes cluster
-	Spec *struct {
+	Spec struct {
 		// ClusterNetwork Network configuration for the cluster
 		ClusterNetwork *struct {
 			// Pods Network ranges from which Pod networks are allocated
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"services"`
 		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
-		Infra *struct {
+		Infra struct {
 			// VPC Virtual Private Cloud Network that the cluster is created in
-			VPC *string `json:"VPC,omitempty"`
+			VPC string `json:"VPC"`
 
 			// Subnet Engine sub-network that the cluster is created in
-			Subnet *string `json:"subnet,omitempty"`
+			Subnet string `json:"subnet"`
 
 			// Version Control-plane version configuration
-			Version *struct {
+			Version struct {
 				// KubernetesVersion Kubernetes version
-				KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+				KubernetesVersion string `json:"kubernetesVersion"`
 
 				// PatchVersion SKE patch version
-				PatchVersion *string `json:"patchVersion,omitempty"`
-			} `json:"version,omitempty"`
-		} `json:"infra,omitempty"`
-	} `json:"spec,omitempty"`
+				PatchVersion string `json:"patchVersion"`
+			} `json:"version"`
+		} `json:"infra"`
+	} `json:"spec"`
 
 	// Status Current observed state of the cluster
-	Status *struct {
+	Status struct {
 		// Conditions Current conditions of the cluster
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// KubeconfigSecretName Reference to the kubeconfig secret
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
-		Phase *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the cluster is ready for use
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of ready replicas
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of unavailable replicas
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of updated replicas
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersJSONBodyApiVersion defines parameters for PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclusters.
@@ -569,110 +569,110 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersJSONBodyStatusP
 // PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBody defines parameters for PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId.
 type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonCluster' that identifies the schema
-	Kind *PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the Kubernetes cluster
-	Spec *struct {
+	Spec struct {
 		// ClusterNetwork Network configuration for the cluster
 		ClusterNetwork *struct {
 			// Pods Network ranges from which Pod networks are allocated
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"services"`
 		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
-		Infra *struct {
+		Infra struct {
 			// VPC Virtual Private Cloud Network that the cluster is created in
-			VPC *string `json:"VPC,omitempty"`
+			VPC string `json:"VPC"`
 
 			// Subnet Engine sub-network that the cluster is created in
-			Subnet *string `json:"subnet,omitempty"`
+			Subnet string `json:"subnet"`
 
 			// Version Control-plane version configuration
-			Version *struct {
+			Version struct {
 				// KubernetesVersion Kubernetes version
-				KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+				KubernetesVersion string `json:"kubernetesVersion"`
 
 				// PatchVersion SKE patch version
-				PatchVersion *string `json:"patchVersion,omitempty"`
-			} `json:"version,omitempty"`
-		} `json:"infra,omitempty"`
-	} `json:"spec,omitempty"`
+				PatchVersion string `json:"patchVersion"`
+			} `json:"version"`
+		} `json:"infra"`
+	} `json:"spec"`
 
 	// Status Current observed state of the cluster
-	Status *struct {
+	Status struct {
 		// Conditions Current conditions of the cluster
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// KubeconfigSecretName Reference to the kubeconfig secret
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
-		Phase *PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the cluster is ready for use
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of ready replicas
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of unavailable replicas
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of updated replicas
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion defines parameters for PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId.
@@ -687,110 +687,110 @@ type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSON
 // PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBody defines parameters for PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId.
 type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonCluster' that identifies the schema
-	Kind *PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the Kubernetes cluster
-	Spec *struct {
+	Spec struct {
 		// ClusterNetwork Network configuration for the cluster
 		ClusterNetwork *struct {
 			// Pods Network ranges from which Pod networks are allocated
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"services"`
 		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
-		Infra *struct {
+		Infra struct {
 			// VPC Virtual Private Cloud Network that the cluster is created in
-			VPC *string `json:"VPC,omitempty"`
+			VPC string `json:"VPC"`
 
 			// Subnet Engine sub-network that the cluster is created in
-			Subnet *string `json:"subnet,omitempty"`
+			Subnet string `json:"subnet"`
 
 			// Version Control-plane version configuration
-			Version *struct {
+			Version struct {
 				// KubernetesVersion Kubernetes version
-				KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+				KubernetesVersion string `json:"kubernetesVersion"`
 
 				// PatchVersion SKE patch version
-				PatchVersion *string `json:"patchVersion,omitempty"`
-			} `json:"version,omitempty"`
-		} `json:"infra,omitempty"`
-	} `json:"spec,omitempty"`
+				PatchVersion string `json:"patchVersion"`
+			} `json:"version"`
+		} `json:"infra"`
+	} `json:"spec"`
 
 	// Status Current observed state of the cluster
-	Status *struct {
+	Status struct {
 		// Conditions Current conditions of the cluster
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// KubeconfigSecretName Reference to the kubeconfig secret
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
-		Phase *PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the cluster is ready for use
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of ready replicas
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of unavailable replicas
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of updated replicas
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion defines parameters for PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceId.
@@ -805,110 +805,110 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBo
 // PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBody defines parameters for PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools.
 type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonNodepool' that identifies the schema
-	Kind *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyKind `json:"kind,omitempty"`
+	Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the nodepool
-	Spec *struct {
+	Spec struct {
 		// AllowedUnsafeSysctls List of allowed unsafe sysctls
 		AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
 
 		// ClusterName Name of the cluster this nodepool belongs to
-		ClusterName *string `json:"clusterName,omitempty"`
+		ClusterName string `json:"clusterName"`
 
 		// Cri Container runtime configuration
 		Cri *struct {
 			// Runtime Container runtime to use
-			Runtime *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodySpecCriRuntime `json:"runtime,omitempty"`
+			Runtime PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodySpecCriRuntime `json:"runtime"`
 		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
 
 		// Replicas Number of worker nodes desired in the nodepool
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// Template Template configuration for worker nodes
-		Template *struct {
+		Template struct {
 			// IamEnabled Enable IAM integration for nodes
-			IamEnabled *bool `json:"iamEnabled,omitempty"`
+			IamEnabled bool `json:"iamEnabled"`
 
 			// InstanceType Instance type for worker nodes in Engine
-			InstanceType *string `json:"instanceType,omitempty"`
-		} `json:"template,omitempty"`
+			InstanceType string `json:"instanceType"`
+		} `json:"template"`
 
 		// Version Kubernetes and SKE patch version configuration for worker machines
-		Version *struct {
+		Version struct {
 			// KubernetesVersion Kubernetes version
-			KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+			KubernetesVersion string `json:"kubernetesVersion"`
 
 			// PatchVersion SKE patch version
-			PatchVersion *string `json:"patchVersion,omitempty"`
-		} `json:"version,omitempty"`
-	} `json:"spec,omitempty"`
+			PatchVersion string `json:"patchVersion"`
+		} `json:"version"`
+	} `json:"spec"`
 
 	// Status Current observed state of the nodepool
-	Status *struct {
+	Status struct {
 		// AvailableReplicas Number of replicas available for scheduling
-		AvailableReplicas *int32 `json:"availableReplicas,omitempty"`
+		AvailableReplicas int32 `json:"availableReplicas"`
 
 		// Conditions Current conditions of the nodepool
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// Phase Current phase of scaling operation
-		Phase *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the nodepool is ready
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of replicas that are ready to serve traffic
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Current total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of replicas currently unavailable
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of replicas updated to the latest spec
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyApiVersion defines parameters for PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepools.
@@ -926,119 +926,119 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyStatus
 // PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody defines parameters for PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
 type PatchSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody struct {
 	// Spec Specification for nodepool updates
-	Spec *struct {
+	Spec struct {
 		// Replicas Number of worker nodes desired (0 or greater)
 		Replicas *int32 `json:"replicas"`
-	} `json:"spec,omitempty"`
+	} `json:"spec"`
 }
 
 // PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody defines parameters for PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
 type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonNodepool' that identifies the schema
-	Kind *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the nodepool
-	Spec *struct {
+	Spec struct {
 		// AllowedUnsafeSysctls List of allowed unsafe sysctls
 		AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
 
 		// ClusterName Name of the cluster this nodepool belongs to
-		ClusterName *string `json:"clusterName,omitempty"`
+		ClusterName string `json:"clusterName"`
 
 		// Cri Container runtime configuration
 		Cri *struct {
 			// Runtime Container runtime to use
-			Runtime *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime,omitempty"`
+			Runtime PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime"`
 		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
 
 		// Replicas Number of worker nodes desired in the nodepool
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// Template Template configuration for worker nodes
-		Template *struct {
+		Template struct {
 			// IamEnabled Enable IAM integration for nodes
-			IamEnabled *bool `json:"iamEnabled,omitempty"`
+			IamEnabled bool `json:"iamEnabled"`
 
 			// InstanceType Instance type for worker nodes in Engine
-			InstanceType *string `json:"instanceType,omitempty"`
-		} `json:"template,omitempty"`
+			InstanceType string `json:"instanceType"`
+		} `json:"template"`
 
 		// Version Kubernetes and SKE patch version configuration for worker machines
-		Version *struct {
+		Version struct {
 			// KubernetesVersion Kubernetes version
-			KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+			KubernetesVersion string `json:"kubernetesVersion"`
 
 			// PatchVersion SKE patch version
-			PatchVersion *string `json:"patchVersion,omitempty"`
-		} `json:"version,omitempty"`
-	} `json:"spec,omitempty"`
+			PatchVersion string `json:"patchVersion"`
+		} `json:"version"`
+	} `json:"spec"`
 
 	// Status Current observed state of the nodepool
-	Status *struct {
+	Status struct {
 		// AvailableReplicas Number of replicas available for scheduling
-		AvailableReplicas *int32 `json:"availableReplicas,omitempty"`
+		AvailableReplicas int32 `json:"availableReplicas"`
 
 		// Conditions Current conditions of the nodepool
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// Phase Current phase of scaling operation
-		Phase *PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the nodepool is ready
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of replicas that are ready to serve traffic
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Current total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of replicas currently unavailable
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of replicas updated to the latest spec
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion defines parameters for PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
@@ -1056,110 +1056,110 @@ type PostSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSON
 // PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody defines parameters for PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
 type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonNodepool' that identifies the schema
-	Kind *PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the nodepool
-	Spec *struct {
+	Spec struct {
 		// AllowedUnsafeSysctls List of allowed unsafe sysctls
 		AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
 
 		// ClusterName Name of the cluster this nodepool belongs to
-		ClusterName *string `json:"clusterName,omitempty"`
+		ClusterName string `json:"clusterName"`
 
 		// Cri Container runtime configuration
 		Cri *struct {
 			// Runtime Container runtime to use
-			Runtime *PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime,omitempty"`
+			Runtime PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime"`
 		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
 
 		// Replicas Number of worker nodes desired in the nodepool
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// Template Template configuration for worker nodes
-		Template *struct {
+		Template struct {
 			// IamEnabled Enable IAM integration for nodes
-			IamEnabled *bool `json:"iamEnabled,omitempty"`
+			IamEnabled bool `json:"iamEnabled"`
 
 			// InstanceType Instance type for worker nodes in Engine
-			InstanceType *string `json:"instanceType,omitempty"`
-		} `json:"template,omitempty"`
+			InstanceType string `json:"instanceType"`
+		} `json:"template"`
 
 		// Version Kubernetes and SKE patch version configuration for worker machines
-		Version *struct {
+		Version struct {
 			// KubernetesVersion Kubernetes version
-			KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+			KubernetesVersion string `json:"kubernetesVersion"`
 
 			// PatchVersion SKE patch version
-			PatchVersion *string `json:"patchVersion,omitempty"`
-		} `json:"version,omitempty"`
-	} `json:"spec,omitempty"`
+			PatchVersion string `json:"patchVersion"`
+		} `json:"version"`
+	} `json:"spec"`
 
 	// Status Current observed state of the nodepool
-	Status *struct {
+	Status struct {
 		// AvailableReplicas Number of replicas available for scheduling
-		AvailableReplicas *int32 `json:"availableReplicas,omitempty"`
+		AvailableReplicas int32 `json:"availableReplicas"`
 
 		// Conditions Current conditions of the nodepool
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// Phase Current phase of scaling operation
-		Phase *PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the nodepool is ready
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of replicas that are ready to serve traffic
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Current total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of replicas currently unavailable
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of replicas updated to the latest spec
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion defines parameters for PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
@@ -1177,110 +1177,110 @@ type PutSkeV2alpha1Thr1FreeWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONB
 // PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersJSONBody defines parameters for PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters.
 type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonCluster' that identifies the schema
-	Kind *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersJSONBodyKind `json:"kind,omitempty"`
+	Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the Kubernetes cluster
-	Spec *struct {
+	Spec struct {
 		// ClusterNetwork Network configuration for the cluster
 		ClusterNetwork *struct {
 			// Pods Network ranges from which Pod networks are allocated
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"services"`
 		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
-		Infra *struct {
+		Infra struct {
 			// VPC Virtual Private Cloud Network that the cluster is created in
-			VPC *string `json:"VPC,omitempty"`
+			VPC string `json:"VPC"`
 
 			// Subnet Engine sub-network that the cluster is created in
-			Subnet *string `json:"subnet,omitempty"`
+			Subnet string `json:"subnet"`
 
 			// Version Control-plane version configuration
-			Version *struct {
+			Version struct {
 				// KubernetesVersion Kubernetes version
-				KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+				KubernetesVersion string `json:"kubernetesVersion"`
 
 				// PatchVersion SKE patch version
-				PatchVersion *string `json:"patchVersion,omitempty"`
-			} `json:"version,omitempty"`
-		} `json:"infra,omitempty"`
-	} `json:"spec,omitempty"`
+				PatchVersion string `json:"patchVersion"`
+			} `json:"version"`
+		} `json:"infra"`
+	} `json:"spec"`
 
 	// Status Current observed state of the cluster
-	Status *struct {
+	Status struct {
 		// Conditions Current conditions of the cluster
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// KubeconfigSecretName Reference to the kubeconfig secret
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
-		Phase *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the cluster is ready for use
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of ready replicas
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of unavailable replicas
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of updated replicas
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersJSONBodyApiVersion defines parameters for PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclusters.
@@ -1295,110 +1295,110 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersJSONBodyStat
 // PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBody defines parameters for PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId.
 type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonCluster' that identifies the schema
-	Kind *PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the Kubernetes cluster
-	Spec *struct {
+	Spec struct {
 		// ClusterNetwork Network configuration for the cluster
 		ClusterNetwork *struct {
 			// Pods Network ranges from which Pod networks are allocated
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"services"`
 		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
-		Infra *struct {
+		Infra struct {
 			// VPC Virtual Private Cloud Network that the cluster is created in
-			VPC *string `json:"VPC,omitempty"`
+			VPC string `json:"VPC"`
 
 			// Subnet Engine sub-network that the cluster is created in
-			Subnet *string `json:"subnet,omitempty"`
+			Subnet string `json:"subnet"`
 
 			// Version Control-plane version configuration
-			Version *struct {
+			Version struct {
 				// KubernetesVersion Kubernetes version
-				KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+				KubernetesVersion string `json:"kubernetesVersion"`
 
 				// PatchVersion SKE patch version
-				PatchVersion *string `json:"patchVersion,omitempty"`
-			} `json:"version,omitempty"`
-		} `json:"infra,omitempty"`
-	} `json:"spec,omitempty"`
+				PatchVersion string `json:"patchVersion"`
+			} `json:"version"`
+		} `json:"infra"`
+	} `json:"spec"`
 
 	// Status Current observed state of the cluster
-	Status *struct {
+	Status struct {
 		// Conditions Current conditions of the cluster
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// KubeconfigSecretName Reference to the kubeconfig secret
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
-		Phase *PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the cluster is ready for use
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of ready replicas
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of unavailable replicas
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of updated replicas
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion defines parameters for PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId.
@@ -1413,110 +1413,110 @@ type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJ
 // PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBody defines parameters for PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId.
 type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonCluster' that identifies the schema
-	Kind *PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the Kubernetes cluster
-	Spec *struct {
+	Spec struct {
 		// ClusterNetwork Network configuration for the cluster
 		ClusterNetwork *struct {
 			// Pods Network ranges from which Pod networks are allocated
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"services"`
 		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
-		Infra *struct {
+		Infra struct {
 			// VPC Virtual Private Cloud Network that the cluster is created in
-			VPC *string `json:"VPC,omitempty"`
+			VPC string `json:"VPC"`
 
 			// Subnet Engine sub-network that the cluster is created in
-			Subnet *string `json:"subnet,omitempty"`
+			Subnet string `json:"subnet"`
 
 			// Version Control-plane version configuration
-			Version *struct {
+			Version struct {
 				// KubernetesVersion Kubernetes version
-				KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+				KubernetesVersion string `json:"kubernetesVersion"`
 
 				// PatchVersion SKE patch version
-				PatchVersion *string `json:"patchVersion,omitempty"`
-			} `json:"version,omitempty"`
-		} `json:"infra,omitempty"`
-	} `json:"spec,omitempty"`
+				PatchVersion string `json:"patchVersion"`
+			} `json:"version"`
+		} `json:"infra"`
+	} `json:"spec"`
 
 	// Status Current observed state of the cluster
-	Status *struct {
+	Status struct {
 		// Conditions Current conditions of the cluster
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// KubeconfigSecretName Reference to the kubeconfig secret
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
-		Phase *PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the cluster is ready for use
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of ready replicas
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of unavailable replicas
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of updated replicas
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion defines parameters for PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceId.
@@ -1531,110 +1531,110 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSO
 // PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBody defines parameters for PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools.
 type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonNodepool' that identifies the schema
-	Kind *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyKind `json:"kind,omitempty"`
+	Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the nodepool
-	Spec *struct {
+	Spec struct {
 		// AllowedUnsafeSysctls List of allowed unsafe sysctls
 		AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
 
 		// ClusterName Name of the cluster this nodepool belongs to
-		ClusterName *string `json:"clusterName,omitempty"`
+		ClusterName string `json:"clusterName"`
 
 		// Cri Container runtime configuration
 		Cri *struct {
 			// Runtime Container runtime to use
-			Runtime *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodySpecCriRuntime `json:"runtime,omitempty"`
+			Runtime PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodySpecCriRuntime `json:"runtime"`
 		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
 
 		// Replicas Number of worker nodes desired in the nodepool
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// Template Template configuration for worker nodes
-		Template *struct {
+		Template struct {
 			// IamEnabled Enable IAM integration for nodes
-			IamEnabled *bool `json:"iamEnabled,omitempty"`
+			IamEnabled bool `json:"iamEnabled"`
 
 			// InstanceType Instance type for worker nodes in Engine
-			InstanceType *string `json:"instanceType,omitempty"`
-		} `json:"template,omitempty"`
+			InstanceType string `json:"instanceType"`
+		} `json:"template"`
 
 		// Version Kubernetes and SKE patch version configuration for worker machines
-		Version *struct {
+		Version struct {
 			// KubernetesVersion Kubernetes version
-			KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+			KubernetesVersion string `json:"kubernetesVersion"`
 
 			// PatchVersion SKE patch version
-			PatchVersion *string `json:"patchVersion,omitempty"`
-		} `json:"version,omitempty"`
-	} `json:"spec,omitempty"`
+			PatchVersion string `json:"patchVersion"`
+		} `json:"version"`
+	} `json:"spec"`
 
 	// Status Current observed state of the nodepool
-	Status *struct {
+	Status struct {
 		// AvailableReplicas Number of replicas available for scheduling
-		AvailableReplicas *int32 `json:"availableReplicas,omitempty"`
+		AvailableReplicas int32 `json:"availableReplicas"`
 
 		// Conditions Current conditions of the nodepool
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// Phase Current phase of scaling operation
-		Phase *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the nodepool is ready
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of replicas that are ready to serve traffic
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Current total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of replicas currently unavailable
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of replicas updated to the latest spec
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyApiVersion defines parameters for PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepools.
@@ -1652,119 +1652,119 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodySta
 // PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody defines parameters for PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
 type PatchSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody struct {
 	// Spec Specification for nodepool updates
-	Spec *struct {
+	Spec struct {
 		// Replicas Number of worker nodes desired (0 or greater)
 		Replicas *int32 `json:"replicas"`
-	} `json:"spec,omitempty"`
+	} `json:"spec"`
 }
 
 // PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody defines parameters for PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
 type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonNodepool' that identifies the schema
-	Kind *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the nodepool
-	Spec *struct {
+	Spec struct {
 		// AllowedUnsafeSysctls List of allowed unsafe sysctls
 		AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
 
 		// ClusterName Name of the cluster this nodepool belongs to
-		ClusterName *string `json:"clusterName,omitempty"`
+		ClusterName string `json:"clusterName"`
 
 		// Cri Container runtime configuration
 		Cri *struct {
 			// Runtime Container runtime to use
-			Runtime *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime,omitempty"`
+			Runtime PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime"`
 		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
 
 		// Replicas Number of worker nodes desired in the nodepool
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// Template Template configuration for worker nodes
-		Template *struct {
+		Template struct {
 			// IamEnabled Enable IAM integration for nodes
-			IamEnabled *bool `json:"iamEnabled,omitempty"`
+			IamEnabled bool `json:"iamEnabled"`
 
 			// InstanceType Instance type for worker nodes in Engine
-			InstanceType *string `json:"instanceType,omitempty"`
-		} `json:"template,omitempty"`
+			InstanceType string `json:"instanceType"`
+		} `json:"template"`
 
 		// Version Kubernetes and SKE patch version configuration for worker machines
-		Version *struct {
+		Version struct {
 			// KubernetesVersion Kubernetes version
-			KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+			KubernetesVersion string `json:"kubernetesVersion"`
 
 			// PatchVersion SKE patch version
-			PatchVersion *string `json:"patchVersion,omitempty"`
-		} `json:"version,omitempty"`
-	} `json:"spec,omitempty"`
+			PatchVersion string `json:"patchVersion"`
+		} `json:"version"`
+	} `json:"spec"`
 
 	// Status Current observed state of the nodepool
-	Status *struct {
+	Status struct {
 		// AvailableReplicas Number of replicas available for scheduling
-		AvailableReplicas *int32 `json:"availableReplicas,omitempty"`
+		AvailableReplicas int32 `json:"availableReplicas"`
 
 		// Conditions Current conditions of the nodepool
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// Phase Current phase of scaling operation
-		Phase *PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the nodepool is ready
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of replicas that are ready to serve traffic
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Current total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of replicas currently unavailable
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of replicas updated to the latest spec
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion defines parameters for PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
@@ -1782,110 +1782,110 @@ type PostSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJ
 // PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody defines parameters for PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
 type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonNodepool' that identifies the schema
-	Kind *PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the nodepool
-	Spec *struct {
+	Spec struct {
 		// AllowedUnsafeSysctls List of allowed unsafe sysctls
 		AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
 
 		// ClusterName Name of the cluster this nodepool belongs to
-		ClusterName *string `json:"clusterName,omitempty"`
+		ClusterName string `json:"clusterName"`
 
 		// Cri Container runtime configuration
 		Cri *struct {
 			// Runtime Container runtime to use
-			Runtime *PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime,omitempty"`
+			Runtime PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime"`
 		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
 
 		// Replicas Number of worker nodes desired in the nodepool
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// Template Template configuration for worker nodes
-		Template *struct {
+		Template struct {
 			// IamEnabled Enable IAM integration for nodes
-			IamEnabled *bool `json:"iamEnabled,omitempty"`
+			IamEnabled bool `json:"iamEnabled"`
 
 			// InstanceType Instance type for worker nodes in Engine
-			InstanceType *string `json:"instanceType,omitempty"`
-		} `json:"template,omitempty"`
+			InstanceType string `json:"instanceType"`
+		} `json:"template"`
 
 		// Version Kubernetes and SKE patch version configuration for worker machines
-		Version *struct {
+		Version struct {
 			// KubernetesVersion Kubernetes version
-			KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+			KubernetesVersion string `json:"kubernetesVersion"`
 
 			// PatchVersion SKE patch version
-			PatchVersion *string `json:"patchVersion,omitempty"`
-		} `json:"version,omitempty"`
-	} `json:"spec,omitempty"`
+			PatchVersion string `json:"patchVersion"`
+		} `json:"version"`
+	} `json:"spec"`
 
 	// Status Current observed state of the nodepool
-	Status *struct {
+	Status struct {
 		// AvailableReplicas Number of replicas available for scheduling
-		AvailableReplicas *int32 `json:"availableReplicas,omitempty"`
+		AvailableReplicas int32 `json:"availableReplicas"`
 
 		// Conditions Current conditions of the nodepool
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// Phase Current phase of scaling operation
-		Phase *PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the nodepool is ready
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of replicas that are ready to serve traffic
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Current total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of replicas currently unavailable
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of replicas updated to the latest spec
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion defines parameters for PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
@@ -1903,110 +1903,110 @@ type PutSkeV2alpha1Thr1PremiumWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJS
 // PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersJSONBody defines parameters for PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters.
 type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonCluster' that identifies the schema
-	Kind *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersJSONBodyKind `json:"kind,omitempty"`
+	Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the Kubernetes cluster
-	Spec *struct {
+	Spec struct {
 		// ClusterNetwork Network configuration for the cluster
 		ClusterNetwork *struct {
 			// Pods Network ranges from which Pod networks are allocated
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"services"`
 		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
-		Infra *struct {
+		Infra struct {
 			// VPC Virtual Private Cloud Network that the cluster is created in
-			VPC *string `json:"VPC,omitempty"`
+			VPC string `json:"VPC"`
 
 			// Subnet Engine sub-network that the cluster is created in
-			Subnet *string `json:"subnet,omitempty"`
+			Subnet string `json:"subnet"`
 
 			// Version Control-plane version configuration
-			Version *struct {
+			Version struct {
 				// KubernetesVersion Kubernetes version
-				KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+				KubernetesVersion string `json:"kubernetesVersion"`
 
 				// PatchVersion SKE patch version
-				PatchVersion *string `json:"patchVersion,omitempty"`
-			} `json:"version,omitempty"`
-		} `json:"infra,omitempty"`
-	} `json:"spec,omitempty"`
+				PatchVersion string `json:"patchVersion"`
+			} `json:"version"`
+		} `json:"infra"`
+	} `json:"spec"`
 
 	// Status Current observed state of the cluster
-	Status *struct {
+	Status struct {
 		// Conditions Current conditions of the cluster
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// KubeconfigSecretName Reference to the kubeconfig secret
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
-		Phase *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the cluster is ready for use
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of ready replicas
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of unavailable replicas
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of updated replicas
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersJSONBodyApiVersion defines parameters for PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclusters.
@@ -2021,110 +2021,110 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersJSONBodySta
 // PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBody defines parameters for PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId.
 type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonCluster' that identifies the schema
-	Kind *PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the Kubernetes cluster
-	Spec *struct {
+	Spec struct {
 		// ClusterNetwork Network configuration for the cluster
 		ClusterNetwork *struct {
 			// Pods Network ranges from which Pod networks are allocated
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"services"`
 		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
-		Infra *struct {
+		Infra struct {
 			// VPC Virtual Private Cloud Network that the cluster is created in
-			VPC *string `json:"VPC,omitempty"`
+			VPC string `json:"VPC"`
 
 			// Subnet Engine sub-network that the cluster is created in
-			Subnet *string `json:"subnet,omitempty"`
+			Subnet string `json:"subnet"`
 
 			// Version Control-plane version configuration
-			Version *struct {
+			Version struct {
 				// KubernetesVersion Kubernetes version
-				KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+				KubernetesVersion string `json:"kubernetesVersion"`
 
 				// PatchVersion SKE patch version
-				PatchVersion *string `json:"patchVersion,omitempty"`
-			} `json:"version,omitempty"`
-		} `json:"infra,omitempty"`
-	} `json:"spec,omitempty"`
+				PatchVersion string `json:"patchVersion"`
+			} `json:"version"`
+		} `json:"infra"`
+	} `json:"spec"`
 
 	// Status Current observed state of the cluster
-	Status *struct {
+	Status struct {
 		// Conditions Current conditions of the cluster
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// KubeconfigSecretName Reference to the kubeconfig secret
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
-		Phase *PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the cluster is ready for use
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of ready replicas
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of unavailable replicas
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of updated replicas
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion defines parameters for PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId.
@@ -2139,110 +2139,110 @@ type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId
 // PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBody defines parameters for PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId.
 type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonCluster' that identifies the schema
-	Kind *PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the Kubernetes cluster
-	Spec *struct {
+	Spec struct {
 		// ClusterNetwork Network configuration for the cluster
 		ClusterNetwork *struct {
 			// Pods Network ranges from which Pod networks are allocated
 			Pods *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"pods"`
 
 			// Services Network ranges from which service VIPs are allocated
 			Services *struct {
 				// CidrBlocks List of CIDR blocks
-				CidrBlocks *[]string `json:"cidrBlocks,omitempty"`
+				CidrBlocks []string `json:"cidrBlocks"`
 			} `json:"services"`
 		} `json:"clusterNetwork"`
 
 		// Infra Infrastructure configuration for the cluster
-		Infra *struct {
+		Infra struct {
 			// VPC Virtual Private Cloud Network that the cluster is created in
-			VPC *string `json:"VPC,omitempty"`
+			VPC string `json:"VPC"`
 
 			// Subnet Engine sub-network that the cluster is created in
-			Subnet *string `json:"subnet,omitempty"`
+			Subnet string `json:"subnet"`
 
 			// Version Control-plane version configuration
-			Version *struct {
+			Version struct {
 				// KubernetesVersion Kubernetes version
-				KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+				KubernetesVersion string `json:"kubernetesVersion"`
 
 				// PatchVersion SKE patch version
-				PatchVersion *string `json:"patchVersion,omitempty"`
-			} `json:"version,omitempty"`
-		} `json:"infra,omitempty"`
-	} `json:"spec,omitempty"`
+				PatchVersion string `json:"patchVersion"`
+			} `json:"version"`
+		} `json:"infra"`
+	} `json:"spec"`
 
 	// Status Current observed state of the cluster
-	Status *struct {
+	Status struct {
 		// Conditions Current conditions of the cluster
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// KubeconfigSecretName Reference to the kubeconfig secret
 		KubeconfigSecretName *struct {
 			// Name Name of the referenced object
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 		} `json:"kubeconfigSecretName"`
 
 		// Phase Current phase of the cluster
-		Phase *PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the cluster is ready for use
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of ready replicas
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of unavailable replicas
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of updated replicas
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJSONBodyApiVersion defines parameters for PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceId.
@@ -2257,110 +2257,110 @@ type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonclustersResourceIdJS
 // PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBody defines parameters for PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools.
 type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonNodepool' that identifies the schema
-	Kind *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyKind `json:"kind,omitempty"`
+	Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the nodepool
-	Spec *struct {
+	Spec struct {
 		// AllowedUnsafeSysctls List of allowed unsafe sysctls
 		AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
 
 		// ClusterName Name of the cluster this nodepool belongs to
-		ClusterName *string `json:"clusterName,omitempty"`
+		ClusterName string `json:"clusterName"`
 
 		// Cri Container runtime configuration
 		Cri *struct {
 			// Runtime Container runtime to use
-			Runtime *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodySpecCriRuntime `json:"runtime,omitempty"`
+			Runtime PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodySpecCriRuntime `json:"runtime"`
 		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
 
 		// Replicas Number of worker nodes desired in the nodepool
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// Template Template configuration for worker nodes
-		Template *struct {
+		Template struct {
 			// IamEnabled Enable IAM integration for nodes
-			IamEnabled *bool `json:"iamEnabled,omitempty"`
+			IamEnabled bool `json:"iamEnabled"`
 
 			// InstanceType Instance type for worker nodes in Engine
-			InstanceType *string `json:"instanceType,omitempty"`
-		} `json:"template,omitempty"`
+			InstanceType string `json:"instanceType"`
+		} `json:"template"`
 
 		// Version Kubernetes and SKE patch version configuration for worker machines
-		Version *struct {
+		Version struct {
 			// KubernetesVersion Kubernetes version
-			KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+			KubernetesVersion string `json:"kubernetesVersion"`
 
 			// PatchVersion SKE patch version
-			PatchVersion *string `json:"patchVersion,omitempty"`
-		} `json:"version,omitempty"`
-	} `json:"spec,omitempty"`
+			PatchVersion string `json:"patchVersion"`
+		} `json:"version"`
+	} `json:"spec"`
 
 	// Status Current observed state of the nodepool
-	Status *struct {
+	Status struct {
 		// AvailableReplicas Number of replicas available for scheduling
-		AvailableReplicas *int32 `json:"availableReplicas,omitempty"`
+		AvailableReplicas int32 `json:"availableReplicas"`
 
 		// Conditions Current conditions of the nodepool
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// Phase Current phase of scaling operation
-		Phase *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the nodepool is ready
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of replicas that are ready to serve traffic
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Current total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of replicas currently unavailable
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of replicas updated to the latest spec
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodyApiVersion defines parameters for PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepools.
@@ -2378,119 +2378,119 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsJSONBodySt
 // PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody defines parameters for PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
 type PatchSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody struct {
 	// Spec Specification for nodepool updates
-	Spec *struct {
+	Spec struct {
 		// Replicas Number of worker nodes desired (0 or greater)
 		Replicas *int32 `json:"replicas"`
-	} `json:"spec,omitempty"`
+	} `json:"spec"`
 }
 
 // PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody defines parameters for PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
 type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonNodepool' that identifies the schema
-	Kind *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the nodepool
-	Spec *struct {
+	Spec struct {
 		// AllowedUnsafeSysctls List of allowed unsafe sysctls
 		AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
 
 		// ClusterName Name of the cluster this nodepool belongs to
-		ClusterName *string `json:"clusterName,omitempty"`
+		ClusterName string `json:"clusterName"`
 
 		// Cri Container runtime configuration
 		Cri *struct {
 			// Runtime Container runtime to use
-			Runtime *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime,omitempty"`
+			Runtime PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime"`
 		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
 
 		// Replicas Number of worker nodes desired in the nodepool
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// Template Template configuration for worker nodes
-		Template *struct {
+		Template struct {
 			// IamEnabled Enable IAM integration for nodes
-			IamEnabled *bool `json:"iamEnabled,omitempty"`
+			IamEnabled bool `json:"iamEnabled"`
 
 			// InstanceType Instance type for worker nodes in Engine
-			InstanceType *string `json:"instanceType,omitempty"`
-		} `json:"template,omitempty"`
+			InstanceType string `json:"instanceType"`
+		} `json:"template"`
 
 		// Version Kubernetes and SKE patch version configuration for worker machines
-		Version *struct {
+		Version struct {
 			// KubernetesVersion Kubernetes version
-			KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+			KubernetesVersion string `json:"kubernetesVersion"`
 
 			// PatchVersion SKE patch version
-			PatchVersion *string `json:"patchVersion,omitempty"`
-		} `json:"version,omitempty"`
-	} `json:"spec,omitempty"`
+			PatchVersion string `json:"patchVersion"`
+		} `json:"version"`
+	} `json:"spec"`
 
 	// Status Current observed state of the nodepool
-	Status *struct {
+	Status struct {
 		// AvailableReplicas Number of replicas available for scheduling
-		AvailableReplicas *int32 `json:"availableReplicas,omitempty"`
+		AvailableReplicas int32 `json:"availableReplicas"`
 
 		// Conditions Current conditions of the nodepool
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// Phase Current phase of scaling operation
-		Phase *PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the nodepool is ready
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of replicas that are ready to serve traffic
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Current total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of replicas currently unavailable
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of replicas updated to the latest spec
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion defines parameters for PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
@@ -2508,110 +2508,110 @@ type PostSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId
 // PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody defines parameters for PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.
 type PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'SotoonNodepool' that identifies the schema
-	Kind *PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations store additional metadata about the resource
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// ResourceVersion Internal version for optimistic concurrency control
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration for the nodepool
-	Spec *struct {
+	Spec struct {
 		// AllowedUnsafeSysctls List of allowed unsafe sysctls
 		AllowedUnsafeSysctls *[]string `json:"allowedUnsafeSysctls,omitempty"`
 
 		// ClusterName Name of the cluster this nodepool belongs to
-		ClusterName *string `json:"clusterName,omitempty"`
+		ClusterName string `json:"clusterName"`
 
 		// Cri Container runtime configuration
 		Cri *struct {
 			// Runtime Container runtime to use
-			Runtime *PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime,omitempty"`
+			Runtime PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodySpecCriRuntime `json:"runtime"`
 		} `json:"cri"`
 
 		// Labels Labels to apply to worker nodes
 		Labels *map[string]string `json:"labels,omitempty"`
 
 		// Replicas Number of worker nodes desired in the nodepool
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// Template Template configuration for worker nodes
-		Template *struct {
+		Template struct {
 			// IamEnabled Enable IAM integration for nodes
-			IamEnabled *bool `json:"iamEnabled,omitempty"`
+			IamEnabled bool `json:"iamEnabled"`
 
 			// InstanceType Instance type for worker nodes in Engine
-			InstanceType *string `json:"instanceType,omitempty"`
-		} `json:"template,omitempty"`
+			InstanceType string `json:"instanceType"`
+		} `json:"template"`
 
 		// Version Kubernetes and SKE patch version configuration for worker machines
-		Version *struct {
+		Version struct {
 			// KubernetesVersion Kubernetes version
-			KubernetesVersion *string `json:"kubernetesVersion,omitempty"`
+			KubernetesVersion string `json:"kubernetesVersion"`
 
 			// PatchVersion SKE patch version
-			PatchVersion *string `json:"patchVersion,omitempty"`
-		} `json:"version,omitempty"`
-	} `json:"spec,omitempty"`
+			PatchVersion string `json:"patchVersion"`
+		} `json:"version"`
+	} `json:"spec"`
 
 	// Status Current observed state of the nodepool
-	Status *struct {
+	Status struct {
 		// AvailableReplicas Number of replicas available for scheduling
-		AvailableReplicas *int32 `json:"availableReplicas,omitempty"`
+		AvailableReplicas int32 `json:"availableReplicas"`
 
 		// Conditions Current conditions of the nodepool
 		Conditions *[]struct {
-			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
-			Message            *string     `json:"message,omitempty"`
+			LastTransitionTime interface{} `json:"lastTransitionTime"`
+			Message            string      `json:"message"`
 			ObservedGeneration *int64      `json:"observedGeneration,omitempty"`
-			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Reason             string      `json:"reason"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// Phase Current phase of scaling operation
-		Phase *PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyStatusPhase `json:"phase,omitempty"`
+		Phase PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyStatusPhase `json:"phase"`
 
 		// Ready Indicates if the nodepool is ready
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// ReadyReplicas Number of replicas that are ready to serve traffic
-		ReadyReplicas *int32 `json:"readyReplicas,omitempty"`
+		ReadyReplicas int32 `json:"readyReplicas"`
 
 		// Replicas Current total number of replicas
-		Replicas *int32 `json:"replicas,omitempty"`
+		Replicas int32 `json:"replicas"`
 
 		// UnavailableReplicas Number of replicas currently unavailable
-		UnavailableReplicas *int32 `json:"unavailableReplicas,omitempty"`
+		UnavailableReplicas int32 `json:"unavailableReplicas"`
 
 		// UpdatedReplicas Number of replicas updated to the latest spec
-		UpdatedReplicas *int32 `json:"updatedReplicas,omitempty"`
-	} `json:"status,omitempty"`
+		UpdatedReplicas int32 `json:"updatedReplicas"`
+	} `json:"status"`
 }
 
 // PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceIdJSONBodyApiVersion defines parameters for PutSkeV2alpha1Thr1StandardWorkspacesWorkspaceUUIDSotoonnodepoolsResourceId.

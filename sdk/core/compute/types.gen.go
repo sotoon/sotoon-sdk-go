@@ -70,50 +70,50 @@ const (
 // PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsJSONBody defines parameters for PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps.
 type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'ExternalIP' that identifies the schema
-	Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsJSONBodyKind `json:"kind,omitempty"`
+	Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations are key-value pairs storing additional metadata about resources
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace and type
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// OwnerReferences References to other resources that own or manage the resource
-		OwnerReferences *[]struct {
-			ApiVersion         *string `json:"apiVersion,omitempty"`
-			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-			Controller         *bool   `json:"controller"`
-			Kind               *string `json:"kind,omitempty"`
-			Name               *string `json:"name,omitempty"`
-			Uid                *string `json:"uid,omitempty"`
-		} `json:"ownerReferences,omitempty"`
+		OwnerReferences []struct {
+			ApiVersion         string `json:"apiVersion"`
+			BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+			Controller         *bool  `json:"controller"`
+			Kind               string `json:"kind"`
+			Name               string `json:"name"`
+			Uid                string `json:"uid"`
+		} `json:"ownerReferences"`
 
 		// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration and characteristics for the external ip
-	Spec *struct {
+	Spec struct {
 		// BoundTo Specifies the target object that will receive traffic directed to this external IP.
 		BoundTo *struct {
 			ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -131,10 +131,10 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsJSONBody struct {
 
 		// Reserved When set to true, prevents the external IP from being garbage collected even if the target object is removed.
 		Reserved *bool `json:"reserved,omitempty"`
-	} `json:"spec,omitempty"`
+	} `json:"spec"`
 
 	// Status Current observed state and conditions of the external ip
-	Status *struct {
+	Status struct {
 		// Gateway The IPv4 gateway address used for routing outgoing traffic from this external IP.
 		Gateway *string `json:"gateway,omitempty"`
 
@@ -143,7 +143,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsJSONBody struct {
 
 		// Ready Indicates whether the external IP is fully configured and ready to use.
 		Ready *bool `json:"ready,omitempty"`
-	} `json:"status,omitempty"`
+	} `json:"status"`
 }
 
 // PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsJSONBodyApiVersion defines parameters for PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps.
@@ -155,50 +155,50 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsJSONBodyKind string
 // PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdJSONBody defines parameters for PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId.
 type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'ExternalIP' that identifies the schema
-	Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations are key-value pairs storing additional metadata about resources
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace and type
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// OwnerReferences References to other resources that own or manage the resource
-		OwnerReferences *[]struct {
-			ApiVersion         *string `json:"apiVersion,omitempty"`
-			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-			Controller         *bool   `json:"controller"`
-			Kind               *string `json:"kind,omitempty"`
-			Name               *string `json:"name,omitempty"`
-			Uid                *string `json:"uid,omitempty"`
-		} `json:"ownerReferences,omitempty"`
+		OwnerReferences []struct {
+			ApiVersion         string `json:"apiVersion"`
+			BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+			Controller         *bool  `json:"controller"`
+			Kind               string `json:"kind"`
+			Name               string `json:"name"`
+			Uid                string `json:"uid"`
+		} `json:"ownerReferences"`
 
 		// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration and characteristics for the external ip
-	Spec *struct {
+	Spec struct {
 		// BoundTo Specifies the target object that will receive traffic directed to this external IP.
 		BoundTo *struct {
 			ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -216,10 +216,10 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdJSONBody struct
 
 		// Reserved When set to true, prevents the external IP from being garbage collected even if the target object is removed.
 		Reserved *bool `json:"reserved,omitempty"`
-	} `json:"spec,omitempty"`
+	} `json:"spec"`
 
 	// Status Current observed state and conditions of the external ip
-	Status *struct {
+	Status struct {
 		// Gateway The IPv4 gateway address used for routing outgoing traffic from this external IP.
 		Gateway *string `json:"gateway,omitempty"`
 
@@ -228,7 +228,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdJSONBody struct
 
 		// Ready Indicates whether the external IP is fully configured and ready to use.
 		Ready *bool `json:"ready,omitempty"`
-	} `json:"status,omitempty"`
+	} `json:"status"`
 }
 
 // PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdJSONBodyApiVersion defines parameters for PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId.
@@ -240,66 +240,66 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdJSONBodyKind st
 // PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody defines parameters for PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances.
 type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'Instance' that identifies the schema
-	Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBodyKind `json:"kind,omitempty"`
+	Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations are key-value pairs storing additional metadata about resources
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace and type
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// OwnerReferences References to other resources that own or manage the resource
-		OwnerReferences *struct {
-			ApiVersion         *string `json:"apiVersion,omitempty"`
-			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-			Controller         *bool   `json:"controller"`
-			Kind               *string `json:"kind,omitempty"`
-			Name               *string `json:"name,omitempty"`
-			Uid                *string `json:"uid,omitempty"`
-		} `json:"ownerReferences,omitempty"`
+		OwnerReferences struct {
+			ApiVersion         string `json:"apiVersion"`
+			BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+			Controller         *bool  `json:"controller"`
+			Kind               string `json:"kind"`
+			Name               string `json:"name"`
+			Uid                string `json:"uid"`
+		} `json:"ownerReferences"`
 
 		// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration and characteristics for the instance
-	Spec *struct {
+	Spec struct {
 		// IamEnabled When enabled, SSH access to this instance will be authenticated through Sotoon IAM.
 		IamEnabled *bool `json:"iamEnabled,omitempty"`
 
 		// ImageSource Specifies the base operating system image used to boot the instance. Must specify either an image or customImage, but not both.
-		ImageSource *struct {
+		ImageSource struct {
 			// CustomImage Name of the custom image to boot the instance from. Must be a valid custom image name. Cannot be modified after instance creation. Cannot be used together with image.
 			CustomImage *string `json:"customImage,omitempty"`
 
 			// Image Name of the base operating system image to boot the instance from. Must be a valid image name. Cannot be modified after instance creation. Cannot be used together with customImage.
 			Image *string `json:"image,omitempty"`
-		} `json:"imageSource,omitempty"`
+		} `json:"imageSource"`
 
 		// InitialUser Defines the initial OS login credentials. If specified, both username and password must be provided.
 		InitialUser *struct {
 			// Password Password configuration for the user account, specified either through a secret or file source
-			Password *struct {
+			Password struct {
 				// FromSecret Reference to a secret containing the password value. The secret must exist in the same namespace as the instance.
 				FromSecret *struct {
 					// Key Key within the secret containing the desired value. If not specified, defaults to the instance name
@@ -311,22 +311,22 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 					// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
 					Optional *bool `json:"optional"`
 				} `json:"fromSecret,omitempty"`
-			} `json:"password,omitempty"`
+			} `json:"password"`
 
 			// SshAuthorizedKeys List of SSH public keys to authorize for this user account
 			SshAuthorizedKeys *[]string `json:"sshAuthorizedKeys,omitempty"`
 
 			// Username Operating system username for the initial user account. Must follow Linux username requirements.
-			Username *string `json:"username,omitempty"`
+			Username string `json:"username"`
 		} `json:"initialUser"`
 
 		// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 		Interfaces *struct {
 			// Link Name of the Link resource that defines the network this interface connects to
-			Link *string `json:"link,omitempty"`
+			Link string `json:"link"`
 
 			// Name Unique identifier for this network interface within the instance
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 		} `json:"interfaces,omitempty"`
 
 		// OsVolume Defines the storage volume containing the operating system. Must specify either persistentVolumeClaim or localDisk (localDisk settings are ignored).
@@ -334,16 +334,16 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 			// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 			LocalDisk *struct {
 				// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-				Size interface{} `json:"size,omitempty"`
+				Size interface{} `json:"size"`
 			} `json:"localDisk"`
 
 			// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 			PersistentVolumeClaim *struct {
-				ClaimName *string `json:"claimName,omitempty"`
-				ReadOnly  *bool   `json:"readOnly,omitempty"`
+				ClaimName string `json:"claimName"`
+				ReadOnly  *bool  `json:"readOnly,omitempty"`
 			} `json:"persistentVolumeClaim"`
 		} `json:"osVolume,omitempty"`
 
@@ -353,13 +353,13 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 		} `json:"placementGroupRef"`
 
 		// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
-		PoweredOn *bool `json:"poweredOn,omitempty"`
+		PoweredOn bool `json:"poweredOn"`
 
 		// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
 		RestartedAt interface{} `json:"restartedAt"`
 
 		// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
-		Type *string `json:"type,omitempty"`
+		Type string `json:"type"`
 
 		// UserData Cloud-init configuration data provided in base64 encoded format. Used to customize instance on first boot.
 		UserData *string `json:"userData,omitempty"`
@@ -369,22 +369,22 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 			// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 			LocalDisk *struct {
 				// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-				Size interface{} `json:"size,omitempty"`
+				Size interface{} `json:"size"`
 			} `json:"localDisk"`
 
 			// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 			PersistentVolumeClaim *struct {
-				ClaimName *string `json:"claimName,omitempty"`
-				ReadOnly  *bool   `json:"readOnly,omitempty"`
+				ClaimName string `json:"claimName"`
+				ReadOnly  *bool  `json:"readOnly,omitempty"`
 			} `json:"persistentVolumeClaim"`
 		} `json:"volumes,omitempty"`
-	} `json:"spec,omitempty"`
+	} `json:"spec"`
 
 	// Status Current observed state and conditions of the instance
-	Status *struct {
+	Status struct {
 		// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 		AttachedVolumes *struct {
 			// Size Storage capacity of the attached volume in bytes
@@ -397,7 +397,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 			VolumeID *string `json:"volumeID,omitempty"`
 
 			// VolumeType Type of the attached volume - either 'persistentvolume' or 'localdisk'
-			VolumeType *string `json:"volumeType,omitempty"`
+			VolumeType string `json:"volumeType"`
 		} `json:"attachedVolumes,omitempty"`
 
 		// Conditions List of conditions representing the current state of various instance subsystems
@@ -406,12 +406,12 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
 			Message            *string     `json:"message,omitempty"`
 			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// Ready Indicates whether the instance is fully configured and operational
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// Resizing Indicates whether the instance is currently being resized to a different instance type
 		Resizing *bool `json:"resizing,omitempty"`
@@ -423,20 +423,20 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBody struct {
 		Restarting *bool `json:"restarting,omitempty"`
 
 		// Running Indicates whether the instance's operating system is currently running
-		Running *bool `json:"running,omitempty"`
+		Running bool `json:"running"`
 
 		// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 		RuntimeConfiguration *struct {
 			// Cpu Number of CPU cores
-			Cpu interface{} `json:"cpu,omitempty"`
+			Cpu interface{} `json:"cpu"`
 
 			// Memory Memory size
-			Memory interface{} `json:"memory,omitempty"`
+			Memory interface{} `json:"memory"`
 		} `json:"runtimeConfiguration"`
 
 		// Type The current instance type that defines the cpu, memory and storage capacity
 		Type *string `json:"type,omitempty"`
-	} `json:"status,omitempty"`
+	} `json:"status"`
 }
 
 // PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBodyApiVersion defines parameters for PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances.
@@ -448,66 +448,66 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesJSONBodyKind string
 // PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody defines parameters for PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId.
 type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'Instance' that identifies the schema
-	Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations are key-value pairs storing additional metadata about resources
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace and type
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// OwnerReferences References to other resources that own or manage the resource
-		OwnerReferences *struct {
-			ApiVersion         *string `json:"apiVersion,omitempty"`
-			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-			Controller         *bool   `json:"controller"`
-			Kind               *string `json:"kind,omitempty"`
-			Name               *string `json:"name,omitempty"`
-			Uid                *string `json:"uid,omitempty"`
-		} `json:"ownerReferences,omitempty"`
+		OwnerReferences struct {
+			ApiVersion         string `json:"apiVersion"`
+			BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+			Controller         *bool  `json:"controller"`
+			Kind               string `json:"kind"`
+			Name               string `json:"name"`
+			Uid                string `json:"uid"`
+		} `json:"ownerReferences"`
 
 		// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration and characteristics for the instance
-	Spec *struct {
+	Spec struct {
 		// IamEnabled When enabled, SSH access to this instance will be authenticated through Sotoon IAM.
 		IamEnabled *bool `json:"iamEnabled,omitempty"`
 
 		// ImageSource Specifies the base operating system image used to boot the instance. Must specify either an image or customImage, but not both.
-		ImageSource *struct {
+		ImageSource struct {
 			// CustomImage Name of the custom image to boot the instance from. Must be a valid custom image name. Cannot be modified after instance creation. Cannot be used together with image.
 			CustomImage *string `json:"customImage,omitempty"`
 
 			// Image Name of the base operating system image to boot the instance from. Must be a valid image name. Cannot be modified after instance creation. Cannot be used together with customImage.
 			Image *string `json:"image,omitempty"`
-		} `json:"imageSource,omitempty"`
+		} `json:"imageSource"`
 
 		// InitialUser Defines the initial OS login credentials. If specified, both username and password must be provided.
 		InitialUser *struct {
 			// Password Password configuration for the user account, specified either through a secret or file source
-			Password *struct {
+			Password struct {
 				// FromSecret Reference to a secret containing the password value. The secret must exist in the same namespace as the instance.
 				FromSecret *struct {
 					// Key Key within the secret containing the desired value. If not specified, defaults to the instance name
@@ -519,22 +519,22 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 					// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
 					Optional *bool `json:"optional"`
 				} `json:"fromSecret,omitempty"`
-			} `json:"password,omitempty"`
+			} `json:"password"`
 
 			// SshAuthorizedKeys List of SSH public keys to authorize for this user account
 			SshAuthorizedKeys *[]string `json:"sshAuthorizedKeys,omitempty"`
 
 			// Username Operating system username for the initial user account. Must follow Linux username requirements.
-			Username *string `json:"username,omitempty"`
+			Username string `json:"username"`
 		} `json:"initialUser"`
 
 		// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 		Interfaces *struct {
 			// Link Name of the Link resource that defines the network this interface connects to
-			Link *string `json:"link,omitempty"`
+			Link string `json:"link"`
 
 			// Name Unique identifier for this network interface within the instance
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 		} `json:"interfaces,omitempty"`
 
 		// OsVolume Defines the storage volume containing the operating system. Must specify either persistentVolumeClaim or localDisk (localDisk settings are ignored).
@@ -542,16 +542,16 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 			// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 			LocalDisk *struct {
 				// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-				Size interface{} `json:"size,omitempty"`
+				Size interface{} `json:"size"`
 			} `json:"localDisk"`
 
 			// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 			PersistentVolumeClaim *struct {
-				ClaimName *string `json:"claimName,omitempty"`
-				ReadOnly  *bool   `json:"readOnly,omitempty"`
+				ClaimName string `json:"claimName"`
+				ReadOnly  *bool  `json:"readOnly,omitempty"`
 			} `json:"persistentVolumeClaim"`
 		} `json:"osVolume,omitempty"`
 
@@ -561,13 +561,13 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 		} `json:"placementGroupRef"`
 
 		// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
-		PoweredOn *bool `json:"poweredOn,omitempty"`
+		PoweredOn bool `json:"poweredOn"`
 
 		// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
 		RestartedAt interface{} `json:"restartedAt"`
 
 		// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
-		Type *string `json:"type,omitempty"`
+		Type string `json:"type"`
 
 		// UserData Cloud-init configuration data provided in base64 encoded format. Used to customize instance on first boot.
 		UserData *string `json:"userData,omitempty"`
@@ -577,22 +577,22 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 			// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 			LocalDisk *struct {
 				// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-				Size interface{} `json:"size,omitempty"`
+				Size interface{} `json:"size"`
 			} `json:"localDisk"`
 
 			// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 			PersistentVolumeClaim *struct {
-				ClaimName *string `json:"claimName,omitempty"`
-				ReadOnly  *bool   `json:"readOnly,omitempty"`
+				ClaimName string `json:"claimName"`
+				ReadOnly  *bool  `json:"readOnly,omitempty"`
 			} `json:"persistentVolumeClaim"`
 		} `json:"volumes,omitempty"`
-	} `json:"spec,omitempty"`
+	} `json:"spec"`
 
 	// Status Current observed state and conditions of the instance
-	Status *struct {
+	Status struct {
 		// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 		AttachedVolumes *struct {
 			// Size Storage capacity of the attached volume in bytes
@@ -605,7 +605,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 			VolumeID *string `json:"volumeID,omitempty"`
 
 			// VolumeType Type of the attached volume - either 'persistentvolume' or 'localdisk'
-			VolumeType *string `json:"volumeType,omitempty"`
+			VolumeType string `json:"volumeType"`
 		} `json:"attachedVolumes,omitempty"`
 
 		// Conditions List of conditions representing the current state of various instance subsystems
@@ -614,12 +614,12 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 			LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
 			Message            *string     `json:"message,omitempty"`
 			Reason             *string     `json:"reason,omitempty"`
-			Status             *string     `json:"status,omitempty"`
-			Type               *string     `json:"type,omitempty"`
+			Status             string      `json:"status"`
+			Type               string      `json:"type"`
 		} `json:"conditions,omitempty"`
 
 		// Ready Indicates whether the instance is fully configured and operational
-		Ready *bool `json:"ready,omitempty"`
+		Ready bool `json:"ready"`
 
 		// Resizing Indicates whether the instance is currently being resized to a different instance type
 		Resizing *bool `json:"resizing,omitempty"`
@@ -631,20 +631,20 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBody struct {
 		Restarting *bool `json:"restarting,omitempty"`
 
 		// Running Indicates whether the instance's operating system is currently running
-		Running *bool `json:"running,omitempty"`
+		Running bool `json:"running"`
 
 		// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 		RuntimeConfiguration *struct {
 			// Cpu Number of CPU cores
-			Cpu interface{} `json:"cpu,omitempty"`
+			Cpu interface{} `json:"cpu"`
 
 			// Memory Memory size
-			Memory interface{} `json:"memory,omitempty"`
+			Memory interface{} `json:"memory"`
 		} `json:"runtimeConfiguration"`
 
 		// Type The current instance type that defines the cpu, memory and storage capacity
 		Type *string `json:"type,omitempty"`
-	} `json:"status,omitempty"`
+	} `json:"status"`
 }
 
 // PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBodyApiVersion defines parameters for PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId.
@@ -656,50 +656,50 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdJSONBodyKind stri
 // PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksJSONBody defines parameters for PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks.
 type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'Link' that identifies the schema
-	Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksJSONBodyKind `json:"kind,omitempty"`
+	Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations are key-value pairs storing additional metadata about resources
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace and type
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// OwnerReferences References to other resources that own or manage the resource
-		OwnerReferences *[]struct {
-			ApiVersion         *string `json:"apiVersion,omitempty"`
-			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-			Controller         *bool   `json:"controller"`
-			Kind               *string `json:"kind,omitempty"`
-			Name               *string `json:"name,omitempty"`
-			Uid                *string `json:"uid,omitempty"`
-		} `json:"ownerReferences,omitempty"`
+		OwnerReferences []struct {
+			ApiVersion         string `json:"apiVersion"`
+			BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+			Controller         *bool  `json:"controller"`
+			Kind               string `json:"kind"`
+			Name               string `json:"name"`
+			Uid                string `json:"uid"`
+		} `json:"ownerReferences"`
 
 		// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration and characteristics for the link
-	Spec *struct {
+	Spec struct {
 		// BoundTo Reference to the instance that this link is connected to.
 		BoundTo *struct {
 			ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -719,7 +719,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksJSONBody struct {
 		// ForwardableAddresses List of addresses that can forward traffic through this link.
 		ForwardableAddresses *[]struct {
 			// Cidr Specifies the IP range in CIDR notation that can be forwarded through this link
-			Cidr *string `json:"cidr,omitempty"`
+			Cidr string `json:"cidr"`
 
 			// Mac The MAC address associated with this forwardable address. If not specified, the link's MAC address will be used.
 			Mac *string `json:"mac,omitempty"`
@@ -733,10 +733,10 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksJSONBody struct {
 
 		// VpcName Name of the VPC containing this link's subnet.
 		VpcName *string `json:"vpcName,omitempty"`
-	} `json:"spec,omitempty"`
+	} `json:"spec"`
 
 	// Status Current observed state and conditions of the link
-	Status *struct {
+	Status struct {
 		// Configured Indicates if the link is properly configured.
 		Configured *bool `json:"configured,omitempty"`
 
@@ -764,7 +764,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksJSONBody struct {
 
 		// Ready Indicates if the link is ready for use.
 		Ready *bool `json:"ready,omitempty"`
-	} `json:"status,omitempty"`
+	} `json:"status"`
 }
 
 // PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksJSONBodyApiVersion defines parameters for PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks.
@@ -776,50 +776,50 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksJSONBodyKind string
 // PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdJSONBody defines parameters for PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId.
 type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdJSONBody struct {
 	// ApiVersion Version identifier of the API schema
-	ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdJSONBodyApiVersion `json:"apiVersion,omitempty"`
+	ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdJSONBodyApiVersion `json:"apiVersion"`
 
 	// Kind The string value 'Link' that identifies the schema
-	Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdJSONBodyKind `json:"kind,omitempty"`
+	Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdJSONBodyKind `json:"kind"`
 
 	// Metadata Standard resource metadata fields
-	Metadata *struct {
+	Metadata struct {
 		// Annotations Annotations are key-value pairs storing additional metadata about resources
-		Annotations *map[string]string `json:"annotations,omitempty"`
+		Annotations map[string]string `json:"annotations"`
 
 		// CreationTimestamp Timestamp when the resource was initially created
-		CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+		CreationTimestamp interface{} `json:"creationTimestamp"`
 
 		// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-		DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+		DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 		// Labels Labels are key-value pairs attached to resources for organization and categorization
-		Labels *map[string]string `json:"labels,omitempty"`
+		Labels map[string]string `json:"labels"`
 
 		// Name User-provided name that uniquely identifies the resource within its workspace and type
-		Name *string `json:"name,omitempty"`
+		Name string `json:"name"`
 
 		// OwnerReferences References to other resources that own or manage the resource
-		OwnerReferences *[]struct {
-			ApiVersion         *string `json:"apiVersion,omitempty"`
-			BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-			Controller         *bool   `json:"controller"`
-			Kind               *string `json:"kind,omitempty"`
-			Name               *string `json:"name,omitempty"`
-			Uid                *string `json:"uid,omitempty"`
-		} `json:"ownerReferences,omitempty"`
+		OwnerReferences []struct {
+			ApiVersion         string `json:"apiVersion"`
+			BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+			Controller         *bool  `json:"controller"`
+			Kind               string `json:"kind"`
+			Name               string `json:"name"`
+			Uid                string `json:"uid"`
+		} `json:"ownerReferences"`
 
 		// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 		ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 		// Uid System-generated unique identifier for the resource
-		Uid *string `json:"uid,omitempty"`
+		Uid string `json:"uid"`
 
 		// Workspace Unique identifier of the workspace where the resource belongs
-		Workspace *string `json:"workspace,omitempty"`
-	} `json:"metadata,omitempty"`
+		Workspace string `json:"workspace"`
+	} `json:"metadata"`
 
 	// Spec Desired configuration and characteristics for the link
-	Spec *struct {
+	Spec struct {
 		// BoundTo Reference to the instance that this link is connected to.
 		BoundTo *struct {
 			ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -839,7 +839,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdJSONBody struct {
 		// ForwardableAddresses List of addresses that can forward traffic through this link.
 		ForwardableAddresses *[]struct {
 			// Cidr Specifies the IP range in CIDR notation that can be forwarded through this link
-			Cidr *string `json:"cidr,omitempty"`
+			Cidr string `json:"cidr"`
 
 			// Mac The MAC address associated with this forwardable address. If not specified, the link's MAC address will be used.
 			Mac *string `json:"mac,omitempty"`
@@ -853,10 +853,10 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdJSONBody struct {
 
 		// VpcName Name of the VPC containing this link's subnet.
 		VpcName *string `json:"vpcName,omitempty"`
-	} `json:"spec,omitempty"`
+	} `json:"spec"`
 
 	// Status Current observed state and conditions of the link
-	Status *struct {
+	Status struct {
 		// Configured Indicates if the link is properly configured.
 		Configured *bool `json:"configured,omitempty"`
 
@@ -884,7 +884,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdJSONBody struct {
 
 		// Ready Indicates if the link is ready for use.
 		Ready *bool `json:"ready,omitempty"`
-	} `json:"status,omitempty"`
+	} `json:"status"`
 }
 
 // PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdJSONBodyApiVersion defines parameters for PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId.

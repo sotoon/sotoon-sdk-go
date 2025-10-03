@@ -1357,55 +1357,55 @@ type GetComputeV2Thr1ImagesResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *string `json:"apiVersion,omitempty"`
+		ApiVersion string `json:"apiVersion"`
 
 		// Items Collection of Image resources
-		Items *struct {
+		Items struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *GetComputeV2Thr1Images200ItemsApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1Images200ItemsApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'Image' that identifies the schema
-			Kind *GetComputeV2Thr1Images200ItemsKind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1Images200ItemsKind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the image
-			Spec *struct {
+			Spec struct {
 				// Description A brief description of the image.
 				Description *string `json:"description,omitempty"`
 
@@ -1419,36 +1419,36 @@ type GetComputeV2Thr1ImagesResponse struct {
 				OsVersion *string `json:"osVersion,omitempty"`
 
 				// Public Indicates whether the image is public.
-				Public *bool `json:"public,omitempty"`
-			} `json:"spec,omitempty"`
+				Public bool `json:"public"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the image
-			Status *struct {
+			Status struct {
 				// CreationFailed Indicates if the image creation has failed.
 				CreationFailed *bool `json:"creationFailed,omitempty"`
 
 				// Size The size of the image in bytes.
 				Size *int64 `json:"size,omitempty"`
-			} `json:"status,omitempty"`
-		} `json:"items,omitempty"`
+			} `json:"status"`
+		} `json:"items"`
 
 		// Kind The string value 'ImageList' that identifies the schema
-		Kind *GetComputeV2Thr1Images200Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1Images200Kind `json:"kind"`
 
 		// Metadata Standard metadata fields for the list
-		Metadata *struct {
+		Metadata struct {
 			Continue           *string `json:"continue,omitempty"`
 			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
+		} `json:"metadata"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1Images400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1Images400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -1458,10 +1458,10 @@ type GetComputeV2Thr1ImagesResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -1478,7 +1478,7 @@ type GetComputeV2Thr1ImagesResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1Images400Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1Images400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -1495,14 +1495,14 @@ type GetComputeV2Thr1ImagesResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1Images400Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1Images400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1Images403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1Images403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -1512,10 +1512,10 @@ type GetComputeV2Thr1ImagesResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -1532,7 +1532,7 @@ type GetComputeV2Thr1ImagesResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1Images403Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1Images403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -1549,7 +1549,7 @@ type GetComputeV2Thr1ImagesResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1Images403Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1Images403Status `json:"status"`
 	}
 }
 type GetComputeV2Thr1Images200ItemsApiVersion string
@@ -1584,103 +1584,103 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *string `json:"apiVersion,omitempty"`
+		ApiVersion string `json:"apiVersion"`
 
 		// Items Collection of InstanceType resources
-		Items *[]struct {
+		Items []struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *GetComputeV2Thr1InstanceTypes200ItemsApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1InstanceTypes200ItemsApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'InstanceType' that identifies the schema
-			Kind *GetComputeV2Thr1InstanceTypes200ItemsKind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1InstanceTypes200ItemsKind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *[]struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences []struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the instance type
-			Spec *struct {
+			Spec struct {
 				// Dedicated Indicates whether the instance type is dedicated or shared.
-				Dedicated *bool `json:"dedicated,omitempty"`
+				Dedicated bool `json:"dedicated"`
 
 				// Family The family of the instance type.
-				Family *GetComputeV2Thr1InstanceTypes200ItemsSpecFamily `json:"family,omitempty"`
+				Family GetComputeV2Thr1InstanceTypes200ItemsSpecFamily `json:"family"`
 
 				// Limits The limits for the instance type, including disk I/O bandwidth.
-				Limits *struct {
-					Disk *struct {
-						Bandwidth *map[string]interface{} `json:"bandwidth,omitempty"`
-						Io        *map[string]interface{} `json:"io,omitempty"`
-					} `json:"disk,omitempty"`
-				} `json:"limits,omitempty"`
+				Limits struct {
+					Disk struct {
+						Bandwidth map[string]interface{} `json:"bandwidth"`
+						Io        map[string]interface{} `json:"io"`
+					} `json:"disk"`
+				} `json:"limits"`
 
 				// Public Indicates whether the instance type is publicly available.
-				Public *bool `json:"public,omitempty"`
+				Public bool `json:"public"`
 
 				// Resources The resource specifications for the instance type, including CPU and memory.
-				Resources *map[string]interface{} `json:"resources,omitempty"`
+				Resources map[string]interface{} `json:"resources"`
 
 				// Series The specific series of the instance type.
-				Series *string `json:"series,omitempty"`
-			} `json:"spec,omitempty"`
+				Series string `json:"series"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the instance type
-			Status *struct {
+			Status struct {
 				// ResizableTo A list of other instance types to which a compute instance with this instance type can be resized.
 				ResizableTo *[]string `json:"resizableTo,omitempty"`
-			} `json:"status,omitempty"`
-		} `json:"items,omitempty"`
+			} `json:"status"`
+		} `json:"items"`
 
 		// Kind The string value 'InstanceTypeList' that identifies the schema
-		Kind *GetComputeV2Thr1InstanceTypes200Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1InstanceTypes200Kind `json:"kind"`
 
 		// Metadata Standard metadata fields for the list
-		Metadata *struct {
+		Metadata struct {
 			Continue           *string `json:"continue,omitempty"`
 			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
+		} `json:"metadata"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1InstanceTypes400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1InstanceTypes400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -1690,10 +1690,10 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -1710,7 +1710,7 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1InstanceTypes400Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1InstanceTypes400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -1727,14 +1727,14 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1InstanceTypes400Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1InstanceTypes400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1InstanceTypes403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1InstanceTypes403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -1744,10 +1744,10 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -1764,7 +1764,7 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1InstanceTypes403Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1InstanceTypes403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -1781,7 +1781,7 @@ type GetComputeV2Thr1InstanceTypesResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1InstanceTypes403Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1InstanceTypes403Status `json:"status"`
 	}
 }
 type GetComputeV2Thr1InstanceTypes200ItemsApiVersion string
@@ -1816,55 +1816,55 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200ApiVersion `json:"apiVersion"`
 
 		// Items Collection of ExternalIP resources
-		Items *[]struct {
+		Items []struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200ItemsApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200ItemsApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'ExternalIP' that identifies the schema
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200ItemsKind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200ItemsKind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *[]struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences []struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the external ip
-			Spec *struct {
+			Spec struct {
 				// BoundTo Specifies the target object that will receive traffic directed to this external IP.
 				BoundTo *struct {
 					ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -1882,10 +1882,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 
 				// Reserved When set to true, prevents the external IP from being garbage collected even if the target object is removed.
 				Reserved *bool `json:"reserved,omitempty"`
-			} `json:"spec,omitempty"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the external ip
-			Status *struct {
+			Status struct {
 				// Gateway The IPv4 gateway address used for routing outgoing traffic from this external IP.
 				Gateway *string `json:"gateway,omitempty"`
 
@@ -1894,26 +1894,26 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 
 				// Ready Indicates whether the external IP is fully configured and ready to use.
 				Ready *bool `json:"ready,omitempty"`
-			} `json:"status,omitempty"`
-		} `json:"items,omitempty"`
+			} `json:"status"`
+		} `json:"items"`
 
 		// Kind The string value 'ExternalIPList' that identifies the schema
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200Kind `json:"kind"`
 
 		// Metadata Standard metadata fields for the list
-		Metadata *struct {
+		Metadata struct {
 			Continue           *string `json:"continue,omitempty"`
 			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
+		} `json:"metadata"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -1923,10 +1923,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -1943,7 +1943,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -1960,14 +1960,14 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -1977,10 +1977,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -1997,7 +1997,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -2014,7 +2014,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Status `json:"status"`
 	}
 }
 type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200ApiVersion string
@@ -2049,50 +2049,50 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps201ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps201ApiVersion `json:"apiVersion"`
 
 		// Kind The string value 'ExternalIP' that identifies the schema
-		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps201Kind `json:"kind,omitempty"`
+		Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps201Kind `json:"kind"`
 
 		// Metadata Standard resource metadata fields
-		Metadata *struct {
+		Metadata struct {
 			// Annotations Annotations are key-value pairs storing additional metadata about resources
-			Annotations *map[string]string `json:"annotations,omitempty"`
+			Annotations map[string]string `json:"annotations"`
 
 			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+			CreationTimestamp interface{} `json:"creationTimestamp"`
 
 			// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-			DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+			DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels *map[string]string `json:"labels,omitempty"`
+			Labels map[string]string `json:"labels"`
 
 			// Name User-provided name that uniquely identifies the resource within its workspace and type
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// OwnerReferences References to other resources that own or manage the resource
-			OwnerReferences *[]struct {
-				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-				Controller         *bool   `json:"controller"`
-				Kind               *string `json:"kind,omitempty"`
-				Name               *string `json:"name,omitempty"`
-				Uid                *string `json:"uid,omitempty"`
-			} `json:"ownerReferences,omitempty"`
+			OwnerReferences []struct {
+				ApiVersion         string `json:"apiVersion"`
+				BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+				Controller         *bool  `json:"controller"`
+				Kind               string `json:"kind"`
+				Name               string `json:"name"`
+				Uid                string `json:"uid"`
+			} `json:"ownerReferences"`
 
 			// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 			// Uid System-generated unique identifier for the resource
-			Uid *string `json:"uid,omitempty"`
+			Uid string `json:"uid"`
 
 			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace *string `json:"workspace,omitempty"`
-		} `json:"metadata,omitempty"`
+			Workspace string `json:"workspace"`
+		} `json:"metadata"`
 
 		// Spec Desired configuration and characteristics for the external ip
-		Spec *struct {
+		Spec struct {
 			// BoundTo Specifies the target object that will receive traffic directed to this external IP.
 			BoundTo *struct {
 				ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -2110,10 +2110,10 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 
 			// Reserved When set to true, prevents the external IP from being garbage collected even if the target object is removed.
 			Reserved *bool `json:"reserved,omitempty"`
-		} `json:"spec,omitempty"`
+		} `json:"spec"`
 
 		// Status Current observed state and conditions of the external ip
-		Status *struct {
+		Status struct {
 			// Gateway The IPv4 gateway address used for routing outgoing traffic from this external IP.
 			Gateway *string `json:"gateway,omitempty"`
 
@@ -2122,14 +2122,14 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 
 			// Ready Indicates whether the external IP is fully configured and ready to use.
 			Ready *bool `json:"ready,omitempty"`
-		} `json:"status,omitempty"`
+		} `json:"status"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -2139,10 +2139,10 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -2159,7 +2159,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Kind `json:"kind,omitempty"`
+		Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -2176,14 +2176,14 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Status `json:"status,omitempty"`
+		Status PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -2193,10 +2193,10 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -2213,7 +2213,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Kind `json:"kind,omitempty"`
+		Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -2230,14 +2230,14 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Status `json:"status,omitempty"`
+		Status PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Status `json:"status"`
 	}
 	JSON409 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -2247,10 +2247,10 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -2267,7 +2267,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409Kind `json:"kind,omitempty"`
+		Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -2284,7 +2284,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409Status `json:"status,omitempty"`
+		Status PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409Status `json:"status"`
 	}
 }
 type PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps201ApiVersion string
@@ -2320,50 +2320,50 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion `json:"apiVersion"`
 
 		// Kind The string value 'ExternalIP' that identifies the schema
-		Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200Kind `json:"kind,omitempty"`
+		Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200Kind `json:"kind"`
 
 		// Metadata Standard resource metadata fields
-		Metadata *struct {
+		Metadata struct {
 			// Annotations Annotations are key-value pairs storing additional metadata about resources
-			Annotations *map[string]string `json:"annotations,omitempty"`
+			Annotations map[string]string `json:"annotations"`
 
 			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+			CreationTimestamp interface{} `json:"creationTimestamp"`
 
 			// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-			DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+			DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels *map[string]string `json:"labels,omitempty"`
+			Labels map[string]string `json:"labels"`
 
 			// Name User-provided name that uniquely identifies the resource within its workspace and type
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// OwnerReferences References to other resources that own or manage the resource
-			OwnerReferences *[]struct {
-				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-				Controller         *bool   `json:"controller"`
-				Kind               *string `json:"kind,omitempty"`
-				Name               *string `json:"name,omitempty"`
-				Uid                *string `json:"uid,omitempty"`
-			} `json:"ownerReferences,omitempty"`
+			OwnerReferences []struct {
+				ApiVersion         string `json:"apiVersion"`
+				BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+				Controller         *bool  `json:"controller"`
+				Kind               string `json:"kind"`
+				Name               string `json:"name"`
+				Uid                string `json:"uid"`
+			} `json:"ownerReferences"`
 
 			// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 			// Uid System-generated unique identifier for the resource
-			Uid *string `json:"uid,omitempty"`
+			Uid string `json:"uid"`
 
 			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace *string `json:"workspace,omitempty"`
-		} `json:"metadata,omitempty"`
+			Workspace string `json:"workspace"`
+		} `json:"metadata"`
 
 		// Spec Desired configuration and characteristics for the external ip
-		Spec *struct {
+		Spec struct {
 			// BoundTo Specifies the target object that will receive traffic directed to this external IP.
 			BoundTo *struct {
 				ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -2381,10 +2381,10 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 
 			// Reserved When set to true, prevents the external IP from being garbage collected even if the target object is removed.
 			Reserved *bool `json:"reserved,omitempty"`
-		} `json:"spec,omitempty"`
+		} `json:"spec"`
 
 		// Status Current observed state and conditions of the external ip
-		Status *struct {
+		Status struct {
 			// Gateway The IPv4 gateway address used for routing outgoing traffic from this external IP.
 			Gateway *string `json:"gateway,omitempty"`
 
@@ -2393,14 +2393,14 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 
 			// Ready Indicates whether the external IP is fully configured and ready to use.
 			Ready *bool `json:"ready,omitempty"`
-		} `json:"status,omitempty"`
+		} `json:"status"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -2410,10 +2410,10 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -2430,7 +2430,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind,omitempty"`
+		Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -2447,14 +2447,14 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Status `json:"status,omitempty"`
+		Status DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -2464,10 +2464,10 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -2484,7 +2484,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind,omitempty"`
+		Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -2501,7 +2501,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse str
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Status `json:"status,omitempty"`
+		Status DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Status `json:"status"`
 	}
 }
 type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion string
@@ -2534,50 +2534,50 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion `json:"apiVersion"`
 
 		// Kind The string value 'ExternalIP' that identifies the schema
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200Kind `json:"kind"`
 
 		// Metadata Standard resource metadata fields
-		Metadata *struct {
+		Metadata struct {
 			// Annotations Annotations are key-value pairs storing additional metadata about resources
-			Annotations *map[string]string `json:"annotations,omitempty"`
+			Annotations map[string]string `json:"annotations"`
 
 			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+			CreationTimestamp interface{} `json:"creationTimestamp"`
 
 			// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-			DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+			DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels *map[string]string `json:"labels,omitempty"`
+			Labels map[string]string `json:"labels"`
 
 			// Name User-provided name that uniquely identifies the resource within its workspace and type
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// OwnerReferences References to other resources that own or manage the resource
-			OwnerReferences *[]struct {
-				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-				Controller         *bool   `json:"controller"`
-				Kind               *string `json:"kind,omitempty"`
-				Name               *string `json:"name,omitempty"`
-				Uid                *string `json:"uid,omitempty"`
-			} `json:"ownerReferences,omitempty"`
+			OwnerReferences []struct {
+				ApiVersion         string `json:"apiVersion"`
+				BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+				Controller         *bool  `json:"controller"`
+				Kind               string `json:"kind"`
+				Name               string `json:"name"`
+				Uid                string `json:"uid"`
+			} `json:"ownerReferences"`
 
 			// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 			// Uid System-generated unique identifier for the resource
-			Uid *string `json:"uid,omitempty"`
+			Uid string `json:"uid"`
 
 			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace *string `json:"workspace,omitempty"`
-		} `json:"metadata,omitempty"`
+			Workspace string `json:"workspace"`
+		} `json:"metadata"`
 
 		// Spec Desired configuration and characteristics for the external ip
-		Spec *struct {
+		Spec struct {
 			// BoundTo Specifies the target object that will receive traffic directed to this external IP.
 			BoundTo *struct {
 				ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -2595,10 +2595,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 
 			// Reserved When set to true, prevents the external IP from being garbage collected even if the target object is removed.
 			Reserved *bool `json:"reserved,omitempty"`
-		} `json:"spec,omitempty"`
+		} `json:"spec"`
 
 		// Status Current observed state and conditions of the external ip
-		Status *struct {
+		Status struct {
 			// Gateway The IPv4 gateway address used for routing outgoing traffic from this external IP.
 			Gateway *string `json:"gateway,omitempty"`
 
@@ -2607,14 +2607,14 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 
 			// Ready Indicates whether the external IP is fully configured and ready to use.
 			Ready *bool `json:"ready,omitempty"`
-		} `json:"status,omitempty"`
+		} `json:"status"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -2624,10 +2624,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -2644,7 +2644,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -2661,14 +2661,14 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -2678,10 +2678,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -2698,7 +2698,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -2715,7 +2715,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Status `json:"status"`
 	}
 }
 type GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion string
@@ -2748,50 +2748,50 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion `json:"apiVersion"`
 
 		// Kind The string value 'ExternalIP' that identifies the schema
-		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200Kind `json:"kind,omitempty"`
+		Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200Kind `json:"kind"`
 
 		// Metadata Standard resource metadata fields
-		Metadata *struct {
+		Metadata struct {
 			// Annotations Annotations are key-value pairs storing additional metadata about resources
-			Annotations *map[string]string `json:"annotations,omitempty"`
+			Annotations map[string]string `json:"annotations"`
 
 			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+			CreationTimestamp interface{} `json:"creationTimestamp"`
 
 			// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-			DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+			DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels *map[string]string `json:"labels,omitempty"`
+			Labels map[string]string `json:"labels"`
 
 			// Name User-provided name that uniquely identifies the resource within its workspace and type
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// OwnerReferences References to other resources that own or manage the resource
-			OwnerReferences *[]struct {
-				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-				Controller         *bool   `json:"controller"`
-				Kind               *string `json:"kind,omitempty"`
-				Name               *string `json:"name,omitempty"`
-				Uid                *string `json:"uid,omitempty"`
-			} `json:"ownerReferences,omitempty"`
+			OwnerReferences []struct {
+				ApiVersion         string `json:"apiVersion"`
+				BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+				Controller         *bool  `json:"controller"`
+				Kind               string `json:"kind"`
+				Name               string `json:"name"`
+				Uid                string `json:"uid"`
+			} `json:"ownerReferences"`
 
 			// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 			// Uid System-generated unique identifier for the resource
-			Uid *string `json:"uid,omitempty"`
+			Uid string `json:"uid"`
 
 			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace *string `json:"workspace,omitempty"`
-		} `json:"metadata,omitempty"`
+			Workspace string `json:"workspace"`
+		} `json:"metadata"`
 
 		// Spec Desired configuration and characteristics for the external ip
-		Spec *struct {
+		Spec struct {
 			// BoundTo Specifies the target object that will receive traffic directed to this external IP.
 			BoundTo *struct {
 				ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -2809,10 +2809,10 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 
 			// Reserved When set to true, prevents the external IP from being garbage collected even if the target object is removed.
 			Reserved *bool `json:"reserved,omitempty"`
-		} `json:"spec,omitempty"`
+		} `json:"spec"`
 
 		// Status Current observed state and conditions of the external ip
-		Status *struct {
+		Status struct {
 			// Gateway The IPv4 gateway address used for routing outgoing traffic from this external IP.
 			Gateway *string `json:"gateway,omitempty"`
 
@@ -2821,14 +2821,14 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 
 			// Ready Indicates whether the external IP is fully configured and ready to use.
 			Ready *bool `json:"ready,omitempty"`
-		} `json:"status,omitempty"`
+		} `json:"status"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -2838,10 +2838,10 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -2858,7 +2858,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind,omitempty"`
+		Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -2875,14 +2875,14 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Status `json:"status,omitempty"`
+		Status PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -2892,10 +2892,10 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -2912,7 +2912,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind,omitempty"`
+		Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -2929,7 +2929,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse struct
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Status `json:"status,omitempty"`
+		Status PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Status `json:"status"`
 	}
 }
 type PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion string
@@ -2962,71 +2962,71 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *string `json:"apiVersion,omitempty"`
+		ApiVersion string `json:"apiVersion"`
 
 		// Items Collection of Instance resources
-		Items *struct {
+		Items struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances200ItemsApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances200ItemsApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'Instance' that identifies the schema
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances200ItemsKind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances200ItemsKind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the instance
-			Spec *struct {
+			Spec struct {
 				// IamEnabled When enabled, SSH access to this instance will be authenticated through Sotoon IAM.
 				IamEnabled *bool `json:"iamEnabled,omitempty"`
 
 				// ImageSource Specifies the base operating system image used to boot the instance. Must specify either an image or customImage, but not both.
-				ImageSource *struct {
+				ImageSource struct {
 					// CustomImage Name of the custom image to boot the instance from. Must be a valid custom image name. Cannot be modified after instance creation. Cannot be used together with image.
 					CustomImage *string `json:"customImage,omitempty"`
 
 					// Image Name of the base operating system image to boot the instance from. Must be a valid image name. Cannot be modified after instance creation. Cannot be used together with customImage.
 					Image *string `json:"image,omitempty"`
-				} `json:"imageSource,omitempty"`
+				} `json:"imageSource"`
 
 				// InitialUser Defines the initial OS login credentials. If specified, both username and password must be provided.
 				InitialUser *struct {
 					// Password Password configuration for the user account, specified either through a secret or file source
-					Password *struct {
+					Password struct {
 						// FromSecret Reference to a secret containing the password value. The secret must exist in the same namespace as the instance.
 						FromSecret *struct {
 							// Key Key within the secret containing the desired value. If not specified, defaults to the instance name
@@ -3038,22 +3038,22 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 							// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
 							Optional *bool `json:"optional"`
 						} `json:"fromSecret,omitempty"`
-					} `json:"password,omitempty"`
+					} `json:"password"`
 
 					// SshAuthorizedKeys List of SSH public keys to authorize for this user account
 					SshAuthorizedKeys *[]string `json:"sshAuthorizedKeys,omitempty"`
 
 					// Username Operating system username for the initial user account. Must follow Linux username requirements.
-					Username *string `json:"username,omitempty"`
+					Username string `json:"username"`
 				} `json:"initialUser"`
 
 				// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 				Interfaces *struct {
 					// Link Name of the Link resource that defines the network this interface connects to
-					Link *string `json:"link,omitempty"`
+					Link string `json:"link"`
 
 					// Name Unique identifier for this network interface within the instance
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 				} `json:"interfaces,omitempty"`
 
 				// OsVolume Defines the storage volume containing the operating system. Must specify either persistentVolumeClaim or localDisk (localDisk settings are ignored).
@@ -3061,16 +3061,16 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 					// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 					LocalDisk *struct {
 						// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Name *string `json:"name,omitempty"`
+						Name string `json:"name"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size interface{} `json:"size,omitempty"`
+						Size interface{} `json:"size"`
 					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
-						ClaimName *string `json:"claimName,omitempty"`
-						ReadOnly  *bool   `json:"readOnly,omitempty"`
+						ClaimName string `json:"claimName"`
+						ReadOnly  *bool  `json:"readOnly,omitempty"`
 					} `json:"persistentVolumeClaim"`
 				} `json:"osVolume,omitempty"`
 
@@ -3080,13 +3080,13 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				} `json:"placementGroupRef"`
 
 				// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
-				PoweredOn *bool `json:"poweredOn,omitempty"`
+				PoweredOn bool `json:"poweredOn"`
 
 				// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
 				RestartedAt interface{} `json:"restartedAt"`
 
 				// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
-				Type *string `json:"type,omitempty"`
+				Type string `json:"type"`
 
 				// UserData Cloud-init configuration data provided in base64 encoded format. Used to customize instance on first boot.
 				UserData *string `json:"userData,omitempty"`
@@ -3096,22 +3096,22 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 					// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 					LocalDisk *struct {
 						// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Name *string `json:"name,omitempty"`
+						Name string `json:"name"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size interface{} `json:"size,omitempty"`
+						Size interface{} `json:"size"`
 					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
-						ClaimName *string `json:"claimName,omitempty"`
-						ReadOnly  *bool   `json:"readOnly,omitempty"`
+						ClaimName string `json:"claimName"`
+						ReadOnly  *bool  `json:"readOnly,omitempty"`
 					} `json:"persistentVolumeClaim"`
 				} `json:"volumes,omitempty"`
-			} `json:"spec,omitempty"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the instance
-			Status *struct {
+			Status struct {
 				// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 				AttachedVolumes *struct {
 					// Size Storage capacity of the attached volume in bytes
@@ -3124,7 +3124,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 					VolumeID *string `json:"volumeID,omitempty"`
 
 					// VolumeType Type of the attached volume - either 'persistentvolume' or 'localdisk'
-					VolumeType *string `json:"volumeType,omitempty"`
+					VolumeType string `json:"volumeType"`
 				} `json:"attachedVolumes,omitempty"`
 
 				// Conditions List of conditions representing the current state of various instance subsystems
@@ -3133,12 +3133,12 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 					LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
 					Message            *string     `json:"message,omitempty"`
 					Reason             *string     `json:"reason,omitempty"`
-					Status             *string     `json:"status,omitempty"`
-					Type               *string     `json:"type,omitempty"`
+					Status             string      `json:"status"`
+					Type               string      `json:"type"`
 				} `json:"conditions,omitempty"`
 
 				// Ready Indicates whether the instance is fully configured and operational
-				Ready *bool `json:"ready,omitempty"`
+				Ready bool `json:"ready"`
 
 				// Resizing Indicates whether the instance is currently being resized to a different instance type
 				Resizing *bool `json:"resizing,omitempty"`
@@ -3150,39 +3150,39 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				Restarting *bool `json:"restarting,omitempty"`
 
 				// Running Indicates whether the instance's operating system is currently running
-				Running *bool `json:"running,omitempty"`
+				Running bool `json:"running"`
 
 				// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 				RuntimeConfiguration *struct {
 					// Cpu Number of CPU cores
-					Cpu interface{} `json:"cpu,omitempty"`
+					Cpu interface{} `json:"cpu"`
 
 					// Memory Memory size
-					Memory interface{} `json:"memory,omitempty"`
+					Memory interface{} `json:"memory"`
 				} `json:"runtimeConfiguration"`
 
 				// Type The current instance type that defines the cpu, memory and storage capacity
 				Type *string `json:"type,omitempty"`
-			} `json:"status,omitempty"`
-		} `json:"items,omitempty"`
+			} `json:"status"`
+		} `json:"items"`
 
 		// Kind The string value 'InstanceList' that identifies the schema
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances200Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances200Kind `json:"kind"`
 
 		// Metadata Standard metadata fields for the list
-		Metadata *struct {
+		Metadata struct {
 			Continue           *string `json:"continue,omitempty"`
 			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
+		} `json:"metadata"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -3192,10 +3192,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -3212,7 +3212,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -3229,14 +3229,14 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -3246,10 +3246,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -3266,7 +3266,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -3283,7 +3283,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Status `json:"status"`
 	}
 }
 type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances200ItemsApiVersion string
@@ -3317,66 +3317,66 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances201ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances201ApiVersion `json:"apiVersion"`
 
 		// Kind The string value 'Instance' that identifies the schema
-		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances201Kind `json:"kind,omitempty"`
+		Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances201Kind `json:"kind"`
 
 		// Metadata Standard resource metadata fields
-		Metadata *struct {
+		Metadata struct {
 			// Annotations Annotations are key-value pairs storing additional metadata about resources
-			Annotations *map[string]string `json:"annotations,omitempty"`
+			Annotations map[string]string `json:"annotations"`
 
 			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+			CreationTimestamp interface{} `json:"creationTimestamp"`
 
 			// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-			DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+			DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels *map[string]string `json:"labels,omitempty"`
+			Labels map[string]string `json:"labels"`
 
 			// Name User-provided name that uniquely identifies the resource within its workspace and type
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// OwnerReferences References to other resources that own or manage the resource
-			OwnerReferences *struct {
-				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-				Controller         *bool   `json:"controller"`
-				Kind               *string `json:"kind,omitempty"`
-				Name               *string `json:"name,omitempty"`
-				Uid                *string `json:"uid,omitempty"`
-			} `json:"ownerReferences,omitempty"`
+			OwnerReferences struct {
+				ApiVersion         string `json:"apiVersion"`
+				BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+				Controller         *bool  `json:"controller"`
+				Kind               string `json:"kind"`
+				Name               string `json:"name"`
+				Uid                string `json:"uid"`
+			} `json:"ownerReferences"`
 
 			// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 			// Uid System-generated unique identifier for the resource
-			Uid *string `json:"uid,omitempty"`
+			Uid string `json:"uid"`
 
 			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace *string `json:"workspace,omitempty"`
-		} `json:"metadata,omitempty"`
+			Workspace string `json:"workspace"`
+		} `json:"metadata"`
 
 		// Spec Desired configuration and characteristics for the instance
-		Spec *struct {
+		Spec struct {
 			// IamEnabled When enabled, SSH access to this instance will be authenticated through Sotoon IAM.
 			IamEnabled *bool `json:"iamEnabled,omitempty"`
 
 			// ImageSource Specifies the base operating system image used to boot the instance. Must specify either an image or customImage, but not both.
-			ImageSource *struct {
+			ImageSource struct {
 				// CustomImage Name of the custom image to boot the instance from. Must be a valid custom image name. Cannot be modified after instance creation. Cannot be used together with image.
 				CustomImage *string `json:"customImage,omitempty"`
 
 				// Image Name of the base operating system image to boot the instance from. Must be a valid image name. Cannot be modified after instance creation. Cannot be used together with customImage.
 				Image *string `json:"image,omitempty"`
-			} `json:"imageSource,omitempty"`
+			} `json:"imageSource"`
 
 			// InitialUser Defines the initial OS login credentials. If specified, both username and password must be provided.
 			InitialUser *struct {
 				// Password Password configuration for the user account, specified either through a secret or file source
-				Password *struct {
+				Password struct {
 					// FromSecret Reference to a secret containing the password value. The secret must exist in the same namespace as the instance.
 					FromSecret *struct {
 						// Key Key within the secret containing the desired value. If not specified, defaults to the instance name
@@ -3388,22 +3388,22 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 						// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
 						Optional *bool `json:"optional"`
 					} `json:"fromSecret,omitempty"`
-				} `json:"password,omitempty"`
+				} `json:"password"`
 
 				// SshAuthorizedKeys List of SSH public keys to authorize for this user account
 				SshAuthorizedKeys *[]string `json:"sshAuthorizedKeys,omitempty"`
 
 				// Username Operating system username for the initial user account. Must follow Linux username requirements.
-				Username *string `json:"username,omitempty"`
+				Username string `json:"username"`
 			} `json:"initialUser"`
 
 			// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 			Interfaces *struct {
 				// Link Name of the Link resource that defines the network this interface connects to
-				Link *string `json:"link,omitempty"`
+				Link string `json:"link"`
 
 				// Name Unique identifier for this network interface within the instance
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 			} `json:"interfaces,omitempty"`
 
 			// OsVolume Defines the storage volume containing the operating system. Must specify either persistentVolumeClaim or localDisk (localDisk settings are ignored).
@@ -3411,16 +3411,16 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 				LocalDisk *struct {
 					// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 
 					// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Size interface{} `json:"size,omitempty"`
+					Size interface{} `json:"size"`
 				} `json:"localDisk"`
 
 				// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 				PersistentVolumeClaim *struct {
-					ClaimName *string `json:"claimName,omitempty"`
-					ReadOnly  *bool   `json:"readOnly,omitempty"`
+					ClaimName string `json:"claimName"`
+					ReadOnly  *bool  `json:"readOnly,omitempty"`
 				} `json:"persistentVolumeClaim"`
 			} `json:"osVolume,omitempty"`
 
@@ -3430,13 +3430,13 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 			} `json:"placementGroupRef"`
 
 			// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
-			PoweredOn *bool `json:"poweredOn,omitempty"`
+			PoweredOn bool `json:"poweredOn"`
 
 			// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
 			RestartedAt interface{} `json:"restartedAt"`
 
 			// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
-			Type *string `json:"type,omitempty"`
+			Type string `json:"type"`
 
 			// UserData Cloud-init configuration data provided in base64 encoded format. Used to customize instance on first boot.
 			UserData *string `json:"userData,omitempty"`
@@ -3446,22 +3446,22 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 				LocalDisk *struct {
 					// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 
 					// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Size interface{} `json:"size,omitempty"`
+					Size interface{} `json:"size"`
 				} `json:"localDisk"`
 
 				// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 				PersistentVolumeClaim *struct {
-					ClaimName *string `json:"claimName,omitempty"`
-					ReadOnly  *bool   `json:"readOnly,omitempty"`
+					ClaimName string `json:"claimName"`
+					ReadOnly  *bool  `json:"readOnly,omitempty"`
 				} `json:"persistentVolumeClaim"`
 			} `json:"volumes,omitempty"`
-		} `json:"spec,omitempty"`
+		} `json:"spec"`
 
 		// Status Current observed state and conditions of the instance
-		Status *struct {
+		Status struct {
 			// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 			AttachedVolumes *struct {
 				// Size Storage capacity of the attached volume in bytes
@@ -3474,7 +3474,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				VolumeID *string `json:"volumeID,omitempty"`
 
 				// VolumeType Type of the attached volume - either 'persistentvolume' or 'localdisk'
-				VolumeType *string `json:"volumeType,omitempty"`
+				VolumeType string `json:"volumeType"`
 			} `json:"attachedVolumes,omitempty"`
 
 			// Conditions List of conditions representing the current state of various instance subsystems
@@ -3483,12 +3483,12 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
 				Message            *string     `json:"message,omitempty"`
 				Reason             *string     `json:"reason,omitempty"`
-				Status             *string     `json:"status,omitempty"`
-				Type               *string     `json:"type,omitempty"`
+				Status             string      `json:"status"`
+				Type               string      `json:"type"`
 			} `json:"conditions,omitempty"`
 
 			// Ready Indicates whether the instance is fully configured and operational
-			Ready *bool `json:"ready,omitempty"`
+			Ready bool `json:"ready"`
 
 			// Resizing Indicates whether the instance is currently being resized to a different instance type
 			Resizing *bool `json:"resizing,omitempty"`
@@ -3500,27 +3500,27 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 			Restarting *bool `json:"restarting,omitempty"`
 
 			// Running Indicates whether the instance's operating system is currently running
-			Running *bool `json:"running,omitempty"`
+			Running bool `json:"running"`
 
 			// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 			RuntimeConfiguration *struct {
 				// Cpu Number of CPU cores
-				Cpu interface{} `json:"cpu,omitempty"`
+				Cpu interface{} `json:"cpu"`
 
 				// Memory Memory size
-				Memory interface{} `json:"memory,omitempty"`
+				Memory interface{} `json:"memory"`
 			} `json:"runtimeConfiguration"`
 
 			// Type The current instance type that defines the cpu, memory and storage capacity
 			Type *string `json:"type,omitempty"`
-		} `json:"status,omitempty"`
+		} `json:"status"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -3530,10 +3530,10 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -3550,7 +3550,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Kind `json:"kind,omitempty"`
+		Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -3567,14 +3567,14 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Status `json:"status,omitempty"`
+		Status PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -3584,10 +3584,10 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -3604,7 +3604,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Kind `json:"kind,omitempty"`
+		Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -3621,14 +3621,14 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Status `json:"status,omitempty"`
+		Status PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Status `json:"status"`
 	}
 	JSON409 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -3638,10 +3638,10 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -3658,7 +3658,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409Kind `json:"kind,omitempty"`
+		Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -3675,7 +3675,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409Status `json:"status,omitempty"`
+		Status PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409Status `json:"status"`
 	}
 }
 type PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances201ApiVersion string
@@ -3711,10 +3711,10 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struc
 	HTTPResponse *http.Response
 	JSON400      *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -3724,10 +3724,10 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struc
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -3744,7 +3744,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struc
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind,omitempty"`
+		Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -3761,14 +3761,14 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struc
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Status `json:"status,omitempty"`
+		Status DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -3778,10 +3778,10 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struc
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -3798,7 +3798,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struc
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind,omitempty"`
+		Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -3815,7 +3815,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struc
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Status `json:"status,omitempty"`
+		Status DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Status `json:"status"`
 	}
 }
 type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400ApiVersion string
@@ -3846,66 +3846,66 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200ApiVersion `json:"apiVersion"`
 
 		// Kind The string value 'Instance' that identifies the schema
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200Kind `json:"kind"`
 
 		// Metadata Standard resource metadata fields
-		Metadata *struct {
+		Metadata struct {
 			// Annotations Annotations are key-value pairs storing additional metadata about resources
-			Annotations *map[string]string `json:"annotations,omitempty"`
+			Annotations map[string]string `json:"annotations"`
 
 			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+			CreationTimestamp interface{} `json:"creationTimestamp"`
 
 			// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-			DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+			DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels *map[string]string `json:"labels,omitempty"`
+			Labels map[string]string `json:"labels"`
 
 			// Name User-provided name that uniquely identifies the resource within its workspace and type
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// OwnerReferences References to other resources that own or manage the resource
-			OwnerReferences *struct {
-				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-				Controller         *bool   `json:"controller"`
-				Kind               *string `json:"kind,omitempty"`
-				Name               *string `json:"name,omitempty"`
-				Uid                *string `json:"uid,omitempty"`
-			} `json:"ownerReferences,omitempty"`
+			OwnerReferences struct {
+				ApiVersion         string `json:"apiVersion"`
+				BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+				Controller         *bool  `json:"controller"`
+				Kind               string `json:"kind"`
+				Name               string `json:"name"`
+				Uid                string `json:"uid"`
+			} `json:"ownerReferences"`
 
 			// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 			// Uid System-generated unique identifier for the resource
-			Uid *string `json:"uid,omitempty"`
+			Uid string `json:"uid"`
 
 			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace *string `json:"workspace,omitempty"`
-		} `json:"metadata,omitempty"`
+			Workspace string `json:"workspace"`
+		} `json:"metadata"`
 
 		// Spec Desired configuration and characteristics for the instance
-		Spec *struct {
+		Spec struct {
 			// IamEnabled When enabled, SSH access to this instance will be authenticated through Sotoon IAM.
 			IamEnabled *bool `json:"iamEnabled,omitempty"`
 
 			// ImageSource Specifies the base operating system image used to boot the instance. Must specify either an image or customImage, but not both.
-			ImageSource *struct {
+			ImageSource struct {
 				// CustomImage Name of the custom image to boot the instance from. Must be a valid custom image name. Cannot be modified after instance creation. Cannot be used together with image.
 				CustomImage *string `json:"customImage,omitempty"`
 
 				// Image Name of the base operating system image to boot the instance from. Must be a valid image name. Cannot be modified after instance creation. Cannot be used together with customImage.
 				Image *string `json:"image,omitempty"`
-			} `json:"imageSource,omitempty"`
+			} `json:"imageSource"`
 
 			// InitialUser Defines the initial OS login credentials. If specified, both username and password must be provided.
 			InitialUser *struct {
 				// Password Password configuration for the user account, specified either through a secret or file source
-				Password *struct {
+				Password struct {
 					// FromSecret Reference to a secret containing the password value. The secret must exist in the same namespace as the instance.
 					FromSecret *struct {
 						// Key Key within the secret containing the desired value. If not specified, defaults to the instance name
@@ -3917,22 +3917,22 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 						// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
 						Optional *bool `json:"optional"`
 					} `json:"fromSecret,omitempty"`
-				} `json:"password,omitempty"`
+				} `json:"password"`
 
 				// SshAuthorizedKeys List of SSH public keys to authorize for this user account
 				SshAuthorizedKeys *[]string `json:"sshAuthorizedKeys,omitempty"`
 
 				// Username Operating system username for the initial user account. Must follow Linux username requirements.
-				Username *string `json:"username,omitempty"`
+				Username string `json:"username"`
 			} `json:"initialUser"`
 
 			// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 			Interfaces *struct {
 				// Link Name of the Link resource that defines the network this interface connects to
-				Link *string `json:"link,omitempty"`
+				Link string `json:"link"`
 
 				// Name Unique identifier for this network interface within the instance
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 			} `json:"interfaces,omitempty"`
 
 			// OsVolume Defines the storage volume containing the operating system. Must specify either persistentVolumeClaim or localDisk (localDisk settings are ignored).
@@ -3940,16 +3940,16 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 				// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 				LocalDisk *struct {
 					// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 
 					// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Size interface{} `json:"size,omitempty"`
+					Size interface{} `json:"size"`
 				} `json:"localDisk"`
 
 				// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 				PersistentVolumeClaim *struct {
-					ClaimName *string `json:"claimName,omitempty"`
-					ReadOnly  *bool   `json:"readOnly,omitempty"`
+					ClaimName string `json:"claimName"`
+					ReadOnly  *bool  `json:"readOnly,omitempty"`
 				} `json:"persistentVolumeClaim"`
 			} `json:"osVolume,omitempty"`
 
@@ -3959,13 +3959,13 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 			} `json:"placementGroupRef"`
 
 			// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
-			PoweredOn *bool `json:"poweredOn,omitempty"`
+			PoweredOn bool `json:"poweredOn"`
 
 			// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
 			RestartedAt interface{} `json:"restartedAt"`
 
 			// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
-			Type *string `json:"type,omitempty"`
+			Type string `json:"type"`
 
 			// UserData Cloud-init configuration data provided in base64 encoded format. Used to customize instance on first boot.
 			UserData *string `json:"userData,omitempty"`
@@ -3975,22 +3975,22 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 				// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 				LocalDisk *struct {
 					// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 
 					// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Size interface{} `json:"size,omitempty"`
+					Size interface{} `json:"size"`
 				} `json:"localDisk"`
 
 				// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 				PersistentVolumeClaim *struct {
-					ClaimName *string `json:"claimName,omitempty"`
-					ReadOnly  *bool   `json:"readOnly,omitempty"`
+					ClaimName string `json:"claimName"`
+					ReadOnly  *bool  `json:"readOnly,omitempty"`
 				} `json:"persistentVolumeClaim"`
 			} `json:"volumes,omitempty"`
-		} `json:"spec,omitempty"`
+		} `json:"spec"`
 
 		// Status Current observed state and conditions of the instance
-		Status *struct {
+		Status struct {
 			// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 			AttachedVolumes *struct {
 				// Size Storage capacity of the attached volume in bytes
@@ -4003,7 +4003,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 				VolumeID *string `json:"volumeID,omitempty"`
 
 				// VolumeType Type of the attached volume - either 'persistentvolume' or 'localdisk'
-				VolumeType *string `json:"volumeType,omitempty"`
+				VolumeType string `json:"volumeType"`
 			} `json:"attachedVolumes,omitempty"`
 
 			// Conditions List of conditions representing the current state of various instance subsystems
@@ -4012,12 +4012,12 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 				LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
 				Message            *string     `json:"message,omitempty"`
 				Reason             *string     `json:"reason,omitempty"`
-				Status             *string     `json:"status,omitempty"`
-				Type               *string     `json:"type,omitempty"`
+				Status             string      `json:"status"`
+				Type               string      `json:"type"`
 			} `json:"conditions,omitempty"`
 
 			// Ready Indicates whether the instance is fully configured and operational
-			Ready *bool `json:"ready,omitempty"`
+			Ready bool `json:"ready"`
 
 			// Resizing Indicates whether the instance is currently being resized to a different instance type
 			Resizing *bool `json:"resizing,omitempty"`
@@ -4029,27 +4029,27 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 			Restarting *bool `json:"restarting,omitempty"`
 
 			// Running Indicates whether the instance's operating system is currently running
-			Running *bool `json:"running,omitempty"`
+			Running bool `json:"running"`
 
 			// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 			RuntimeConfiguration *struct {
 				// Cpu Number of CPU cores
-				Cpu interface{} `json:"cpu,omitempty"`
+				Cpu interface{} `json:"cpu"`
 
 				// Memory Memory size
-				Memory interface{} `json:"memory,omitempty"`
+				Memory interface{} `json:"memory"`
 			} `json:"runtimeConfiguration"`
 
 			// Type The current instance type that defines the cpu, memory and storage capacity
 			Type *string `json:"type,omitempty"`
-		} `json:"status,omitempty"`
+		} `json:"status"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -4059,10 +4059,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -4079,7 +4079,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -4096,14 +4096,14 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -4113,10 +4113,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -4133,7 +4133,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -4150,7 +4150,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Status `json:"status"`
 	}
 }
 type GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200ApiVersion string
@@ -4183,66 +4183,66 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200ApiVersion `json:"apiVersion"`
 
 		// Kind The string value 'Instance' that identifies the schema
-		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200Kind `json:"kind,omitempty"`
+		Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200Kind `json:"kind"`
 
 		// Metadata Standard resource metadata fields
-		Metadata *struct {
+		Metadata struct {
 			// Annotations Annotations are key-value pairs storing additional metadata about resources
-			Annotations *map[string]string `json:"annotations,omitempty"`
+			Annotations map[string]string `json:"annotations"`
 
 			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+			CreationTimestamp interface{} `json:"creationTimestamp"`
 
 			// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-			DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+			DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels *map[string]string `json:"labels,omitempty"`
+			Labels map[string]string `json:"labels"`
 
 			// Name User-provided name that uniquely identifies the resource within its workspace and type
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// OwnerReferences References to other resources that own or manage the resource
-			OwnerReferences *struct {
-				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-				Controller         *bool   `json:"controller"`
-				Kind               *string `json:"kind,omitempty"`
-				Name               *string `json:"name,omitempty"`
-				Uid                *string `json:"uid,omitempty"`
-			} `json:"ownerReferences,omitempty"`
+			OwnerReferences struct {
+				ApiVersion         string `json:"apiVersion"`
+				BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+				Controller         *bool  `json:"controller"`
+				Kind               string `json:"kind"`
+				Name               string `json:"name"`
+				Uid                string `json:"uid"`
+			} `json:"ownerReferences"`
 
 			// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 			// Uid System-generated unique identifier for the resource
-			Uid *string `json:"uid,omitempty"`
+			Uid string `json:"uid"`
 
 			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace *string `json:"workspace,omitempty"`
-		} `json:"metadata,omitempty"`
+			Workspace string `json:"workspace"`
+		} `json:"metadata"`
 
 		// Spec Desired configuration and characteristics for the instance
-		Spec *struct {
+		Spec struct {
 			// IamEnabled When enabled, SSH access to this instance will be authenticated through Sotoon IAM.
 			IamEnabled *bool `json:"iamEnabled,omitempty"`
 
 			// ImageSource Specifies the base operating system image used to boot the instance. Must specify either an image or customImage, but not both.
-			ImageSource *struct {
+			ImageSource struct {
 				// CustomImage Name of the custom image to boot the instance from. Must be a valid custom image name. Cannot be modified after instance creation. Cannot be used together with image.
 				CustomImage *string `json:"customImage,omitempty"`
 
 				// Image Name of the base operating system image to boot the instance from. Must be a valid image name. Cannot be modified after instance creation. Cannot be used together with customImage.
 				Image *string `json:"image,omitempty"`
-			} `json:"imageSource,omitempty"`
+			} `json:"imageSource"`
 
 			// InitialUser Defines the initial OS login credentials. If specified, both username and password must be provided.
 			InitialUser *struct {
 				// Password Password configuration for the user account, specified either through a secret or file source
-				Password *struct {
+				Password struct {
 					// FromSecret Reference to a secret containing the password value. The secret must exist in the same namespace as the instance.
 					FromSecret *struct {
 						// Key Key within the secret containing the desired value. If not specified, defaults to the instance name
@@ -4254,22 +4254,22 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 						// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
 						Optional *bool `json:"optional"`
 					} `json:"fromSecret,omitempty"`
-				} `json:"password,omitempty"`
+				} `json:"password"`
 
 				// SshAuthorizedKeys List of SSH public keys to authorize for this user account
 				SshAuthorizedKeys *[]string `json:"sshAuthorizedKeys,omitempty"`
 
 				// Username Operating system username for the initial user account. Must follow Linux username requirements.
-				Username *string `json:"username,omitempty"`
+				Username string `json:"username"`
 			} `json:"initialUser"`
 
 			// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 			Interfaces *struct {
 				// Link Name of the Link resource that defines the network this interface connects to
-				Link *string `json:"link,omitempty"`
+				Link string `json:"link"`
 
 				// Name Unique identifier for this network interface within the instance
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 			} `json:"interfaces,omitempty"`
 
 			// OsVolume Defines the storage volume containing the operating system. Must specify either persistentVolumeClaim or localDisk (localDisk settings are ignored).
@@ -4277,16 +4277,16 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 				// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 				LocalDisk *struct {
 					// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 
 					// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Size interface{} `json:"size,omitempty"`
+					Size interface{} `json:"size"`
 				} `json:"localDisk"`
 
 				// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 				PersistentVolumeClaim *struct {
-					ClaimName *string `json:"claimName,omitempty"`
-					ReadOnly  *bool   `json:"readOnly,omitempty"`
+					ClaimName string `json:"claimName"`
+					ReadOnly  *bool  `json:"readOnly,omitempty"`
 				} `json:"persistentVolumeClaim"`
 			} `json:"osVolume,omitempty"`
 
@@ -4296,13 +4296,13 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 			} `json:"placementGroupRef"`
 
 			// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
-			PoweredOn *bool `json:"poweredOn,omitempty"`
+			PoweredOn bool `json:"poweredOn"`
 
 			// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
 			RestartedAt interface{} `json:"restartedAt"`
 
 			// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
-			Type *string `json:"type,omitempty"`
+			Type string `json:"type"`
 
 			// UserData Cloud-init configuration data provided in base64 encoded format. Used to customize instance on first boot.
 			UserData *string `json:"userData,omitempty"`
@@ -4312,22 +4312,22 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 				// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 				LocalDisk *struct {
 					// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 
 					// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-					Size interface{} `json:"size,omitempty"`
+					Size interface{} `json:"size"`
 				} `json:"localDisk"`
 
 				// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 				PersistentVolumeClaim *struct {
-					ClaimName *string `json:"claimName,omitempty"`
-					ReadOnly  *bool   `json:"readOnly,omitempty"`
+					ClaimName string `json:"claimName"`
+					ReadOnly  *bool  `json:"readOnly,omitempty"`
 				} `json:"persistentVolumeClaim"`
 			} `json:"volumes,omitempty"`
-		} `json:"spec,omitempty"`
+		} `json:"spec"`
 
 		// Status Current observed state and conditions of the instance
-		Status *struct {
+		Status struct {
 			// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 			AttachedVolumes *struct {
 				// Size Storage capacity of the attached volume in bytes
@@ -4340,7 +4340,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 				VolumeID *string `json:"volumeID,omitempty"`
 
 				// VolumeType Type of the attached volume - either 'persistentvolume' or 'localdisk'
-				VolumeType *string `json:"volumeType,omitempty"`
+				VolumeType string `json:"volumeType"`
 			} `json:"attachedVolumes,omitempty"`
 
 			// Conditions List of conditions representing the current state of various instance subsystems
@@ -4349,12 +4349,12 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 				LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
 				Message            *string     `json:"message,omitempty"`
 				Reason             *string     `json:"reason,omitempty"`
-				Status             *string     `json:"status,omitempty"`
-				Type               *string     `json:"type,omitempty"`
+				Status             string      `json:"status"`
+				Type               string      `json:"type"`
 			} `json:"conditions,omitempty"`
 
 			// Ready Indicates whether the instance is fully configured and operational
-			Ready *bool `json:"ready,omitempty"`
+			Ready bool `json:"ready"`
 
 			// Resizing Indicates whether the instance is currently being resized to a different instance type
 			Resizing *bool `json:"resizing,omitempty"`
@@ -4366,27 +4366,27 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 			Restarting *bool `json:"restarting,omitempty"`
 
 			// Running Indicates whether the instance's operating system is currently running
-			Running *bool `json:"running,omitempty"`
+			Running bool `json:"running"`
 
 			// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 			RuntimeConfiguration *struct {
 				// Cpu Number of CPU cores
-				Cpu interface{} `json:"cpu,omitempty"`
+				Cpu interface{} `json:"cpu"`
 
 				// Memory Memory size
-				Memory interface{} `json:"memory,omitempty"`
+				Memory interface{} `json:"memory"`
 			} `json:"runtimeConfiguration"`
 
 			// Type The current instance type that defines the cpu, memory and storage capacity
 			Type *string `json:"type,omitempty"`
-		} `json:"status,omitempty"`
+		} `json:"status"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -4396,10 +4396,10 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -4416,7 +4416,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind,omitempty"`
+		Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -4433,14 +4433,14 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Status `json:"status,omitempty"`
+		Status PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -4450,10 +4450,10 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -4470,7 +4470,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind,omitempty"`
+		Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -4487,7 +4487,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Status `json:"status,omitempty"`
+		Status PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Status `json:"status"`
 	}
 }
 type PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200ApiVersion string
@@ -4520,55 +4520,55 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *string `json:"apiVersion,omitempty"`
+		ApiVersion string `json:"apiVersion"`
 
 		// Items Collection of Link resources
-		Items *[]struct {
+		Items []struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks200ItemsApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks200ItemsApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'Link' that identifies the schema
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks200ItemsKind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks200ItemsKind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *[]struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences []struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the link
-			Spec *struct {
+			Spec struct {
 				// BoundTo Reference to the instance that this link is connected to.
 				BoundTo *struct {
 					ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -4588,7 +4588,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 				// ForwardableAddresses List of addresses that can forward traffic through this link.
 				ForwardableAddresses *[]struct {
 					// Cidr Specifies the IP range in CIDR notation that can be forwarded through this link
-					Cidr *string `json:"cidr,omitempty"`
+					Cidr string `json:"cidr"`
 
 					// Mac The MAC address associated with this forwardable address. If not specified, the link's MAC address will be used.
 					Mac *string `json:"mac,omitempty"`
@@ -4602,10 +4602,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 
 				// VpcName Name of the VPC containing this link's subnet.
 				VpcName *string `json:"vpcName,omitempty"`
-			} `json:"spec,omitempty"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the link
-			Status *struct {
+			Status struct {
 				// Configured Indicates if the link is properly configured.
 				Configured *bool `json:"configured,omitempty"`
 
@@ -4633,26 +4633,26 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 
 				// Ready Indicates if the link is ready for use.
 				Ready *bool `json:"ready,omitempty"`
-			} `json:"status,omitempty"`
-		} `json:"items,omitempty"`
+			} `json:"status"`
+		} `json:"items"`
 
 		// Kind The string value 'LinkList' that identifies the schema
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks200Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks200Kind `json:"kind"`
 
 		// Metadata Standard metadata fields for the list
-		Metadata *struct {
+		Metadata struct {
 			Continue           *string `json:"continue,omitempty"`
 			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
+		} `json:"metadata"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -4662,10 +4662,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -4682,7 +4682,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -4699,14 +4699,14 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -4716,10 +4716,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -4736,7 +4736,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -4753,7 +4753,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Status `json:"status"`
 	}
 }
 type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks200ItemsApiVersion string
@@ -4787,50 +4787,50 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 	HTTPResponse *http.Response
 	JSON201      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks201ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks201ApiVersion `json:"apiVersion"`
 
 		// Kind The string value 'Link' that identifies the schema
-		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks201Kind `json:"kind,omitempty"`
+		Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks201Kind `json:"kind"`
 
 		// Metadata Standard resource metadata fields
-		Metadata *struct {
+		Metadata struct {
 			// Annotations Annotations are key-value pairs storing additional metadata about resources
-			Annotations *map[string]string `json:"annotations,omitempty"`
+			Annotations map[string]string `json:"annotations"`
 
 			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+			CreationTimestamp interface{} `json:"creationTimestamp"`
 
 			// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-			DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+			DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels *map[string]string `json:"labels,omitempty"`
+			Labels map[string]string `json:"labels"`
 
 			// Name User-provided name that uniquely identifies the resource within its workspace and type
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// OwnerReferences References to other resources that own or manage the resource
-			OwnerReferences *[]struct {
-				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-				Controller         *bool   `json:"controller"`
-				Kind               *string `json:"kind,omitempty"`
-				Name               *string `json:"name,omitempty"`
-				Uid                *string `json:"uid,omitempty"`
-			} `json:"ownerReferences,omitempty"`
+			OwnerReferences []struct {
+				ApiVersion         string `json:"apiVersion"`
+				BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+				Controller         *bool  `json:"controller"`
+				Kind               string `json:"kind"`
+				Name               string `json:"name"`
+				Uid                string `json:"uid"`
+			} `json:"ownerReferences"`
 
 			// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 			// Uid System-generated unique identifier for the resource
-			Uid *string `json:"uid,omitempty"`
+			Uid string `json:"uid"`
 
 			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace *string `json:"workspace,omitempty"`
-		} `json:"metadata,omitempty"`
+			Workspace string `json:"workspace"`
+		} `json:"metadata"`
 
 		// Spec Desired configuration and characteristics for the link
-		Spec *struct {
+		Spec struct {
 			// BoundTo Reference to the instance that this link is connected to.
 			BoundTo *struct {
 				ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -4850,7 +4850,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 			// ForwardableAddresses List of addresses that can forward traffic through this link.
 			ForwardableAddresses *[]struct {
 				// Cidr Specifies the IP range in CIDR notation that can be forwarded through this link
-				Cidr *string `json:"cidr,omitempty"`
+				Cidr string `json:"cidr"`
 
 				// Mac The MAC address associated with this forwardable address. If not specified, the link's MAC address will be used.
 				Mac *string `json:"mac,omitempty"`
@@ -4864,10 +4864,10 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 
 			// VpcName Name of the VPC containing this link's subnet.
 			VpcName *string `json:"vpcName,omitempty"`
-		} `json:"spec,omitempty"`
+		} `json:"spec"`
 
 		// Status Current observed state and conditions of the link
-		Status *struct {
+		Status struct {
 			// Configured Indicates if the link is properly configured.
 			Configured *bool `json:"configured,omitempty"`
 
@@ -4895,14 +4895,14 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 
 			// Ready Indicates if the link is ready for use.
 			Ready *bool `json:"ready,omitempty"`
-		} `json:"status,omitempty"`
+		} `json:"status"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -4912,10 +4912,10 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -4932,7 +4932,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Kind `json:"kind,omitempty"`
+		Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -4949,14 +4949,14 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Status `json:"status,omitempty"`
+		Status PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -4966,10 +4966,10 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -4986,7 +4986,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Kind `json:"kind,omitempty"`
+		Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -5003,14 +5003,14 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Status `json:"status,omitempty"`
+		Status PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Status `json:"status"`
 	}
 	JSON409 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -5020,10 +5020,10 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -5040,7 +5040,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409Kind `json:"kind,omitempty"`
+		Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -5057,7 +5057,7 @@ type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409Status `json:"status,omitempty"`
+		Status PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409Status `json:"status"`
 	}
 }
 type PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks201ApiVersion string
@@ -5093,10 +5093,10 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 	HTTPResponse *http.Response
 	JSON400      *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -5106,10 +5106,10 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -5126,7 +5126,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind,omitempty"`
+		Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -5143,14 +5143,14 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Status `json:"status,omitempty"`
+		Status DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -5160,10 +5160,10 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -5180,7 +5180,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind,omitempty"`
+		Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -5197,7 +5197,7 @@ type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Status `json:"status,omitempty"`
+		Status DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Status `json:"status"`
 	}
 }
 type DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400ApiVersion string
@@ -5228,50 +5228,50 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200ApiVersion `json:"apiVersion"`
 
 		// Kind The string value 'Link' that identifies the schema
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200Kind `json:"kind"`
 
 		// Metadata Standard resource metadata fields
-		Metadata *struct {
+		Metadata struct {
 			// Annotations Annotations are key-value pairs storing additional metadata about resources
-			Annotations *map[string]string `json:"annotations,omitempty"`
+			Annotations map[string]string `json:"annotations"`
 
 			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+			CreationTimestamp interface{} `json:"creationTimestamp"`
 
 			// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-			DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+			DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels *map[string]string `json:"labels,omitempty"`
+			Labels map[string]string `json:"labels"`
 
 			// Name User-provided name that uniquely identifies the resource within its workspace and type
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// OwnerReferences References to other resources that own or manage the resource
-			OwnerReferences *[]struct {
-				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-				Controller         *bool   `json:"controller"`
-				Kind               *string `json:"kind,omitempty"`
-				Name               *string `json:"name,omitempty"`
-				Uid                *string `json:"uid,omitempty"`
-			} `json:"ownerReferences,omitempty"`
+			OwnerReferences []struct {
+				ApiVersion         string `json:"apiVersion"`
+				BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+				Controller         *bool  `json:"controller"`
+				Kind               string `json:"kind"`
+				Name               string `json:"name"`
+				Uid                string `json:"uid"`
+			} `json:"ownerReferences"`
 
 			// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 			// Uid System-generated unique identifier for the resource
-			Uid *string `json:"uid,omitempty"`
+			Uid string `json:"uid"`
 
 			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace *string `json:"workspace,omitempty"`
-		} `json:"metadata,omitempty"`
+			Workspace string `json:"workspace"`
+		} `json:"metadata"`
 
 		// Spec Desired configuration and characteristics for the link
-		Spec *struct {
+		Spec struct {
 			// BoundTo Reference to the instance that this link is connected to.
 			BoundTo *struct {
 				ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -5291,7 +5291,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 			// ForwardableAddresses List of addresses that can forward traffic through this link.
 			ForwardableAddresses *[]struct {
 				// Cidr Specifies the IP range in CIDR notation that can be forwarded through this link
-				Cidr *string `json:"cidr,omitempty"`
+				Cidr string `json:"cidr"`
 
 				// Mac The MAC address associated with this forwardable address. If not specified, the link's MAC address will be used.
 				Mac *string `json:"mac,omitempty"`
@@ -5305,10 +5305,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 
 			// VpcName Name of the VPC containing this link's subnet.
 			VpcName *string `json:"vpcName,omitempty"`
-		} `json:"spec,omitempty"`
+		} `json:"spec"`
 
 		// Status Current observed state and conditions of the link
-		Status *struct {
+		Status struct {
 			// Configured Indicates if the link is properly configured.
 			Configured *bool `json:"configured,omitempty"`
 
@@ -5336,14 +5336,14 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 
 			// Ready Indicates if the link is ready for use.
 			Ready *bool `json:"ready,omitempty"`
-		} `json:"status,omitempty"`
+		} `json:"status"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -5353,10 +5353,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -5373,7 +5373,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -5390,14 +5390,14 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -5407,10 +5407,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -5427,7 +5427,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -5444,7 +5444,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Status `json:"status"`
 	}
 }
 type GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200ApiVersion string
@@ -5477,50 +5477,50 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200ApiVersion `json:"apiVersion"`
 
 		// Kind The string value 'Link' that identifies the schema
-		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200Kind `json:"kind,omitempty"`
+		Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200Kind `json:"kind"`
 
 		// Metadata Standard resource metadata fields
-		Metadata *struct {
+		Metadata struct {
 			// Annotations Annotations are key-value pairs storing additional metadata about resources
-			Annotations *map[string]string `json:"annotations,omitempty"`
+			Annotations map[string]string `json:"annotations"`
 
 			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+			CreationTimestamp interface{} `json:"creationTimestamp"`
 
 			// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-			DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+			DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels *map[string]string `json:"labels,omitempty"`
+			Labels map[string]string `json:"labels"`
 
 			// Name User-provided name that uniquely identifies the resource within its workspace and type
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// OwnerReferences References to other resources that own or manage the resource
-			OwnerReferences *[]struct {
-				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-				Controller         *bool   `json:"controller"`
-				Kind               *string `json:"kind,omitempty"`
-				Name               *string `json:"name,omitempty"`
-				Uid                *string `json:"uid,omitempty"`
-			} `json:"ownerReferences,omitempty"`
+			OwnerReferences []struct {
+				ApiVersion         string `json:"apiVersion"`
+				BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+				Controller         *bool  `json:"controller"`
+				Kind               string `json:"kind"`
+				Name               string `json:"name"`
+				Uid                string `json:"uid"`
+			} `json:"ownerReferences"`
 
 			// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 			// Uid System-generated unique identifier for the resource
-			Uid *string `json:"uid,omitempty"`
+			Uid string `json:"uid"`
 
 			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace *string `json:"workspace,omitempty"`
-		} `json:"metadata,omitempty"`
+			Workspace string `json:"workspace"`
+		} `json:"metadata"`
 
 		// Spec Desired configuration and characteristics for the link
-		Spec *struct {
+		Spec struct {
 			// BoundTo Reference to the instance that this link is connected to.
 			BoundTo *struct {
 				ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -5540,7 +5540,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 			// ForwardableAddresses List of addresses that can forward traffic through this link.
 			ForwardableAddresses *[]struct {
 				// Cidr Specifies the IP range in CIDR notation that can be forwarded through this link
-				Cidr *string `json:"cidr,omitempty"`
+				Cidr string `json:"cidr"`
 
 				// Mac The MAC address associated with this forwardable address. If not specified, the link's MAC address will be used.
 				Mac *string `json:"mac,omitempty"`
@@ -5554,10 +5554,10 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 
 			// VpcName Name of the VPC containing this link's subnet.
 			VpcName *string `json:"vpcName,omitempty"`
-		} `json:"spec,omitempty"`
+		} `json:"spec"`
 
 		// Status Current observed state and conditions of the link
-		Status *struct {
+		Status struct {
 			// Configured Indicates if the link is properly configured.
 			Configured *bool `json:"configured,omitempty"`
 
@@ -5585,14 +5585,14 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 
 			// Ready Indicates if the link is ready for use.
 			Ready *bool `json:"ready,omitempty"`
-		} `json:"status,omitempty"`
+		} `json:"status"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -5602,10 +5602,10 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -5622,7 +5622,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind,omitempty"`
+		Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -5639,14 +5639,14 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Status `json:"status,omitempty"`
+		Status PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -5656,10 +5656,10 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -5676,7 +5676,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind,omitempty"`
+		Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -5693,7 +5693,7 @@ type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Status `json:"status,omitempty"`
+		Status PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Status `json:"status"`
 	}
 }
 type PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200ApiVersion string
@@ -5726,12 +5726,12 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ApiVersion `json:"apiVersion"`
 
 		// Items Collection of Secret resources
-		Items *[]struct {
+		Items []struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ItemsApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ItemsApiVersion `json:"apiVersion"`
 
 			// Data Contains the secret data as base64 encoded strings
 			Data *map[string][]byte `json:"data,omitempty"`
@@ -5740,69 +5740,69 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 			Immutable *bool `json:"immutable"`
 
 			// Kind The string value 'Secret' that identifies the schema
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ItemsKind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ItemsKind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *[]struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences []struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// StringData Allows specifying non-binary secret data in string form, merged into the data field on write
 			StringData *map[string]string `json:"stringData,omitempty"`
 
 			// Type Used to facilitate programmatic handling of secret data
 			Type *string `json:"type,omitempty"`
-		} `json:"items,omitempty"`
+		} `json:"items"`
 
 		// Kind The string value 'SecretList' that identifies the schema
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200Kind `json:"kind"`
 
 		// Metadata Standard metadata fields for the list
-		Metadata *struct {
+		Metadata struct {
 			Continue           *string `json:"continue,omitempty"`
 			RemainingItemCount *int64  `json:"remainingItemCount"`
 			ResourceVersion    *string `json:"resourceVersion,omitempty"`
 			SelfLink           *string `json:"selfLink,omitempty"`
-		} `json:"metadata,omitempty"`
+		} `json:"metadata"`
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -5812,10 +5812,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -5832,7 +5832,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -5849,14 +5849,14 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -5866,10 +5866,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -5886,7 +5886,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -5903,7 +5903,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403Status `json:"status"`
 	}
 }
 type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ApiVersion string
@@ -5938,7 +5938,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 	HTTPResponse *http.Response
 	JSON200      *struct {
 		// ApiVersion Version identifier of the API schema
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId200ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId200ApiVersion `json:"apiVersion"`
 
 		// Data Contains the secret data as base64 encoded strings
 		Data *map[string][]byte `json:"data,omitempty"`
@@ -5947,44 +5947,44 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 		Immutable *bool `json:"immutable"`
 
 		// Kind The string value 'Secret' that identifies the schema
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId200Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId200Kind `json:"kind"`
 
 		// Metadata Standard resource metadata fields
-		Metadata *struct {
+		Metadata struct {
 			// Annotations Annotations are key-value pairs storing additional metadata about resources
-			Annotations *map[string]string `json:"annotations,omitempty"`
+			Annotations map[string]string `json:"annotations"`
 
 			// CreationTimestamp Timestamp when the resource was initially created
-			CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+			CreationTimestamp interface{} `json:"creationTimestamp"`
 
 			// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-			DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+			DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 			// Labels Labels are key-value pairs attached to resources for organization and categorization
-			Labels *map[string]string `json:"labels,omitempty"`
+			Labels map[string]string `json:"labels"`
 
 			// Name User-provided name that uniquely identifies the resource within its workspace and type
-			Name *string `json:"name,omitempty"`
+			Name string `json:"name"`
 
 			// OwnerReferences References to other resources that own or manage the resource
-			OwnerReferences *[]struct {
-				ApiVersion         *string `json:"apiVersion,omitempty"`
-				BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-				Controller         *bool   `json:"controller"`
-				Kind               *string `json:"kind,omitempty"`
-				Name               *string `json:"name,omitempty"`
-				Uid                *string `json:"uid,omitempty"`
-			} `json:"ownerReferences,omitempty"`
+			OwnerReferences []struct {
+				ApiVersion         string `json:"apiVersion"`
+				BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+				Controller         *bool  `json:"controller"`
+				Kind               string `json:"kind"`
+				Name               string `json:"name"`
+				Uid                string `json:"uid"`
+			} `json:"ownerReferences"`
 
 			// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 			ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 			// Uid System-generated unique identifier for the resource
-			Uid *string `json:"uid,omitempty"`
+			Uid string `json:"uid"`
 
 			// Workspace Unique identifier of the workspace where the resource belongs
-			Workspace *string `json:"workspace,omitempty"`
-		} `json:"metadata,omitempty"`
+			Workspace string `json:"workspace"`
+		} `json:"metadata"`
 
 		// StringData Allows specifying non-binary secret data in string form, merged into the data field on write
 		StringData *map[string]string `json:"stringData,omitempty"`
@@ -5994,10 +5994,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 	}
 	JSON400 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -6007,10 +6007,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -6027,7 +6027,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -6044,14 +6044,14 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400Status `json:"status"`
 	}
 	JSON403 *struct {
 		// ApiVersion Version of the Status kind
-		ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403ApiVersion `json:"apiVersion,omitempty"`
+		ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403ApiVersion `json:"apiVersion"`
 
 		// Code HTTP status code corresponding to this status
-		Code *int32 `json:"code,omitempty"`
+		Code int32 `json:"code"`
 
 		// Details Extended details about the error
 		Details *struct {
@@ -6061,10 +6061,10 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 				Field *string `json:"field,omitempty"`
 
 				// Message Human-readable description of the cause of the error
-				Message *string `json:"message,omitempty"`
+				Message string `json:"message"`
 
 				// Reason Machine-readable description of the cause of the error
-				Reason *string `json:"reason,omitempty"`
+				Reason string `json:"reason"`
 			} `json:"causes,omitempty"`
 
 			// Group API group of the resource in the status details
@@ -6081,7 +6081,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 		} `json:"details"`
 
 		// Kind Value is always 'Status'
-		Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403Kind `json:"kind,omitempty"`
+		Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403Kind `json:"kind"`
 
 		// Message Human-readable description of the status
 		Message *string `json:"message,omitempty"`
@@ -6098,7 +6098,7 @@ type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse struct {
 		Reason *string `json:"reason,omitempty"`
 
 		// Status Status of the operation
-		Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403Status `json:"status,omitempty"`
+		Status GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403Status `json:"status"`
 	}
 }
 type GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId200ApiVersion string
@@ -6362,55 +6362,55 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *string `json:"apiVersion,omitempty"`
+			ApiVersion string `json:"apiVersion"`
 
 			// Items Collection of Image resources
-			Items *struct {
+			Items struct {
 				// ApiVersion Version identifier of the API schema
-				ApiVersion *GetComputeV2Thr1Images200ItemsApiVersion `json:"apiVersion,omitempty"`
+				ApiVersion GetComputeV2Thr1Images200ItemsApiVersion `json:"apiVersion"`
 
 				// Kind The string value 'Image' that identifies the schema
-				Kind *GetComputeV2Thr1Images200ItemsKind `json:"kind,omitempty"`
+				Kind GetComputeV2Thr1Images200ItemsKind `json:"kind"`
 
 				// Metadata Standard resource metadata fields
-				Metadata *struct {
+				Metadata struct {
 					// Annotations Annotations are key-value pairs storing additional metadata about resources
-					Annotations *map[string]string `json:"annotations,omitempty"`
+					Annotations map[string]string `json:"annotations"`
 
 					// CreationTimestamp Timestamp when the resource was initially created
-					CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+					CreationTimestamp interface{} `json:"creationTimestamp"`
 
 					// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-					DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+					DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 					// Labels Labels are key-value pairs attached to resources for organization and categorization
-					Labels *map[string]string `json:"labels,omitempty"`
+					Labels map[string]string `json:"labels"`
 
 					// Name User-provided name that uniquely identifies the resource within its workspace and type
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 
 					// OwnerReferences References to other resources that own or manage the resource
-					OwnerReferences *struct {
-						ApiVersion         *string `json:"apiVersion,omitempty"`
-						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-						Controller         *bool   `json:"controller"`
-						Kind               *string `json:"kind,omitempty"`
-						Name               *string `json:"name,omitempty"`
-						Uid                *string `json:"uid,omitempty"`
-					} `json:"ownerReferences,omitempty"`
+					OwnerReferences struct {
+						ApiVersion         string `json:"apiVersion"`
+						BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+						Controller         *bool  `json:"controller"`
+						Kind               string `json:"kind"`
+						Name               string `json:"name"`
+						Uid                string `json:"uid"`
+					} `json:"ownerReferences"`
 
 					// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 					// Uid System-generated unique identifier for the resource
-					Uid *string `json:"uid,omitempty"`
+					Uid string `json:"uid"`
 
 					// Workspace Unique identifier of the workspace where the resource belongs
-					Workspace *string `json:"workspace,omitempty"`
-				} `json:"metadata,omitempty"`
+					Workspace string `json:"workspace"`
+				} `json:"metadata"`
 
 				// Spec Desired configuration and characteristics for the image
-				Spec *struct {
+				Spec struct {
 					// Description A brief description of the image.
 					Description *string `json:"description,omitempty"`
 
@@ -6424,29 +6424,29 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 					OsVersion *string `json:"osVersion,omitempty"`
 
 					// Public Indicates whether the image is public.
-					Public *bool `json:"public,omitempty"`
-				} `json:"spec,omitempty"`
+					Public bool `json:"public"`
+				} `json:"spec"`
 
 				// Status Current observed state and conditions of the image
-				Status *struct {
+				Status struct {
 					// CreationFailed Indicates if the image creation has failed.
 					CreationFailed *bool `json:"creationFailed,omitempty"`
 
 					// Size The size of the image in bytes.
 					Size *int64 `json:"size,omitempty"`
-				} `json:"status,omitempty"`
-			} `json:"items,omitempty"`
+				} `json:"status"`
+			} `json:"items"`
 
 			// Kind The string value 'ImageList' that identifies the schema
-			Kind *GetComputeV2Thr1Images200Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1Images200Kind `json:"kind"`
 
 			// Metadata Standard metadata fields for the list
-			Metadata *struct {
+			Metadata struct {
 				Continue           *string `json:"continue,omitempty"`
 				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
+			} `json:"metadata"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -6456,10 +6456,10 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1Images400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1Images400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -6469,10 +6469,10 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -6489,7 +6489,7 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1Images400Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1Images400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -6506,7 +6506,7 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1Images400Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1Images400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -6516,10 +6516,10 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1Images403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1Images403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -6529,10 +6529,10 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -6549,7 +6549,7 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1Images403Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1Images403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -6566,7 +6566,7 @@ func ParseGetComputeV2Thr1ImagesResponse(rsp *http.Response) (*GetComputeV2Thr1I
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1Images403Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1Images403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -6595,96 +6595,96 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *string `json:"apiVersion,omitempty"`
+			ApiVersion string `json:"apiVersion"`
 
 			// Items Collection of InstanceType resources
-			Items *[]struct {
+			Items []struct {
 				// ApiVersion Version identifier of the API schema
-				ApiVersion *GetComputeV2Thr1InstanceTypes200ItemsApiVersion `json:"apiVersion,omitempty"`
+				ApiVersion GetComputeV2Thr1InstanceTypes200ItemsApiVersion `json:"apiVersion"`
 
 				// Kind The string value 'InstanceType' that identifies the schema
-				Kind *GetComputeV2Thr1InstanceTypes200ItemsKind `json:"kind,omitempty"`
+				Kind GetComputeV2Thr1InstanceTypes200ItemsKind `json:"kind"`
 
 				// Metadata Standard resource metadata fields
-				Metadata *struct {
+				Metadata struct {
 					// Annotations Annotations are key-value pairs storing additional metadata about resources
-					Annotations *map[string]string `json:"annotations,omitempty"`
+					Annotations map[string]string `json:"annotations"`
 
 					// CreationTimestamp Timestamp when the resource was initially created
-					CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+					CreationTimestamp interface{} `json:"creationTimestamp"`
 
 					// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-					DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+					DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 					// Labels Labels are key-value pairs attached to resources for organization and categorization
-					Labels *map[string]string `json:"labels,omitempty"`
+					Labels map[string]string `json:"labels"`
 
 					// Name User-provided name that uniquely identifies the resource within its workspace and type
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 
 					// OwnerReferences References to other resources that own or manage the resource
-					OwnerReferences *[]struct {
-						ApiVersion         *string `json:"apiVersion,omitempty"`
-						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-						Controller         *bool   `json:"controller"`
-						Kind               *string `json:"kind,omitempty"`
-						Name               *string `json:"name,omitempty"`
-						Uid                *string `json:"uid,omitempty"`
-					} `json:"ownerReferences,omitempty"`
+					OwnerReferences []struct {
+						ApiVersion         string `json:"apiVersion"`
+						BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+						Controller         *bool  `json:"controller"`
+						Kind               string `json:"kind"`
+						Name               string `json:"name"`
+						Uid                string `json:"uid"`
+					} `json:"ownerReferences"`
 
 					// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 					// Uid System-generated unique identifier for the resource
-					Uid *string `json:"uid,omitempty"`
+					Uid string `json:"uid"`
 
 					// Workspace Unique identifier of the workspace where the resource belongs
-					Workspace *string `json:"workspace,omitempty"`
-				} `json:"metadata,omitempty"`
+					Workspace string `json:"workspace"`
+				} `json:"metadata"`
 
 				// Spec Desired configuration and characteristics for the instance type
-				Spec *struct {
+				Spec struct {
 					// Dedicated Indicates whether the instance type is dedicated or shared.
-					Dedicated *bool `json:"dedicated,omitempty"`
+					Dedicated bool `json:"dedicated"`
 
 					// Family The family of the instance type.
-					Family *GetComputeV2Thr1InstanceTypes200ItemsSpecFamily `json:"family,omitempty"`
+					Family GetComputeV2Thr1InstanceTypes200ItemsSpecFamily `json:"family"`
 
 					// Limits The limits for the instance type, including disk I/O bandwidth.
-					Limits *struct {
-						Disk *struct {
-							Bandwidth *map[string]interface{} `json:"bandwidth,omitempty"`
-							Io        *map[string]interface{} `json:"io,omitempty"`
-						} `json:"disk,omitempty"`
-					} `json:"limits,omitempty"`
+					Limits struct {
+						Disk struct {
+							Bandwidth map[string]interface{} `json:"bandwidth"`
+							Io        map[string]interface{} `json:"io"`
+						} `json:"disk"`
+					} `json:"limits"`
 
 					// Public Indicates whether the instance type is publicly available.
-					Public *bool `json:"public,omitempty"`
+					Public bool `json:"public"`
 
 					// Resources The resource specifications for the instance type, including CPU and memory.
-					Resources *map[string]interface{} `json:"resources,omitempty"`
+					Resources map[string]interface{} `json:"resources"`
 
 					// Series The specific series of the instance type.
-					Series *string `json:"series,omitempty"`
-				} `json:"spec,omitempty"`
+					Series string `json:"series"`
+				} `json:"spec"`
 
 				// Status Current observed state and conditions of the instance type
-				Status *struct {
+				Status struct {
 					// ResizableTo A list of other instance types to which a compute instance with this instance type can be resized.
 					ResizableTo *[]string `json:"resizableTo,omitempty"`
-				} `json:"status,omitempty"`
-			} `json:"items,omitempty"`
+				} `json:"status"`
+			} `json:"items"`
 
 			// Kind The string value 'InstanceTypeList' that identifies the schema
-			Kind *GetComputeV2Thr1InstanceTypes200Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1InstanceTypes200Kind `json:"kind"`
 
 			// Metadata Standard metadata fields for the list
-			Metadata *struct {
+			Metadata struct {
 				Continue           *string `json:"continue,omitempty"`
 				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
+			} `json:"metadata"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -6694,10 +6694,10 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1InstanceTypes400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1InstanceTypes400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -6707,10 +6707,10 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -6727,7 +6727,7 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1InstanceTypes400Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1InstanceTypes400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -6744,7 +6744,7 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1InstanceTypes400Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1InstanceTypes400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -6754,10 +6754,10 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1InstanceTypes403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1InstanceTypes403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -6767,10 +6767,10 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -6787,7 +6787,7 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1InstanceTypes403Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1InstanceTypes403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -6804,7 +6804,7 @@ func ParseGetComputeV2Thr1InstanceTypesResponse(rsp *http.Response) (*GetCompute
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1InstanceTypes403Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1InstanceTypes403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -6833,55 +6833,55 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200ApiVersion `json:"apiVersion"`
 
 			// Items Collection of ExternalIP resources
-			Items *[]struct {
+			Items []struct {
 				// ApiVersion Version identifier of the API schema
-				ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200ItemsApiVersion `json:"apiVersion,omitempty"`
+				ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200ItemsApiVersion `json:"apiVersion"`
 
 				// Kind The string value 'ExternalIP' that identifies the schema
-				Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200ItemsKind `json:"kind,omitempty"`
+				Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200ItemsKind `json:"kind"`
 
 				// Metadata Standard resource metadata fields
-				Metadata *struct {
+				Metadata struct {
 					// Annotations Annotations are key-value pairs storing additional metadata about resources
-					Annotations *map[string]string `json:"annotations,omitempty"`
+					Annotations map[string]string `json:"annotations"`
 
 					// CreationTimestamp Timestamp when the resource was initially created
-					CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+					CreationTimestamp interface{} `json:"creationTimestamp"`
 
 					// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-					DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+					DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 					// Labels Labels are key-value pairs attached to resources for organization and categorization
-					Labels *map[string]string `json:"labels,omitempty"`
+					Labels map[string]string `json:"labels"`
 
 					// Name User-provided name that uniquely identifies the resource within its workspace and type
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 
 					// OwnerReferences References to other resources that own or manage the resource
-					OwnerReferences *[]struct {
-						ApiVersion         *string `json:"apiVersion,omitempty"`
-						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-						Controller         *bool   `json:"controller"`
-						Kind               *string `json:"kind,omitempty"`
-						Name               *string `json:"name,omitempty"`
-						Uid                *string `json:"uid,omitempty"`
-					} `json:"ownerReferences,omitempty"`
+					OwnerReferences []struct {
+						ApiVersion         string `json:"apiVersion"`
+						BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+						Controller         *bool  `json:"controller"`
+						Kind               string `json:"kind"`
+						Name               string `json:"name"`
+						Uid                string `json:"uid"`
+					} `json:"ownerReferences"`
 
 					// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 					// Uid System-generated unique identifier for the resource
-					Uid *string `json:"uid,omitempty"`
+					Uid string `json:"uid"`
 
 					// Workspace Unique identifier of the workspace where the resource belongs
-					Workspace *string `json:"workspace,omitempty"`
-				} `json:"metadata,omitempty"`
+					Workspace string `json:"workspace"`
+				} `json:"metadata"`
 
 				// Spec Desired configuration and characteristics for the external ip
-				Spec *struct {
+				Spec struct {
 					// BoundTo Specifies the target object that will receive traffic directed to this external IP.
 					BoundTo *struct {
 						ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -6899,10 +6899,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 
 					// Reserved When set to true, prevents the external IP from being garbage collected even if the target object is removed.
 					Reserved *bool `json:"reserved,omitempty"`
-				} `json:"spec,omitempty"`
+				} `json:"spec"`
 
 				// Status Current observed state and conditions of the external ip
-				Status *struct {
+				Status struct {
 					// Gateway The IPv4 gateway address used for routing outgoing traffic from this external IP.
 					Gateway *string `json:"gateway,omitempty"`
 
@@ -6911,19 +6911,19 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 
 					// Ready Indicates whether the external IP is fully configured and ready to use.
 					Ready *bool `json:"ready,omitempty"`
-				} `json:"status,omitempty"`
-			} `json:"items,omitempty"`
+				} `json:"status"`
+			} `json:"items"`
 
 			// Kind The string value 'ExternalIPList' that identifies the schema
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps200Kind `json:"kind"`
 
 			// Metadata Standard metadata fields for the list
-			Metadata *struct {
+			Metadata struct {
 				Continue           *string `json:"continue,omitempty"`
 				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
+			} `json:"metadata"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -6933,10 +6933,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -6946,10 +6946,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -6966,7 +6966,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -6983,7 +6983,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -6993,10 +6993,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -7006,10 +7006,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -7026,7 +7026,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -7043,7 +7043,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.R
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -7072,50 +7072,50 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps201ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps201ApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'ExternalIP' that identifies the schema
-			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps201Kind `json:"kind,omitempty"`
+			Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps201Kind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *[]struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences []struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the external ip
-			Spec *struct {
+			Spec struct {
 				// BoundTo Specifies the target object that will receive traffic directed to this external IP.
 				BoundTo *struct {
 					ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -7133,10 +7133,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 
 				// Reserved When set to true, prevents the external IP from being garbage collected even if the target object is removed.
 				Reserved *bool `json:"reserved,omitempty"`
-			} `json:"spec,omitempty"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the external ip
-			Status *struct {
+			Status struct {
 				// Gateway The IPv4 gateway address used for routing outgoing traffic from this external IP.
 				Gateway *string `json:"gateway,omitempty"`
 
@@ -7145,7 +7145,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 
 				// Ready Indicates whether the external IP is fully configured and ready to use.
 				Ready *bool `json:"ready,omitempty"`
-			} `json:"status,omitempty"`
+			} `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -7155,10 +7155,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -7168,10 +7168,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -7188,7 +7188,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Kind `json:"kind,omitempty"`
+			Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -7205,7 +7205,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Status `json:"status,omitempty"`
+			Status PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -7215,10 +7215,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -7228,10 +7228,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -7248,7 +7248,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Kind `json:"kind,omitempty"`
+			Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -7265,7 +7265,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Status `json:"status,omitempty"`
+			Status PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -7275,10 +7275,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -7288,10 +7288,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -7308,7 +7308,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409Kind `json:"kind,omitempty"`
+			Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -7325,7 +7325,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResponse(rsp *http.
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409Status `json:"status,omitempty"`
+			Status PostComputeV2Thr1WorkspacesWorkspaceUUIDExternalIps409Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -7354,50 +7354,50 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'ExternalIP' that identifies the schema
-			Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200Kind `json:"kind,omitempty"`
+			Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200Kind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *[]struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences []struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the external ip
-			Spec *struct {
+			Spec struct {
 				// BoundTo Specifies the target object that will receive traffic directed to this external IP.
 				BoundTo *struct {
 					ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -7415,10 +7415,10 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 
 				// Reserved When set to true, prevents the external IP from being garbage collected even if the target object is removed.
 				Reserved *bool `json:"reserved,omitempty"`
-			} `json:"spec,omitempty"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the external ip
-			Status *struct {
+			Status struct {
 				// Gateway The IPv4 gateway address used for routing outgoing traffic from this external IP.
 				Gateway *string `json:"gateway,omitempty"`
 
@@ -7427,7 +7427,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 
 				// Ready Indicates whether the external IP is fully configured and ready to use.
 				Ready *bool `json:"ready,omitempty"`
-			} `json:"status,omitempty"`
+			} `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -7437,10 +7437,10 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -7450,10 +7450,10 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -7470,7 +7470,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind,omitempty"`
+			Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -7487,7 +7487,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Status `json:"status,omitempty"`
+			Status DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -7497,10 +7497,10 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -7510,10 +7510,10 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -7530,7 +7530,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind,omitempty"`
+			Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -7547,7 +7547,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdRespons
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Status `json:"status,omitempty"`
+			Status DeleteComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -7576,50 +7576,50 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'ExternalIP' that identifies the schema
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200Kind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *[]struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences []struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the external ip
-			Spec *struct {
+			Spec struct {
 				// BoundTo Specifies the target object that will receive traffic directed to this external IP.
 				BoundTo *struct {
 					ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -7637,10 +7637,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 
 				// Reserved When set to true, prevents the external IP from being garbage collected even if the target object is removed.
 				Reserved *bool `json:"reserved,omitempty"`
-			} `json:"spec,omitempty"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the external ip
-			Status *struct {
+			Status struct {
 				// Gateway The IPv4 gateway address used for routing outgoing traffic from this external IP.
 				Gateway *string `json:"gateway,omitempty"`
 
@@ -7649,7 +7649,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 
 				// Ready Indicates whether the external IP is fully configured and ready to use.
 				Ready *bool `json:"ready,omitempty"`
-			} `json:"status,omitempty"`
+			} `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -7659,10 +7659,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -7672,10 +7672,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -7692,7 +7692,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -7709,7 +7709,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -7719,10 +7719,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -7732,10 +7732,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -7752,7 +7752,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -7769,7 +7769,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -7798,50 +7798,50 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200ApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'ExternalIP' that identifies the schema
-			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200Kind `json:"kind,omitempty"`
+			Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId200Kind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *[]struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences []struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the external ip
-			Spec *struct {
+			Spec struct {
 				// BoundTo Specifies the target object that will receive traffic directed to this external IP.
 				BoundTo *struct {
 					ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -7859,10 +7859,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 
 				// Reserved When set to true, prevents the external IP from being garbage collected even if the target object is removed.
 				Reserved *bool `json:"reserved,omitempty"`
-			} `json:"spec,omitempty"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the external ip
-			Status *struct {
+			Status struct {
 				// Gateway The IPv4 gateway address used for routing outgoing traffic from this external IP.
 				Gateway *string `json:"gateway,omitempty"`
 
@@ -7871,7 +7871,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 
 				// Ready Indicates whether the external IP is fully configured and ready to use.
 				Ready *bool `json:"ready,omitempty"`
-			} `json:"status,omitempty"`
+			} `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -7881,10 +7881,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -7894,10 +7894,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -7914,7 +7914,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind,omitempty"`
+			Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -7931,7 +7931,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Status `json:"status,omitempty"`
+			Status PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -7941,10 +7941,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -7954,10 +7954,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -7974,7 +7974,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind,omitempty"`
+			Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -7991,7 +7991,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceIdResponse(r
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Status `json:"status,omitempty"`
+			Status PutComputeV2Thr1WorkspacesWorkspaceUUIDExternalIpsResourceId403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -8020,71 +8020,71 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *string `json:"apiVersion,omitempty"`
+			ApiVersion string `json:"apiVersion"`
 
 			// Items Collection of Instance resources
-			Items *struct {
+			Items struct {
 				// ApiVersion Version identifier of the API schema
-				ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances200ItemsApiVersion `json:"apiVersion,omitempty"`
+				ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances200ItemsApiVersion `json:"apiVersion"`
 
 				// Kind The string value 'Instance' that identifies the schema
-				Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances200ItemsKind `json:"kind,omitempty"`
+				Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances200ItemsKind `json:"kind"`
 
 				// Metadata Standard resource metadata fields
-				Metadata *struct {
+				Metadata struct {
 					// Annotations Annotations are key-value pairs storing additional metadata about resources
-					Annotations *map[string]string `json:"annotations,omitempty"`
+					Annotations map[string]string `json:"annotations"`
 
 					// CreationTimestamp Timestamp when the resource was initially created
-					CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+					CreationTimestamp interface{} `json:"creationTimestamp"`
 
 					// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-					DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+					DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 					// Labels Labels are key-value pairs attached to resources for organization and categorization
-					Labels *map[string]string `json:"labels,omitempty"`
+					Labels map[string]string `json:"labels"`
 
 					// Name User-provided name that uniquely identifies the resource within its workspace and type
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 
 					// OwnerReferences References to other resources that own or manage the resource
-					OwnerReferences *struct {
-						ApiVersion         *string `json:"apiVersion,omitempty"`
-						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-						Controller         *bool   `json:"controller"`
-						Kind               *string `json:"kind,omitempty"`
-						Name               *string `json:"name,omitempty"`
-						Uid                *string `json:"uid,omitempty"`
-					} `json:"ownerReferences,omitempty"`
+					OwnerReferences struct {
+						ApiVersion         string `json:"apiVersion"`
+						BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+						Controller         *bool  `json:"controller"`
+						Kind               string `json:"kind"`
+						Name               string `json:"name"`
+						Uid                string `json:"uid"`
+					} `json:"ownerReferences"`
 
 					// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 					// Uid System-generated unique identifier for the resource
-					Uid *string `json:"uid,omitempty"`
+					Uid string `json:"uid"`
 
 					// Workspace Unique identifier of the workspace where the resource belongs
-					Workspace *string `json:"workspace,omitempty"`
-				} `json:"metadata,omitempty"`
+					Workspace string `json:"workspace"`
+				} `json:"metadata"`
 
 				// Spec Desired configuration and characteristics for the instance
-				Spec *struct {
+				Spec struct {
 					// IamEnabled When enabled, SSH access to this instance will be authenticated through Sotoon IAM.
 					IamEnabled *bool `json:"iamEnabled,omitempty"`
 
 					// ImageSource Specifies the base operating system image used to boot the instance. Must specify either an image or customImage, but not both.
-					ImageSource *struct {
+					ImageSource struct {
 						// CustomImage Name of the custom image to boot the instance from. Must be a valid custom image name. Cannot be modified after instance creation. Cannot be used together with image.
 						CustomImage *string `json:"customImage,omitempty"`
 
 						// Image Name of the base operating system image to boot the instance from. Must be a valid image name. Cannot be modified after instance creation. Cannot be used together with customImage.
 						Image *string `json:"image,omitempty"`
-					} `json:"imageSource,omitempty"`
+					} `json:"imageSource"`
 
 					// InitialUser Defines the initial OS login credentials. If specified, both username and password must be provided.
 					InitialUser *struct {
 						// Password Password configuration for the user account, specified either through a secret or file source
-						Password *struct {
+						Password struct {
 							// FromSecret Reference to a secret containing the password value. The secret must exist in the same namespace as the instance.
 							FromSecret *struct {
 								// Key Key within the secret containing the desired value. If not specified, defaults to the instance name
@@ -8096,22 +8096,22 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 								// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
 								Optional *bool `json:"optional"`
 							} `json:"fromSecret,omitempty"`
-						} `json:"password,omitempty"`
+						} `json:"password"`
 
 						// SshAuthorizedKeys List of SSH public keys to authorize for this user account
 						SshAuthorizedKeys *[]string `json:"sshAuthorizedKeys,omitempty"`
 
 						// Username Operating system username for the initial user account. Must follow Linux username requirements.
-						Username *string `json:"username,omitempty"`
+						Username string `json:"username"`
 					} `json:"initialUser"`
 
 					// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 					Interfaces *struct {
 						// Link Name of the Link resource that defines the network this interface connects to
-						Link *string `json:"link,omitempty"`
+						Link string `json:"link"`
 
 						// Name Unique identifier for this network interface within the instance
-						Name *string `json:"name,omitempty"`
+						Name string `json:"name"`
 					} `json:"interfaces,omitempty"`
 
 					// OsVolume Defines the storage volume containing the operating system. Must specify either persistentVolumeClaim or localDisk (localDisk settings are ignored).
@@ -8119,16 +8119,16 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 						// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 						LocalDisk *struct {
 							// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-							Name *string `json:"name,omitempty"`
+							Name string `json:"name"`
 
 							// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-							Size interface{} `json:"size,omitempty"`
+							Size interface{} `json:"size"`
 						} `json:"localDisk"`
 
 						// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 						PersistentVolumeClaim *struct {
-							ClaimName *string `json:"claimName,omitempty"`
-							ReadOnly  *bool   `json:"readOnly,omitempty"`
+							ClaimName string `json:"claimName"`
+							ReadOnly  *bool  `json:"readOnly,omitempty"`
 						} `json:"persistentVolumeClaim"`
 					} `json:"osVolume,omitempty"`
 
@@ -8138,13 +8138,13 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 					} `json:"placementGroupRef"`
 
 					// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
-					PoweredOn *bool `json:"poweredOn,omitempty"`
+					PoweredOn bool `json:"poweredOn"`
 
 					// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
 					RestartedAt interface{} `json:"restartedAt"`
 
 					// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
-					Type *string `json:"type,omitempty"`
+					Type string `json:"type"`
 
 					// UserData Cloud-init configuration data provided in base64 encoded format. Used to customize instance on first boot.
 					UserData *string `json:"userData,omitempty"`
@@ -8154,22 +8154,22 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 						// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 						LocalDisk *struct {
 							// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-							Name *string `json:"name,omitempty"`
+							Name string `json:"name"`
 
 							// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-							Size interface{} `json:"size,omitempty"`
+							Size interface{} `json:"size"`
 						} `json:"localDisk"`
 
 						// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 						PersistentVolumeClaim *struct {
-							ClaimName *string `json:"claimName,omitempty"`
-							ReadOnly  *bool   `json:"readOnly,omitempty"`
+							ClaimName string `json:"claimName"`
+							ReadOnly  *bool  `json:"readOnly,omitempty"`
 						} `json:"persistentVolumeClaim"`
 					} `json:"volumes,omitempty"`
-				} `json:"spec,omitempty"`
+				} `json:"spec"`
 
 				// Status Current observed state and conditions of the instance
-				Status *struct {
+				Status struct {
 					// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 					AttachedVolumes *struct {
 						// Size Storage capacity of the attached volume in bytes
@@ -8182,7 +8182,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 						VolumeID *string `json:"volumeID,omitempty"`
 
 						// VolumeType Type of the attached volume - either 'persistentvolume' or 'localdisk'
-						VolumeType *string `json:"volumeType,omitempty"`
+						VolumeType string `json:"volumeType"`
 					} `json:"attachedVolumes,omitempty"`
 
 					// Conditions List of conditions representing the current state of various instance subsystems
@@ -8191,12 +8191,12 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 						LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
 						Message            *string     `json:"message,omitempty"`
 						Reason             *string     `json:"reason,omitempty"`
-						Status             *string     `json:"status,omitempty"`
-						Type               *string     `json:"type,omitempty"`
+						Status             string      `json:"status"`
+						Type               string      `json:"type"`
 					} `json:"conditions,omitempty"`
 
 					// Ready Indicates whether the instance is fully configured and operational
-					Ready *bool `json:"ready,omitempty"`
+					Ready bool `json:"ready"`
 
 					// Resizing Indicates whether the instance is currently being resized to a different instance type
 					Resizing *bool `json:"resizing,omitempty"`
@@ -8208,32 +8208,32 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 					Restarting *bool `json:"restarting,omitempty"`
 
 					// Running Indicates whether the instance's operating system is currently running
-					Running *bool `json:"running,omitempty"`
+					Running bool `json:"running"`
 
 					// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 					RuntimeConfiguration *struct {
 						// Cpu Number of CPU cores
-						Cpu interface{} `json:"cpu,omitempty"`
+						Cpu interface{} `json:"cpu"`
 
 						// Memory Memory size
-						Memory interface{} `json:"memory,omitempty"`
+						Memory interface{} `json:"memory"`
 					} `json:"runtimeConfiguration"`
 
 					// Type The current instance type that defines the cpu, memory and storage capacity
 					Type *string `json:"type,omitempty"`
-				} `json:"status,omitempty"`
-			} `json:"items,omitempty"`
+				} `json:"status"`
+			} `json:"items"`
 
 			// Kind The string value 'InstanceList' that identifies the schema
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances200Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances200Kind `json:"kind"`
 
 			// Metadata Standard metadata fields for the list
-			Metadata *struct {
+			Metadata struct {
 				Continue           *string `json:"continue,omitempty"`
 				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
+			} `json:"metadata"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -8243,10 +8243,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -8256,10 +8256,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -8276,7 +8276,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -8293,7 +8293,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -8303,10 +8303,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -8316,10 +8316,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -8336,7 +8336,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -8353,7 +8353,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Res
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -8382,66 +8382,66 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances201ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances201ApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'Instance' that identifies the schema
-			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances201Kind `json:"kind,omitempty"`
+			Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances201Kind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the instance
-			Spec *struct {
+			Spec struct {
 				// IamEnabled When enabled, SSH access to this instance will be authenticated through Sotoon IAM.
 				IamEnabled *bool `json:"iamEnabled,omitempty"`
 
 				// ImageSource Specifies the base operating system image used to boot the instance. Must specify either an image or customImage, but not both.
-				ImageSource *struct {
+				ImageSource struct {
 					// CustomImage Name of the custom image to boot the instance from. Must be a valid custom image name. Cannot be modified after instance creation. Cannot be used together with image.
 					CustomImage *string `json:"customImage,omitempty"`
 
 					// Image Name of the base operating system image to boot the instance from. Must be a valid image name. Cannot be modified after instance creation. Cannot be used together with customImage.
 					Image *string `json:"image,omitempty"`
-				} `json:"imageSource,omitempty"`
+				} `json:"imageSource"`
 
 				// InitialUser Defines the initial OS login credentials. If specified, both username and password must be provided.
 				InitialUser *struct {
 					// Password Password configuration for the user account, specified either through a secret or file source
-					Password *struct {
+					Password struct {
 						// FromSecret Reference to a secret containing the password value. The secret must exist in the same namespace as the instance.
 						FromSecret *struct {
 							// Key Key within the secret containing the desired value. If not specified, defaults to the instance name
@@ -8453,22 +8453,22 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 							// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
 							Optional *bool `json:"optional"`
 						} `json:"fromSecret,omitempty"`
-					} `json:"password,omitempty"`
+					} `json:"password"`
 
 					// SshAuthorizedKeys List of SSH public keys to authorize for this user account
 					SshAuthorizedKeys *[]string `json:"sshAuthorizedKeys,omitempty"`
 
 					// Username Operating system username for the initial user account. Must follow Linux username requirements.
-					Username *string `json:"username,omitempty"`
+					Username string `json:"username"`
 				} `json:"initialUser"`
 
 				// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 				Interfaces *struct {
 					// Link Name of the Link resource that defines the network this interface connects to
-					Link *string `json:"link,omitempty"`
+					Link string `json:"link"`
 
 					// Name Unique identifier for this network interface within the instance
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 				} `json:"interfaces,omitempty"`
 
 				// OsVolume Defines the storage volume containing the operating system. Must specify either persistentVolumeClaim or localDisk (localDisk settings are ignored).
@@ -8476,16 +8476,16 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 					// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 					LocalDisk *struct {
 						// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Name *string `json:"name,omitempty"`
+						Name string `json:"name"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size interface{} `json:"size,omitempty"`
+						Size interface{} `json:"size"`
 					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
-						ClaimName *string `json:"claimName,omitempty"`
-						ReadOnly  *bool   `json:"readOnly,omitempty"`
+						ClaimName string `json:"claimName"`
+						ReadOnly  *bool  `json:"readOnly,omitempty"`
 					} `json:"persistentVolumeClaim"`
 				} `json:"osVolume,omitempty"`
 
@@ -8495,13 +8495,13 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 				} `json:"placementGroupRef"`
 
 				// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
-				PoweredOn *bool `json:"poweredOn,omitempty"`
+				PoweredOn bool `json:"poweredOn"`
 
 				// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
 				RestartedAt interface{} `json:"restartedAt"`
 
 				// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
-				Type *string `json:"type,omitempty"`
+				Type string `json:"type"`
 
 				// UserData Cloud-init configuration data provided in base64 encoded format. Used to customize instance on first boot.
 				UserData *string `json:"userData,omitempty"`
@@ -8511,22 +8511,22 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 					// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 					LocalDisk *struct {
 						// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Name *string `json:"name,omitempty"`
+						Name string `json:"name"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size interface{} `json:"size,omitempty"`
+						Size interface{} `json:"size"`
 					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
-						ClaimName *string `json:"claimName,omitempty"`
-						ReadOnly  *bool   `json:"readOnly,omitempty"`
+						ClaimName string `json:"claimName"`
+						ReadOnly  *bool  `json:"readOnly,omitempty"`
 					} `json:"persistentVolumeClaim"`
 				} `json:"volumes,omitempty"`
-			} `json:"spec,omitempty"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the instance
-			Status *struct {
+			Status struct {
 				// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 				AttachedVolumes *struct {
 					// Size Storage capacity of the attached volume in bytes
@@ -8539,7 +8539,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 					VolumeID *string `json:"volumeID,omitempty"`
 
 					// VolumeType Type of the attached volume - either 'persistentvolume' or 'localdisk'
-					VolumeType *string `json:"volumeType,omitempty"`
+					VolumeType string `json:"volumeType"`
 				} `json:"attachedVolumes,omitempty"`
 
 				// Conditions List of conditions representing the current state of various instance subsystems
@@ -8548,12 +8548,12 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 					LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
 					Message            *string     `json:"message,omitempty"`
 					Reason             *string     `json:"reason,omitempty"`
-					Status             *string     `json:"status,omitempty"`
-					Type               *string     `json:"type,omitempty"`
+					Status             string      `json:"status"`
+					Type               string      `json:"type"`
 				} `json:"conditions,omitempty"`
 
 				// Ready Indicates whether the instance is fully configured and operational
-				Ready *bool `json:"ready,omitempty"`
+				Ready bool `json:"ready"`
 
 				// Resizing Indicates whether the instance is currently being resized to a different instance type
 				Resizing *bool `json:"resizing,omitempty"`
@@ -8565,20 +8565,20 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 				Restarting *bool `json:"restarting,omitempty"`
 
 				// Running Indicates whether the instance's operating system is currently running
-				Running *bool `json:"running,omitempty"`
+				Running bool `json:"running"`
 
 				// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 				RuntimeConfiguration *struct {
 					// Cpu Number of CPU cores
-					Cpu interface{} `json:"cpu,omitempty"`
+					Cpu interface{} `json:"cpu"`
 
 					// Memory Memory size
-					Memory interface{} `json:"memory,omitempty"`
+					Memory interface{} `json:"memory"`
 				} `json:"runtimeConfiguration"`
 
 				// Type The current instance type that defines the cpu, memory and storage capacity
 				Type *string `json:"type,omitempty"`
-			} `json:"status,omitempty"`
+			} `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -8588,10 +8588,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -8601,10 +8601,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -8621,7 +8621,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Kind `json:"kind,omitempty"`
+			Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -8638,7 +8638,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Status `json:"status,omitempty"`
+			Status PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -8648,10 +8648,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -8661,10 +8661,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -8681,7 +8681,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Kind `json:"kind,omitempty"`
+			Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -8698,7 +8698,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Status `json:"status,omitempty"`
+			Status PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -8708,10 +8708,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -8721,10 +8721,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -8741,7 +8741,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409Kind `json:"kind,omitempty"`
+			Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -8758,7 +8758,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResponse(rsp *http.Re
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409Status `json:"status,omitempty"`
+			Status PostComputeV2Thr1WorkspacesWorkspaceUUIDInstances409Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -8787,10 +8787,10 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -8800,10 +8800,10 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -8820,7 +8820,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind,omitempty"`
+			Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -8837,7 +8837,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Status `json:"status,omitempty"`
+			Status DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -8847,10 +8847,10 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -8860,10 +8860,10 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -8880,7 +8880,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind,omitempty"`
+			Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -8897,7 +8897,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Status `json:"status,omitempty"`
+			Status DeleteComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -8926,66 +8926,66 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200ApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'Instance' that identifies the schema
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200Kind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the instance
-			Spec *struct {
+			Spec struct {
 				// IamEnabled When enabled, SSH access to this instance will be authenticated through Sotoon IAM.
 				IamEnabled *bool `json:"iamEnabled,omitempty"`
 
 				// ImageSource Specifies the base operating system image used to boot the instance. Must specify either an image or customImage, but not both.
-				ImageSource *struct {
+				ImageSource struct {
 					// CustomImage Name of the custom image to boot the instance from. Must be a valid custom image name. Cannot be modified after instance creation. Cannot be used together with image.
 					CustomImage *string `json:"customImage,omitempty"`
 
 					// Image Name of the base operating system image to boot the instance from. Must be a valid image name. Cannot be modified after instance creation. Cannot be used together with customImage.
 					Image *string `json:"image,omitempty"`
-				} `json:"imageSource,omitempty"`
+				} `json:"imageSource"`
 
 				// InitialUser Defines the initial OS login credentials. If specified, both username and password must be provided.
 				InitialUser *struct {
 					// Password Password configuration for the user account, specified either through a secret or file source
-					Password *struct {
+					Password struct {
 						// FromSecret Reference to a secret containing the password value. The secret must exist in the same namespace as the instance.
 						FromSecret *struct {
 							// Key Key within the secret containing the desired value. If not specified, defaults to the instance name
@@ -8997,22 +8997,22 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 							// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
 							Optional *bool `json:"optional"`
 						} `json:"fromSecret,omitempty"`
-					} `json:"password,omitempty"`
+					} `json:"password"`
 
 					// SshAuthorizedKeys List of SSH public keys to authorize for this user account
 					SshAuthorizedKeys *[]string `json:"sshAuthorizedKeys,omitempty"`
 
 					// Username Operating system username for the initial user account. Must follow Linux username requirements.
-					Username *string `json:"username,omitempty"`
+					Username string `json:"username"`
 				} `json:"initialUser"`
 
 				// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 				Interfaces *struct {
 					// Link Name of the Link resource that defines the network this interface connects to
-					Link *string `json:"link,omitempty"`
+					Link string `json:"link"`
 
 					// Name Unique identifier for this network interface within the instance
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 				} `json:"interfaces,omitempty"`
 
 				// OsVolume Defines the storage volume containing the operating system. Must specify either persistentVolumeClaim or localDisk (localDisk settings are ignored).
@@ -9020,16 +9020,16 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 					// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 					LocalDisk *struct {
 						// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Name *string `json:"name,omitempty"`
+						Name string `json:"name"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size interface{} `json:"size,omitempty"`
+						Size interface{} `json:"size"`
 					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
-						ClaimName *string `json:"claimName,omitempty"`
-						ReadOnly  *bool   `json:"readOnly,omitempty"`
+						ClaimName string `json:"claimName"`
+						ReadOnly  *bool  `json:"readOnly,omitempty"`
 					} `json:"persistentVolumeClaim"`
 				} `json:"osVolume,omitempty"`
 
@@ -9039,13 +9039,13 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 				} `json:"placementGroupRef"`
 
 				// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
-				PoweredOn *bool `json:"poweredOn,omitempty"`
+				PoweredOn bool `json:"poweredOn"`
 
 				// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
 				RestartedAt interface{} `json:"restartedAt"`
 
 				// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
-				Type *string `json:"type,omitempty"`
+				Type string `json:"type"`
 
 				// UserData Cloud-init configuration data provided in base64 encoded format. Used to customize instance on first boot.
 				UserData *string `json:"userData,omitempty"`
@@ -9055,22 +9055,22 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 					// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 					LocalDisk *struct {
 						// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Name *string `json:"name,omitempty"`
+						Name string `json:"name"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size interface{} `json:"size,omitempty"`
+						Size interface{} `json:"size"`
 					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
-						ClaimName *string `json:"claimName,omitempty"`
-						ReadOnly  *bool   `json:"readOnly,omitempty"`
+						ClaimName string `json:"claimName"`
+						ReadOnly  *bool  `json:"readOnly,omitempty"`
 					} `json:"persistentVolumeClaim"`
 				} `json:"volumes,omitempty"`
-			} `json:"spec,omitempty"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the instance
-			Status *struct {
+			Status struct {
 				// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 				AttachedVolumes *struct {
 					// Size Storage capacity of the attached volume in bytes
@@ -9083,7 +9083,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 					VolumeID *string `json:"volumeID,omitempty"`
 
 					// VolumeType Type of the attached volume - either 'persistentvolume' or 'localdisk'
-					VolumeType *string `json:"volumeType,omitempty"`
+					VolumeType string `json:"volumeType"`
 				} `json:"attachedVolumes,omitempty"`
 
 				// Conditions List of conditions representing the current state of various instance subsystems
@@ -9092,12 +9092,12 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 					LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
 					Message            *string     `json:"message,omitempty"`
 					Reason             *string     `json:"reason,omitempty"`
-					Status             *string     `json:"status,omitempty"`
-					Type               *string     `json:"type,omitempty"`
+					Status             string      `json:"status"`
+					Type               string      `json:"type"`
 				} `json:"conditions,omitempty"`
 
 				// Ready Indicates whether the instance is fully configured and operational
-				Ready *bool `json:"ready,omitempty"`
+				Ready bool `json:"ready"`
 
 				// Resizing Indicates whether the instance is currently being resized to a different instance type
 				Resizing *bool `json:"resizing,omitempty"`
@@ -9109,20 +9109,20 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 				Restarting *bool `json:"restarting,omitempty"`
 
 				// Running Indicates whether the instance's operating system is currently running
-				Running *bool `json:"running,omitempty"`
+				Running bool `json:"running"`
 
 				// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 				RuntimeConfiguration *struct {
 					// Cpu Number of CPU cores
-					Cpu interface{} `json:"cpu,omitempty"`
+					Cpu interface{} `json:"cpu"`
 
 					// Memory Memory size
-					Memory interface{} `json:"memory,omitempty"`
+					Memory interface{} `json:"memory"`
 				} `json:"runtimeConfiguration"`
 
 				// Type The current instance type that defines the cpu, memory and storage capacity
 				Type *string `json:"type,omitempty"`
-			} `json:"status,omitempty"`
+			} `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -9132,10 +9132,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -9145,10 +9145,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -9165,7 +9165,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -9182,7 +9182,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -9192,10 +9192,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -9205,10 +9205,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -9225,7 +9225,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -9242,7 +9242,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -9271,66 +9271,66 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200ApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'Instance' that identifies the schema
-			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200Kind `json:"kind,omitempty"`
+			Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId200Kind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the instance
-			Spec *struct {
+			Spec struct {
 				// IamEnabled When enabled, SSH access to this instance will be authenticated through Sotoon IAM.
 				IamEnabled *bool `json:"iamEnabled,omitempty"`
 
 				// ImageSource Specifies the base operating system image used to boot the instance. Must specify either an image or customImage, but not both.
-				ImageSource *struct {
+				ImageSource struct {
 					// CustomImage Name of the custom image to boot the instance from. Must be a valid custom image name. Cannot be modified after instance creation. Cannot be used together with image.
 					CustomImage *string `json:"customImage,omitempty"`
 
 					// Image Name of the base operating system image to boot the instance from. Must be a valid image name. Cannot be modified after instance creation. Cannot be used together with customImage.
 					Image *string `json:"image,omitempty"`
-				} `json:"imageSource,omitempty"`
+				} `json:"imageSource"`
 
 				// InitialUser Defines the initial OS login credentials. If specified, both username and password must be provided.
 				InitialUser *struct {
 					// Password Password configuration for the user account, specified either through a secret or file source
-					Password *struct {
+					Password struct {
 						// FromSecret Reference to a secret containing the password value. The secret must exist in the same namespace as the instance.
 						FromSecret *struct {
 							// Key Key within the secret containing the desired value. If not specified, defaults to the instance name
@@ -9342,22 +9342,22 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 							// Optional When true, the referenced secret and key are optional and will be filled automatically. When false or unset, they must exist
 							Optional *bool `json:"optional"`
 						} `json:"fromSecret,omitempty"`
-					} `json:"password,omitempty"`
+					} `json:"password"`
 
 					// SshAuthorizedKeys List of SSH public keys to authorize for this user account
 					SshAuthorizedKeys *[]string `json:"sshAuthorizedKeys,omitempty"`
 
 					// Username Operating system username for the initial user account. Must follow Linux username requirements.
-					Username *string `json:"username,omitempty"`
+					Username string `json:"username"`
 				} `json:"initialUser"`
 
 				// Interfaces List of network interfaces to attach to the instance. Each interface defines network connectivity.
 				Interfaces *struct {
 					// Link Name of the Link resource that defines the network this interface connects to
-					Link *string `json:"link,omitempty"`
+					Link string `json:"link"`
 
 					// Name Unique identifier for this network interface within the instance
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 				} `json:"interfaces,omitempty"`
 
 				// OsVolume Defines the storage volume containing the operating system. Must specify either persistentVolumeClaim or localDisk (localDisk settings are ignored).
@@ -9365,16 +9365,16 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 					// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 					LocalDisk *struct {
 						// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Name *string `json:"name,omitempty"`
+						Name string `json:"name"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size interface{} `json:"size,omitempty"`
+						Size interface{} `json:"size"`
 					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
-						ClaimName *string `json:"claimName,omitempty"`
-						ReadOnly  *bool   `json:"readOnly,omitempty"`
+						ClaimName string `json:"claimName"`
+						ReadOnly  *bool  `json:"readOnly,omitempty"`
 					} `json:"persistentVolumeClaim"`
 				} `json:"osVolume,omitempty"`
 
@@ -9384,13 +9384,13 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 				} `json:"placementGroupRef"`
 
 				// PoweredOn Controls the power state of the instance. True means the instance is powered on, false means powered off.
-				PoweredOn *bool `json:"poweredOn,omitempty"`
+				PoweredOn bool `json:"poweredOn"`
 
 				// RestartedAt Timestamp indicating when the instance is scheduled to restart. Empty indicates no scheduled restart.
 				RestartedAt interface{} `json:"restartedAt"`
 
 				// Type Specifies the instance type that determines CPU, memory and other resource allocations. Must match an existing Instance Type name. Can be modified to resize the instance.
-				Type *string `json:"type,omitempty"`
+				Type string `json:"type"`
 
 				// UserData Cloud-init configuration data provided in base64 encoded format. Used to customize instance on first boot.
 				UserData *string `json:"userData,omitempty"`
@@ -9400,22 +9400,22 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 					// LocalDisk Specification for a local disk volume to create and attach to the instance. Cannot be used together with persistentVolumeClaim.
 					LocalDisk *struct {
 						// Name Name of the local disk. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Name *string `json:"name,omitempty"`
+						Name string `json:"name"`
 
 						// Size Size of the local disk in bytes. This field is automatically populated based on the instance type configuration and should not be set by users.
-						Size interface{} `json:"size,omitempty"`
+						Size interface{} `json:"size"`
 					} `json:"localDisk"`
 
 					// PersistentVolumeClaim Reference to a PersistentVolumeClaim to use as a volume source. Cannot be used together with localDisk.
 					PersistentVolumeClaim *struct {
-						ClaimName *string `json:"claimName,omitempty"`
-						ReadOnly  *bool   `json:"readOnly,omitempty"`
+						ClaimName string `json:"claimName"`
+						ReadOnly  *bool  `json:"readOnly,omitempty"`
 					} `json:"persistentVolumeClaim"`
 				} `json:"volumes,omitempty"`
-			} `json:"spec,omitempty"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the instance
-			Status *struct {
+			Status struct {
 				// AttachedVolumes Contains details about all storage volumes currently attached to this instance
 				AttachedVolumes *struct {
 					// Size Storage capacity of the attached volume in bytes
@@ -9428,7 +9428,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 					VolumeID *string `json:"volumeID,omitempty"`
 
 					// VolumeType Type of the attached volume - either 'persistentvolume' or 'localdisk'
-					VolumeType *string `json:"volumeType,omitempty"`
+					VolumeType string `json:"volumeType"`
 				} `json:"attachedVolumes,omitempty"`
 
 				// Conditions List of conditions representing the current state of various instance subsystems
@@ -9437,12 +9437,12 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 					LastTransitionTime interface{} `json:"lastTransitionTime,omitempty"`
 					Message            *string     `json:"message,omitempty"`
 					Reason             *string     `json:"reason,omitempty"`
-					Status             *string     `json:"status,omitempty"`
-					Type               *string     `json:"type,omitempty"`
+					Status             string      `json:"status"`
+					Type               string      `json:"type"`
 				} `json:"conditions,omitempty"`
 
 				// Ready Indicates whether the instance is fully configured and operational
-				Ready *bool `json:"ready,omitempty"`
+				Ready bool `json:"ready"`
 
 				// Resizing Indicates whether the instance is currently being resized to a different instance type
 				Resizing *bool `json:"resizing,omitempty"`
@@ -9454,20 +9454,20 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 				Restarting *bool `json:"restarting,omitempty"`
 
 				// Running Indicates whether the instance's operating system is currently running
-				Running *bool `json:"running,omitempty"`
+				Running bool `json:"running"`
 
 				// RuntimeConfiguration Contains the current runtime configuration settings for the instance, including CPU, memory and other resources
 				RuntimeConfiguration *struct {
 					// Cpu Number of CPU cores
-					Cpu interface{} `json:"cpu,omitempty"`
+					Cpu interface{} `json:"cpu"`
 
 					// Memory Memory size
-					Memory interface{} `json:"memory,omitempty"`
+					Memory interface{} `json:"memory"`
 				} `json:"runtimeConfiguration"`
 
 				// Type The current instance type that defines the cpu, memory and storage capacity
 				Type *string `json:"type,omitempty"`
-			} `json:"status,omitempty"`
+			} `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -9477,10 +9477,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -9490,10 +9490,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -9510,7 +9510,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind,omitempty"`
+			Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -9527,7 +9527,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Status `json:"status,omitempty"`
+			Status PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -9537,10 +9537,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -9550,10 +9550,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -9570,7 +9570,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind,omitempty"`
+			Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -9587,7 +9587,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceIdResponse(rsp
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Status `json:"status,omitempty"`
+			Status PutComputeV2Thr1WorkspacesWorkspaceUUIDInstancesResourceId403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -9616,55 +9616,55 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *string `json:"apiVersion,omitempty"`
+			ApiVersion string `json:"apiVersion"`
 
 			// Items Collection of Link resources
-			Items *[]struct {
+			Items []struct {
 				// ApiVersion Version identifier of the API schema
-				ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks200ItemsApiVersion `json:"apiVersion,omitempty"`
+				ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks200ItemsApiVersion `json:"apiVersion"`
 
 				// Kind The string value 'Link' that identifies the schema
-				Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks200ItemsKind `json:"kind,omitempty"`
+				Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks200ItemsKind `json:"kind"`
 
 				// Metadata Standard resource metadata fields
-				Metadata *struct {
+				Metadata struct {
 					// Annotations Annotations are key-value pairs storing additional metadata about resources
-					Annotations *map[string]string `json:"annotations,omitempty"`
+					Annotations map[string]string `json:"annotations"`
 
 					// CreationTimestamp Timestamp when the resource was initially created
-					CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+					CreationTimestamp interface{} `json:"creationTimestamp"`
 
 					// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-					DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+					DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 					// Labels Labels are key-value pairs attached to resources for organization and categorization
-					Labels *map[string]string `json:"labels,omitempty"`
+					Labels map[string]string `json:"labels"`
 
 					// Name User-provided name that uniquely identifies the resource within its workspace and type
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 
 					// OwnerReferences References to other resources that own or manage the resource
-					OwnerReferences *[]struct {
-						ApiVersion         *string `json:"apiVersion,omitempty"`
-						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-						Controller         *bool   `json:"controller"`
-						Kind               *string `json:"kind,omitempty"`
-						Name               *string `json:"name,omitempty"`
-						Uid                *string `json:"uid,omitempty"`
-					} `json:"ownerReferences,omitempty"`
+					OwnerReferences []struct {
+						ApiVersion         string `json:"apiVersion"`
+						BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+						Controller         *bool  `json:"controller"`
+						Kind               string `json:"kind"`
+						Name               string `json:"name"`
+						Uid                string `json:"uid"`
+					} `json:"ownerReferences"`
 
 					// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 					// Uid System-generated unique identifier for the resource
-					Uid *string `json:"uid,omitempty"`
+					Uid string `json:"uid"`
 
 					// Workspace Unique identifier of the workspace where the resource belongs
-					Workspace *string `json:"workspace,omitempty"`
-				} `json:"metadata,omitempty"`
+					Workspace string `json:"workspace"`
+				} `json:"metadata"`
 
 				// Spec Desired configuration and characteristics for the link
-				Spec *struct {
+				Spec struct {
 					// BoundTo Reference to the instance that this link is connected to.
 					BoundTo *struct {
 						ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -9684,7 +9684,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 					// ForwardableAddresses List of addresses that can forward traffic through this link.
 					ForwardableAddresses *[]struct {
 						// Cidr Specifies the IP range in CIDR notation that can be forwarded through this link
-						Cidr *string `json:"cidr,omitempty"`
+						Cidr string `json:"cidr"`
 
 						// Mac The MAC address associated with this forwardable address. If not specified, the link's MAC address will be used.
 						Mac *string `json:"mac,omitempty"`
@@ -9698,10 +9698,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 
 					// VpcName Name of the VPC containing this link's subnet.
 					VpcName *string `json:"vpcName,omitempty"`
-				} `json:"spec,omitempty"`
+				} `json:"spec"`
 
 				// Status Current observed state and conditions of the link
-				Status *struct {
+				Status struct {
 					// Configured Indicates if the link is properly configured.
 					Configured *bool `json:"configured,omitempty"`
 
@@ -9729,19 +9729,19 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 
 					// Ready Indicates if the link is ready for use.
 					Ready *bool `json:"ready,omitempty"`
-				} `json:"status,omitempty"`
-			} `json:"items,omitempty"`
+				} `json:"status"`
+			} `json:"items"`
 
 			// Kind The string value 'LinkList' that identifies the schema
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks200Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks200Kind `json:"kind"`
 
 			// Metadata Standard metadata fields for the list
-			Metadata *struct {
+			Metadata struct {
 				Continue           *string `json:"continue,omitempty"`
 				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
+			} `json:"metadata"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -9751,10 +9751,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -9764,10 +9764,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -9784,7 +9784,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -9801,7 +9801,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -9811,10 +9811,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -9824,10 +9824,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -9844,7 +9844,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -9861,7 +9861,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respons
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -9890,50 +9890,50 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks201ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks201ApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'Link' that identifies the schema
-			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks201Kind `json:"kind,omitempty"`
+			Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks201Kind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *[]struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences []struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the link
-			Spec *struct {
+			Spec struct {
 				// BoundTo Reference to the instance that this link is connected to.
 				BoundTo *struct {
 					ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -9953,7 +9953,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 				// ForwardableAddresses List of addresses that can forward traffic through this link.
 				ForwardableAddresses *[]struct {
 					// Cidr Specifies the IP range in CIDR notation that can be forwarded through this link
-					Cidr *string `json:"cidr,omitempty"`
+					Cidr string `json:"cidr"`
 
 					// Mac The MAC address associated with this forwardable address. If not specified, the link's MAC address will be used.
 					Mac *string `json:"mac,omitempty"`
@@ -9967,10 +9967,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 
 				// VpcName Name of the VPC containing this link's subnet.
 				VpcName *string `json:"vpcName,omitempty"`
-			} `json:"spec,omitempty"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the link
-			Status *struct {
+			Status struct {
 				// Configured Indicates if the link is properly configured.
 				Configured *bool `json:"configured,omitempty"`
 
@@ -9998,7 +9998,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 
 				// Ready Indicates if the link is ready for use.
 				Ready *bool `json:"ready,omitempty"`
-			} `json:"status,omitempty"`
+			} `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10008,10 +10008,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -10021,10 +10021,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -10041,7 +10041,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Kind `json:"kind,omitempty"`
+			Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -10058,7 +10058,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Status `json:"status,omitempty"`
+			Status PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10068,10 +10068,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -10081,10 +10081,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -10101,7 +10101,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Kind `json:"kind,omitempty"`
+			Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -10118,7 +10118,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Status `json:"status,omitempty"`
+			Status PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10128,10 +10128,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -10141,10 +10141,10 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -10161,7 +10161,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409Kind `json:"kind,omitempty"`
+			Kind PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -10178,7 +10178,7 @@ func ParsePostComputeV2Thr1WorkspacesWorkspaceUUIDLinksResponse(rsp *http.Respon
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409Status `json:"status,omitempty"`
+			Status PostComputeV2Thr1WorkspacesWorkspaceUUIDLinks409Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10207,10 +10207,10 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -10220,10 +10220,10 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp 
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -10240,7 +10240,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp 
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind,omitempty"`
+			Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -10257,7 +10257,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp 
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Status `json:"status,omitempty"`
+			Status DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10267,10 +10267,10 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -10280,10 +10280,10 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp 
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -10300,7 +10300,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp 
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind,omitempty"`
+			Kind DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -10317,7 +10317,7 @@ func ParseDeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp 
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Status `json:"status,omitempty"`
+			Status DeleteComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10346,50 +10346,50 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200ApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'Link' that identifies the schema
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200Kind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *[]struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences []struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the link
-			Spec *struct {
+			Spec struct {
 				// BoundTo Reference to the instance that this link is connected to.
 				BoundTo *struct {
 					ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -10409,7 +10409,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 				// ForwardableAddresses List of addresses that can forward traffic through this link.
 				ForwardableAddresses *[]struct {
 					// Cidr Specifies the IP range in CIDR notation that can be forwarded through this link
-					Cidr *string `json:"cidr,omitempty"`
+					Cidr string `json:"cidr"`
 
 					// Mac The MAC address associated with this forwardable address. If not specified, the link's MAC address will be used.
 					Mac *string `json:"mac,omitempty"`
@@ -10423,10 +10423,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 
 				// VpcName Name of the VPC containing this link's subnet.
 				VpcName *string `json:"vpcName,omitempty"`
-			} `json:"spec,omitempty"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the link
-			Status *struct {
+			Status struct {
 				// Configured Indicates if the link is properly configured.
 				Configured *bool `json:"configured,omitempty"`
 
@@ -10454,7 +10454,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 
 				// Ready Indicates if the link is ready for use.
 				Ready *bool `json:"ready,omitempty"`
-			} `json:"status,omitempty"`
+			} `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10464,10 +10464,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -10477,10 +10477,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -10497,7 +10497,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -10514,7 +10514,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10524,10 +10524,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -10537,10 +10537,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -10557,7 +10557,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -10574,7 +10574,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10603,50 +10603,50 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200ApiVersion `json:"apiVersion"`
 
 			// Kind The string value 'Link' that identifies the schema
-			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200Kind `json:"kind,omitempty"`
+			Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId200Kind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *[]struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences []struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// Spec Desired configuration and characteristics for the link
-			Spec *struct {
+			Spec struct {
 				// BoundTo Reference to the instance that this link is connected to.
 				BoundTo *struct {
 					ApiVersion      *string `json:"apiVersion,omitempty"`
@@ -10666,7 +10666,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 				// ForwardableAddresses List of addresses that can forward traffic through this link.
 				ForwardableAddresses *[]struct {
 					// Cidr Specifies the IP range in CIDR notation that can be forwarded through this link
-					Cidr *string `json:"cidr,omitempty"`
+					Cidr string `json:"cidr"`
 
 					// Mac The MAC address associated with this forwardable address. If not specified, the link's MAC address will be used.
 					Mac *string `json:"mac,omitempty"`
@@ -10680,10 +10680,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 
 				// VpcName Name of the VPC containing this link's subnet.
 				VpcName *string `json:"vpcName,omitempty"`
-			} `json:"spec,omitempty"`
+			} `json:"spec"`
 
 			// Status Current observed state and conditions of the link
-			Status *struct {
+			Status struct {
 				// Configured Indicates if the link is properly configured.
 				Configured *bool `json:"configured,omitempty"`
 
@@ -10711,7 +10711,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 
 				// Ready Indicates if the link is ready for use.
 				Ready *bool `json:"ready,omitempty"`
-			} `json:"status,omitempty"`
+			} `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10721,10 +10721,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -10734,10 +10734,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -10754,7 +10754,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind,omitempty"`
+			Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -10771,7 +10771,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Status `json:"status,omitempty"`
+			Status PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10781,10 +10781,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -10794,10 +10794,10 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -10814,7 +10814,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind,omitempty"`
+			Kind PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -10831,7 +10831,7 @@ func ParsePutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceIdResponse(rsp *ht
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Status `json:"status,omitempty"`
+			Status PutComputeV2Thr1WorkspacesWorkspaceUUIDLinksResourceId403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10860,12 +10860,12 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ApiVersion `json:"apiVersion"`
 
 			// Items Collection of Secret resources
-			Items *[]struct {
+			Items []struct {
 				// ApiVersion Version identifier of the API schema
-				ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ItemsApiVersion `json:"apiVersion,omitempty"`
+				ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ItemsApiVersion `json:"apiVersion"`
 
 				// Data Contains the secret data as base64 encoded strings
 				Data *map[string][]byte `json:"data,omitempty"`
@@ -10874,62 +10874,62 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 				Immutable *bool `json:"immutable"`
 
 				// Kind The string value 'Secret' that identifies the schema
-				Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ItemsKind `json:"kind,omitempty"`
+				Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200ItemsKind `json:"kind"`
 
 				// Metadata Standard resource metadata fields
-				Metadata *struct {
+				Metadata struct {
 					// Annotations Annotations are key-value pairs storing additional metadata about resources
-					Annotations *map[string]string `json:"annotations,omitempty"`
+					Annotations map[string]string `json:"annotations"`
 
 					// CreationTimestamp Timestamp when the resource was initially created
-					CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+					CreationTimestamp interface{} `json:"creationTimestamp"`
 
 					// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-					DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+					DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 					// Labels Labels are key-value pairs attached to resources for organization and categorization
-					Labels *map[string]string `json:"labels,omitempty"`
+					Labels map[string]string `json:"labels"`
 
 					// Name User-provided name that uniquely identifies the resource within its workspace and type
-					Name *string `json:"name,omitempty"`
+					Name string `json:"name"`
 
 					// OwnerReferences References to other resources that own or manage the resource
-					OwnerReferences *[]struct {
-						ApiVersion         *string `json:"apiVersion,omitempty"`
-						BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-						Controller         *bool   `json:"controller"`
-						Kind               *string `json:"kind,omitempty"`
-						Name               *string `json:"name,omitempty"`
-						Uid                *string `json:"uid,omitempty"`
-					} `json:"ownerReferences,omitempty"`
+					OwnerReferences []struct {
+						ApiVersion         string `json:"apiVersion"`
+						BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+						Controller         *bool  `json:"controller"`
+						Kind               string `json:"kind"`
+						Name               string `json:"name"`
+						Uid                string `json:"uid"`
+					} `json:"ownerReferences"`
 
 					// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 					ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 					// Uid System-generated unique identifier for the resource
-					Uid *string `json:"uid,omitempty"`
+					Uid string `json:"uid"`
 
 					// Workspace Unique identifier of the workspace where the resource belongs
-					Workspace *string `json:"workspace,omitempty"`
-				} `json:"metadata,omitempty"`
+					Workspace string `json:"workspace"`
+				} `json:"metadata"`
 
 				// StringData Allows specifying non-binary secret data in string form, merged into the data field on write
 				StringData *map[string]string `json:"stringData,omitempty"`
 
 				// Type Used to facilitate programmatic handling of secret data
 				Type *string `json:"type,omitempty"`
-			} `json:"items,omitempty"`
+			} `json:"items"`
 
 			// Kind The string value 'SecretList' that identifies the schema
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets200Kind `json:"kind"`
 
 			// Metadata Standard metadata fields for the list
-			Metadata *struct {
+			Metadata struct {
 				Continue           *string `json:"continue,omitempty"`
 				RemainingItemCount *int64  `json:"remainingItemCount"`
 				ResourceVersion    *string `json:"resourceVersion,omitempty"`
 				SelfLink           *string `json:"selfLink,omitempty"`
-			} `json:"metadata,omitempty"`
+			} `json:"metadata"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10939,10 +10939,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -10952,10 +10952,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -10972,7 +10972,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -10989,7 +10989,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -10999,10 +10999,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -11012,10 +11012,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -11032,7 +11032,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -11049,7 +11049,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResponse(rsp *http.Respo
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDSecrets403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -11078,7 +11078,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
 			// ApiVersion Version identifier of the API schema
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId200ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId200ApiVersion `json:"apiVersion"`
 
 			// Data Contains the secret data as base64 encoded strings
 			Data *map[string][]byte `json:"data,omitempty"`
@@ -11087,44 +11087,44 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 			Immutable *bool `json:"immutable"`
 
 			// Kind The string value 'Secret' that identifies the schema
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId200Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId200Kind `json:"kind"`
 
 			// Metadata Standard resource metadata fields
-			Metadata *struct {
+			Metadata struct {
 				// Annotations Annotations are key-value pairs storing additional metadata about resources
-				Annotations *map[string]string `json:"annotations,omitempty"`
+				Annotations map[string]string `json:"annotations"`
 
 				// CreationTimestamp Timestamp when the resource was initially created
-				CreationTimestamp interface{} `json:"creationTimestamp,omitempty"`
+				CreationTimestamp interface{} `json:"creationTimestamp"`
 
 				// DeletionTimestamp Timestamp when the resource was marked for deletion - resource will be removed after this time
-				DeletionTimestamp interface{} `json:"deletionTimestamp,omitempty"`
+				DeletionTimestamp interface{} `json:"deletionTimestamp"`
 
 				// Labels Labels are key-value pairs attached to resources for organization and categorization
-				Labels *map[string]string `json:"labels,omitempty"`
+				Labels map[string]string `json:"labels"`
 
 				// Name User-provided name that uniquely identifies the resource within its workspace and type
-				Name *string `json:"name,omitempty"`
+				Name string `json:"name"`
 
 				// OwnerReferences References to other resources that own or manage the resource
-				OwnerReferences *[]struct {
-					ApiVersion         *string `json:"apiVersion,omitempty"`
-					BlockOwnerDeletion *bool   `json:"blockOwnerDeletion"`
-					Controller         *bool   `json:"controller"`
-					Kind               *string `json:"kind,omitempty"`
-					Name               *string `json:"name,omitempty"`
-					Uid                *string `json:"uid,omitempty"`
-				} `json:"ownerReferences,omitempty"`
+				OwnerReferences []struct {
+					ApiVersion         string `json:"apiVersion"`
+					BlockOwnerDeletion *bool  `json:"blockOwnerDeletion"`
+					Controller         *bool  `json:"controller"`
+					Kind               string `json:"kind"`
+					Name               string `json:"name"`
+					Uid                string `json:"uid"`
+				} `json:"ownerReferences"`
 
 				// ResourceVersion An opaque value representing the internal version of this object that can be used for optimistic concurrency and change detection
 				ResourceVersion *string `json:"resourceVersion,omitempty"`
 
 				// Uid System-generated unique identifier for the resource
-				Uid *string `json:"uid,omitempty"`
+				Uid string `json:"uid"`
 
 				// Workspace Unique identifier of the workspace where the resource belongs
-				Workspace *string `json:"workspace,omitempty"`
-			} `json:"metadata,omitempty"`
+				Workspace string `json:"workspace"`
+			} `json:"metadata"`
 
 			// StringData Allows specifying non-binary secret data in string form, merged into the data field on write
 			StringData *map[string]string `json:"stringData,omitempty"`
@@ -11140,10 +11140,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -11153,10 +11153,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -11173,7 +11173,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -11190,7 +11190,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId400Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -11200,10 +11200,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
 		var dest struct {
 			// ApiVersion Version of the Status kind
-			ApiVersion *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403ApiVersion `json:"apiVersion,omitempty"`
+			ApiVersion GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403ApiVersion `json:"apiVersion"`
 
 			// Code HTTP status code corresponding to this status
-			Code *int32 `json:"code,omitempty"`
+			Code int32 `json:"code"`
 
 			// Details Extended details about the error
 			Details *struct {
@@ -11213,10 +11213,10 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 					Field *string `json:"field,omitempty"`
 
 					// Message Human-readable description of the cause of the error
-					Message *string `json:"message,omitempty"`
+					Message string `json:"message"`
 
 					// Reason Machine-readable description of the cause of the error
-					Reason *string `json:"reason,omitempty"`
+					Reason string `json:"reason"`
 				} `json:"causes,omitempty"`
 
 				// Group API group of the resource in the status details
@@ -11233,7 +11233,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 			} `json:"details"`
 
 			// Kind Value is always 'Status'
-			Kind *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403Kind `json:"kind,omitempty"`
+			Kind GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403Kind `json:"kind"`
 
 			// Message Human-readable description of the status
 			Message *string `json:"message,omitempty"`
@@ -11250,7 +11250,7 @@ func ParseGetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceIdResponse(rsp *
 			Reason *string `json:"reason,omitempty"`
 
 			// Status Status of the operation
-			Status *GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403Status `json:"status,omitempty"`
+			Status GetComputeV2Thr1WorkspacesWorkspaceUUIDSecretsResourceId403Status `json:"status"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
