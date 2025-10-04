@@ -391,6 +391,9 @@ type IamServiceUser struct {
 	// CreatedAt Timestamp when the service user was created
 	CreatedAt time.Time `json:"created_at"`
 
+	// Description description about this service user
+	Description string `json:"description"`
+
 	// Name Name of the service user
 	Name string `json:"name"`
 
