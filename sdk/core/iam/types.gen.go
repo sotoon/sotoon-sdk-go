@@ -522,10 +522,16 @@ type IamServiceUserToken struct {
 
 	// ExpiresAt Timestamp when the token will expire
 	ExpiresAt *time.Time `json:"expires_at,omitempty"`
+	IsHashed  bool       `json:"is_hashed"`
 
 	// Name Name of the token
-	Name        string         `json:"name"`
-	ServiceUser IamServiceUser `json:"service_user"`
+	Name string `json:"name"`
+
+	// ServiceUser The service user this token belongs to
+	ServiceUser string `json:"service_user"`
+
+	// UpdatedAt Timestamp when the token was updated
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
 
 	// Uuid Unique identifier for the token
 	Uuid string `json:"uuid"`
