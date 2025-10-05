@@ -117,7 +117,7 @@ type ClientInterface interface {
 	GetDetailedServiceUser(ctx context.Context, workspaceUUID string, serviceUserUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListDetailedWorkspaceUsers request
-	ListDetailedWorkspaceUsers(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListDetailedWorkspaceUsers(ctx context.Context, workspaceUUID string, params *ListDetailedWorkspaceUsersParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetDetailedWorkspaceUser request
 	GetDetailedWorkspaceUser(ctx context.Context, workspaceUUID string, userUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -182,7 +182,7 @@ type ClientInterface interface {
 	DeleteUserToken(ctx context.Context, userUUID string, resourceUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListUserWorkspaces request
-	ListUserWorkspaces(ctx context.Context, userUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListUserWorkspaces(ctx context.Context, userUUID string, params *ListUserWorkspacesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListBackupKeys request
 	ListBackupKeys(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -214,8 +214,10 @@ type ClientInterface interface {
 
 	UpdateGroup(ctx context.Context, workspaceUUID string, groupUUID string, body UpdateGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// BulkAddRolesToGroup request
-	BulkAddRolesToGroup(ctx context.Context, workspaceUUID string, groupUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// BulkAddRolesToGroupWithBody request with any body
+	BulkAddRolesToGroupWithBody(ctx context.Context, workspaceUUID string, groupUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	BulkAddRolesToGroup(ctx context.Context, workspaceUUID string, groupUUID string, body BulkAddRolesToGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// BulkAddServiceUsersToGroupWithBody request with any body
 	BulkAddServiceUsersToGroupWithBody(ctx context.Context, workspaceUUID string, groupUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -261,10 +263,12 @@ type ClientInterface interface {
 	ListServiceUserKiseKeys(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListRoles request
-	ListRoles(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListRoles(ctx context.Context, workspaceUUID string, params *ListRolesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CreateRole request
-	CreateRole(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// CreateRoleWithBody request with any body
+	CreateRoleWithBody(ctx context.Context, workspaceUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CreateRole(ctx context.Context, workspaceUUID string, body CreateRoleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// DeleteRole request
 	DeleteRole(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -301,8 +305,8 @@ type ClientInterface interface {
 
 	AddRuleToRole(ctx context.Context, workspaceUUID string, roleUUID string, ruleUUID string, body AddRuleToRoleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// ListServiceUsersRoleBindings request
-	ListServiceUsersRoleBindings(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// ListRolesServiceUsers request
+	ListRolesServiceUsers(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RemoveRoleFromServiceUser request
 	RemoveRoleFromServiceUser(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -315,8 +319,8 @@ type ClientInterface interface {
 
 	AssignRoleToServiceUser(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, body AssignRoleToServiceUserJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// ListUsersRoleBindings request
-	ListUsersRoleBindings(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// ListRoleUsers request
+	ListRoleUsers(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RemoveRoleFromUser request
 	RemoveRoleFromUser(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -406,7 +410,7 @@ type ClientInterface interface {
 	BulkRefreshThirdPartyTokens(ctx context.Context, workspaceUUID string, thirdPartyUUID string, serviceUserUUID string, body BulkRefreshThirdPartyTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListWorkspaceUsers request
-	ListWorkspaceUsers(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListWorkspaceUsers(ctx context.Context, workspaceUUID string, params *ListWorkspaceUsersParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RemoveUserFromWorkspace request
 	RemoveUserFromWorkspace(ctx context.Context, workspaceUUID string, userUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -558,8 +562,8 @@ func (c *Client) GetDetailedServiceUser(ctx context.Context, workspaceUUID strin
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListDetailedWorkspaceUsers(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListDetailedWorkspaceUsersRequest(c.Server, workspaceUUID)
+func (c *Client) ListDetailedWorkspaceUsers(ctx context.Context, workspaceUUID string, params *ListDetailedWorkspaceUsersParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListDetailedWorkspaceUsersRequest(c.Server, workspaceUUID, params)
 	if err != nil {
 		return nil, err
 	}
@@ -846,8 +850,8 @@ func (c *Client) DeleteUserToken(ctx context.Context, userUUID string, resourceU
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListUserWorkspaces(ctx context.Context, userUUID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListUserWorkspacesRequest(c.Server, userUUID)
+func (c *Client) ListUserWorkspaces(ctx context.Context, userUUID string, params *ListUserWorkspacesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListUserWorkspacesRequest(c.Server, userUUID, params)
 	if err != nil {
 		return nil, err
 	}
@@ -990,8 +994,20 @@ func (c *Client) UpdateGroup(ctx context.Context, workspaceUUID string, groupUUI
 	return c.Client.Do(req)
 }
 
-func (c *Client) BulkAddRolesToGroup(ctx context.Context, workspaceUUID string, groupUUID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewBulkAddRolesToGroupRequest(c.Server, workspaceUUID, groupUUID)
+func (c *Client) BulkAddRolesToGroupWithBody(ctx context.Context, workspaceUUID string, groupUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkAddRolesToGroupRequestWithBody(c.Server, workspaceUUID, groupUUID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) BulkAddRolesToGroup(ctx context.Context, workspaceUUID string, groupUUID string, body BulkAddRolesToGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewBulkAddRolesToGroupRequest(c.Server, workspaceUUID, groupUUID, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1194,8 +1210,8 @@ func (c *Client) ListServiceUserKiseKeys(ctx context.Context, workspaceUUID stri
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListRoles(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListRolesRequest(c.Server, workspaceUUID)
+func (c *Client) ListRoles(ctx context.Context, workspaceUUID string, params *ListRolesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListRolesRequest(c.Server, workspaceUUID, params)
 	if err != nil {
 		return nil, err
 	}
@@ -1206,8 +1222,20 @@ func (c *Client) ListRoles(ctx context.Context, workspaceUUID string, reqEditors
 	return c.Client.Do(req)
 }
 
-func (c *Client) CreateRole(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewCreateRoleRequest(c.Server, workspaceUUID)
+func (c *Client) CreateRoleWithBody(ctx context.Context, workspaceUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateRoleRequestWithBody(c.Server, workspaceUUID, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CreateRole(ctx context.Context, workspaceUUID string, body CreateRoleJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCreateRoleRequest(c.Server, workspaceUUID, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1374,8 +1402,8 @@ func (c *Client) AddRuleToRole(ctx context.Context, workspaceUUID string, roleUU
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListServiceUsersRoleBindings(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListServiceUsersRoleBindingsRequest(c.Server, workspaceUUID, roleUUID)
+func (c *Client) ListRolesServiceUsers(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListRolesServiceUsersRequest(c.Server, workspaceUUID, roleUUID)
 	if err != nil {
 		return nil, err
 	}
@@ -1434,8 +1462,8 @@ func (c *Client) AssignRoleToServiceUser(ctx context.Context, workspaceUUID stri
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListUsersRoleBindings(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListUsersRoleBindingsRequest(c.Server, workspaceUUID, roleUUID)
+func (c *Client) ListRoleUsers(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListRoleUsersRequest(c.Server, workspaceUUID, roleUUID)
 	if err != nil {
 		return nil, err
 	}
@@ -1830,8 +1858,8 @@ func (c *Client) BulkRefreshThirdPartyTokens(ctx context.Context, workspaceUUID 
 	return c.Client.Do(req)
 }
 
-func (c *Client) ListWorkspaceUsers(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewListWorkspaceUsersRequest(c.Server, workspaceUUID)
+func (c *Client) ListWorkspaceUsers(ctx context.Context, workspaceUUID string, params *ListWorkspaceUsersParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListWorkspaceUsersRequest(c.Server, workspaceUUID, params)
 	if err != nil {
 		return nil, err
 	}
@@ -2252,7 +2280,7 @@ func NewGetDetailedServiceUserRequest(server string, workspaceUUID string, servi
 }
 
 // NewListDetailedWorkspaceUsersRequest generates requests for ListDetailedWorkspaceUsers
-func NewListDetailedWorkspaceUsersRequest(server string, workspaceUUID string) (*http.Request, error) {
+func NewListDetailedWorkspaceUsersRequest(server string, workspaceUUID string, params *ListDetailedWorkspaceUsersParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -2275,6 +2303,28 @@ func NewListDetailedWorkspaceUsersRequest(server string, workspaceUUID string) (
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Email != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "email", runtime.ParamLocationQuery, *params.Email); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
 	}
 
 	req, err := http.NewRequest("GET", queryURL.String(), nil)
@@ -2942,7 +2992,7 @@ func NewDeleteUserTokenRequest(server string, userUUID string, resourceUUID stri
 }
 
 // NewListUserWorkspacesRequest generates requests for ListUserWorkspaces
-func NewListUserWorkspacesRequest(server string, userUUID string) (*http.Request, error) {
+func NewListUserWorkspacesRequest(server string, userUUID string, params *ListUserWorkspacesParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -2965,6 +3015,92 @@ func NewListUserWorkspacesRequest(server string, userUUID string) (*http.Request
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.OrgName != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "org_name", runtime.ParamLocationQuery, *params.OrgName); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.Name != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "name", runtime.ParamLocationQuery, *params.Name); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.WorkspaceUuid != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "workspace_uuid", runtime.ParamLocationQuery, *params.WorkspaceUuid); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.IncludeMaster != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "include_master", runtime.ParamLocationQuery, *params.IncludeMaster); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		if params.IncludeSuspended != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "include_suspended", runtime.ParamLocationQuery, *params.IncludeSuspended); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
 	}
 
 	req, err := http.NewRequest("GET", queryURL.String(), nil)
@@ -3314,8 +3450,19 @@ func NewUpdateGroupRequestWithBody(server string, workspaceUUID string, groupUUI
 	return req, nil
 }
 
-// NewBulkAddRolesToGroupRequest generates requests for BulkAddRolesToGroup
-func NewBulkAddRolesToGroupRequest(server string, workspaceUUID string, groupUUID string) (*http.Request, error) {
+// NewBulkAddRolesToGroupRequest calls the generic BulkAddRolesToGroup builder with application/json body
+func NewBulkAddRolesToGroupRequest(server string, workspaceUUID string, groupUUID string, body BulkAddRolesToGroupJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewBulkAddRolesToGroupRequestWithBody(server, workspaceUUID, groupUUID, "application/json", bodyReader)
+}
+
+// NewBulkAddRolesToGroupRequestWithBody generates requests for BulkAddRolesToGroup with any type of body
+func NewBulkAddRolesToGroupRequestWithBody(server string, workspaceUUID string, groupUUID string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3347,10 +3494,12 @@ func NewBulkAddRolesToGroupRequest(server string, workspaceUUID string, groupUUI
 		return nil, err
 	}
 
-	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	req, err := http.NewRequest("POST", queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -3886,7 +4035,7 @@ func NewListServiceUserKiseKeysRequest(server string, workspaceUUID string) (*ht
 }
 
 // NewListRolesRequest generates requests for ListRoles
-func NewListRolesRequest(server string, workspaceUUID string) (*http.Request, error) {
+func NewListRolesRequest(server string, workspaceUUID string, params *ListRolesParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3909,6 +4058,28 @@ func NewListRolesRequest(server string, workspaceUUID string) (*http.Request, er
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Service != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "service", runtime.ParamLocationQuery, *params.Service); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
 	}
 
 	req, err := http.NewRequest("GET", queryURL.String(), nil)
@@ -3919,8 +4090,19 @@ func NewListRolesRequest(server string, workspaceUUID string) (*http.Request, er
 	return req, nil
 }
 
-// NewCreateRoleRequest generates requests for CreateRole
-func NewCreateRoleRequest(server string, workspaceUUID string) (*http.Request, error) {
+// NewCreateRoleRequest calls the generic CreateRole builder with application/json body
+func NewCreateRoleRequest(server string, workspaceUUID string, body CreateRoleJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCreateRoleRequestWithBody(server, workspaceUUID, "application/json", bodyReader)
+}
+
+// NewCreateRoleRequestWithBody generates requests for CreateRole with any type of body
+func NewCreateRoleRequestWithBody(server string, workspaceUUID string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -3945,10 +4127,12 @@ func NewCreateRoleRequest(server string, workspaceUUID string) (*http.Request, e
 		return nil, err
 	}
 
-	req, err := http.NewRequest("POST", queryURL.String(), nil)
+	req, err := http.NewRequest("POST", queryURL.String(), body)
 	if err != nil {
 		return nil, err
 	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -4395,8 +4579,8 @@ func NewAddRuleToRoleRequestWithBody(server string, workspaceUUID string, roleUU
 	return req, nil
 }
 
-// NewListServiceUsersRoleBindingsRequest generates requests for ListServiceUsersRoleBindings
-func NewListServiceUsersRoleBindingsRequest(server string, workspaceUUID string, roleUUID string) (*http.Request, error) {
+// NewListRolesServiceUsersRequest generates requests for ListRolesServiceUsers
+func NewListRolesServiceUsersRequest(server string, workspaceUUID string, roleUUID string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -4593,8 +4777,8 @@ func NewAssignRoleToServiceUserRequestWithBody(server string, workspaceUUID stri
 	return req, nil
 }
 
-// NewListUsersRoleBindingsRequest generates requests for ListUsersRoleBindings
-func NewListUsersRoleBindingsRequest(server string, workspaceUUID string, roleUUID string) (*http.Request, error) {
+// NewListRoleUsersRequest generates requests for ListRoleUsers
+func NewListRoleUsersRequest(server string, workspaceUUID string, roleUUID string) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5709,7 +5893,7 @@ func NewBulkRefreshThirdPartyTokensRequestWithBody(server string, workspaceUUID 
 }
 
 // NewListWorkspaceUsersRequest generates requests for ListWorkspaceUsers
-func NewListWorkspaceUsersRequest(server string, workspaceUUID string) (*http.Request, error) {
+func NewListWorkspaceUsersRequest(server string, workspaceUUID string, params *ListWorkspaceUsersParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -5732,6 +5916,28 @@ func NewListWorkspaceUsersRequest(server string, workspaceUUID string) (*http.Re
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		queryValues := queryURL.Query()
+
+		if params.Email != nil {
+
+			if queryFrag, err := runtime.StyleParamWithLocation("form", true, "email", runtime.ParamLocationQuery, *params.Email); err != nil {
+				return nil, err
+			} else if parsed, err := url.ParseQuery(queryFrag); err != nil {
+				return nil, err
+			} else {
+				for k, v := range parsed {
+					for _, v2 := range v {
+						queryValues.Add(k, v2)
+					}
+				}
+			}
+
+		}
+
+		queryURL.RawQuery = queryValues.Encode()
 	}
 
 	req, err := http.NewRequest("GET", queryURL.String(), nil)
@@ -6145,7 +6351,7 @@ type ClientWithResponsesInterface interface {
 	GetDetailedServiceUserWithResponse(ctx context.Context, workspaceUUID string, serviceUserUUID string, reqEditors ...RequestEditorFn) (*GetDetailedServiceUserResponse, error)
 
 	// ListDetailedWorkspaceUsersWithResponse request
-	ListDetailedWorkspaceUsersWithResponse(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*ListDetailedWorkspaceUsersResponse, error)
+	ListDetailedWorkspaceUsersWithResponse(ctx context.Context, workspaceUUID string, params *ListDetailedWorkspaceUsersParams, reqEditors ...RequestEditorFn) (*ListDetailedWorkspaceUsersResponse, error)
 
 	// GetDetailedWorkspaceUserWithResponse request
 	GetDetailedWorkspaceUserWithResponse(ctx context.Context, workspaceUUID string, userUUID string, reqEditors ...RequestEditorFn) (*GetDetailedWorkspaceUserResponse, error)
@@ -6210,7 +6416,7 @@ type ClientWithResponsesInterface interface {
 	DeleteUserTokenWithResponse(ctx context.Context, userUUID string, resourceUUID string, reqEditors ...RequestEditorFn) (*DeleteUserTokenResponse, error)
 
 	// ListUserWorkspacesWithResponse request
-	ListUserWorkspacesWithResponse(ctx context.Context, userUUID string, reqEditors ...RequestEditorFn) (*ListUserWorkspacesResponse, error)
+	ListUserWorkspacesWithResponse(ctx context.Context, userUUID string, params *ListUserWorkspacesParams, reqEditors ...RequestEditorFn) (*ListUserWorkspacesResponse, error)
 
 	// ListBackupKeysWithResponse request
 	ListBackupKeysWithResponse(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*ListBackupKeysResponse, error)
@@ -6242,8 +6448,10 @@ type ClientWithResponsesInterface interface {
 
 	UpdateGroupWithResponse(ctx context.Context, workspaceUUID string, groupUUID string, body UpdateGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*UpdateGroupResponse, error)
 
-	// BulkAddRolesToGroupWithResponse request
-	BulkAddRolesToGroupWithResponse(ctx context.Context, workspaceUUID string, groupUUID string, reqEditors ...RequestEditorFn) (*BulkAddRolesToGroupResponse, error)
+	// BulkAddRolesToGroupWithBodyWithResponse request with any body
+	BulkAddRolesToGroupWithBodyWithResponse(ctx context.Context, workspaceUUID string, groupUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkAddRolesToGroupResponse, error)
+
+	BulkAddRolesToGroupWithResponse(ctx context.Context, workspaceUUID string, groupUUID string, body BulkAddRolesToGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkAddRolesToGroupResponse, error)
 
 	// BulkAddServiceUsersToGroupWithBodyWithResponse request with any body
 	BulkAddServiceUsersToGroupWithBodyWithResponse(ctx context.Context, workspaceUUID string, groupUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkAddServiceUsersToGroupResponse, error)
@@ -6289,10 +6497,12 @@ type ClientWithResponsesInterface interface {
 	ListServiceUserKiseKeysWithResponse(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*ListServiceUserKiseKeysResponse, error)
 
 	// ListRolesWithResponse request
-	ListRolesWithResponse(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*ListRolesResponse, error)
+	ListRolesWithResponse(ctx context.Context, workspaceUUID string, params *ListRolesParams, reqEditors ...RequestEditorFn) (*ListRolesResponse, error)
 
-	// CreateRoleWithResponse request
-	CreateRoleWithResponse(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*CreateRoleResponse, error)
+	// CreateRoleWithBodyWithResponse request with any body
+	CreateRoleWithBodyWithResponse(ctx context.Context, workspaceUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateRoleResponse, error)
+
+	CreateRoleWithResponse(ctx context.Context, workspaceUUID string, body CreateRoleJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateRoleResponse, error)
 
 	// DeleteRoleWithResponse request
 	DeleteRoleWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*DeleteRoleResponse, error)
@@ -6329,8 +6539,8 @@ type ClientWithResponsesInterface interface {
 
 	AddRuleToRoleWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, ruleUUID string, body AddRuleToRoleJSONRequestBody, reqEditors ...RequestEditorFn) (*AddRuleToRoleResponse, error)
 
-	// ListServiceUsersRoleBindingsWithResponse request
-	ListServiceUsersRoleBindingsWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*ListServiceUsersRoleBindingsResponse, error)
+	// ListRolesServiceUsersWithResponse request
+	ListRolesServiceUsersWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*ListRolesServiceUsersResponse, error)
 
 	// RemoveRoleFromServiceUserWithResponse request
 	RemoveRoleFromServiceUserWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, reqEditors ...RequestEditorFn) (*RemoveRoleFromServiceUserResponse, error)
@@ -6343,8 +6553,8 @@ type ClientWithResponsesInterface interface {
 
 	AssignRoleToServiceUserWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, body AssignRoleToServiceUserJSONRequestBody, reqEditors ...RequestEditorFn) (*AssignRoleToServiceUserResponse, error)
 
-	// ListUsersRoleBindingsWithResponse request
-	ListUsersRoleBindingsWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*ListUsersRoleBindingsResponse, error)
+	// ListRoleUsersWithResponse request
+	ListRoleUsersWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*ListRoleUsersResponse, error)
 
 	// RemoveRoleFromUserWithResponse request
 	RemoveRoleFromUserWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, reqEditors ...RequestEditorFn) (*RemoveRoleFromUserResponse, error)
@@ -6434,7 +6644,7 @@ type ClientWithResponsesInterface interface {
 	BulkRefreshThirdPartyTokensWithResponse(ctx context.Context, workspaceUUID string, thirdPartyUUID string, serviceUserUUID string, body BulkRefreshThirdPartyTokensJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkRefreshThirdPartyTokensResponse, error)
 
 	// ListWorkspaceUsersWithResponse request
-	ListWorkspaceUsersWithResponse(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*ListWorkspaceUsersResponse, error)
+	ListWorkspaceUsersWithResponse(ctx context.Context, workspaceUUID string, params *ListWorkspaceUsersParams, reqEditors ...RequestEditorFn) (*ListWorkspaceUsersResponse, error)
 
 	// RemoveUserFromWorkspaceWithResponse request
 	RemoveUserFromWorkspaceWithResponse(ctx context.Context, workspaceUUID string, userUUID string, reqEditors ...RequestEditorFn) (*RemoveUserFromWorkspaceResponse, error)
@@ -6496,7 +6706,7 @@ type CreateAuthTokenWithCredResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *IamChallenge
-	JSON201      *IamUserToken
+	JSON201      *IamUserTokenWithCredCreate
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -6523,7 +6733,7 @@ type CreateAuthTokenWithChallengeResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *IamChallenge
-	JSON201      *IamUserToken
+	JSON201      *IamUserTokenWithCredCreate
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -6548,7 +6758,7 @@ func (r CreateAuthTokenWithChallengeResponse) StatusCode() int {
 type ListDetailedGroupsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]IamGroupDetailed
+	JSON200      *[]IamGroupDetail
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -6573,7 +6783,7 @@ func (r ListDetailedGroupsResponse) StatusCode() int {
 type GetDetailedGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *IamGroupDetailed
+	JSON200      *IamGroupDetail
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -6943,7 +7153,6 @@ func (r ListUserPublicKeysResponse) StatusCode() int {
 type CreateUserPublicKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *IamUserPublicKey
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -7067,6 +7276,7 @@ func (r DeleteUserTokenResponse) StatusCode() int {
 type ListUserWorkspacesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *[]IamUserWorkspace
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -7315,7 +7525,7 @@ func (r BulkAddRolesToGroupResponse) StatusCode() int {
 type BulkAddServiceUsersToGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *[]IamServiceUserGroupResponse
+	JSON201      *[]IamServiceUserGroup
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -7340,7 +7550,7 @@ func (r BulkAddServiceUsersToGroupResponse) StatusCode() int {
 type BulkAddUsersToGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *[]IamUserGroupResponse
+	JSON201      *[]IamServiceUserGroup
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -7513,7 +7723,7 @@ func (r RemoveUserFromGroupResponse) StatusCode() int {
 type AddUserToGroupResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *IamUserGroupResponse
+	JSON201      *IamUserGroup
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -7538,7 +7748,7 @@ func (r AddUserToGroupResponse) StatusCode() int {
 type InviteUsersToWorkspaceResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *IamUserCreated
+	JSON200      *IamUserInvitation
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -7613,6 +7823,7 @@ func (r ListRolesResponse) StatusCode() int {
 type CreateRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON201      *IamRole
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -7661,6 +7872,7 @@ func (r DeleteRoleResponse) StatusCode() int {
 type GetRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON200      *IamRole
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -7710,7 +7922,7 @@ func (r BulkAddRulesToRoleResponse) StatusCode() int {
 type BulkAddServiceUsersToRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *[]IamRoleBinding
+	JSON201      *[]IamServiceUserRoleBindingMinimal
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -7735,7 +7947,7 @@ func (r BulkAddServiceUsersToRoleResponse) StatusCode() int {
 type BulkAddUsersToRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *[]IamRoleBinding
+	JSON201      *[]IamUserRoleBindingMinimal
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -7855,7 +8067,7 @@ func (r AddRuleToRoleResponse) StatusCode() int {
 	return 0
 }
 
-type ListServiceUsersRoleBindingsResponse struct {
+type ListRolesServiceUsersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *[]IamServiceUserWithRoleItems
@@ -7865,7 +8077,7 @@ type ListServiceUsersRoleBindingsResponse struct {
 }
 
 // Status returns HTTPResponse.Status
-func (r ListServiceUsersRoleBindingsResponse) Status() string {
+func (r ListRolesServiceUsersResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7873,7 +8085,7 @@ func (r ListServiceUsersRoleBindingsResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r ListServiceUsersRoleBindingsResponse) StatusCode() int {
+func (r ListRolesServiceUsersResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -7954,7 +8166,7 @@ func (r AssignRoleToServiceUserResponse) StatusCode() int {
 	return 0
 }
 
-type ListUsersRoleBindingsResponse struct {
+type ListRoleUsersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *[]IamUserWithRoleItems
@@ -7964,7 +8176,7 @@ type ListUsersRoleBindingsResponse struct {
 }
 
 // Status returns HTTPResponse.Status
-func (r ListUsersRoleBindingsResponse) Status() string {
+func (r ListRoleUsersResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -7972,7 +8184,7 @@ func (r ListUsersRoleBindingsResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r ListUsersRoleBindingsResponse) StatusCode() int {
+func (r ListRoleUsersResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -8527,7 +8739,7 @@ func (r ListServicesResponse) StatusCode() int {
 type BulkRefreshThirdPartyTokensResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *IamBulkRefreshTokenResponse
+	JSON200      *[]IamRefreshTokenResp
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -8835,8 +9047,8 @@ func (c *ClientWithResponses) GetDetailedServiceUserWithResponse(ctx context.Con
 }
 
 // ListDetailedWorkspaceUsersWithResponse request returning *ListDetailedWorkspaceUsersResponse
-func (c *ClientWithResponses) ListDetailedWorkspaceUsersWithResponse(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*ListDetailedWorkspaceUsersResponse, error) {
-	rsp, err := c.ListDetailedWorkspaceUsers(ctx, workspaceUUID, reqEditors...)
+func (c *ClientWithResponses) ListDetailedWorkspaceUsersWithResponse(ctx context.Context, workspaceUUID string, params *ListDetailedWorkspaceUsersParams, reqEditors ...RequestEditorFn) (*ListDetailedWorkspaceUsersResponse, error) {
+	rsp, err := c.ListDetailedWorkspaceUsers(ctx, workspaceUUID, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9044,8 +9256,8 @@ func (c *ClientWithResponses) DeleteUserTokenWithResponse(ctx context.Context, u
 }
 
 // ListUserWorkspacesWithResponse request returning *ListUserWorkspacesResponse
-func (c *ClientWithResponses) ListUserWorkspacesWithResponse(ctx context.Context, userUUID string, reqEditors ...RequestEditorFn) (*ListUserWorkspacesResponse, error) {
-	rsp, err := c.ListUserWorkspaces(ctx, userUUID, reqEditors...)
+func (c *ClientWithResponses) ListUserWorkspacesWithResponse(ctx context.Context, userUUID string, params *ListUserWorkspacesParams, reqEditors ...RequestEditorFn) (*ListUserWorkspacesResponse, error) {
+	rsp, err := c.ListUserWorkspaces(ctx, userUUID, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9148,9 +9360,17 @@ func (c *ClientWithResponses) UpdateGroupWithResponse(ctx context.Context, works
 	return ParseUpdateGroupResponse(rsp)
 }
 
-// BulkAddRolesToGroupWithResponse request returning *BulkAddRolesToGroupResponse
-func (c *ClientWithResponses) BulkAddRolesToGroupWithResponse(ctx context.Context, workspaceUUID string, groupUUID string, reqEditors ...RequestEditorFn) (*BulkAddRolesToGroupResponse, error) {
-	rsp, err := c.BulkAddRolesToGroup(ctx, workspaceUUID, groupUUID, reqEditors...)
+// BulkAddRolesToGroupWithBodyWithResponse request with arbitrary body returning *BulkAddRolesToGroupResponse
+func (c *ClientWithResponses) BulkAddRolesToGroupWithBodyWithResponse(ctx context.Context, workspaceUUID string, groupUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*BulkAddRolesToGroupResponse, error) {
+	rsp, err := c.BulkAddRolesToGroupWithBody(ctx, workspaceUUID, groupUUID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseBulkAddRolesToGroupResponse(rsp)
+}
+
+func (c *ClientWithResponses) BulkAddRolesToGroupWithResponse(ctx context.Context, workspaceUUID string, groupUUID string, body BulkAddRolesToGroupJSONRequestBody, reqEditors ...RequestEditorFn) (*BulkAddRolesToGroupResponse, error) {
+	rsp, err := c.BulkAddRolesToGroup(ctx, workspaceUUID, groupUUID, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9297,17 +9517,25 @@ func (c *ClientWithResponses) ListServiceUserKiseKeysWithResponse(ctx context.Co
 }
 
 // ListRolesWithResponse request returning *ListRolesResponse
-func (c *ClientWithResponses) ListRolesWithResponse(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*ListRolesResponse, error) {
-	rsp, err := c.ListRoles(ctx, workspaceUUID, reqEditors...)
+func (c *ClientWithResponses) ListRolesWithResponse(ctx context.Context, workspaceUUID string, params *ListRolesParams, reqEditors ...RequestEditorFn) (*ListRolesResponse, error) {
+	rsp, err := c.ListRoles(ctx, workspaceUUID, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseListRolesResponse(rsp)
 }
 
-// CreateRoleWithResponse request returning *CreateRoleResponse
-func (c *ClientWithResponses) CreateRoleWithResponse(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*CreateRoleResponse, error) {
-	rsp, err := c.CreateRole(ctx, workspaceUUID, reqEditors...)
+// CreateRoleWithBodyWithResponse request with arbitrary body returning *CreateRoleResponse
+func (c *ClientWithResponses) CreateRoleWithBodyWithResponse(ctx context.Context, workspaceUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CreateRoleResponse, error) {
+	rsp, err := c.CreateRoleWithBody(ctx, workspaceUUID, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCreateRoleResponse(rsp)
+}
+
+func (c *ClientWithResponses) CreateRoleWithResponse(ctx context.Context, workspaceUUID string, body CreateRoleJSONRequestBody, reqEditors ...RequestEditorFn) (*CreateRoleResponse, error) {
+	rsp, err := c.CreateRole(ctx, workspaceUUID, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9427,13 +9655,13 @@ func (c *ClientWithResponses) AddRuleToRoleWithResponse(ctx context.Context, wor
 	return ParseAddRuleToRoleResponse(rsp)
 }
 
-// ListServiceUsersRoleBindingsWithResponse request returning *ListServiceUsersRoleBindingsResponse
-func (c *ClientWithResponses) ListServiceUsersRoleBindingsWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*ListServiceUsersRoleBindingsResponse, error) {
-	rsp, err := c.ListServiceUsersRoleBindings(ctx, workspaceUUID, roleUUID, reqEditors...)
+// ListRolesServiceUsersWithResponse request returning *ListRolesServiceUsersResponse
+func (c *ClientWithResponses) ListRolesServiceUsersWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*ListRolesServiceUsersResponse, error) {
+	rsp, err := c.ListRolesServiceUsers(ctx, workspaceUUID, roleUUID, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseListServiceUsersRoleBindingsResponse(rsp)
+	return ParseListRolesServiceUsersResponse(rsp)
 }
 
 // RemoveRoleFromServiceUserWithResponse request returning *RemoveRoleFromServiceUserResponse
@@ -9471,13 +9699,13 @@ func (c *ClientWithResponses) AssignRoleToServiceUserWithResponse(ctx context.Co
 	return ParseAssignRoleToServiceUserResponse(rsp)
 }
 
-// ListUsersRoleBindingsWithResponse request returning *ListUsersRoleBindingsResponse
-func (c *ClientWithResponses) ListUsersRoleBindingsWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*ListUsersRoleBindingsResponse, error) {
-	rsp, err := c.ListUsersRoleBindings(ctx, workspaceUUID, roleUUID, reqEditors...)
+// ListRoleUsersWithResponse request returning *ListRoleUsersResponse
+func (c *ClientWithResponses) ListRoleUsersWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, reqEditors ...RequestEditorFn) (*ListRoleUsersResponse, error) {
+	rsp, err := c.ListRoleUsers(ctx, workspaceUUID, roleUUID, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseListUsersRoleBindingsResponse(rsp)
+	return ParseListRoleUsersResponse(rsp)
 }
 
 // RemoveRoleFromUserWithResponse request returning *RemoveRoleFromUserResponse
@@ -9760,8 +9988,8 @@ func (c *ClientWithResponses) BulkRefreshThirdPartyTokensWithResponse(ctx contex
 }
 
 // ListWorkspaceUsersWithResponse request returning *ListWorkspaceUsersResponse
-func (c *ClientWithResponses) ListWorkspaceUsersWithResponse(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*ListWorkspaceUsersResponse, error) {
-	rsp, err := c.ListWorkspaceUsers(ctx, workspaceUUID, reqEditors...)
+func (c *ClientWithResponses) ListWorkspaceUsersWithResponse(ctx context.Context, workspaceUUID string, params *ListWorkspaceUsersParams, reqEditors ...RequestEditorFn) (*ListWorkspaceUsersResponse, error) {
+	rsp, err := c.ListWorkspaceUsers(ctx, workspaceUUID, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -9939,7 +10167,7 @@ func ParseCreateAuthTokenWithCredResponse(rsp *http.Response) (*CreateAuthTokenW
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest IamUserToken
+		var dest IamUserTokenWithCredCreate
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -10000,7 +10228,7 @@ func ParseCreateAuthTokenWithChallengeResponse(rsp *http.Response) (*CreateAuthT
 		response.JSON200 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest IamUserToken
+		var dest IamUserTokenWithCredCreate
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -10047,7 +10275,7 @@ func ParseListDetailedGroupsResponse(rsp *http.Response) (*ListDetailedGroupsRes
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest []IamGroupDetailed
+		var dest []IamGroupDetail
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -10094,7 +10322,7 @@ func ParseGetDetailedGroupResponse(rsp *http.Response) (*GetDetailedGroupRespons
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest IamGroupDetailed
+		var dest IamGroupDetail
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -10763,13 +10991,6 @@ func ParseCreateUserPublicKeyResponse(rsp *http.Response) (*CreateUserPublicKeyR
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest IamUserPublicKey
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON201 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -10991,6 +11212,13 @@ func ParseListUserWorkspacesResponse(rsp *http.Response) (*ListUserWorkspacesRes
 	}
 
 	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest []IamUserWorkspace
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -11448,7 +11676,7 @@ func ParseBulkAddServiceUsersToGroupResponse(rsp *http.Response) (*BulkAddServic
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest []IamServiceUserGroupResponse
+		var dest []IamServiceUserGroup
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -11495,7 +11723,7 @@ func ParseBulkAddUsersToGroupResponse(rsp *http.Response) (*BulkAddUsersToGroupR
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest []IamUserGroupResponse
+		var dest []IamServiceUserGroup
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -11810,7 +12038,7 @@ func ParseAddUserToGroupResponse(rsp *http.Response) (*AddUserToGroupResponse, e
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest IamUserGroupResponse
+		var dest IamUserGroup
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -11857,7 +12085,7 @@ func ParseInviteUsersToWorkspaceResponse(rsp *http.Response) (*InviteUsersToWork
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest IamUserCreated
+		var dest IamUserInvitation
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -11997,6 +12225,13 @@ func ParseCreateRoleResponse(rsp *http.Response) (*CreateRoleResponse, error) {
 	}
 
 	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest IamRole
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -12077,6 +12312,13 @@ func ParseGetRoleResponse(rsp *http.Response) (*GetRoleResponse, error) {
 	}
 
 	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest IamRole
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -12165,7 +12407,7 @@ func ParseBulkAddServiceUsersToRoleResponse(rsp *http.Response) (*BulkAddService
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest []IamRoleBinding
+		var dest []IamServiceUserRoleBindingMinimal
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -12212,7 +12454,7 @@ func ParseBulkAddUsersToRoleResponse(rsp *http.Response) (*BulkAddUsersToRoleRes
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest []IamRoleBinding
+		var dest []IamUserRoleBindingMinimal
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -12418,15 +12660,15 @@ func ParseAddRuleToRoleResponse(rsp *http.Response) (*AddRuleToRoleResponse, err
 	return response, nil
 }
 
-// ParseListServiceUsersRoleBindingsResponse parses an HTTP response from a ListServiceUsersRoleBindingsWithResponse call
-func ParseListServiceUsersRoleBindingsResponse(rsp *http.Response) (*ListServiceUsersRoleBindingsResponse, error) {
+// ParseListRolesServiceUsersResponse parses an HTTP response from a ListRolesServiceUsersWithResponse call
+func ParseListRolesServiceUsersResponse(rsp *http.Response) (*ListRolesServiceUsersResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &ListServiceUsersRoleBindingsResponse{
+	response := &ListRolesServiceUsersResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -12599,15 +12841,15 @@ func ParseAssignRoleToServiceUserResponse(rsp *http.Response) (*AssignRoleToServ
 	return response, nil
 }
 
-// ParseListUsersRoleBindingsResponse parses an HTTP response from a ListUsersRoleBindingsWithResponse call
-func ParseListUsersRoleBindingsResponse(rsp *http.Response) (*ListUsersRoleBindingsResponse, error) {
+// ParseListRoleUsersResponse parses an HTTP response from a ListRoleUsersWithResponse call
+func ParseListRoleUsersResponse(rsp *http.Response) (*ListRoleUsersResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &ListUsersRoleBindingsResponse{
+	response := &ListRoleUsersResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
@@ -13660,7 +13902,7 @@ func ParseBulkRefreshThirdPartyTokensResponse(rsp *http.Response) (*BulkRefreshT
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest IamBulkRefreshTokenResponse
+		var dest []IamRefreshTokenResp
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

@@ -23,20 +23,28 @@ type IamBackupKey struct {
 	// CreatedAt Timestamp when the backup key was created
 	CreatedAt time.Time `json:"created_at"`
 
+	// DeletedAt Timestamp when the backup key was deleted
+	DeletedAt time.Time `json:"deleted_at"`
+
 	// Key The SSH key content in SSH format
-	Key string `json:"key"`
+	Key       string `json:"key"`
+	PublicKey string `json:"public_key"`
 
 	// Title Title or name for the backup key
 	Title string `json:"title"`
-
-	// UpdatedAt Timestamp when the backup key was last updated
-	UpdatedAt time.Time `json:"updated_at"`
+	Type  string `json:"type"`
 
 	// Uuid Unique identifier for the backup key
 	Uuid string `json:"uuid"`
 
 	// Workspace The workspace this backup key belongs to
 	Workspace string `json:"workspace"`
+}
+
+// IamBulkAddRolesRequest defines model for iamBulkAddRolesRequest.
+type IamBulkAddRolesRequest struct {
+	// Roles List of roles to assign to the group
+	Roles []IamRoleItem `json:"roles"`
 }
 
 // IamBulkAddRulesRequest defines model for iamBulkAddRulesRequest.
@@ -75,35 +83,19 @@ type IamBulkAddUsersToRoleRequest struct {
 	Users []string `json:"users"`
 }
 
-// IamBulkRefreshTokenRequest defines model for iamBulkRefreshTokenRequest.
-type IamBulkRefreshTokenRequest struct {
-	// TokenIds List of token identifiers to refresh
-	TokenIds []string `json:"token_ids"`
-}
-
-// IamBulkRefreshTokenResponse defines model for iamBulkRefreshTokenResponse.
-type IamBulkRefreshTokenResponse struct {
-	// FailedTokens Map of token identifiers to error messages for tokens that failed to refresh
-	FailedTokens *map[string]string `json:"failed_tokens,omitempty"`
-
-	// RefreshedTokens Map of token identifiers to refreshed tokens
-	RefreshedTokens map[string]string `json:"refreshed_tokens"`
-}
-
 // IamChallenge defines model for iamChallenge.
 type IamChallenge struct {
+	ChallengeAnswer string `json:"challenge_answer"`
+
 	// ChallengeToken Token to be used when responding to the challenge
 	ChallengeToken string `json:"challenge_token"`
 
 	// ChallengeType Type of challenge (e.g., 'otp', 'sms')
 	ChallengeType string `json:"challenge_type"`
-
-	// Message Human-readable message about the challenge
-	Message string `json:"message"`
 }
 
-// IamChallengeResponse defines model for iamChallengeResponse.
-type IamChallengeResponse struct {
+// IamChallengeRequest defines model for iamChallengeRequest.
+type IamChallengeRequest struct {
 	// ChallengeAnswer Answer to the challenge
 	ChallengeAnswer string `json:"challenge_answer"`
 
@@ -118,6 +110,58 @@ type IamChallengeResponse struct {
 type IamChangePasswordRequest struct {
 	// Password New password for the user
 	Password string `json:"password"`
+}
+
+// IamCreateRole defines model for iamCreateRole.
+type IamCreateRole struct {
+	DescriptionEn string       `json:"description_en"`
+	DescriptionFa string       `json:"description_fa"`
+	Name          string       `json:"name"`
+	Service       string       `json:"service"`
+	WarningEn     string       `json:"warning_en"`
+	WarningFa     string       `json:"warning_fa"`
+	Workspace     IamWorkspace `json:"workspace"`
+}
+
+// IamCreateUser defines model for iamCreateUser.
+type IamCreateUser struct {
+	// Birthday Birthday of the user
+	Birthday string `json:"birthday"`
+
+	// Email Email address of the user
+	Email string `json:"email"`
+
+	// EmailVerified Whether the email address is verified
+	EmailVerified bool `json:"email_verified"`
+
+	// FirstName First name of the user
+	FirstName string `json:"first_name"`
+
+	// IsSuspended Whether the user is suspended
+	IsSuspended bool `json:"is_suspended"`
+
+	// LastName Last name of the user
+	LastName string `json:"last_name"`
+
+	// Name Full name of the user
+	Name string `json:"name"`
+
+	// PhoneNumber Phone number of the user
+	PhoneNumber string `json:"phone_number"`
+
+	// PhoneNumberVerified Whether the phone number is verified
+	PhoneNumberVerified bool `json:"phone_number_verified"`
+}
+
+// IamCreateUserKiseKey defines model for iamCreateUserKiseKey.
+type IamCreateUserKiseKey struct {
+	AccessKey   string  `json:"access_key"`
+	Description string  `json:"description"`
+	IsEncrypted bool    `json:"is_encrypted"`
+	User        IamUser `json:"user"`
+
+	// Workspace The workspace this KISE key belongs to
+	Workspace string `json:"workspace"`
 }
 
 // IamError defines model for iamError.
@@ -143,49 +187,36 @@ type IamGroup struct {
 	UpdatedAt time.Time `json:"updated_at"`
 
 	// Uuid Unique identifier for the group
-	Uuid string `json:"uuid"`
+	Uuid      string       `json:"uuid"`
+	Workspace IamWorkspace `json:"workspace"`
 }
 
-// IamGroupDetailed defines model for iamGroupDetailed.
-type IamGroupDetailed struct {
-	// CreatedAt Timestamp when the group was created
-	CreatedAt time.Time `json:"created_at"`
-
-	// Description Description of the group's purpose
-	Description *string `json:"description,omitempty"`
-
-	// Name Name of the group
-	Name string `json:"name"`
-
-	// Roles List of roles assigned to the group
-	Roles []IamRole `json:"roles"`
-
-	// ServiceUsers List of service user members in the group
-	ServiceUsers []IamGroupMember `json:"service_users"`
-
-	// UpdatedAt Timestamp when the group was last updated
-	UpdatedAt time.Time `json:"updated_at"`
-
-	// Users List of user members in the group
-	Users []IamGroupMember `json:"users"`
-
-	// Uuid Unique identifier for the group
-	Uuid string `json:"uuid"`
+// IamGroupDetail defines model for iamGroupDetail.
+type IamGroupDetail struct {
+	CreatedAt          time.Time        `json:"created_at"`
+	Description        string           `json:"description"`
+	Name               string           `json:"name"`
+	Roles              []IamRoleMinimal `json:"roles"`
+	ServiceUsersNumber string           `json:"service_users_number"`
+	UpdatedAt          time.Time        `json:"updated_at"`
+	UsersNumber        string           `json:"users_number"`
+	Uuid               string           `json:"uuid"`
+	Workspace          IamWorkspace     `json:"workspace"`
 }
 
-// IamGroupMember defines model for iamGroupMember.
-type IamGroupMember struct {
-	// CreatedAt Timestamp when the member was added to the group
-	CreatedAt time.Time `json:"created_at"`
+// IamGroupMinimal defines model for iamGroupMinimal.
+type IamGroupMinimal struct {
+	Description string `json:"description"`
+	Name        string `json:"name"`
+	Uuid        string `json:"uuid"`
+}
 
-	// Email Email address of the member
-	Email string `json:"email"`
-
-	// Name Name of the member
-	Name string `json:"name"`
-
-	// Uuid Unique identifier for the member
-	Uuid string `json:"uuid"`
+// IamGroupWithMinimalRole defines model for iamGroupWithMinimalRole.
+type IamGroupWithMinimalRole struct {
+	Description string           `json:"description"`
+	Name        string           `json:"name"`
+	Roles       []IamRoleMinimal `json:"roles"`
+	Uuid        string           `json:"uuid"`
 }
 
 // IamHealthzResponse defines model for iamHealthzResponse.
@@ -274,6 +305,27 @@ type IamOpenIdTokenResponse struct {
 	TokenType string `json:"token_type"`
 }
 
+// IamOrganization defines model for iamOrganization.
+type IamOrganization struct {
+	Address        string `json:"address"`
+	City           string `json:"city"`
+	CreatedAt      string `json:"created_at"`
+	EconomicCode   string `json:"economic_code"`
+	EnterpriseName string `json:"enterprise_name"`
+	FaxNo          string `json:"fax_no"`
+	IsInternal     bool   `json:"is_internal"`
+	IsSuspended    bool   `json:"is_suspended"`
+	Name           string `json:"name"`
+	NameEn         string `json:"name_en"`
+	NationalId     string `json:"national_id"`
+	Province       string `json:"province"`
+	RegistrationNo string `json:"registration_no"`
+	TelephoneNo    string `json:"telephone_no"`
+	UpdatedAt      string `json:"updated_at"`
+	Uuid           string `json:"uuid"`
+	ZipCode        string `json:"zip_code"`
+}
+
 // IamOtpEnabled defines model for iamOtpEnabled.
 type IamOtpEnabled struct {
 	// Enabled Whether OTP is enabled for the user
@@ -286,16 +338,85 @@ type IamPasswordResetRequest struct {
 	Email string `json:"email"`
 }
 
+// IamRefreshTokenReq defines model for iamRefreshTokenReq.
+type IamRefreshTokenReq struct {
+	Description string `json:"description"`
+	Name        string `json:"name"`
+	Role        string `json:"role"`
+	RoleItems   Empty  `json:"role_items"`
+}
+
+// IamRefreshTokenResp defines model for iamRefreshTokenResp.
+type IamRefreshTokenResp struct {
+	Name         string `json:"name"`
+	RefreshToken string `json:"refresh_token"`
+}
+
+// IamRequestCreateBackupKey defines model for iamRequestCreateBackupKey.
+type IamRequestCreateBackupKey struct {
+	// Key The SSH key content in SSH format
+	Key string `json:"key"`
+
+	// Title Title or name for the backup key
+	Title string `json:"title"`
+}
+
+// IamRequestCreateGroup defines model for iamRequestCreateGroup.
+type IamRequestCreateGroup struct {
+	// Description Optional description of the group's purpose
+	Description *string `json:"description,omitempty"`
+
+	// Name Name of the group
+	Name      string              `json:"name"`
+	Workspace IamWorkspaceMinimal `json:"workspace"`
+}
+
+// IamRequestCreateUserPublicKey defines model for iamRequestCreateUserPublicKey.
+type IamRequestCreateUserPublicKey struct {
+	// Key The public key content in SSH format
+	Key string `json:"key"`
+
+	// Title Title or name for the public key
+	Title string `json:"title"`
+}
+
+// IamRequestRuleCreate defines model for iamRequestRuleCreate.
+type IamRequestRuleCreate struct {
+	Actions       []string               `json:"actions"`
+	Deny          bool                   `json:"deny"`
+	Name          string                 `json:"name"`
+	Object        string                 `json:"object"`
+	PossibleItems map[string]interface{} `json:"possible_items"`
+}
+
+// IamReuqestUserTokenCreate defines model for iamReuqestUserTokenCreate.
+type IamReuqestUserTokenCreate struct {
+	Active bool `json:"active"`
+
+	// ExpiresAt Token expiration timestamp
+	ExpiresAt time.Time `json:"expires_at"`
+	IsHashed  bool      `json:"is_hashed"`
+	Name      string    `json:"name"`
+	Secret    string    `json:"secret"`
+
+	// User UUID of the authenticated user
+	User string `json:"user"`
+}
+
 // IamRole defines model for iamRole.
 type IamRole struct {
 	// CreatedAt Timestamp when the role was created
 	CreatedAt time.Time `json:"created_at"`
 
 	// Description Description of the role's purpose and permissions
-	Description *string `json:"description,omitempty"`
+	Description   *string                `json:"description,omitempty"`
+	DescriptionEn string                 `json:"description_en"`
+	DescriptionFa string                 `json:"description_fa"`
+	Items         map[string]interface{} `json:"items"`
 
 	// Name Name of the role
-	Name string `json:"name"`
+	Name          string  `json:"name"`
+	PossibleItems *string `json:"possible_items,omitempty"`
 
 	// Service Service this role applies to
 	Service string `json:"service"`
@@ -304,7 +425,10 @@ type IamRole struct {
 	UpdatedAt time.Time `json:"updated_at"`
 
 	// Uuid Unique identifier for the role
-	Uuid string `json:"uuid"`
+	Uuid      string       `json:"uuid"`
+	WarningEn string       `json:"warning_en"`
+	WarningFa string       `json:"warning_fa"`
+	Workspace IamWorkspace `json:"workspace"`
 }
 
 // IamRoleBinding defines model for iamRoleBinding.
@@ -330,6 +454,24 @@ type IamRoleBindingItems struct {
 	Items interface{} `json:"items,omitempty"`
 }
 
+// IamRoleItem defines model for iamRoleItem.
+type IamRoleItem struct {
+	// ItemsList List of items for this role
+	ItemsList *[]interface{} `json:"items_list,omitempty"`
+
+	// RoleUuid UUID of the role to assign
+	RoleUuid openapi_types.UUID `json:"role_uuid"`
+}
+
+// IamRoleMinimal defines model for iamRoleMinimal.
+type IamRoleMinimal struct {
+	DescriptionEn string `json:"description_en"`
+	DescriptionFa string `json:"description_fa"`
+	Name          string `json:"name"`
+	Uuid          string `json:"uuid"`
+	Workspace     string `json:"workspace"`
+}
+
 // IamRoleRule defines model for iamRoleRule.
 type IamRoleRule struct {
 	// CreatedAt Timestamp when the role-rule binding was created
@@ -344,46 +486,53 @@ type IamRoleRule struct {
 	Uuid string `json:"uuid"`
 }
 
+// IamRoleWorkspaceMinimal defines model for iamRoleWorkspaceMinimal.
+type IamRoleWorkspaceMinimal struct {
+	DescriptionEn string `json:"description_en"`
+	DescriptionFa string `json:"description_fa"`
+	Name          string `json:"name"`
+	Uuid          string `json:"uuid"`
+	Workspace     string `json:"workspace"`
+}
+
 // IamRule defines model for iamRule.
 type IamRule struct {
-	// Action Action this rule controls
-	Action string `json:"action"`
+	// Actions Actions this rule controls (eg: GET,PUT...)
+	Actions []string `json:"actions"`
 
 	// CreatedAt Timestamp when the rule was created
 	CreatedAt time.Time `json:"created_at"`
+	Deny      bool      `json:"deny"`
 
 	// Description Description of the rule's purpose
-	Description *string `json:"description,omitempty"`
+	Description                    *string `json:"description,omitempty"`
+	IsAccessibleByUserDefinedRoles string  `json:"is_accessible_by_user_defined_roles"`
 
 	// Name Name of the rule
 	Name string `json:"name"`
 
-	// Resource Resource this rule applies to
-	Resource string `json:"resource"`
+	// Object Resource this rule applies to
+	Object        string                 `json:"object"`
+	PossibleItems map[string]interface{} `json:"possible_items"`
 
-	// Service Service this rule applies to
-	Service string `json:"service"`
+	// ServiceObject Service this rule applies to
+	ServiceObject string `json:"service_object"`
 
 	// UpdatedAt Timestamp when the rule was last updated
 	UpdatedAt time.Time `json:"updated_at"`
 
 	// Uuid Unique identifier for the rule
-	Uuid string `json:"uuid"`
+	Uuid      string `json:"uuid"`
+	Workspace string `json:"workspace"`
 }
 
 // IamService defines model for iamService.
 type IamService struct {
-	// CreatedAt Timestamp when the service was created
-	CreatedAt time.Time `json:"created_at"`
-
-	// Description Description of the service
-	Description *string `json:"description,omitempty"`
-
-	// Name Name of the service
-	Name string `json:"name"`
-
-	// UpdatedAt Timestamp when the service was last updated
-	UpdatedAt time.Time `json:"updated_at"`
+	Actions            []string `json:"actions"`
+	IsUserCustomizable bool     `json:"is_user_customizable"`
+	Name               string   `json:"name"`
+	Title              string   `json:"title"`
+	Workspace          string   `json:"workspace"`
 }
 
 // IamServiceUser defines model for iamServiceUser.
@@ -401,7 +550,8 @@ type IamServiceUser struct {
 	UpdatedAt time.Time `json:"updated_at"`
 
 	// Uuid Unique identifier for the service user
-	Uuid string `json:"uuid"`
+	Uuid      string `json:"uuid"`
+	Workspace string `json:"workspace"`
 }
 
 // IamServiceUserCreate defines model for iamServiceUserCreate.
@@ -422,19 +572,27 @@ type IamServiceUserDetailed struct {
 	Description *string `json:"description,omitempty"`
 
 	// Groups Groups this service user belongs to
-	Groups []IamGroup `json:"groups"`
+	Groups []IamGroupMinimal `json:"groups"`
 
 	// Name Name of the service user
 	Name string `json:"name"`
 
 	// Roles Roles assigned to this service user
-	Roles []IamRole `json:"roles"`
+	Roles      []IamRoleWorkspaceMinimal `json:"roles"`
+	ThirdParty IamThirdPartyForOcean     `json:"third_party"`
 
 	// UpdatedAt Timestamp when the service user was last updated
 	UpdatedAt time.Time `json:"updated_at"`
 
 	// Uuid Unique identifier for the service user
-	Uuid string `json:"uuid"`
+	Uuid      string `json:"uuid"`
+	Workspace string `json:"workspace"`
+}
+
+// IamServiceUserGroup defines model for iamServiceUserGroup.
+type IamServiceUserGroup struct {
+	Group       IamGroupWithMinimalRole `json:"group"`
+	ServiceUser IamServiceUser          `json:"service_user"`
 }
 
 // IamServiceUserGroupResponse defines model for iamServiceUserGroupResponse.
@@ -450,24 +608,22 @@ type IamServiceUserGroupResponse struct {
 
 // IamServiceUserKiseKey defines model for iamServiceUserKiseKey.
 type IamServiceUserKiseKey struct {
+	AccessKey string `json:"access_key"`
+
 	// CreatedAt Timestamp when the KISE key was created
-	CreatedAt time.Time `json:"created_at"`
+	CreatedAt   time.Time `json:"created_at"`
+	Description string    `json:"description"`
+	IsEncrypted bool      `json:"is_encrypted"`
+	SecretKey   string    `json:"secret_key"`
 
-	// Key The KISE key content
-	Key         string         `json:"key"`
-	ServiceUser IamServiceUser `json:"service_user"`
-
-	// Title Title or name for the KISE key
-	Title string `json:"title"`
+	// ServiceUser The service user this KISE key belongs to
+	ServiceUser string `json:"service_user"`
 
 	// UpdatedAt Timestamp when the KISE key was last updated
 	UpdatedAt time.Time `json:"updated_at"`
 
 	// Uuid Unique identifier for the KISE key
 	Uuid string `json:"uuid"`
-
-	// Workspace The workspace this KISE key belongs to
-	Workspace string `json:"workspace"`
 }
 
 // IamServiceUserPublicKey defines model for iamServiceUserPublicKey.
@@ -477,10 +633,12 @@ type IamServiceUserPublicKey struct {
 
 	// Key The public key content in SSH format
 	Key         string         `json:"key"`
+	PublicKey   string         `json:"public_key"`
 	ServiceUser IamServiceUser `json:"service_user"`
 
 	// Title Title or name for the public key
 	Title string `json:"title"`
+	Type  string `json:"type"`
 
 	// UpdatedAt Timestamp when the public key was last updated
 	UpdatedAt time.Time `json:"updated_at"`
@@ -518,6 +676,14 @@ type IamServiceUserRoleBindingDetailed struct {
 	Workspace string `json:"workspace"`
 }
 
+// IamServiceUserRoleBindingMinimal defines model for iamServiceUserRoleBindingMinimal.
+type IamServiceUserRoleBindingMinimal struct {
+	Items       map[string]interface{} `json:"items"`
+	Role        string                 `json:"role"`
+	ServiceUser string                 `json:"service_user"`
+	Workspace   string                 `json:"workspace"`
+}
+
 // IamServiceUserToken defines model for iamServiceUserToken.
 type IamServiceUserToken struct {
 	// CreatedAt Timestamp when the token was created
@@ -542,84 +708,86 @@ type IamServiceUserToken struct {
 
 // IamServiceUserTokenWithSecret defines model for iamServiceUserTokenWithSecret.
 type IamServiceUserTokenWithSecret struct {
-	// CreatedAt Timestamp when the token was created
-	CreatedAt time.Time `json:"created_at"`
-
 	// ExpiresAt Timestamp when the token will expire
 	ExpiresAt *time.Time `json:"expires_at,omitempty"`
 
 	// Name Name of the token
 	Name string `json:"name"`
-
-	// Secret The secret value of the token
-	Secret      string         `json:"secret"`
-	ServiceUser IamServiceUser `json:"service_user"`
-
-	// Uuid Unique identifier for the token
-	Uuid string `json:"uuid"`
 }
 
 // IamServiceUserWithRoleItems defines model for iamServiceUserWithRoleItems.
 type IamServiceUserWithRoleItems struct {
-	// Items Optional items associated with this role binding
-	Items       interface{}    `json:"items,omitempty"`
-	ServiceUser IamServiceUser `json:"service_user"`
+	CreatedAt   time.Time `json:"created_at"`
+	Description string    `json:"description"`
+	Items       string    `json:"items"`
+	Name        string    `json:"name"`
+	UpdatedAt   time.Time `json:"updated_at"`
+	Uuid        string    `json:"uuid"`
+}
+
+// IamThirdPartyForOcean defines model for iamThirdPartyForOcean.
+type IamThirdPartyForOcean struct {
+	Name string `json:"name"`
+	Uuid string `json:"uuid"`
 }
 
 // IamThirdPartyTokenRequest defines model for iamThirdPartyTokenRequest.
 type IamThirdPartyTokenRequest struct {
-	// ClientId Client ID for the third-party service
-	ClientId *string `json:"client_id,omitempty"`
-
-	// ClientSecret Client secret for the third-party service
-	ClientSecret *string `json:"client_secret,omitempty"`
-
-	// Code Authorization code from the third-party service
-	Code string `json:"code"`
-
-	// RedirectUri Redirect URI used in the authorization request
-	RedirectUri string `json:"redirect_uri"`
-
-	// State State parameter used in the authorization request
-	State *string `json:"state,omitempty"`
+	RefreshToken string `json:"refresh_token"`
 }
 
 // IamThirdPartyTokenResponse defines model for iamThirdPartyTokenResponse.
 type IamThirdPartyTokenResponse struct {
-	// AccessToken Access token for the third-party service
-	AccessToken string `json:"access_token"`
-
-	// ExpiresIn Number of seconds until the token expires
-	ExpiresIn int `json:"expires_in"`
+	// ExpiresAt Number of seconds until the token expires
+	ExpiresAt *int `json:"expires_at,omitempty"`
 
 	// RefreshToken Refresh token for the third-party service
-	RefreshToken *string `json:"refresh_token,omitempty"`
-
-	// Scope Scope of access granted by the token
-	Scope *string `json:"scope,omitempty"`
-
-	// ThirdPartyUserId User ID in the third-party service
-	ThirdPartyUserId *string `json:"third_party_user_id,omitempty"`
-
-	// TokenType Type of token, typically 'Bearer'
-	TokenType string `json:"token_type"`
+	RefreshToken time.Time `json:"refresh_token"`
+	Secret       string    `json:"secret"`
 }
 
 // IamUser defines model for iamUser.
 type IamUser struct {
+	// Birthday Birthday of the user
+	Birthday string `json:"birthday"`
+
 	// CreatedAt Timestamp when the user was created
 	CreatedAt time.Time `json:"created_at"`
 
 	// Email Email address of the user
 	Email string `json:"email"`
 
+	// EmailVerified Whether the email address is verified
+	EmailVerified bool `json:"email_verified"`
+
+	// FirstName First name of the user
+	FirstName string `json:"first_name"`
+
+	// IsOtpEnabled Whether the user has OTP enabled
+	IsOtpEnabled string `json:"is_otp_enabled"`
+
+	// IsSuspended Whether the user is suspended
+	IsSuspended bool `json:"is_suspended"`
+
+	// LastName Last name of the user
+	LastName string `json:"last_name"`
+
 	// Name Full name of the user
 	Name string `json:"name"`
+
+	// PhoneNumber Phone number of the user
+	PhoneNumber string `json:"phone_number"`
+
+	// PhoneNumberVerified Whether the phone number is verified
+	PhoneNumberVerified bool `json:"phone_number_verified"`
 
 	// UpdatedAt Timestamp when the user was last updated
 	UpdatedAt time.Time `json:"updated_at"`
 
-	// Uuid Unique identifier for the user
+	// UserType Type of the user (exactly one of 'user' or 'service-user')
+	UserType string `json:"user_type"`
+
+	// Uuid UUID of the user
 	Uuid string `json:"uuid"`
 }
 
@@ -659,39 +827,31 @@ type IamUserBulkCanResponseItem struct {
 	Service string `json:"service"`
 }
 
-// IamUserCreated defines model for iamUserCreated.
-type IamUserCreated struct {
-	// Created List of users that were created
-	Created []IamUser `json:"created"`
-
-	// Existing List of users that already existed
-	Existing []IamUser `json:"existing"`
-
-	// Invited List of email addresses that were invited
-	Invited []string `json:"invited"`
+// IamUserGroup defines model for iamUserGroup.
+type IamUserGroup struct {
+	Group IamGroupWithMinimalRole `json:"group"`
+	User  IamUser                 `json:"user"`
 }
 
-// IamUserGroupResponse defines model for iamUserGroupResponse.
-type IamUserGroupResponse struct {
-	// CreatedAt Timestamp when the user was added to the group
-	CreatedAt time.Time `json:"created_at"`
-	Group     IamGroup  `json:"group"`
-	User      IamUser   `json:"user"`
-
-	// Uuid Unique identifier for the user-group association
-	Uuid string `json:"uuid"`
+// IamUserInvitation defines model for iamUserInvitation.
+type IamUserInvitation struct {
+	CreatedAt       time.Time `json:"created_at"`
+	Email           string    `json:"email"`
+	InvitationToken string    `json:"invitation_token"`
+	IsSuspended     bool      `json:"is_suspended"`
+	Name            string    `json:"name"`
+	Uuid            string    `json:"uuid"`
 }
 
 // IamUserKiseKey defines model for iamUserKiseKey.
 type IamUserKiseKey struct {
+	AccessKey string `json:"access_key"`
+
 	// CreatedAt Timestamp when the KISE key was created
-	CreatedAt time.Time `json:"created_at"`
-
-	// Key The KISE key content
-	Key string `json:"key"`
-
-	// Title Title or name for the KISE key
-	Title string `json:"title"`
+	CreatedAt   time.Time `json:"created_at"`
+	Description string    `json:"description"`
+	IsEncrypted bool      `json:"is_encrypted"`
+	SecretKey   string    `json:"secret_key"`
 
 	// UpdatedAt Timestamp when the KISE key was last updated
 	UpdatedAt time.Time `json:"updated_at"`
@@ -706,11 +866,11 @@ type IamUserKiseKey struct {
 
 // IamUserOTP defines model for iamUserOTP.
 type IamUserOTP struct {
-	// Code Verification code to confirm OTP setup
-	Code string `json:"code"`
-
 	// Secret OTP secret
 	Secret string `json:"secret"`
+
+	// VerificationCode Verification code to confirm OTP setup
+	VerificationCode string `json:"verification_code"`
 }
 
 // IamUserPublicKey defines model for iamUserPublicKey.
@@ -719,14 +879,18 @@ type IamUserPublicKey struct {
 	CreatedAt time.Time `json:"created_at"`
 
 	// Key The public key content in SSH format
-	Key string `json:"key"`
+	Key       string `json:"key"`
+	PublicKey string `json:"public_key"`
 
 	// Title Title or name for the public key
 	Title string `json:"title"`
+	Type  string `json:"type"`
 
 	// UpdatedAt Timestamp when the public key was last updated
 	UpdatedAt time.Time `json:"updated_at"`
-	User      IamUser   `json:"user"`
+
+	// User The user uuid this public key belongs to
+	User string `json:"user"`
 
 	// Uuid Unique identifier for the public key
 	Uuid string `json:"uuid"`
@@ -752,54 +916,106 @@ type IamUserRoleBindingDetailed struct {
 	Workspace string `json:"workspace"`
 }
 
+// IamUserRoleBindingMinimal defines model for iamUserRoleBindingMinimal.
+type IamUserRoleBindingMinimal struct {
+	Items     map[string]interface{} `json:"items"`
+	Role      string                 `json:"role"`
+	User      string                 `json:"user"`
+	Workspace string                 `json:"workspace"`
+}
+
 // IamUserToken defines model for iamUserToken.
 type IamUserToken struct {
+	Active    bool   `json:"active"`
+	CreatedAt string `json:"created_at"`
+
 	// ExpiresAt Token expiration timestamp
 	ExpiresAt time.Time `json:"expires_at"`
+	IsHashed  bool      `json:"is_hashed"`
+	Name      string    `json:"name"`
+	Secret    string    `json:"secret"`
 
 	// Token Authentication token
-	Token string `json:"token"`
+	Token     *string `json:"token,omitempty"`
+	UpdatedAt string  `json:"updated_at"`
 
-	// UserUuid UUID of the authenticated user
-	UserUuid string `json:"user_uuid"`
+	// User UUID of the authenticated user
+	User string `json:"user"`
+	Uuid string `json:"uuid"`
+}
+
+// IamUserTokenWithCredCreate defines model for iamUserTokenWithCredCreate.
+type IamUserTokenWithCredCreate struct {
+	// Active is token active
+	Active bool `json:"active"`
+
+	// CreatedAt Timestamp when the user was created
+	CreatedAt time.Time `json:"created_at"`
+
+	// DeletedAt Timestamp when the user was deleted
+	DeletedAt time.Time `json:"deleted_at"`
+
+	// Secret user uuid
+	Secret string `json:"secret"`
+
+	// UpdatedAt Timestamp when the user was last updated
+	UpdatedAt time.Time `json:"updated_at"`
+
+	// User user uuid
+	User string `json:"user"`
+
+	// Uuid uuid of token
+	Uuid string `json:"uuid"`
 }
 
 // IamUserWithRoleItems defines model for iamUserWithRoleItems.
 type IamUserWithRoleItems struct {
-	// Items Optional items associated with this role binding
-	Items interface{} `json:"items,omitempty"`
-	User  IamUser     `json:"user"`
+	CreatedAt   time.Time `json:"created_at"`
+	Email       string    `json:"email"`
+	IsSuspended bool      `json:"is_suspended"`
+	Items       string    `json:"items"`
+	Name        string    `json:"name"`
+	UpdatedAt   time.Time `json:"updated_at"`
+
+	// Uuid The userUUID
+	Uuid string `json:"uuid"`
+}
+
+// IamUserWorkspace defines model for iamUserWorkspace.
+type IamUserWorkspace struct {
+	CreatedAt    time.Time       `json:"created_at"`
+	IsMaster     bool            `json:"is_master"`
+	IsSuspended  bool            `json:"is_suspended"`
+	Name         string          `json:"name"`
+	Namespace    string          `json:"namespace"`
+	Organization IamOrganization `json:"organization"`
+	UpdatedAt    time.Time       `json:"updated_at"`
+	Uuid         string          `json:"uuid"`
 }
 
 // IamUserWorkspaceDetailedUser defines model for iamUserWorkspaceDetailedUser.
 type IamUserWorkspaceDetailedUser struct {
-	// CreatedAt Timestamp when the user was added to the workspace
-	CreatedAt time.Time `json:"created_at"`
-
 	// Groups Groups this user belongs to in the workspace
-	Groups []IamGroup `json:"groups"`
+	Groups []IamGroupWithMinimalRole `json:"groups"`
 
 	// Roles Roles assigned to this user in the workspace
-	Roles []IamRole `json:"roles"`
-
-	// UpdatedAt Timestamp when the user's workspace information was last updated
-	UpdatedAt time.Time `json:"updated_at"`
-	User      IamUser   `json:"user"`
-
-	// Workspace The workspace the user belongs to
-	Workspace IamWorkspace `json:"workspace"`
+	Roles []IamRoleMinimal `json:"roles"`
+	User  IamUser          `json:"user"`
 }
 
-// IamWorkspace The workspace the user belongs to
+// IamWorkspace defines model for iamWorkspace.
 type IamWorkspace struct {
 	// CreatedAt Timestamp when the workspace was created
 	CreatedAt time.Time `json:"created_at"`
 
 	// Description Description of the workspace
 	Description *string `json:"description,omitempty"`
+	IsSuspended bool    `json:"is_suspended"`
 
 	// Name Name of the workspace
-	Name string `json:"name"`
+	Name         string `json:"name"`
+	Namespace    string `json:"namespace"`
+	Organization string `json:"organization"`
 
 	// UpdatedAt Timestamp when the workspace was last updated
 	UpdatedAt time.Time `json:"updated_at"`
@@ -808,8 +1024,55 @@ type IamWorkspace struct {
 	Uuid string `json:"uuid"`
 }
 
+// IamWorkspaceMinimal defines model for iamWorkspaceMinimal.
+type IamWorkspaceMinimal struct {
+	IsSuspended  bool   `json:"is_suspended"`
+	Name         string `json:"name"`
+	Namespace    string `json:"namespace"`
+	Organization string `json:"organization"`
+}
+
+// ListDetailedWorkspaceUsersParams defines parameters for ListDetailedWorkspaceUsers.
+type ListDetailedWorkspaceUsersParams struct {
+	// Email Filter users by email address
+	Email *string `form:"email,omitempty" json:"email,omitempty"`
+}
+
 // BulkCanUserJSONBody defines parameters for BulkCanUser.
 type BulkCanUserJSONBody = []IamUserBulkCanRequestItem
+
+// ListUserWorkspacesParams defines parameters for ListUserWorkspaces.
+type ListUserWorkspacesParams struct {
+	// OrgName Organization English Name
+	OrgName *string `form:"org_name,omitempty" json:"org_name,omitempty"`
+
+	// Name Workspace Name
+	Name *string `form:"name,omitempty" json:"name,omitempty"`
+
+	// WorkspaceUuid worksapce uuid
+	WorkspaceUuid *string `form:"workspace_uuid,omitempty" json:"workspace_uuid,omitempty"`
+
+	// IncludeMaster Include master workspaces, default is False
+	IncludeMaster *string `form:"include_master,omitempty" json:"include_master,omitempty"`
+
+	// IncludeSuspended Include suspended workspaces, default is False
+	IncludeSuspended *string `form:"include_suspended,omitempty" json:"include_suspended,omitempty"`
+}
+
+// ListRolesParams defines parameters for ListRoles.
+type ListRolesParams struct {
+	// Service Filter roles based on given service name. If not provided, returns roles for all services.
+	Service *string `form:"service,omitempty" json:"service,omitempty"`
+}
+
+// BulkRefreshThirdPartyTokensJSONBody defines parameters for BulkRefreshThirdPartyTokens.
+type BulkRefreshThirdPartyTokensJSONBody = []IamRefreshTokenReq
+
+// ListWorkspaceUsersParams defines parameters for ListWorkspaceUsers.
+type ListWorkspaceUsersParams struct {
+	// Email Filter users by email address
+	Email *string `form:"email,omitempty" json:"email,omitempty"`
+}
 
 // AcceptInvitationJSONRequestBody defines body for AcceptInvitation for application/json ContentType.
 type AcceptInvitationJSONRequestBody = IamUserAcceptInvitation
@@ -818,7 +1081,7 @@ type AcceptInvitationJSONRequestBody = IamUserAcceptInvitation
 type CreateAuthTokenWithCredJSONRequestBody = IamLoginRequest
 
 // CreateAuthTokenWithChallengeJSONRequestBody defines body for CreateAuthTokenWithChallenge for application/json ContentType.
-type CreateAuthTokenWithChallengeJSONRequestBody = IamChallengeResponse
+type CreateAuthTokenWithChallengeJSONRequestBody = IamChallengeRequest
 
 // GetThirdPartyAccessTokenJSONRequestBody defines body for GetThirdPartyAccessToken for application/json ContentType.
 type GetThirdPartyAccessTokenJSONRequestBody = IamThirdPartyTokenRequest
@@ -836,19 +1099,22 @@ type BulkCanUserJSONRequestBody = BulkCanUserJSONBody
 type EnableUserOtpJSONRequestBody = IamUserOTP
 
 // CreateUserPublicKeyJSONRequestBody defines body for CreateUserPublicKey for application/json ContentType.
-type CreateUserPublicKeyJSONRequestBody = IamUserPublicKey
+type CreateUserPublicKeyJSONRequestBody = IamRequestCreateUserPublicKey
 
 // CreateUserTokenJSONRequestBody defines body for CreateUserToken for application/json ContentType.
-type CreateUserTokenJSONRequestBody = IamUserToken
+type CreateUserTokenJSONRequestBody = IamReuqestUserTokenCreate
 
 // CreateBackupKeyJSONRequestBody defines body for CreateBackupKey for application/json ContentType.
-type CreateBackupKeyJSONRequestBody = IamBackupKey
+type CreateBackupKeyJSONRequestBody = IamRequestCreateBackupKey
 
 // CreateGroupJSONRequestBody defines body for CreateGroup for application/json ContentType.
-type CreateGroupJSONRequestBody = IamGroup
+type CreateGroupJSONRequestBody = IamRequestCreateGroup
 
 // UpdateGroupJSONRequestBody defines body for UpdateGroup for application/json ContentType.
-type UpdateGroupJSONRequestBody = IamGroup
+type UpdateGroupJSONRequestBody = IamRequestCreateGroup
+
+// BulkAddRolesToGroupJSONRequestBody defines body for BulkAddRolesToGroup for application/json ContentType.
+type BulkAddRolesToGroupJSONRequestBody = IamBulkAddRolesRequest
 
 // BulkAddServiceUsersToGroupJSONRequestBody defines body for BulkAddServiceUsersToGroup for application/json ContentType.
 type BulkAddServiceUsersToGroupJSONRequestBody = IamBulkAddServiceUsersRequest
@@ -860,10 +1126,13 @@ type BulkAddUsersToGroupJSONRequestBody = IamBulkAddUsersRequest
 type AddServiceUserToGroupJSONRequestBody = IamServiceUser
 
 // AddUserToGroupJSONRequestBody defines body for AddUserToGroup for application/json ContentType.
-type AddUserToGroupJSONRequestBody = IamUser
+type AddUserToGroupJSONRequestBody = IamCreateUser
 
 // InviteUsersToWorkspaceJSONRequestBody defines body for InviteUsersToWorkspace for application/json ContentType.
 type InviteUsersToWorkspaceJSONRequestBody = IamInviteRequest
+
+// CreateRoleJSONRequestBody defines body for CreateRole for application/json ContentType.
+type CreateRoleJSONRequestBody = IamCreateRole
 
 // BulkAddRulesToRoleJSONRequestBody defines body for BulkAddRulesToRole for application/json ContentType.
 type BulkAddRulesToRoleJSONRequestBody = IamBulkAddRulesRequest
@@ -875,7 +1144,7 @@ type BulkAddServiceUsersToRoleJSONRequestBody = IamBulkAddServiceUsersToRoleRequ
 type BulkAddUsersToRoleJSONRequestBody = IamBulkAddUsersToRoleRequest
 
 // AddRuleToRoleJSONRequestBody defines body for AddRuleToRole for application/json ContentType.
-type AddRuleToRoleJSONRequestBody = IamRule
+type AddRuleToRoleJSONRequestBody = IamRequestRuleCreate
 
 // AssignRoleToServiceUserJSONRequestBody defines body for AssignRoleToServiceUser for application/json ContentType.
 type AssignRoleToServiceUserJSONRequestBody = IamRoleBindingItems
@@ -884,10 +1153,10 @@ type AssignRoleToServiceUserJSONRequestBody = IamRoleBindingItems
 type AssignRoleToUserJSONRequestBody = IamRoleBindingItems
 
 // CreateRuleJSONRequestBody defines body for CreateRule for application/json ContentType.
-type CreateRuleJSONRequestBody = IamRule
+type CreateRuleJSONRequestBody = IamRequestRuleCreate
 
 // UpdateRuleJSONRequestBody defines body for UpdateRule for application/json ContentType.
-type UpdateRuleJSONRequestBody = IamRule
+type UpdateRuleJSONRequestBody = IamRequestRuleCreate
 
 // CreateServiceUserJSONRequestBody defines body for CreateServiceUser for application/json ContentType.
 type CreateServiceUserJSONRequestBody = IamServiceUserCreate
@@ -905,16 +1174,16 @@ type CreateServiceUserPublicKeyJSONRequestBody = IamServiceUserPublicKeyCreate
 type CreateServiceUserTokenJSONRequestBody = IamServiceUserTokenWithSecret
 
 // BulkRefreshThirdPartyTokensJSONRequestBody defines body for BulkRefreshThirdPartyTokens for application/json ContentType.
-type BulkRefreshThirdPartyTokensJSONRequestBody = IamBulkRefreshTokenRequest
+type BulkRefreshThirdPartyTokensJSONRequestBody = BulkRefreshThirdPartyTokensJSONBody
 
 // AllowUserJSONRequestBody defines body for AllowUser for application/json ContentType.
-type AllowUserJSONRequestBody = IamUser
+type AllowUserJSONRequestBody = IamCreateUser
 
 // CreateUserKiseKeyJSONRequestBody defines body for CreateUserKiseKey for application/json ContentType.
-type CreateUserKiseKeyJSONRequestBody = IamUserKiseKey
+type CreateUserKiseKeyJSONRequestBody = IamCreateUserKiseKey
 
 // SuspendUserJSONRequestBody defines body for SuspendUser for application/json ContentType.
-type SuspendUserJSONRequestBody = IamUser
+type SuspendUserJSONRequestBody = IamCreateUser
 
 // GetOpenIdTokenJSONRequestBody defines body for GetOpenIdToken for application/json ContentType.
 type GetOpenIdTokenJSONRequestBody = IamOpenIdTokenRequest
