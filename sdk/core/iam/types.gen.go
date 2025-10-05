@@ -506,7 +506,7 @@ type IamRule struct {
 
 	// Description Description of the rule's purpose
 	Description                    *string `json:"description,omitempty"`
-	IsAccessibleByUserDefinedRoles string  `json:"is_accessible_by_user_defined_roles"`
+	IsAccessibleByUserDefinedRoles bool    `json:"is_accessible_by_user_defined_roles"`
 
 	// Name Name of the rule
 	Name string `json:"name"`
