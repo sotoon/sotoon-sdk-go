@@ -415,8 +415,8 @@ type IamRole struct {
 	Items         map[string]interface{} `json:"items"`
 
 	// Name Name of the role
-	Name          string  `json:"name"`
-	PossibleItems *string `json:"possible_items,omitempty"`
+	Name          string                  `json:"name"`
+	PossibleItems *map[string]interface{} `json:"possible_items,omitempty"`
 
 	// Service Service this role applies to
 	Service string `json:"service"`

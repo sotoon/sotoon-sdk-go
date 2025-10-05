@@ -7,8 +7,8 @@ mkdir -p "${BASE_DIR}/configs/sub"
 mkdir -p "${BASE_DIR}/../sdk/core"
 
 # Download the OpenAPI specification from the remote URL
-echo "Downloading OpenAPI specification from http://localhost:8080/openapi..."
-curl -s http://localhost:8080/openapi -o ../configs/openapi.json
+echo "Downloading OpenAPI specification from https://api.sotoon.ir/openapi..."
+curl -s https://api.sotoon.ir/openapi -o ../configs/openapi.json
 
 if [ $? -eq 0 ]; then
   echo "✓ Successfully downloaded OpenAPI specification"
