@@ -197,7 +197,7 @@ type IamGroupDetail struct {
 	Description        string           `json:"description"`
 	Name               string           `json:"name"`
 	Roles              []IamRoleMinimal `json:"roles"`
-	ServiceUsersNumber string           `json:"service_users_number"`
+	ServiceUsersNumber int32            `json:"service_users_number"`
 	UpdatedAt          time.Time        `json:"updated_at"`
 
 	// UsersNumber number of this group members
