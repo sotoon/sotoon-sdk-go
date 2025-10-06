@@ -708,11 +708,17 @@ type IamServiceUserToken struct {
 
 // IamServiceUserTokenWithSecret defines model for iamServiceUserTokenWithSecret.
 type IamServiceUserTokenWithSecret struct {
+	CreatedAt *time.Time `json:"created_at,omitempty"`
+
 	// ExpiresAt Timestamp when the token will expire
 	ExpiresAt *time.Time `json:"expires_at,omitempty"`
+	IsHashed  bool       `json:"is_hashed"`
 
 	// Name Name of the token
-	Name string `json:"name"`
+	Name      string     `json:"name"`
+	Secret    *string    `json:"secret,omitempty"`
+	UpdatedAt *time.Time `json:"updated_at,omitempty"`
+	Uuid      *string    `json:"uuid,omitempty"`
 }
 
 // IamServiceUserWithRoleItems defines model for iamServiceUserWithRoleItems.
