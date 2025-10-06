@@ -1003,12 +1003,26 @@ type IamUserWorkspace struct {
 
 // IamUserWorkspaceDetailedUser defines model for iamUserWorkspaceDetailedUser.
 type IamUserWorkspaceDetailedUser struct {
+	Birthday      *string `json:"birthday,omitempty"`
+	CreatedAt     *string `json:"created_at,omitempty"`
+	Email         *string `json:"email,omitempty"`
+	EmailVerified *bool   `json:"email_verified,omitempty"`
+	FirstName     *string `json:"first_name,omitempty"`
+
 	// Groups Groups this user belongs to in the workspace
-	Groups []IamGroupWithMinimalRole `json:"groups"`
+	Groups              []IamGroupWithMinimalRole `json:"groups"`
+	IsOtpEnabled        *bool                     `json:"is_otp_enabled,omitempty"`
+	IsSuspended         *bool                     `json:"is_suspended,omitempty"`
+	LastName            *string                   `json:"last_name,omitempty"`
+	Name                *string                   `json:"name,omitempty"`
+	PhoneNumber         *string                   `json:"phone_number,omitempty"`
+	PhoneNumberVerified *bool                     `json:"phone_number_verified,omitempty"`
 
 	// Roles Roles assigned to this user in the workspace
-	Roles []IamRoleMinimal `json:"roles"`
-	User  IamUser          `json:"user"`
+	Roles     []IamRoleMinimal `json:"roles"`
+	UpdatedAt *string          `json:"updated_at,omitempty"`
+	UserType  *string          `json:"user_type,omitempty"`
+	Uuid      *string          `json:"uuid,omitempty"`
 }
 
 // IamWorkspace defines model for iamWorkspace.
