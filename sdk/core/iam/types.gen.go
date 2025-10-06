@@ -460,7 +460,7 @@ type IamRoleItem struct {
 	ItemsList *[]interface{} `json:"items_list,omitempty"`
 
 	// RoleUuid UUID of the role to assign
-	RoleUuid openapi_types.UUID `json:"role_uuid"`
+	RoleUuid string `json:"role_uuid"`
 }
 
 // IamRoleMinimal defines model for iamRoleMinimal.
