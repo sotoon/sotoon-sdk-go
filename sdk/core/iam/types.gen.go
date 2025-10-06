@@ -62,7 +62,7 @@ type IamBulkAddServiceUsersRequest struct {
 // IamBulkAddServiceUsersToRoleRequest defines model for iamBulkAddServiceUsersToRoleRequest.
 type IamBulkAddServiceUsersToRoleRequest struct {
 	// Items List of items needed for role bindings
-	Items *[]interface{} `json:"items,omitempty"`
+	Items *[]map[string]string `json:"items,omitempty"`
 
 	// ServiceUsers List of service user UUIDs to assign to the role
 	ServiceUsers []string `json:"service_users"`
@@ -77,7 +77,7 @@ type IamBulkAddUsersRequest struct {
 // IamBulkAddUsersToRoleRequest defines model for iamBulkAddUsersToRoleRequest.
 type IamBulkAddUsersToRoleRequest struct {
 	// Items List of items needed for role bindings
-	Items *[]interface{} `json:"items,omitempty"`
+	Items *[]map[string]string `json:"items,omitempty"`
 
 	// Users List of user UUIDs to assign to the role
 	Users []string `json:"users"`
@@ -340,10 +340,10 @@ type IamPasswordResetRequest struct {
 
 // IamRefreshTokenReq defines model for iamRefreshTokenReq.
 type IamRefreshTokenReq struct {
-	Description string `json:"description"`
-	Name        string `json:"name"`
-	Role        string `json:"role"`
-	RoleItems   Empty  `json:"role_items"`
+	Description string            `json:"description"`
+	Name        string            `json:"name"`
+	Role        string            `json:"role"`
+	RoleItems   map[string]string `json:"role_items"`
 }
 
 // IamRefreshTokenResp defines model for iamRefreshTokenResp.
@@ -409,14 +409,14 @@ type IamRole struct {
 	CreatedAt time.Time `json:"created_at"`
 
 	// Description Description of the role's purpose and permissions
-	Description   *string                `json:"description,omitempty"`
-	DescriptionEn string                 `json:"description_en"`
-	DescriptionFa string                 `json:"description_fa"`
-	Items         map[string]interface{} `json:"items"`
+	Description   *string           `json:"description,omitempty"`
+	DescriptionEn string            `json:"description_en"`
+	DescriptionFa string            `json:"description_fa"`
+	Items         map[string]string `json:"items"`
 
 	// Name Name of the role
-	Name          string                  `json:"name"`
-	PossibleItems *map[string]interface{} `json:"possible_items,omitempty"`
+	Name          string             `json:"name"`
+	PossibleItems *map[string]string `json:"possible_items,omitempty"`
 
 	// Service Service this role applies to
 	Service string `json:"service"`
@@ -438,8 +438,8 @@ type IamRoleBinding struct {
 	Group     IamGroup  `json:"group"`
 
 	// Items Optional items associated with this role binding
-	Items interface{} `json:"items,omitempty"`
-	Role  IamRole     `json:"role"`
+	Items *map[string]string `json:"items,omitempty"`
+	Role  IamRole            `json:"role"`
 
 	// UpdatedAt Timestamp when the role binding was last updated
 	UpdatedAt time.Time `json:"updated_at"`
@@ -451,13 +451,13 @@ type IamRoleBinding struct {
 // IamRoleBindingItems defines model for iamRoleBindingItems.
 type IamRoleBindingItems struct {
 	// Items Optional items associated with this role binding
-	Items interface{} `json:"items,omitempty"`
+	Items *map[string]string `json:"items,omitempty"`
 }
 
 // IamRoleItem defines model for iamRoleItem.
 type IamRoleItem struct {
 	// ItemsList List of items for this role
-	ItemsList *[]interface{} `json:"items_list,omitempty"`
+	ItemsList *[]map[string]string `json:"items_list,omitempty"`
 
 	// RoleUuid UUID of the role to assign
 	RoleUuid string `json:"role_uuid"`
@@ -512,8 +512,8 @@ type IamRule struct {
 	Name string `json:"name"`
 
 	// Object Resource this rule applies to
-	Object        string                 `json:"object"`
-	PossibleItems map[string]interface{} `json:"possible_items"`
+	Object        string            `json:"object"`
+	PossibleItems map[string]string `json:"possible_items"`
 
 	// ServiceObject Service this rule applies to
 	ServiceObject string `json:"service_object"`
@@ -662,9 +662,9 @@ type IamServiceUserRoleBindingDetailed struct {
 	CreatedAt time.Time `json:"created_at"`
 
 	// Items Optional items associated with this role binding
-	Items       interface{}    `json:"items,omitempty"`
-	Role        IamRole        `json:"role"`
-	ServiceUser IamServiceUser `json:"service_user"`
+	Items       *map[string]string `json:"items,omitempty"`
+	Role        IamRole            `json:"role"`
+	ServiceUser IamServiceUser     `json:"service_user"`
 
 	// UpdatedAt Timestamp when the binding was last updated
 	UpdatedAt time.Time `json:"updated_at"`
@@ -678,10 +678,10 @@ type IamServiceUserRoleBindingDetailed struct {
 
 // IamServiceUserRoleBindingMinimal defines model for iamServiceUserRoleBindingMinimal.
 type IamServiceUserRoleBindingMinimal struct {
-	Items       map[string]interface{} `json:"items"`
-	Role        string                 `json:"role"`
-	ServiceUser string                 `json:"service_user"`
-	Workspace   string                 `json:"workspace"`
+	Items       map[string]string `json:"items"`
+	Role        string            `json:"role"`
+	ServiceUser string            `json:"service_user"`
+	Workspace   string            `json:"workspace"`
 }
 
 // IamServiceUserToken defines model for iamServiceUserToken.
@@ -902,8 +902,8 @@ type IamUserRoleBindingDetailed struct {
 	CreatedAt time.Time `json:"created_at"`
 
 	// Items Optional items associated with this role binding
-	Items interface{} `json:"items,omitempty"`
-	Role  IamRole     `json:"role"`
+	Items *map[string]string `json:"items,omitempty"`
+	Role  IamRole            `json:"role"`
 
 	// UpdatedAt Timestamp when the binding was last updated
 	UpdatedAt time.Time `json:"updated_at"`
@@ -918,10 +918,10 @@ type IamUserRoleBindingDetailed struct {
 
 // IamUserRoleBindingMinimal defines model for iamUserRoleBindingMinimal.
 type IamUserRoleBindingMinimal struct {
-	Items     map[string]interface{} `json:"items"`
-	Role      string                 `json:"role"`
-	User      string                 `json:"user"`
-	Workspace string                 `json:"workspace"`
+	Items     map[string]string `json:"items"`
+	Role      string            `json:"role"`
+	User      string            `json:"user"`
+	Workspace string            `json:"workspace"`
 }
 
 // IamUserToken defines model for iamUserToken.
