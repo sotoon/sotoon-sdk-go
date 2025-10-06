@@ -50,7 +50,7 @@ type IamBulkAddRolesRequest struct {
 // IamBulkAddRulesRequest defines model for iamBulkAddRulesRequest.
 type IamBulkAddRulesRequest struct {
 	// RulesUuidList List of UUIDs of the Rule objects to add to the role
-	RulesUuidList []interface{} `json:"rules_uuid_list"`
+	RulesUuidList []string `json:"rules_uuid_list"`
 }
 
 // IamBulkAddServiceUsersRequest defines model for iamBulkAddServiceUsersRequest.
