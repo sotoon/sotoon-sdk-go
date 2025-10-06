@@ -199,9 +199,11 @@ type IamGroupDetail struct {
 	Roles              []IamRoleMinimal `json:"roles"`
 	ServiceUsersNumber string           `json:"service_users_number"`
 	UpdatedAt          time.Time        `json:"updated_at"`
-	UsersNumber        string           `json:"users_number"`
-	Uuid               string           `json:"uuid"`
-	Workspace          IamWorkspace     `json:"workspace"`
+
+	// UsersNumber number of this group members
+	UsersNumber int32        `json:"users_number"`
+	Uuid        string       `json:"uuid"`
+	Workspace   IamWorkspace `json:"workspace"`
 }
 
 // IamGroupMinimal defines model for iamGroupMinimal.
@@ -382,11 +384,11 @@ type IamRequestCreateUserPublicKey struct {
 
 // IamRequestRuleCreate defines model for iamRequestRuleCreate.
 type IamRequestRuleCreate struct {
-	Actions       []string               `json:"actions"`
-	Deny          bool                   `json:"deny"`
-	Name          string                 `json:"name"`
-	Object        string                 `json:"object"`
-	PossibleItems map[string]interface{} `json:"possible_items"`
+	Actions       []string            `json:"actions"`
+	Deny          bool                `json:"deny"`
+	Name          string              `json:"name"`
+	Object        string              `json:"object"`
+	PossibleItems map[string][]string `json:"possible_items"`
 }
 
 // IamReuqestUserTokenCreate defines model for iamReuqestUserTokenCreate.
@@ -409,14 +411,14 @@ type IamRole struct {
 	CreatedAt time.Time `json:"created_at"`
 
 	// Description Description of the role's purpose and permissions
-	Description   *string           `json:"description,omitempty"`
-	DescriptionEn string            `json:"description_en"`
-	DescriptionFa string            `json:"description_fa"`
-	Items         map[string]string `json:"items"`
+	Description   *string             `json:"description,omitempty"`
+	DescriptionEn string              `json:"description_en"`
+	DescriptionFa string              `json:"description_fa"`
+	Items         []map[string]string `json:"items"`
 
 	// Name Name of the role
-	Name          string             `json:"name"`
-	PossibleItems *map[string]string `json:"possible_items,omitempty"`
+	Name          string               `json:"name"`
+	PossibleItems *map[string][]string `json:"possible_items,omitempty"`
 
 	// Service Service this role applies to
 	Service string `json:"service"`
@@ -438,8 +440,8 @@ type IamRoleBinding struct {
 	Group     IamGroup  `json:"group"`
 
 	// Items Optional items associated with this role binding
-	Items *map[string]string `json:"items,omitempty"`
-	Role  IamRole            `json:"role"`
+	Items *[]map[string]string `json:"items,omitempty"`
+	Role  IamRole              `json:"role"`
 
 	// UpdatedAt Timestamp when the role binding was last updated
 	UpdatedAt time.Time `json:"updated_at"`
@@ -451,7 +453,7 @@ type IamRoleBinding struct {
 // IamRoleBindingItems defines model for iamRoleBindingItems.
 type IamRoleBindingItems struct {
 	// Items Optional items associated with this role binding
-	Items *map[string]string `json:"items,omitempty"`
+	Items *[]map[string]string `json:"items,omitempty"`
 }
 
 // IamRoleItem defines model for iamRoleItem.
@@ -512,8 +514,8 @@ type IamRule struct {
 	Name string `json:"name"`
 
 	// Object Resource this rule applies to
-	Object        string            `json:"object"`
-	PossibleItems map[string]string `json:"possible_items"`
+	Object        string              `json:"object"`
+	PossibleItems map[string][]string `json:"possible_items"`
 
 	// ServiceObject Service this rule applies to
 	ServiceObject string `json:"service_object"`
@@ -662,9 +664,9 @@ type IamServiceUserRoleBindingDetailed struct {
 	CreatedAt time.Time `json:"created_at"`
 
 	// Items Optional items associated with this role binding
-	Items       *map[string]string `json:"items,omitempty"`
-	Role        IamRole            `json:"role"`
-	ServiceUser IamServiceUser     `json:"service_user"`
+	Items       *[]map[string]string `json:"items,omitempty"`
+	Role        IamRole              `json:"role"`
+	ServiceUser IamServiceUser       `json:"service_user"`
 
 	// UpdatedAt Timestamp when the binding was last updated
 	UpdatedAt time.Time `json:"updated_at"`
@@ -678,10 +680,10 @@ type IamServiceUserRoleBindingDetailed struct {
 
 // IamServiceUserRoleBindingMinimal defines model for iamServiceUserRoleBindingMinimal.
 type IamServiceUserRoleBindingMinimal struct {
-	Items       map[string]string `json:"items"`
-	Role        string            `json:"role"`
-	ServiceUser string            `json:"service_user"`
-	Workspace   string            `json:"workspace"`
+	Items       []map[string]string `json:"items"`
+	Role        string              `json:"role"`
+	ServiceUser string              `json:"service_user"`
+	Workspace   string              `json:"workspace"`
 }
 
 // IamServiceUserToken defines model for iamServiceUserToken.
@@ -723,12 +725,12 @@ type IamServiceUserTokenWithSecret struct {
 
 // IamServiceUserWithRoleItems defines model for iamServiceUserWithRoleItems.
 type IamServiceUserWithRoleItems struct {
-	CreatedAt   time.Time `json:"created_at"`
-	Description string    `json:"description"`
-	Items       string    `json:"items"`
-	Name        string    `json:"name"`
-	UpdatedAt   time.Time `json:"updated_at"`
-	Uuid        string    `json:"uuid"`
+	CreatedAt   time.Time           `json:"created_at"`
+	Description string              `json:"description"`
+	Items       []map[string]string `json:"items"`
+	Name        string              `json:"name"`
+	UpdatedAt   time.Time           `json:"updated_at"`
+	Uuid        string              `json:"uuid"`
 }
 
 // IamThirdPartyForOcean defines model for iamThirdPartyForOcean.
@@ -908,8 +910,8 @@ type IamUserRoleBindingDetailed struct {
 	CreatedAt time.Time `json:"created_at"`
 
 	// Items Optional items associated with this role binding
-	Items *map[string]string `json:"items,omitempty"`
-	Role  IamRole            `json:"role"`
+	Items *[]map[string]string `json:"items,omitempty"`
+	Role  IamRole              `json:"role"`
 
 	// UpdatedAt Timestamp when the binding was last updated
 	UpdatedAt time.Time `json:"updated_at"`
@@ -924,10 +926,10 @@ type IamUserRoleBindingDetailed struct {
 
 // IamUserRoleBindingMinimal defines model for iamUserRoleBindingMinimal.
 type IamUserRoleBindingMinimal struct {
-	Items     map[string]string `json:"items"`
-	Role      string            `json:"role"`
-	User      string            `json:"user"`
-	Workspace string            `json:"workspace"`
+	Items     []map[string]string `json:"items"`
+	Role      string              `json:"role"`
+	User      string              `json:"user"`
+	Workspace string              `json:"workspace"`
 }
 
 // IamUserToken defines model for iamUserToken.
@@ -976,12 +978,12 @@ type IamUserTokenWithCredCreate struct {
 
 // IamUserWithRoleItems defines model for iamUserWithRoleItems.
 type IamUserWithRoleItems struct {
-	CreatedAt   time.Time `json:"created_at"`
-	Email       string    `json:"email"`
-	IsSuspended bool      `json:"is_suspended"`
-	Items       string    `json:"items"`
-	Name        string    `json:"name"`
-	UpdatedAt   time.Time `json:"updated_at"`
+	CreatedAt   time.Time           `json:"created_at"`
+	Email       string              `json:"email"`
+	IsSuspended bool                `json:"is_suspended"`
+	Items       []map[string]string `json:"items"`
+	Name        string              `json:"name"`
+	UpdatedAt   time.Time           `json:"updated_at"`
 
 	// Uuid The userUUID
 	Uuid string `json:"uuid"`
