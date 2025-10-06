@@ -770,7 +770,7 @@ type IamUser struct {
 	FirstName string `json:"first_name"`
 
 	// IsOtpEnabled Whether the user has OTP enabled
-	IsOtpEnabled string `json:"is_otp_enabled"`
+	IsOtpEnabled bool `json:"is_otp_enabled"`
 
 	// IsSuspended Whether the user is suspended
 	IsSuspended bool `json:"is_suspended"`
