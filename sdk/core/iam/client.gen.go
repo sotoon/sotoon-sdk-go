@@ -7153,6 +7153,7 @@ func (r ListUserPublicKeysResponse) StatusCode() int {
 type CreateUserPublicKeyResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
+	JSON201      *IamUserPublicKey
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -10991,6 +10992,13 @@ func ParseCreateUserPublicKeyResponse(rsp *http.Response) (*CreateUserPublicKeyR
 	}
 
 	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
+		var dest IamUserPublicKey
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON201 = &dest
+
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
