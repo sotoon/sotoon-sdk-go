@@ -84,6 +84,37 @@ This will:
 - The generator will detect the new tag, create `sdk/core/<service>/` with generated `client.gen.go`, `types.gen.go`, and will create `handler.go` only if missing.
 - Customize the new handler if needed.
 
+## Excluding Tags
+
+To exclude specific tags from SDK generation, edit `generator/scripts/run.sh` and set the `EXCLUDE_TAGS` variable:
+
+```bash
+EXCLUDE_TAGS="compute,CDN and DNS,Sotoon Kubernetes Engine"
+```
+
+- Tags are comma-separated
+- Tag names are case-insensitive
+- Tags with spaces are supported (e.g., "CDN and DNS")
+- Excluded tags will not have sub-API files or SDK packages generated
+
+## Renaming Packages
+
+To rename generated SDK packages, edit `generator/configs/name-mapping.json`:
+
+```json
+{
+  "iam": "iamv1",
+  "compute": "vmv1",
+  "cdn-and-dns": "cdnv1"
+}
+```
+
+- **Key**: Original tag name (lowercase, spaces replaced with hyphens)
+- **Value**: Desired package name (must be a valid Go identifier)
+- Packages will be created under `sdk/core/<mapped-name>/`
+- The SDK wrapper automatically uses the mapped names
+- Unmapped tags use their original names
+
 ## Notes
 
 - Handlers are intentionally not overwritten to preserve your custom logic. If you need to re-create a handler from the template, delete the existing `handler.go` and run `make generate` again.

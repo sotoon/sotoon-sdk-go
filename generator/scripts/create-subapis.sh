@@ -6,8 +6,9 @@ set -euo pipefail
 
 # Check if required arguments are provided
 if [ $# -lt 2 ]; then
-  echo "Usage: $0 <openapi-file> <output-directory>"
+  echo "Usage: $0 <openapi-file> <output-directory> [exclude-tags]"
   echo "Example: $0 ../configs/openapi.json ../configs/sub"
+  echo "Example with excluded tags: $0 ../configs/openapi.json ../configs/sub \"compute,internal\""
   exit 1
 fi
 
@@ -24,6 +25,17 @@ fi
 # Get absolute paths to input and output
 OPENAPI_FILE="$(realpath "$1")"
 OUTPUT_DIR="$(realpath "$2")"
+
+# Optional: Tags to exclude (comma-separated)
+EXCLUDE_TAGS="${3:-}"
+
+# Convert exclude tags to array for easier checking
+if [ -n "$EXCLUDE_TAGS" ]; then
+  IFS=',' read -ra EXCLUDE_TAGS_ARRAY <<< "$EXCLUDE_TAGS"
+  echo "Will exclude the following tags: $EXCLUDE_TAGS"
+else
+  EXCLUDE_TAGS_ARRAY=()
+fi
 
 # Check if input file exists
 if [ ! -f "$OPENAPI_FILE" ]; then
@@ -61,6 +73,26 @@ echo "$TAGS_JSON" | while read -r TAG_JSON; do
   # Create a filename from the tag name
   # Replace spaces with hyphens and convert to lowercase for better filenames
   FILENAME=$(echo "$TAG" | tr '[:upper:]' '[:lower:]' | tr ' ' '-')
+  
+  # Check if this tag should be excluded
+  SKIP_TAG=false
+  for EXCLUDE_TAG in "${EXCLUDE_TAGS_ARRAY[@]}"; do
+    # Trim whitespace from exclude tag
+    EXCLUDE_TAG=$(echo "$EXCLUDE_TAG" | xargs)
+    # Compare case-insensitively
+    TAG_LOWER="$(echo "$TAG" | tr '[:upper:]' '[:lower:]')"
+    EXCLUDE_LOWER="$(echo "$EXCLUDE_TAG" | tr '[:upper:]' '[:lower:]')"
+    if [ "$TAG_LOWER" = "$EXCLUDE_LOWER" ]; then
+      SKIP_TAG=true
+      break
+    fi
+  done
+  
+  if [ "$SKIP_TAG" = true ]; then
+    echo "Skipping excluded tag: $TAG"
+    continue
+  fi
+  
   OUTPUT_FILE="$OUTPUT_DIR/$FILENAME.json"
   
   echo "Processing tag: $TAG -> $OUTPUT_FILE"

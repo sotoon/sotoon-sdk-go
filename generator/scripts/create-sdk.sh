@@ -21,6 +21,18 @@ fi
 
 mkdir -p "$OUTPUT_DIR"
 
+# Get the script directory to find the name mapping file
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+NAME_MAPPING_FILE="$SCRIPT_DIR/../configs/name-mapping.json"
+
+# Check if name mapping file exists
+if [ -f "$NAME_MAPPING_FILE" ]; then
+  echo "Using name mapping from $NAME_MAPPING_FILE"
+else
+  echo "Warning: Name mapping file not found at $NAME_MAPPING_FILE"
+  echo "Proceeding without name mapping..."
+fi
+
 # Check if oapi-codegen is installed
 if ! command -v oapi-codegen &> /dev/null; then
   echo "Error: oapi-codegen is not installed. Please install it using:"
@@ -45,14 +57,25 @@ for API_FILE in $SUB_API_FILES; do
   # Get the filename without extension
   FILENAME=$(basename "$API_FILE" .json)
   
-  # Create a package name from the filename (ensure it's a valid Go package name)
-  PACKAGE_NAME=$(echo "$FILENAME" | tr '-' '_')
+  # Check if there's a name mapping for this file
+  MAPPED_NAME="$FILENAME"
+  if [ -f "$NAME_MAPPING_FILE" ]; then
+    # Try to get the mapped name from the JSON file
+    MAPPED_NAME=$(jq -r --arg key "$FILENAME" '.[$key] // $key' "$NAME_MAPPING_FILE")
+  fi
   
-  # Create a directory for this API's SDK
-  API_OUTPUT_DIR="$OUTPUT_DIR/$FILENAME"
+  # Create a package name from the mapped name (ensure it's a valid Go package name)
+  PACKAGE_NAME=$(echo "$MAPPED_NAME" | tr '-' '_')
+  
+  # Create a directory for this API's SDK using the mapped name
+  API_OUTPUT_DIR="$OUTPUT_DIR/$MAPPED_NAME"
   mkdir -p "$API_OUTPUT_DIR"
   
-  echo "Processing $FILENAME..."
+  if [ "$FILENAME" != "$MAPPED_NAME" ]; then
+    echo "Processing $FILENAME -> $MAPPED_NAME..."
+  else
+    echo "Processing $FILENAME..."
+  fi
   
   # Generate client code
   echo "  Generating client code..."

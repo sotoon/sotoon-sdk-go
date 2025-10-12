@@ -1,9 +1,7 @@
 package sotton
 
 import (
-	compute "github.com/sotoon/sotoon-sdk-go/sdk/core/compute"
-	iam "github.com/sotoon/sotoon-sdk-go/sdk/core/iam"
-	sotoon_kubernetes_engine "github.com/sotoon/sotoon-sdk-go/sdk/core/sotoon-kubernetes-engine"
+	iamV1 "github.com/sotoon/sotoon-sdk-go/sdk/core/iamV1"
 	"github.com/sotoon/sotoon-sdk-go/sdk/interceptors"
 )
 
@@ -12,34 +10,20 @@ const (
 )
 
 type SDK struct {
-	Compute *compute.Handler
-	Iam *iam.Handler
-	Engine *sotoon_kubernetes_engine.Handler
+	IamV1 *iamV1.Handler
 }
 
 type SDKOption func(SDK) SDK
 
 func NewSDK(secretKey string, opts ...SDKOption) (*SDK, error) {
 
-	computeClient, err := compute.NewHandler(serverAddress, secretKey)
-	if err != nil {
-		return nil, err
-	}
-
-	iamClient, err := iam.NewHandler(serverAddress, secretKey)
-	if err != nil {
-		return nil, err
-	}
-
-	engineClient, err := sotoon_kubernetes_engine.NewHandler(serverAddress, secretKey)
+	iamV1Client, err := iamV1.NewHandler(serverAddress, secretKey)
 	if err != nil {
 		return nil, err
 	}
 
 	sdk := SDK{
-		Compute: computeClient,
-		Iam: iamClient,
-		Engine: engineClient,
+		IamV1: iamV1Client,
 	}
 	for _, opt := range opts {
 		sdk = opt(sdk)
@@ -49,9 +33,7 @@ func NewSDK(secretKey string, opts ...SDKOption) (*SDK, error) {
 
 func WithInterceptor(interceptors ...interceptors.Interceptor) SDKOption {
 	return func(s SDK) SDK {
-		s.Compute.AddInterceptors(interceptors...)
-		s.Iam.AddInterceptors(interceptors...)
-		s.Engine.AddInterceptors(interceptors...)
+		s.IamV1.AddInterceptors(interceptors...)
 		return s
 	}
 }
