@@ -1,7 +1,7 @@
 package sotton
 
 import (
-	iamV1 "github.com/sotoon/sotoon-sdk-go/sdk/core/iamV1"
+	iam_v1 "github.com/sotoon/sotoon-sdk-go/sdk/core/iam_v1"
 	"github.com/sotoon/sotoon-sdk-go/sdk/interceptors"
 )
 
@@ -10,20 +10,20 @@ const (
 )
 
 type SDK struct {
-	IamV1 *iamV1.Handler
+	Iam_v1 *iam_v1.Handler
 }
 
 type SDKOption func(SDK) SDK
 
 func NewSDK(secretKey string, opts ...SDKOption) (*SDK, error) {
 
-	iamV1Client, err := iamV1.NewHandler(serverAddress, secretKey)
+	iam_v1Client, err := iam_v1.NewHandler(serverAddress, secretKey)
 	if err != nil {
 		return nil, err
 	}
 
 	sdk := SDK{
-		IamV1: iamV1Client,
+		Iam_v1: iam_v1Client,
 	}
 	for _, opt := range opts {
 		sdk = opt(sdk)
@@ -33,7 +33,7 @@ func NewSDK(secretKey string, opts ...SDKOption) (*SDK, error) {
 
 func WithInterceptor(interceptors ...interceptors.Interceptor) SDKOption {
 	return func(s SDK) SDK {
-		s.IamV1.AddInterceptors(interceptors...)
+		s.Iam_v1.AddInterceptors(interceptors...)
 		return s
 	}
 }

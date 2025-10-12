@@ -45,8 +45,9 @@ SUB_API_FILES=$(find "$SUB_API_DIR" -name "*.json")
 
 # Check if any sub-API files were found
 if [ -z "$SUB_API_FILES" ]; then
-  echo "No sub-API files found in $SUB_API_DIR"
-  exit 1
+  echo "⚠ No sub-API files found in $SUB_API_DIR"
+  echo "All tags may have been excluded. Skipping SDK generation."
+  exit 0
 fi
 
 echo "Found $(echo "$SUB_API_FILES" | wc -l | tr -d ' ') sub-API files"

@@ -76,17 +76,19 @@ echo "$TAGS_JSON" | while read -r TAG_JSON; do
   
   # Check if this tag should be excluded
   SKIP_TAG=false
-  for EXCLUDE_TAG in "${EXCLUDE_TAGS_ARRAY[@]}"; do
-    # Trim whitespace from exclude tag
-    EXCLUDE_TAG=$(echo "$EXCLUDE_TAG" | xargs)
-    # Compare case-insensitively
-    TAG_LOWER="$(echo "$TAG" | tr '[:upper:]' '[:lower:]')"
-    EXCLUDE_LOWER="$(echo "$EXCLUDE_TAG" | tr '[:upper:]' '[:lower:]')"
-    if [ "$TAG_LOWER" = "$EXCLUDE_LOWER" ]; then
-      SKIP_TAG=true
-      break
-    fi
-  done
+  if [ ${#EXCLUDE_TAGS_ARRAY[@]} -gt 0 ]; then
+    for EXCLUDE_TAG in "${EXCLUDE_TAGS_ARRAY[@]}"; do
+      # Trim whitespace from exclude tag
+      EXCLUDE_TAG=$(echo "$EXCLUDE_TAG" | xargs)
+      # Compare case-insensitively
+      TAG_LOWER="$(echo "$TAG" | tr '[:upper:]' '[:lower:]')"
+      EXCLUDE_LOWER="$(echo "$EXCLUDE_TAG" | tr '[:upper:]' '[:lower:]')"
+      if [ "$TAG_LOWER" = "$EXCLUDE_LOWER" ]; then
+        SKIP_TAG=true
+        break
+      fi
+    done
+  fi
   
   if [ "$SKIP_TAG" = true ]; then
     echo "Skipping excluded tag: $TAG"

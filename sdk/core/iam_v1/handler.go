@@ -1,4 +1,4 @@
-package iamV1
+package iam_v1
 
 import (
 	"github.com/sotoon/sotoon-sdk-go/sdk/interceptors"

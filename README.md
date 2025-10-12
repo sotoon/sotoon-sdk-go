@@ -86,16 +86,22 @@ This will:
 
 ## Excluding Tags
 
-To exclude specific tags from SDK generation, edit `generator/scripts/run.sh` and set the `EXCLUDE_TAGS` variable:
+To exclude specific tags from SDK generation, edit `generator/configs/exclude-tags.json`:
 
-```bash
-EXCLUDE_TAGS="compute,CDN and DNS,Sotoon Kubernetes Engine"
+```json
+{
+  "exclude": [
+    "compute",
+    "CDN and DNS",
+    "Sotoon Kubernetes Engine"
+  ]
+}
 ```
 
-- Tags are comma-separated
 - Tag names are case-insensitive
 - Tags with spaces are supported (e.g., "CDN and DNS")
 - Excluded tags will not have sub-API files or SDK packages generated
+- You can also override this by passing tags as a command-line argument: `./run.sh "tag1,tag2"`
 
 ## Renaming Packages
 

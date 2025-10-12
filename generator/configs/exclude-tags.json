@@ -1,0 +1,7 @@
+{
+  "exclude": [
+    "compute",
+    "CDN and DNS",
+    "Sotoon Kubernetes Engine"
+  ]
+}

@@ -6,17 +6,27 @@ BASE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 mkdir -p "${BASE_DIR}/configs/sub"
 mkdir -p "${BASE_DIR}/../sdk/core"
 
-# Check for optional exclude-tags parameter
-EXCLUDE_TAGS="compute,CDN and DNS,Sotoon Kubernetes Engine"
+# Load exclude tags from configuration file
+EXCLUDE_TAGS_FILE="${BASE_DIR}/configs/exclude-tags.json"
+EXCLUDE_TAGS=""
 
+if [ -f "$EXCLUDE_TAGS_FILE" ]; then
+  # Read the exclude array from JSON and convert to comma-separated string
+  EXCLUDE_TAGS=$(jq -r '.exclude | join(",")' "$EXCLUDE_TAGS_FILE")
+  if [ -n "$EXCLUDE_TAGS" ] && [ "$EXCLUDE_TAGS" != "null" ]; then
+    echo "Loaded exclude tags from config: $EXCLUDE_TAGS"
+  fi
+fi
+
+# Allow command-line override
 if [ $# -eq 1 ]; then
   EXCLUDE_TAGS="$1"
-  echo "Will exclude the following tags during generation: $EXCLUDE_TAGS"
+  echo "Using command-line exclude tags: $EXCLUDE_TAGS"
 fi
 
 # Download the OpenAPI specification from the remote URL
-echo "Downloading OpenAPI specification from https://api.sotoon.ir/openapi..."
-curl -s https://api.sotoon.ir/openapi -o ../configs/openapi.json
+echo "Downloading OpenAPI specification from https://api.sotoon.io/openapi..."
+curl -s https://api.sotoon.io/openapi -o ../configs/openapi.json
 
 if [ $? -eq 0 ]; then
   echo "✓ Successfully downloaded OpenAPI specification"
@@ -24,6 +34,10 @@ else
   echo "✗ Failed to download OpenAPI specification"
   exit 1
 fi
+
+# Clean up old sub-API files to avoid processing stale data
+echo "Cleaning up old sub-API files..."
+rm -f "${BASE_DIR}/configs/sub"/*.json
 
 # Generate sub-APIs and SDK
 echo "Generating sub-APIs..."
