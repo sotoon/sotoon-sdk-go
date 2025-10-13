@@ -6931,7 +6931,7 @@ func (r GetIamV1ApiV1HealthzResponse) StatusCode() int {
 type GetThirdPartyAccessTokenResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *IamThirdPartyTokenResponse
+	JSON201      *IamThirdPartyTokenResponse
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -10590,12 +10590,12 @@ func ParseGetThirdPartyAccessTokenResponse(rsp *http.Response) (*GetThirdPartyAc
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest IamThirdPartyTokenResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest IamError

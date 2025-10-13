@@ -747,7 +747,7 @@ type IamThirdPartyTokenRequest struct {
 // IamThirdPartyTokenResponse defines model for iamThirdPartyTokenResponse.
 type IamThirdPartyTokenResponse struct {
 	// ExpiresAt Number of seconds until the token expires
-	ExpiresAt *int `json:"expires_at,omitempty"`
+	ExpiresAt *time.Time `json:"expires_at,omitempty"`
 
 	// RefreshToken Refresh token for the third-party service
 	RefreshToken time.Time `json:"refresh_token"`
