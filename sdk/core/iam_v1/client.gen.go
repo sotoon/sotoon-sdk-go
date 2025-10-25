@@ -311,9 +311,6 @@ type ClientInterface interface {
 	// RemoveRoleFromServiceUser request
 	RemoveRoleFromServiceUser(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetServiceUserRoleBinding request
-	GetServiceUserRoleBinding(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
 	// AssignRoleToServiceUserWithBody request with any body
 	AssignRoleToServiceUserWithBody(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -324,14 +321,6 @@ type ClientInterface interface {
 
 	// RemoveRoleFromUser request
 	RemoveRoleFromUser(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// GetUserRoleBinding request
-	GetUserRoleBinding(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// AssignRoleToUserWithBody request with any body
-	AssignRoleToUserWithBody(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	AssignRoleToUser(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, body AssignRoleToUserJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListRules request
 	ListRules(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -1426,18 +1415,6 @@ func (c *Client) RemoveRoleFromServiceUser(ctx context.Context, workspaceUUID st
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetServiceUserRoleBinding(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetServiceUserRoleBindingRequest(c.Server, workspaceUUID, roleUUID, serviceUserUUID)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
 func (c *Client) AssignRoleToServiceUserWithBody(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewAssignRoleToServiceUserRequestWithBody(c.Server, workspaceUUID, roleUUID, serviceUserUUID, contentType, body)
 	if err != nil {
@@ -1476,42 +1453,6 @@ func (c *Client) ListRoleUsers(ctx context.Context, workspaceUUID string, roleUU
 
 func (c *Client) RemoveRoleFromUser(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewRemoveRoleFromUserRequest(c.Server, workspaceUUID, roleUUID, userUUID)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) GetUserRoleBinding(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetUserRoleBindingRequest(c.Server, workspaceUUID, roleUUID, userUUID)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) AssignRoleToUserWithBody(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAssignRoleToUserRequestWithBody(c.Server, workspaceUUID, roleUUID, userUUID, contentType, body)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-func (c *Client) AssignRoleToUser(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, body AssignRoleToUserJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewAssignRoleToUserRequest(c.Server, workspaceUUID, roleUUID, userUUID, body)
 	if err != nil {
 		return nil, err
 	}
@@ -4668,54 +4609,6 @@ func NewRemoveRoleFromServiceUserRequest(server string, workspaceUUID string, ro
 	return req, nil
 }
 
-// NewGetServiceUserRoleBindingRequest generates requests for GetServiceUserRoleBinding
-func NewGetServiceUserRoleBindingRequest(server string, workspaceUUID string, roleUUID string, serviceUserUUID string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "workspaceUUID", runtime.ParamLocationPath, workspaceUUID)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "roleUUID", runtime.ParamLocationPath, roleUUID)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam2 string
-
-	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "serviceUserUUID", runtime.ParamLocationPath, serviceUserUUID)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/iam/v1/api/v1/workspace/%s/role/%s/service-user/%s/", pathParam0, pathParam1, pathParam2)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
 // NewAssignRoleToServiceUserRequest calls the generic AssignRoleToServiceUser builder with application/json body
 func NewAssignRoleToServiceUserRequest(server string, workspaceUUID string, roleUUID string, serviceUserUUID string, body AssignRoleToServiceUserJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -4862,115 +4755,6 @@ func NewRemoveRoleFromUserRequest(server string, workspaceUUID string, roleUUID 
 	if err != nil {
 		return nil, err
 	}
-
-	return req, nil
-}
-
-// NewGetUserRoleBindingRequest generates requests for GetUserRoleBinding
-func NewGetUserRoleBindingRequest(server string, workspaceUUID string, roleUUID string, userUUID string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "workspaceUUID", runtime.ParamLocationPath, workspaceUUID)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "roleUUID", runtime.ParamLocationPath, roleUUID)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam2 string
-
-	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "userUUID", runtime.ParamLocationPath, userUUID)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/iam/v1/api/v1/workspace/%s/role/%s/user/%s/", pathParam0, pathParam1, pathParam2)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("GET", queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewAssignRoleToUserRequest calls the generic AssignRoleToUser builder with application/json body
-func NewAssignRoleToUserRequest(server string, workspaceUUID string, roleUUID string, userUUID string, body AssignRoleToUserJSONRequestBody) (*http.Request, error) {
-	var bodyReader io.Reader
-	buf, err := json.Marshal(body)
-	if err != nil {
-		return nil, err
-	}
-	bodyReader = bytes.NewReader(buf)
-	return NewAssignRoleToUserRequestWithBody(server, workspaceUUID, roleUUID, userUUID, "application/json", bodyReader)
-}
-
-// NewAssignRoleToUserRequestWithBody generates requests for AssignRoleToUser with any type of body
-func NewAssignRoleToUserRequestWithBody(server string, workspaceUUID string, roleUUID string, userUUID string, contentType string, body io.Reader) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithLocation("simple", false, "workspaceUUID", runtime.ParamLocationPath, workspaceUUID)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam1 string
-
-	pathParam1, err = runtime.StyleParamWithLocation("simple", false, "roleUUID", runtime.ParamLocationPath, roleUUID)
-	if err != nil {
-		return nil, err
-	}
-
-	var pathParam2 string
-
-	pathParam2, err = runtime.StyleParamWithLocation("simple", false, "userUUID", runtime.ParamLocationPath, userUUID)
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/iam/v1/api/v1/workspace/%s/role/%s/user/%s/", pathParam0, pathParam1, pathParam2)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest("POST", queryURL.String(), body)
-	if err != nil {
-		return nil, err
-	}
-
-	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -6545,9 +6329,6 @@ type ClientWithResponsesInterface interface {
 	// RemoveRoleFromServiceUserWithResponse request
 	RemoveRoleFromServiceUserWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, reqEditors ...RequestEditorFn) (*RemoveRoleFromServiceUserResponse, error)
 
-	// GetServiceUserRoleBindingWithResponse request
-	GetServiceUserRoleBindingWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, reqEditors ...RequestEditorFn) (*GetServiceUserRoleBindingResponse, error)
-
 	// AssignRoleToServiceUserWithBodyWithResponse request with any body
 	AssignRoleToServiceUserWithBodyWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AssignRoleToServiceUserResponse, error)
 
@@ -6558,14 +6339,6 @@ type ClientWithResponsesInterface interface {
 
 	// RemoveRoleFromUserWithResponse request
 	RemoveRoleFromUserWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, reqEditors ...RequestEditorFn) (*RemoveRoleFromUserResponse, error)
-
-	// GetUserRoleBindingWithResponse request
-	GetUserRoleBindingWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, reqEditors ...RequestEditorFn) (*GetUserRoleBindingResponse, error)
-
-	// AssignRoleToUserWithBodyWithResponse request with any body
-	AssignRoleToUserWithBodyWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AssignRoleToUserResponse, error)
-
-	AssignRoleToUserWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, body AssignRoleToUserJSONRequestBody, reqEditors ...RequestEditorFn) (*AssignRoleToUserResponse, error)
 
 	// ListRulesWithResponse request
 	ListRulesWithResponse(ctx context.Context, workspaceUUID string, reqEditors ...RequestEditorFn) (*ListRulesResponse, error)
@@ -8117,35 +7890,9 @@ func (r RemoveRoleFromServiceUserResponse) StatusCode() int {
 	return 0
 }
 
-type GetServiceUserRoleBindingResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *IamServiceUserWithRoleItems
-	JSON400      *IamError
-	JSON401      *IamError
-	JSON403      *IamError
-}
-
-// Status returns HTTPResponse.Status
-func (r GetServiceUserRoleBindingResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetServiceUserRoleBindingResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
 type AssignRoleToServiceUserResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *IamServiceUserRoleBindingDetailed
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -8210,56 +7957,6 @@ func (r RemoveRoleFromUserResponse) Status() string {
 
 // StatusCode returns HTTPResponse.StatusCode
 func (r RemoveRoleFromUserResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type GetUserRoleBindingResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON200      *IamUserWithRoleItems
-	JSON400      *IamError
-	JSON401      *IamError
-	JSON403      *IamError
-}
-
-// Status returns HTTPResponse.Status
-func (r GetUserRoleBindingResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r GetUserRoleBindingResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-type AssignRoleToUserResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	JSON201      *IamUserRoleBindingDetailed
-	JSON400      *IamError
-	JSON401      *IamError
-	JSON403      *IamError
-}
-
-// Status returns HTTPResponse.Status
-func (r AssignRoleToUserResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r AssignRoleToUserResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -8740,7 +8437,7 @@ func (r ListServicesResponse) StatusCode() int {
 type BulkRefreshThirdPartyTokensResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *[]IamRefreshTokenResp
+	JSON201      *[]IamRefreshTokenResp
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -9674,15 +9371,6 @@ func (c *ClientWithResponses) RemoveRoleFromServiceUserWithResponse(ctx context.
 	return ParseRemoveRoleFromServiceUserResponse(rsp)
 }
 
-// GetServiceUserRoleBindingWithResponse request returning *GetServiceUserRoleBindingResponse
-func (c *ClientWithResponses) GetServiceUserRoleBindingWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, reqEditors ...RequestEditorFn) (*GetServiceUserRoleBindingResponse, error) {
-	rsp, err := c.GetServiceUserRoleBinding(ctx, workspaceUUID, roleUUID, serviceUserUUID, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetServiceUserRoleBindingResponse(rsp)
-}
-
 // AssignRoleToServiceUserWithBodyWithResponse request with arbitrary body returning *AssignRoleToServiceUserResponse
 func (c *ClientWithResponses) AssignRoleToServiceUserWithBodyWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, serviceUserUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AssignRoleToServiceUserResponse, error) {
 	rsp, err := c.AssignRoleToServiceUserWithBody(ctx, workspaceUUID, roleUUID, serviceUserUUID, contentType, body, reqEditors...)
@@ -9716,32 +9404,6 @@ func (c *ClientWithResponses) RemoveRoleFromUserWithResponse(ctx context.Context
 		return nil, err
 	}
 	return ParseRemoveRoleFromUserResponse(rsp)
-}
-
-// GetUserRoleBindingWithResponse request returning *GetUserRoleBindingResponse
-func (c *ClientWithResponses) GetUserRoleBindingWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, reqEditors ...RequestEditorFn) (*GetUserRoleBindingResponse, error) {
-	rsp, err := c.GetUserRoleBinding(ctx, workspaceUUID, roleUUID, userUUID, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseGetUserRoleBindingResponse(rsp)
-}
-
-// AssignRoleToUserWithBodyWithResponse request with arbitrary body returning *AssignRoleToUserResponse
-func (c *ClientWithResponses) AssignRoleToUserWithBodyWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AssignRoleToUserResponse, error) {
-	rsp, err := c.AssignRoleToUserWithBody(ctx, workspaceUUID, roleUUID, userUUID, contentType, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseAssignRoleToUserResponse(rsp)
-}
-
-func (c *ClientWithResponses) AssignRoleToUserWithResponse(ctx context.Context, workspaceUUID string, roleUUID string, userUUID string, body AssignRoleToUserJSONRequestBody, reqEditors ...RequestEditorFn) (*AssignRoleToUserResponse, error) {
-	rsp, err := c.AssignRoleToUser(ctx, workspaceUUID, roleUUID, userUUID, body, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseAssignRoleToUserResponse(rsp)
 }
 
 // ListRulesWithResponse request returning *ListRulesResponse
@@ -12755,53 +12417,6 @@ func ParseRemoveRoleFromServiceUserResponse(rsp *http.Response) (*RemoveRoleFrom
 	return response, nil
 }
 
-// ParseGetServiceUserRoleBindingResponse parses an HTTP response from a GetServiceUserRoleBindingWithResponse call
-func ParseGetServiceUserRoleBindingResponse(rsp *http.Response) (*GetServiceUserRoleBindingResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetServiceUserRoleBindingResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest IamServiceUserWithRoleItems
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest IamError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest IamError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest IamError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	}
-
-	return response, nil
-}
-
 // ParseAssignRoleToServiceUserResponse parses an HTTP response from a AssignRoleToServiceUserWithResponse call
 func ParseAssignRoleToServiceUserResponse(rsp *http.Response) (*AssignRoleToServiceUserResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -12816,13 +12431,6 @@ func ParseAssignRoleToServiceUserResponse(rsp *http.Response) (*AssignRoleToServ
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest IamServiceUserRoleBindingDetailed
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -12910,100 +12518,6 @@ func ParseRemoveRoleFromUserResponse(rsp *http.Response) (*RemoveRoleFromUserRes
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest IamError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest IamError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest IamError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseGetUserRoleBindingResponse parses an HTTP response from a GetUserRoleBindingWithResponse call
-func ParseGetUserRoleBindingResponse(rsp *http.Response) (*GetUserRoleBindingResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &GetUserRoleBindingResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest IamUserWithRoleItems
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
-		var dest IamError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON400 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
-		var dest IamError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
-		var dest IamError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON403 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseAssignRoleToUserResponse parses an HTTP response from a AssignRoleToUserWithResponse call
-func ParseAssignRoleToUserResponse(rsp *http.Response) (*AssignRoleToUserResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &AssignRoleToUserResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest IamUserRoleBindingDetailed
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON201 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest IamError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -13909,12 +13423,12 @@ func ParseBulkRefreshThirdPartyTokensResponse(rsp *http.Response) (*BulkRefreshT
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
 		var dest []IamRefreshTokenResp
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
-		response.JSON200 = &dest
+		response.JSON201 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
 		var dest IamError

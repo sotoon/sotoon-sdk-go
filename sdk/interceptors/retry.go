@@ -62,7 +62,9 @@ func (e *RetryInterceptor) BeforeRequest(data InterceptorData) (InterceptorData,
 
 		response, err := e.transporter.RoundTripWithID(data.Request, data.ID)
 		if err != nil || response.StatusCode >= 400 {
-			data.Error = err
+			if err != nil {
+				data.Error = err
+			}
 			return e.BeforeRequest(data)
 		}
 		data.Error = nil
@@ -87,8 +89,10 @@ func (e *RetryInterceptor) AfterResponse(data InterceptorData) (InterceptorData,
 
 	response, err := e.transporter.RoundTripWithID(data.InitialRequest, data.ID)
 	data.Response = response
-	if err != nil || response.StatusCode >= 400 {
-		data.Error = err
+	if err != nil || (response != nil && response.StatusCode >= 400) {
+		if err != nil {
+			data.Error = err
+		}
 		return e.AfterResponse(data)
 	}
 	data.Error = nil
@@ -176,9 +180,12 @@ func NewRetryInterceptor_RetryDeciderAll(maxRetries int) RetryDeciderAll {
 func (r RetryDeciderAll) ShouldRetry(response *http.Response, err error, retryData RetryInternalData) (bool, error) {
 
 	if retryData.RetryCount >= r.maxRetries {
+		// Return the actual error that caused the failure, not a generic "max retries exceeded" error
 		if err != nil {
 			return false, err
 		}
+		// If no error but we have a bad response, return a generic error
+		// (though this shouldn't happen if TreatAsErrorInterceptor runs before RetryInterceptor)
 		return false, constants.ErrMaxRetriesExceeded
 	}
 
