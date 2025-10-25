@@ -259,6 +259,17 @@ type IamLoginRequest struct {
 	Remember bool `json:"remember"`
 }
 
+// IamMinimalRoleWithTime defines model for iamMinimalRoleWithTime.
+type IamMinimalRoleWithTime struct {
+	CreatedAt     time.Time   `json:"created_at"`
+	DescriptionEn interface{} `json:"description_en"`
+	DescriptionFa interface{} `json:"description_fa"`
+	Name          string      `json:"name"`
+	UpdatedAt     time.Time   `json:"updated_at"`
+	Uuid          string      `json:"uuid"`
+	Workspace     string      `json:"workspace"`
+}
+
 // IamOpenIdTokenRequest defines model for iamOpenIdTokenRequest.
 type IamOpenIdTokenRequest struct {
 	// ClientId OAuth 2.0 client identifier
