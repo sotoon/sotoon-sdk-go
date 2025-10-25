@@ -114,13 +114,13 @@ type IamChangePasswordRequest struct {
 
 // IamCreateRole defines model for iamCreateRole.
 type IamCreateRole struct {
-	DescriptionEn string       `json:"description_en"`
-	DescriptionFa string       `json:"description_fa"`
-	Name          string       `json:"name"`
-	Service       string       `json:"service"`
-	WarningEn     string       `json:"warning_en"`
-	WarningFa     string       `json:"warning_fa"`
-	Workspace     IamWorkspace `json:"workspace"`
+	DescriptionEn string `json:"description_en"`
+	DescriptionFa string `json:"description_fa"`
+	Name          string `json:"name"`
+	Service       string `json:"service"`
+	WarningEn     string `json:"warning_en"`
+	WarningFa     string `json:"warning_fa"`
+	Workspace     string `json:"workspace"`
 }
 
 // IamCreateUser defines model for iamCreateUser.
@@ -658,26 +658,6 @@ type IamServiceUserPublicKeyCreate struct {
 	Title string `json:"title"`
 }
 
-// IamServiceUserRoleBindingDetailed defines model for iamServiceUserRoleBindingDetailed.
-type IamServiceUserRoleBindingDetailed struct {
-	// CreatedAt Timestamp when the binding was created
-	CreatedAt time.Time `json:"created_at"`
-
-	// Items Optional items associated with this role binding
-	Items       *[]map[string]string `json:"items,omitempty"`
-	Role        IamRole              `json:"role"`
-	ServiceUser IamServiceUser       `json:"service_user"`
-
-	// UpdatedAt Timestamp when the binding was last updated
-	UpdatedAt time.Time `json:"updated_at"`
-
-	// Uuid Unique identifier for the service-user-role binding
-	Uuid string `json:"uuid"`
-
-	// Workspace The workspace in which the binding exists
-	Workspace string `json:"workspace"`
-}
-
 // IamServiceUserRoleBindingMinimal defines model for iamServiceUserRoleBindingMinimal.
 type IamServiceUserRoleBindingMinimal struct {
 	Items       []map[string]string `json:"items"`
@@ -902,26 +882,6 @@ type IamUserPublicKey struct {
 
 	// Uuid Unique identifier for the public key
 	Uuid string `json:"uuid"`
-}
-
-// IamUserRoleBindingDetailed defines model for iamUserRoleBindingDetailed.
-type IamUserRoleBindingDetailed struct {
-	// CreatedAt Timestamp when the binding was created
-	CreatedAt time.Time `json:"created_at"`
-
-	// Items Optional items associated with this role binding
-	Items *[]map[string]string `json:"items,omitempty"`
-	Role  IamRole              `json:"role"`
-
-	// UpdatedAt Timestamp when the binding was last updated
-	UpdatedAt time.Time `json:"updated_at"`
-	User      IamUser   `json:"user"`
-
-	// Uuid Unique identifier for the user-role binding
-	Uuid string `json:"uuid"`
-
-	// Workspace The workspace in which the binding exists
-	Workspace string `json:"workspace"`
 }
 
 // IamUserRoleBindingMinimal defines model for iamUserRoleBindingMinimal.
@@ -1170,9 +1130,6 @@ type AddRuleToRoleJSONRequestBody = IamRequestRuleCreate
 
 // AssignRoleToServiceUserJSONRequestBody defines body for AssignRoleToServiceUser for application/json ContentType.
 type AssignRoleToServiceUserJSONRequestBody = IamRoleBindingItems
-
-// AssignRoleToUserJSONRequestBody defines body for AssignRoleToUser for application/json ContentType.
-type AssignRoleToUserJSONRequestBody = IamRoleBindingItems
 
 // CreateRuleJSONRequestBody defines body for CreateRule for application/json ContentType.
 type CreateRuleJSONRequestBody = IamRequestRuleCreate

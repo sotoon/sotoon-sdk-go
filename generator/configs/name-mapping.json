@@ -1,3 +1,4 @@
 {
-  "iam": "iam_v1"
+  "iam": "iam_v1",
+  "iam-(identity-&-access-management)": "iam_v1"
 }
