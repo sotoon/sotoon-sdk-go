@@ -7597,7 +7597,7 @@ func (r ListRolesResponse) StatusCode() int {
 type CreateRoleResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON201      *IamMinimalRoleWithTime
+	JSON201      *IamRole
 	JSON400      *IamError
 	JSON401      *IamError
 	JSON403      *IamError
@@ -11896,7 +11896,7 @@ func ParseCreateRoleResponse(rsp *http.Response) (*CreateRoleResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 201:
-		var dest IamMinimalRoleWithTime
+		var dest IamRole
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

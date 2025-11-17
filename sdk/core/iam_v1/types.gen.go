@@ -114,13 +114,13 @@ type IamChangePasswordRequest struct {
 
 // IamCreateRole defines model for iamCreateRole.
 type IamCreateRole struct {
-	DescriptionEn string `json:"description_en"`
-	DescriptionFa string `json:"description_fa"`
-	Name          string `json:"name"`
-	Service       string `json:"service"`
-	WarningEn     string `json:"warning_en"`
-	WarningFa     string `json:"warning_fa"`
-	Workspace     string `json:"workspace"`
+	DescriptionEn string       `json:"description_en"`
+	DescriptionFa string       `json:"description_fa"`
+	Name          string       `json:"name"`
+	Service       string       `json:"service"`
+	WarningEn     string       `json:"warning_en"`
+	WarningFa     string       `json:"warning_fa"`
+	Workspace     IamWorkspace `json:"workspace"`
 }
 
 // IamCreateUser defines model for iamCreateUser.
@@ -257,17 +257,6 @@ type IamLoginRequest struct {
 
 	// Remember Whether to create a long-lived token
 	Remember bool `json:"remember"`
-}
-
-// IamMinimalRoleWithTime defines model for iamMinimalRoleWithTime.
-type IamMinimalRoleWithTime struct {
-	CreatedAt     time.Time   `json:"created_at"`
-	DescriptionEn interface{} `json:"description_en"`
-	DescriptionFa interface{} `json:"description_fa"`
-	Name          string      `json:"name"`
-	UpdatedAt     time.Time   `json:"updated_at"`
-	Uuid          string      `json:"uuid"`
-	Workspace     string      `json:"workspace"`
 }
 
 // IamOpenIdTokenRequest defines model for iamOpenIdTokenRequest.
@@ -671,10 +660,10 @@ type IamServiceUserPublicKeyCreate struct {
 
 // IamServiceUserRoleBindingMinimal defines model for iamServiceUserRoleBindingMinimal.
 type IamServiceUserRoleBindingMinimal struct {
-	Items       []map[string]string `json:"items"`
-	Role        string              `json:"role"`
-	ServiceUser string              `json:"service_user"`
-	Workspace   string              `json:"workspace"`
+	Items       map[string]string `json:"items"`
+	Role        string            `json:"role"`
+	ServiceUser string            `json:"service_user"`
+	Workspace   string            `json:"workspace"`
 }
 
 // IamServiceUserToken defines model for iamServiceUserToken.
@@ -897,10 +886,10 @@ type IamUserPublicKey struct {
 
 // IamUserRoleBindingMinimal defines model for iamUserRoleBindingMinimal.
 type IamUserRoleBindingMinimal struct {
-	Items     []map[string]string `json:"items"`
-	Role      string              `json:"role"`
-	User      string              `json:"user"`
-	Workspace string              `json:"workspace"`
+	Items     map[string]string `json:"items"`
+	Role      string            `json:"role"`
+	User      string            `json:"user"`
+	Workspace string            `json:"workspace"`
 }
 
 // IamUserToken defines model for iamUserToken.
