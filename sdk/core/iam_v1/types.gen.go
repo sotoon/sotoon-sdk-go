@@ -238,8 +238,29 @@ type IamHealthzResponseStatus struct {
 	Ok bool `json:"ok"`
 }
 
-// IamIamMinimalRoleWithTime defines model for iamIamMinimalRoleWithTime.
-type IamIamMinimalRoleWithTime struct {
+// IamInviteRequest defines model for iamInviteRequest.
+type IamInviteRequest struct {
+	// Emails List of email addresses to invite to the workspace
+	Emails []string `json:"emails"`
+}
+
+// IamLoginRequest defines model for iamLoginRequest.
+type IamLoginRequest struct {
+	// Captcha Captcha response if required
+	Captcha *string `json:"captcha,omitempty"`
+
+	// Email Email address of the user
+	Email openapi_types.Email `json:"email"`
+
+	// Password User's password
+	Password string `json:"password"`
+
+	// Remember Whether to create a long-lived token
+	Remember bool `json:"remember"`
+}
+
+// IamMinimalRoleWithTime defines model for iamMinimalRoleWithTime.
+type IamMinimalRoleWithTime struct {
 	// CreatedAt Timestamp when the role was created
 	CreatedAt time.Time `json:"created_at"`
 
@@ -260,27 +281,6 @@ type IamIamMinimalRoleWithTime struct {
 
 	// Workspace Workspace this role applies to
 	Workspace string `json:"workspace"`
-}
-
-// IamInviteRequest defines model for iamInviteRequest.
-type IamInviteRequest struct {
-	// Emails List of email addresses to invite to the workspace
-	Emails []string `json:"emails"`
-}
-
-// IamLoginRequest defines model for iamLoginRequest.
-type IamLoginRequest struct {
-	// Captcha Captcha response if required
-	Captcha *string `json:"captcha,omitempty"`
-
-	// Email Email address of the user
-	Email openapi_types.Email `json:"email"`
-
-	// Password User's password
-	Password string `json:"password"`
-
-	// Remember Whether to create a long-lived token
-	Remember bool `json:"remember"`
 }
 
 // IamOpenIdTokenRequest defines model for iamOpenIdTokenRequest.
