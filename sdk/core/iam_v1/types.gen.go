@@ -114,13 +114,13 @@ type IamChangePasswordRequest struct {
 
 // IamCreateRole defines model for iamCreateRole.
 type IamCreateRole struct {
-	DescriptionEn string       `json:"description_en"`
-	DescriptionFa string       `json:"description_fa"`
-	Name          string       `json:"name"`
-	Service       string       `json:"service"`
-	WarningEn     string       `json:"warning_en"`
-	WarningFa     string       `json:"warning_fa"`
-	Workspace     IamWorkspace `json:"workspace"`
+	DescriptionEn string `json:"description_en"`
+	DescriptionFa string `json:"description_fa"`
+	Name          string `json:"name"`
+	Service       string `json:"service"`
+	WarningEn     string `json:"warning_en"`
+	WarningFa     string `json:"warning_fa"`
+	Workspace     string `json:"workspace"`
 }
 
 // IamCreateUser defines model for iamCreateUser.
@@ -236,6 +236,30 @@ type IamHealthzResponseDefault struct {
 // IamHealthzResponseStatus defines model for iamHealthzResponseStatus.
 type IamHealthzResponseStatus struct {
 	Ok bool `json:"ok"`
+}
+
+// IamIamMinimalRoleWithTime defines model for iamIamMinimalRoleWithTime.
+type IamIamMinimalRoleWithTime struct {
+	// CreatedAt Timestamp when the role was created
+	CreatedAt time.Time `json:"created_at"`
+
+	// DescriptionEn Description of the role's purpose and permissions
+	DescriptionEn *string `json:"description_en,omitempty"`
+
+	// DescriptionFa Description of the role's purpose and permissions
+	DescriptionFa *string `json:"description_fa,omitempty"`
+
+	// Name Name of the role
+	Name string `json:"name"`
+
+	// UpdatedAt Timestamp when the role was last updated
+	UpdatedAt time.Time `json:"updated_at"`
+
+	// Uuid Unique identifier for the role
+	Uuid string `json:"uuid"`
+
+	// Workspace Workspace this role applies to
+	Workspace string `json:"workspace"`
 }
 
 // IamInviteRequest defines model for iamInviteRequest.
